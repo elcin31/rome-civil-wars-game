@@ -1,0 +1,29 @@
+{
+  "name": "Cinis Lauri 24",
+  "colors": [
+    {"name": "terracotta", "hex": "#B5523B"},
+    {"name": "ochre", "hex": "#D9A441"},
+    {"name": "olive", "hex": "#6B7A3A"},
+    {"name": "dark_red", "hex": "#7A1F1F"},
+    {"name": "ivory", "hex": "#EDE3CC"},
+    {"name": "dark_brown", "hex": "#2B1B14"},
+    {"name": "night_blue", "hex": "#1E2A44"},
+    {"name": "bronze", "hex": "#A87B3D"},
+    {"name": "stone", "hex": "#8A8577"},
+    {"name": "ink", "hex": "#14151F"},
+    {"name": "umber", "hex": "#4A3026"},
+    {"name": "leather", "hex": "#76503B"},
+    {"name": "sand", "hex": "#BFA87A"},
+    {"name": "skin", "hex": "#D4A077"},
+    {"name": "skin_shadow", "hex": "#A66A50"},
+    {"name": "steel", "hex": "#B6B6A6"},
+    {"name": "sky", "hex": "#8BA7B1"},
+    {"name": "mist", "hex": "#C1C9BB"},
+    {"name": "water", "hex": "#496E7A"},
+    {"name": "deep_water", "hex": "#2D4855"},
+    {"name": "forest", "hex": "#344B37"},
+    {"name": "moss", "hex": "#89945A"},
+    {"name": "flame", "hex": "#ED803E"},
+    {"name": "firelight", "hex": "#F3C76A"}
+  ]
+}

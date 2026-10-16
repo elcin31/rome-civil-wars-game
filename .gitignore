@@ -1,0 +1,17 @@
+# Godot 4 generated caches and exports
+.godot/
+*.tmp
+*.log
+export.cfg
+export_presets.cfg
+build/
+dist/
+*.apk
+*.aab
+*.keystore
+# Python and local environment
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.DS_Store
