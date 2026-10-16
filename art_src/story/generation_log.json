@@ -1,0 +1,347 @@
+{
+  "version": 2,
+  "tool": "built-in image_gen.imagegen",
+  "style_suffix": "STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+  "sources": [
+    {
+      "id": "pullo",
+      "category": "emotions",
+      "source": "art_src/story/emotions_pullo.png",
+      "prompt": "Create a new original Roman game DIALOGUE EMOTION atlas of the same Titus Pullo as reference: dark tousled hair, stubble, scar at eyebrow, bronze helmet with transverse red centurion crest, red tunic and mail. EXACT 2 columns by 2 rows of FOUR separate bust portraits, equal square cells, no borders or text. Same head size, same angle, same costume, bust below chest, include whole crest. Row-major expressions: neutral, angry (brows lowered, mouth closed), worried (raised brows, tense eyes), subtle warm smile (not laughing). Transparent canvas with clear space around every bust, no scenery, no shadows outside bust. Each face should fill about80% cell and remain readable at96x96. Do not resemble any actor. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/titus_pullo_portrait.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "camp_defense",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_camp_defense.png",
+      "prompt": "Original single wide cinematic pixel-art illustration for CINIS LAURI. Night defense of Quintus Cicero's Roman winter camp in54 BCE, Gaul. Close foreground TWO Roman centurions Titus Pullo (stubbled, red crest, strong) and Lucius Vorenus (lean, clean shaven, neat armor, red crest) brace oval shields side by side on an earthen rampart, mail lorica hamata, against distant spear silhouettes outside timber palisade. Burning hut rooftops behind, water buckets passed hand to hand, meaningful cooperation amid danger. No gore, no visible dead bodies. Cold navy night and restrained ochre flame, readable silhouettes and large pixel clusters. Use references for character identity and palette, never copy a TV scene or actor. One complete landscape composition16:9, important subjects entirely within central80% to allow cropping. No panels, no magenta. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/titus_pullo_portrait.png",
+        "/workspace/rome-civil-wars-game/assets/characters/lucius_vorenus_portrait.png",
+        "/workspace/rome-civil-wars-game/assets/locations/roman_camp.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "vorenus",
+      "category": "emotions",
+      "source": "art_src/story/emotions_vorenus.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Lucius Vorenus, disciplined lean Roman centurion, clean-shaven narrow jaw, tidy short black hair, serious eyes, bronze helmet transverse red crest, neat mail over red tunic. Distinct from stubbled Pullo. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/lucius_vorenus_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "caesar",
+      "category": "emotions",
+      "source": "art_src/story/emotions_caesar.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Julius Caesar about55, narrow lined clean-shaven face, receding grey hair, small laurel wreath, ivory toga with dark crimson/purple narrow border and red cloak. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/julius_caesar_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "octavian",
+      "category": "emotions",
+      "source": "art_src/story/emotions_octavian.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Young Octavian age19, pale slender narrow face, short dark brown hair, no beard no wreath, simple ivory tunic and muted navy cloak. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/octavian_young_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "augustus",
+      "category": "emotions",
+      "source": "art_src/story/emotions_augustus.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Elderly Augustus about70, short white hair, lined slim clean-shaven face, laurel wreath, ivory white toga, restrained dignified bearing. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/augustus_old_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "antony",
+      "category": "emotions",
+      "source": "art_src/story/emotions_antony.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Mark Antony about40, broad square jaw, dark curled short hair, clean shaven, bronze anatomical cuirass, red commander cloak, NO helmet. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/mark_antony_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "cleopatra",
+      "category": "emotions",
+      "source": "art_src/story/emotions_cleopatra.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Cleopatra VII, olive complexion, dark Greek melon-coiffure hair, thin gold diadem, gold Hellenistic dress with restrained Egyptian trim, calm intelligent face, no actor likeness. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/cleopatra_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "pompey",
+      "category": "emotions",
+      "source": "art_src/story/emotions_pompey.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Pompey the Great about58, mature broad dignified face, swept-back grey-brown hair, clean shaven, bronze officer cuirass and ochre cloak, no wreath. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/pompey_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "brutus",
+      "category": "emotions",
+      "source": "art_src/story/emotions_brutus.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Marcus Junius Brutus about40, strict angular clean-shaven face, short dark hair, ivory toga with a narrow crimson border, no wreath no cloak. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/assets/characters/brutus_portrait.png",
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "cicero",
+      "category": "emotions",
+      "source": "art_src/story/emotions_cicero.png",
+      "prompt": "Use face identity from the first reference and 2x2 emotion layout/pixel technique from second reference where provided. Create one new original FOUR BUST emotion atlas of Marcus Tullius Cicero about63, NEW original face, balding with greying hair at sides, broad lined face, intelligent tired eyes and strong rounded nose, clean shaven, formal ivory toga with dark red stripe. NOT his brother Quintus. Not an actor. EXACT2x2 equal square cells, row-major neutral, angry, worried, warm subtle smile. Same angle and head size across all four; include whole hair/wreath/crest, visible chest, no clipping or touching borders. Transparent background, no shadows outside bust, no grid, no lettering. Each cell exported96x96 later. No actor likeness. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/emotions_pullo.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "alesia_assault",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_alesia_assault.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Alesia52 BCE, Roman earthworks with two visible concentric timber palisade lines around a distant hilltop Gallic oppidum. Foreground Titus and Lucius in mail brace shields at a ditch as soldiers haul a comrade up the rampart. Ochre dust, olive hills, no gore. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "rubicon_dawn",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_rubicon_dawn.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: January49 BCE, a modest shallow Rubicon stream at pale winter dawn, Caesar in red cloak on horseback at near bank, a small legion column behind him, Titus and Lucius seen from back at edge of foreground, reeds and frost, thoughtful hesitation, no speech text. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "empty_rome",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_empty_rome.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Rome49 BCE after Pompey and many senators depart, empty Republican city street and partly shut ancient timber city gate, abandoned market baskets, an ordinary woman potter with a small boy wait in portico, distant soldiers departing, no Colosseum and no medieval towers. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "pharsalus_battle",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_pharsalus_battle.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Pharsalus48 BCE, two distant lines of Roman armies across broad dry Thessalian plain, dusty cavalry on far flank, Titus and Lucius with red shields in foreground, matched late Republic equipment on both sides, human scale, no bodies or gore. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "mutual_rescue",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_mutual_rescue.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Gaul54 BCE, the episode of the two centurions helping one another outside Quintus Cicero's camp, one kneeling in a shallow hollow reaching up, the other braces shield and offers his hand, pursuing warriors distant. Two distinct hero faces/costumes, a moment of trust rather than a triumphant killing. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "ides",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_ides.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: 15March44 BCE, confusion in meeting chamber in Pompey's theatre complex used by Senate, NOT the later Curia Julia. A fallen ivory toga at foot of a statue, scattered blank tablets, senators recoiling behind columns. Caesar implied in fallen figure, no blood, no stabbing closeup, no modern Senate chamber. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "caesar_funeral",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_caesar_funeral.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Rome Forum March44 BCE funeral of Caesar, funeral bier and a rising pyre in foreground, dense distant ordinary citizens, Antony as small red-cloaked speaker by the rostra, restrained smoke and torchlight, Republican buildings, no invented quotations or writing. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "proscription_wall",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_proscription_wall.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Rome43 BCE, fearful small crowd at a wall of official proscription notices, pale parchment slats with red wax seals and unlettered short dark marks, absolutely no legible letters, two centurions in shadow and a clerk shielding a small packet, threat conveyed by absence and locked shutters, no gore. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "night_escape",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_night_escape.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Rome43 BCE, a potter woman with a boy and a female healer quietly leave a torchlit narrow street; Titus opens a side gate while Lucius distracts a small distant patrol. One shared oil lamp, dark navy and bronze, nonviolent suspense, original scene. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "philippi_start",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_philippi_start.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Philippi42 BCE, cold autumn muddy Macedonian plain, Republican and triumviral Roman formations begin moving toward one another, low marsh haze, raised blank standards, distant mountains; aging Titus and Lucius watch from opposite foreground edges, no gore. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "commanders_council",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_commanders_council.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Brundisium40 BCE, a restrained historically plausible public negotiating chamber where Octavian and Antony are reconciled, both seated at a low table with rolled blank maps and wax tablets, attendants distant, harbor arch opening. Octavian is a lean young man and Antony a broad mature man, no crowns. This is40 BCE, not a joint war council before Actium. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "actium_battle",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_actium_battle.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: 2September31 BCE naval Battle of Actium, ancient oared galleys with square sails, two distant burning ships, dense lines of oars and sunset smoke; foreground a small evacuation boat with an older centurion reaching toward a rope, no cannons, no modern ships, no bodies or gore. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "alexandria_defeat",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_alexandria_defeat.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Alexandria30 BCE after Octavian's victory, silent Ptolemaic harbor with Pharos lighthouse, lowered blank red banners, sealed warehouses, folded sails, a woman artisan carrying a bundle of papyrus and an older Roman soldier with repaired red cloak; subdued daylight, no corpses. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "augustan_marble",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_augustan_marble.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Rome under Augustus, a calm urban reconstruction contrasting fresh ivory marble temple columns with ordinary crowded brick workshops, a potter's kiln and working people in foreground, laurel motif carved without lettering, no Colosseum or modern imperial monuments, soft afternoon light. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "old_friends",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_old_friends.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: Two original Roman former centurions Titus and Lucius around70 years old at sunset in12 BCE, grey hair and weathered faces, Titus with rough beard and patched terracotta tunic, Lucius neatly shaven in simple ivory tunic, no helmets or armor. Both seated together on a low stone wall above a quiet Italian olive grove, two plain clay cups between them, warm restrained sunset, no writing. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "together",
+      "category": "endings",
+      "source": "art_src/story/endings_together.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: A hopeful ending, two elderly former Roman centurions Titus and Lucius in modest civilian tunics repair a wooden door together at a small Italian pottery workshop, olive tree and two lit oil lamps, an adult man and woman working in background, friendship expressed through shared ordinary labor. No military triumph, no text. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "apart",
+      "category": "endings",
+      "source": "art_src/story/endings_apart.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: A bittersweet ending, elderly Titus on a quay at left holding an unlettered sealed letter, an empty second seat beside him; a departing merchant ship across quiet water carries a distant elderly Lucius figure at its stern, dusk, one continuous composition, no split panels, no visible writing, two friends alive but separated. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "sacrifice",
+      "category": "endings",
+      "source": "art_src/story/endings_sacrifice.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: A mournful ending, elderly Titus alone at a simple stone memorial under an olive tree, his rough grey-bearded face in profile, a second untouched clay cup and a folded plain ivory tunic beside a single oil lamp, Lucius absent, no corpse or gore, respectful human grief at sunset. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    },
+    {
+      "id": "bad",
+      "category": "endings",
+      "source": "art_src/story/endings_bad.png",
+      "prompt": "A NEW original single cinematic Roman historical game illustration: A bleak ending, locked small Roman municipal archive in cold blue predawn, two abandoned worn centurion shields lean separately against opposite sides of a closed doorway, charred blank wax tablets and a broken clay lamp on ground, one tiny distant human silhouette walking away, no text, no gore, no villain spectacle. Use reference only for pixel technique and historical atmosphere, create distinct composition. Large landscape16:9 canvas, main subjects inside central80%, designed for480x270. No panels, no magenta background, no foreign characters or TV actor likenesses, all original. STYLE SUFFIX: original 16-bit pixel art, sober Roman historical drama, confident clean pixel clusters, crisp stepped contours, readable small-screen silhouettes, no antialiasing, no gradients, no text, no watermark, no logos, flat #FF00FF only where transparent; restricted colors terracotta #B5523B ochre #D9A441 olive #6B7A3A crimson #7A1F1F ivory #EDE3CC dark brown #2B1B14 navy #1E2A44 bronze #A87B3D stone #8A8577 with muted earth shadows.",
+      "reference_paths": [
+        "/workspace/rome-civil-wars-game/art_src/story/cutscenes_camp_defense.png"
+      ],
+      "attempts": 1,
+      "review": "Reviewed on quantized contact sheet; technical PNG validation in validate_story.py."
+    }
+  ]
+}

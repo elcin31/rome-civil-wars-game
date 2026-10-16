@@ -11,7 +11,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "vorenus",
@@ -23,7 +23,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "caesar",
@@ -35,7 +35,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "octavian",
@@ -47,7 +47,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "augustus",
@@ -59,7 +59,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "antony",
@@ -71,7 +71,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "cleopatra",
@@ -83,7 +83,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "pompey",
@@ -95,7 +95,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "brutus",
@@ -107,7 +107,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "cicero",
@@ -119,7 +119,7 @@
         192,
         192
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "camp_defense",
@@ -131,7 +131,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "alesia_assault",
@@ -143,7 +143,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "rubicon_dawn",
@@ -155,7 +155,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "empty_rome",
@@ -167,7 +167,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "pharsalus_battle",
@@ -179,7 +179,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "mutual_rescue",
@@ -191,7 +191,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "ides",
@@ -203,7 +203,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "caesar_funeral",
@@ -215,7 +215,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "proscription_wall",
@@ -227,7 +227,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "night_escape",
@@ -239,7 +239,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "philippi_start",
@@ -251,7 +251,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "commanders_council",
@@ -263,7 +263,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "actium_battle",
@@ -275,7 +275,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "alexandria_defeat",
@@ -287,7 +287,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "augustan_marble",
@@ -299,7 +299,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "old_friends",
@@ -311,7 +311,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "together",
@@ -323,7 +323,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "apart",
@@ -335,7 +335,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "sacrifice",
@@ -347,7 +347,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     },
     {
       "id": "bad",
@@ -359,7 +359,7 @@
         480,
         270
       ],
-      "status": "pending_review"
+      "status": "reviewed_for_story"
     }
   ]
 }

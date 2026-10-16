@@ -1,0 +1,45 @@
+{
+  "mode": "strict",
+  "nodes": 466,
+  "scenes": 76,
+  "choices": 55,
+  "major_branches": 10,
+  "side_scenes": 11,
+  "narrative_words": 9932,
+  "all_text_minutes": 49.7,
+  "finished_scenes": 16,
+  "illustrations": 30,
+  "new_pngs": 70,
+  "normal_routes": [
+    {
+      "route": "legion",
+      "side_quests": false,
+      "words": 7839,
+      "minutes": 39.2
+    },
+    {
+      "route": "legion",
+      "side_quests": true,
+      "words": 9095,
+      "minutes": 45.5
+    },
+    {
+      "route": "citizen",
+      "side_quests": false,
+      "words": 7803,
+      "minutes": 39.0
+    },
+    {
+      "route": "citizen",
+      "side_quests": true,
+      "words": 9054,
+      "minutes": 45.3
+    }
+  ],
+  "errors": [],
+  "unmet_requirements": [
+    "Authored narrative words 9932: required 25000..35000",
+    "60 scenes still marked draft",
+    "Normal route reading time must be 120..180 minutes at 200 words/min"
+  ]
+}
