@@ -160,6 +160,10 @@ func _settle() -> void:
 		state.progress.chapter = int(str(scene.get("id", "ch01")).substr(2, 2))
 		if scene.get("id", "") not in state.progress.visited:
 			state.progress.visited.append(scene.get("id", ""))
+		# Empty dialogue connectors carry effects but should not ask for a blank tap.
+		if node.get("kind") == "dialogue" and node.get("text", {}).get("ru", "").is_empty() and node.has("next"):
+			state.node = node.next
+			continue
 		return
 	push_error("Narrative branch cycle")
 

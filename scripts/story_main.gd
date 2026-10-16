@@ -51,6 +51,7 @@ func _label(value: String, rect: Rect2, size_value: int = 9, color: Color = IVOR
 	label.add_theme_color_override("font_color", color)
 	label.mouse_filter = MOUSE_FILTER_IGNORE
 	layer.add_child(label)
+	label.set_deferred("size", rect.size)
 	return label
 
 
@@ -81,6 +82,7 @@ func _button(value: String, rect: Rect2, callback: Callable, enabled: bool = tru
 	label.add_theme_color_override("font_color", IVORY if enabled else BRONZE)
 	label.mouse_filter = MOUSE_FILTER_IGNORE
 	button.add_child(label)
+	label.set_deferred("size", rect.size - Vector2(6, 2))
 	return button
 
 
@@ -90,7 +92,7 @@ func menu(message: String = "") -> void:
 	_label(StoryRuntime.tr_ui("subtitle"), Rect2(115, 35, 180, 18), 11)
 	_button(StoryRuntime.tr_ui("new_game"), Rect2(80, 64, 160, 22), _new_request)
 	_button(StoryRuntime.tr_ui("continue"), Rect2(80, 90, 160, 22), _continue,
-		FileAccess.file_exists(StoryRuntime.SAVE_PATH))
+		FileAccess.file_exists(StoryRuntime.save_path))
 	_button(StoryRuntime.tr_ui("chapters"), Rect2(80, 116, 160, 22), _chapters)
 	_button(StoryRuntime.tr_ui("gallery"), Rect2(80, 142, 160, 22), _gallery)
 	if not message.is_empty():
@@ -98,7 +100,7 @@ func menu(message: String = "") -> void:
 
 
 func _new_request() -> void:
-	if not FileAccess.file_exists(StoryRuntime.SAVE_PATH):
+	if not FileAccess.file_exists(StoryRuntime.save_path):
 		_new_game()
 		return
 	_clear("confirm")
@@ -334,6 +336,8 @@ func _draw() -> void:
 			draw_rect(Rect2(0, 82, 320, 98), INK)
 			draw_line(Vector2(0, 82), Vector2(320, 82), BRONZE)
 			if face: draw_texture_rect(face, Rect2(4, 100, 48, 48), false)
+		elif StoryRuntime.current().get("kind") == "ending":
+			draw_rect(Rect2(0, 108, 320, 72), INK)
 		else:
 			draw_rect(Rect2(5, 22, 310, 156), Color(0.078, 0.082, 0.121, .86))
 	else:

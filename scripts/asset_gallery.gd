@@ -101,7 +101,7 @@ func _build_ui() -> void:
 	chrome.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(chrome)
 	_label("C I N I S   L A U R I", Vector2(5, 1), OCHRE)
-	_label("ПЕПЕЛ ЛАВРА  /  ART I", Vector2(207, 1), BRONZE)
+	_label("ПЕПЕЛ ЛАВРА  /  ART I", Vector2(158, 1), BRONZE)
 	for i in range(4):
 		tabs.append(_button(GROUP_NAMES[i], Rect2(i * 80, 16, 80, 18), _select_group.bind(i)))
 	_button("<", Rect2(3, 143, 32, 32), _navigate.bind(-1))
