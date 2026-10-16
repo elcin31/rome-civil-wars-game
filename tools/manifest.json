@@ -18,7 +18,9 @@
         64
       ],
       "portrait": "assets/characters/titus_pullo_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "lucius_vorenus",
@@ -36,7 +38,9 @@
         64
       ],
       "portrait": "assets/characters/lucius_vorenus_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "julius_caesar",
@@ -54,7 +58,9 @@
         64
       ],
       "portrait": "assets/characters/julius_caesar_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "octavian_young",
@@ -72,7 +78,9 @@
         64
       ],
       "portrait": "assets/characters/octavian_young_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "augustus_old",
@@ -90,7 +98,9 @@
         64
       ],
       "portrait": "assets/characters/augustus_old_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "mark_antony",
@@ -108,7 +118,9 @@
         64
       ],
       "portrait": "assets/characters/mark_antony_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "cleopatra",
@@ -126,7 +138,9 @@
         64
       ],
       "portrait": "assets/characters/cleopatra_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "pompey",
@@ -144,7 +158,9 @@
         64
       ],
       "portrait": "assets/characters/pompey_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "brutus",
@@ -162,7 +178,9 @@
         64
       ],
       "portrait": "assets/characters/brutus_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "caesar_legionary",
@@ -180,7 +198,9 @@
         64
       ],
       "portrait": "assets/characters/caesar_legionary_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "gallic_warrior",
@@ -198,7 +218,9 @@
         64
       ],
       "portrait": "assets/characters/gallic_warrior_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "pompeian_soldier",
@@ -216,7 +238,9 @@
         64
       ],
       "portrait": "assets/characters/pompeian_soldier_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "roman_citizen",
@@ -234,7 +258,9 @@
         64
       ],
       "portrait": "assets/characters/roman_citizen_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "senator",
@@ -252,7 +278,9 @@
         64
       ],
       "portrait": "assets/characters/senator_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "craftsman",
@@ -270,7 +298,9 @@
         64
       ],
       "portrait": "assets/characters/craftsman_portrait.png",
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
     },
     {
       "id": "gaul_forest",
@@ -288,7 +318,8 @@
         "assets/locations/gaul_forest_mid.png",
         "assets/locations/gaul_forest_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "gallic_fort",
@@ -306,7 +337,8 @@
         "assets/locations/gallic_fort_mid.png",
         "assets/locations/gallic_fort_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "alesia",
@@ -324,7 +356,8 @@
         "assets/locations/alesia_mid.png",
         "assets/locations/alesia_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "roman_camp",
@@ -342,7 +375,8 @@
         "assets/locations/roman_camp_mid.png",
         "assets/locations/roman_camp_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "roman_forum",
@@ -360,7 +394,9 @@
         "assets/locations/roman_forum_mid.png",
         "assets/locations/roman_forum_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Уточнение архитектуры выбранного года; сейчас художественная композиция поздней Республики."
     },
     {
       "id": "rome_night",
@@ -378,7 +414,8 @@
         "assets/locations/rome_night_mid.png",
         "assets/locations/rome_night_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "rubicon",
@@ -396,12 +433,13 @@
         "assets/locations/rubicon_mid.png",
         "assets/locations/rubicon_near.png"
       ],
-      "status": "pending",
+      "status": "ready_part_1",
       "layer_offsets_y": [
         0,
         40,
         0
-      ]
+      ],
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "pharsalus",
@@ -419,12 +457,13 @@
         "assets/locations/pharsalus_mid.png",
         "assets/locations/pharsalus_near.png"
       ],
-      "status": "pending",
+      "status": "ready_part_1",
       "layer_offsets_y": [
         0,
         40,
         0
-      ]
+      ],
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "alexandria",
@@ -442,12 +481,13 @@
         "assets/locations/alexandria_mid.png",
         "assets/locations/alexandria_near.png"
       ],
-      "status": "pending",
+      "status": "ready_part_1",
       "layer_offsets_y": [
         0,
         24,
         0
-      ]
+      ],
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "cleopatra_palace",
@@ -465,7 +505,8 @@
         "assets/locations/cleopatra_palace_mid.png",
         "assets/locations/cleopatra_palace_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "philippi",
@@ -483,7 +524,8 @@
         "assets/locations/philippi_mid.png",
         "assets/locations/philippi_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "actium",
@@ -501,7 +543,8 @@
         "assets/locations/actium_mid.png",
         "assets/locations/actium_near.png"
       ],
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "city",
@@ -519,7 +562,9 @@
         16
       ],
       "key_background": true,
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Стыки соседних 16x16 ячеек, переходы terrain и назначение коллизий при создании уровней."
     },
     {
       "id": "camp_fields",
@@ -537,7 +582,9 @@
         16
       ],
       "key_background": true,
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Стыки соседних 16x16 ячеек, переходы terrain и назначение коллизий при создании уровней."
     },
     {
       "id": "forest_siege",
@@ -555,7 +602,9 @@
         16
       ],
       "key_background": true,
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Стыки соседних 16x16 ячеек, переходы terrain и назначение коллизий при создании уровней."
     },
     {
       "id": "objects",
@@ -573,11 +622,13 @@
         16
       ],
       "key_background": true,
-      "status": "pending",
+      "status": "ready_part_1",
       "object_frame_size": [
         32,
         32
-      ]
+      ],
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Стыки соседних 16x16 ячеек, переходы terrain и назначение коллизий при создании уровней."
     },
     {
       "id": "dialogue",
@@ -591,7 +642,7 @@
         64
       ],
       "key_background": true,
-      "status": "pending",
+      "status": "ready_part_1",
       "crop": [
         28,
         65,
@@ -637,7 +688,8 @@
           1506,
           983
         ]
-      ]
+      ],
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "icons",
@@ -651,7 +703,8 @@
         16
       ],
       "key_background": true,
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "campaign_map",
@@ -665,7 +718,9 @@
         180
       ],
       "key_background": false,
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "manual_polish": "Сверка берегов и координат узлов перед игровой кампанией."
     },
     {
       "id": "inventory",
@@ -679,7 +734,8 @@
         144
       ],
       "key_background": true,
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     },
     {
       "id": "logo",
@@ -693,7 +749,8 @@
         64
       ],
       "key_background": true,
-      "status": "pending"
+      "status": "ready_part_1",
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
     }
   ]
 }
