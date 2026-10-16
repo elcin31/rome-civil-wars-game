@@ -1,0 +1,859 @@
+{
+  "schema_version": 1,
+  "id": "ch01",
+  "number": 1,
+  "title": {
+    "ru": "Галлия",
+    "en": ""
+  },
+  "years": "58–52 до н. э.",
+  "entry": "ch01_s01_n01",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch01_s01",
+      "title": {
+        "ru": "Ров, который ещё не выкопан",
+        "en": ""
+      },
+      "year": "58 до н. э.",
+      "entry": "ch01_s01_n01",
+      "illustration": "assets/locations/gaul_forest.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "gallic_war"
+      ]
+    },
+    {
+      "id": "ch01_s02",
+      "title": {
+        "ru": "Чужая мера",
+        "en": ""
+      },
+      "year": "57 до н. э.",
+      "entry": "ch01_s02_n01",
+      "illustration": "assets/locations/gallic_fort.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch01_s03",
+      "title": {
+        "ru": "Огонь за спиной",
+        "en": ""
+      },
+      "year": "54 до н. э.",
+      "entry": "ch01_s03_n01",
+      "illustration": "assets/story/camp_defense.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "quintus_cicero_camp"
+      ]
+    },
+    {
+      "id": "ch01_s04",
+      "title": {
+        "ru": "Двое за валом",
+        "en": ""
+      },
+      "year": "54 до н. э.",
+      "entry": "ch01_s04_n01",
+      "illustration": "assets/story/mutual_rescue.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "mutual_rescue"
+      ]
+    },
+    {
+      "id": "ch01_s05",
+      "title": {
+        "ru": "Два имени на воске",
+        "en": ""
+      },
+      "year": "54 до н. э.",
+      "entry": "ch01_s05_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch01_s06",
+      "title": {
+        "ru": "Две линии",
+        "en": ""
+      },
+      "year": "52 до н. э.",
+      "entry": "ch01_s06_n01",
+      "illustration": "assets/story/alesia_assault.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "alesia"
+      ]
+    },
+    {
+      "id": "ch01_s07",
+      "title": {
+        "ru": "Деревянная игла",
+        "en": ""
+      },
+      "year": "52 до н. э.",
+      "entry": "ch01_s07_n01",
+      "illustration": "assets/locations/gaul_forest.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch01_s08",
+      "title": {
+        "ru": "Снятый венец",
+        "en": ""
+      },
+      "year": "52 до н. э.",
+      "entry": "ch01_s08_n01",
+      "illustration": "assets/locations/alesia.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "vercingetorix"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch01_s01_n01",
+      "scene": "ch01_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "pullo_neutral",
+      "text": {
+        "ru": "Дождь смывает мел с разметки будущего рва. Пулон считает шаги, Ворен считает людей. Ни один не желает первым признаться, что сырая земля сильнее обоих. Между колышками пробирается юный писец Гай Серран, прижимая к груди ещё пустые таблички.",
+        "en": ""
+      },
+      "next": "ch01_s01_n90"
+    },
+    {
+      "id": "ch01_s01_n91",
+      "scene": "ch01_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Два центуриона сверяют шаги. Новобранцы перестают ждать, кто первым ошибётся.",
+        "en": ""
+      },
+      "next": "ch01_s02_n01"
+    },
+    {
+      "id": "ch01_s01_n92",
+      "scene": "ch01_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Работу заканчивают быстрее на одном участке, но соседний придётся переделать. Ворен запоминает, кто отказался сверить меру.",
+        "en": ""
+      },
+      "next": "ch01_s02_n01"
+    },
+    {
+      "id": "ch01_s01_n90",
+      "scene": "ch01_s01",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s01_shared_measure",
+          "text": {
+            "ru": "Помочь Ворену разметить ров",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 3,
+          "goto": "ch01_s01_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s01_own_measure",
+          "text": {
+            "ru": "Выставить собственную разметку",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch01_s01_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch01_s02_n01",
+      "scene": "ch01_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "vorenus_neutral",
+      "text": {
+        "ru": "Нерия Фауста просит полотна для перевязок. Снабженец предлагает ей обрезки, которых не жалко. Она раскладывает их на щите Пулона и показывает, почему жалость измеряют длиной ткани. Ворену предстоит подписать расход, за который спросят с него.",
+        "en": ""
+      },
+      "next": "ch01_s02_n90"
+    },
+    {
+      "id": "ch01_s02_n91",
+      "scene": "ch01_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Нерия получает целое полотно и оставляет копию расхода Серрану.",
+        "en": ""
+      },
+      "next": "ch01_s03_n01"
+    },
+    {
+      "id": "ch01_s02_n92",
+      "scene": "ch01_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Снабженец запирает сундук. Нерия стирает старые повязки и больше не просит за себя.",
+        "en": ""
+      },
+      "next": "ch01_s03_n01"
+    },
+    {
+      "id": "ch01_s02_n90",
+      "scene": "ch01_s02",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s02_cloth",
+          "text": {
+            "ru": "Подписать расход полотна",
+            "en": ""
+          },
+          "set_flags": [
+            "neria_trust"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch01_s02_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s02_inspect",
+          "text": {
+            "ru": "Отложить расход до проверки",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch01_s02_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch01_s03_n01",
+      "scene": "ch01_s03",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "pullo_worried",
+      "text": {
+        "ru": "В лагере Квинта Цицерона горит соломенная кровля. Ветер толкает дым к валу. Ворен велит не оставлять место; Пулон слышит просьбы у лечебного навеса. Воды хватит либо на ближайший проход, либо на несколько перевязок. Нерия держит ведро обеими руками.",
+        "en": ""
+      },
+      "next": "ch01_s03_n80"
+    },
+    {
+      "id": "ch01_s03_n80",
+      "scene": "ch01_s03",
+      "kind": "beat",
+      "beat": "beat_ch01_s03",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch01_s03_n90"
+    },
+    {
+      "id": "ch01_s03_n91",
+      "scene": "ch01_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон выводит раненых из дыма. Ворен закрывает ослабевшее место собственной сменой.",
+        "en": ""
+      },
+      "next": "ch01_s04_n01"
+    },
+    {
+      "id": "ch01_s03_n92",
+      "scene": "ch01_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Вал остаётся цел. Нерия сама тащит мешки из навеса, не получив обещанной помощи.",
+        "en": ""
+      },
+      "next": "ch01_s04_n01"
+    },
+    {
+      "id": "ch01_s03_n90",
+      "scene": "ch01_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s03_rescue_neria",
+          "text": {
+            "ru": "Взять людей к лечебному навесу",
+            "en": ""
+          },
+          "set_flags": [
+            "neria_trust"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 10,
+          "goto": "ch01_s03_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s03_hold_rampart",
+          "text": {
+            "ru": "Удержать отведённый участок",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 2
+          },
+          "bond": -5,
+          "goto": "ch01_s03_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "camp_duty"
+    },
+    {
+      "id": "ch01_s04_n01",
+      "scene": "ch01_s04",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "vorenus_worried",
+      "text": {
+        "ru": "Соперничество выносит Пулона из укреплений. Метательное копьё застревает у пояса и мешает обнажить меч. Ворен выходит следом и отвлекает преследователей. Теперь уже он оступается в ложбину. Пулону достаточно одного взгляда, чтобы понять, куда исчез соперник.",
+        "en": ""
+      },
+      "next": "ch01_s04_n90"
+    },
+    {
+      "id": "ch01_s04_n91",
+      "scene": "ch01_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон бросает удобное укрытие и вытаскивает товарища из ложбины.",
+        "en": ""
+      },
+      "next": "ch01_s05_n01"
+    },
+    {
+      "id": "ch01_s04_n92",
+      "scene": "ch01_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон прикрывает ложбину, пока двое легионеров подают Ворену ремень. Тот замечает задержку.",
+        "en": ""
+      },
+      "next": "ch01_s05_n01"
+    },
+    {
+      "id": "ch01_s04_n90",
+      "scene": "ch01_s04",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s04_return",
+          "text": {
+            "ru": "Вернуться за Вореном",
+            "en": ""
+          },
+          "set_flags": [
+            "mutual_rescue"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 8,
+          "goto": "ch01_s04_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s04_cover",
+          "text": {
+            "ru": "Поднять щит и позвать помощь",
+            "en": ""
+          },
+          "set_flags": [
+            "mutual_rescue"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -2,
+          "goto": "ch01_s04_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch01_s05_n01",
+      "scene": "ch01_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "После возвращения никто не может честно назвать одного спасителем другого. Серран оставляет в донесении два имени. Децим Веттий предлагает переписать строку так, чтобы спор наконец закончился. Пулон неожиданно просит писца ничего не исправлять.",
+        "en": ""
+      },
+      "next": "ch01_s05_n90"
+    },
+    {
+      "id": "ch01_s05_n91",
+      "scene": "ch01_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Серран не меняет строку. Веттий уходит без удобного победителя.",
+        "en": ""
+      },
+      "next": "ch01_s06_n01"
+    },
+    {
+      "id": "ch01_s05_n92",
+      "scene": "ch01_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "В донесении первым остаётся Пулон. Между центурионами снова появляется расстояние.",
+        "en": ""
+      },
+      "next": "ch01_s06_n01"
+    },
+    {
+      "id": "ch01_s05_n90",
+      "scene": "ch01_s05",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s05_two_names",
+          "text": {
+            "ru": "Оставить два равных имени",
+            "en": ""
+          },
+          "set_flags": [
+            "shared_record"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 4,
+          "goto": "ch01_s05_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s05_one_name",
+          "text": {
+            "ru": "Выделить успех Пулона",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -4,
+          "goto": "ch01_s05_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch01_s06_n01",
+      "scene": "ch01_s06",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "У Алезии строят укрепления против города и против помощи извне. Между линиями лежит узкая полоса римской жизни: котлы, перевязки, сон на мокрых плащах. Ворен объясняет новобранцам, почему стена за спиной тоже должна быть защищена.",
+        "en": ""
+      },
+      "next": "ch01_s06_n80"
+    },
+    {
+      "id": "ch01_s06_n80",
+      "scene": "ch01_s06",
+      "kind": "beat",
+      "beat": "beat_ch01_s06",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch01_s06_n90"
+    },
+    {
+      "id": "ch01_s06_n91",
+      "scene": "ch01_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Люди у города получают прикрытие. На внешнюю линию друзья идут вместе после смены.",
+        "en": ""
+      },
+      "next": "ch01_optional_07"
+    },
+    {
+      "id": "ch01_s06_n92",
+      "scene": "ch01_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Разведчики получают передышку. Ворен принимает риск и меняет расписание.",
+        "en": ""
+      },
+      "next": "ch01_optional_07"
+    },
+    {
+      "id": "ch01_s06_n90",
+      "scene": "ch01_s06",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s06_inner",
+          "text": {
+            "ru": "Сначала закончить внутреннюю линию",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": 2,
+          "goto": "ch01_s06_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s06_outer",
+          "text": {
+            "ru": "Отдать смену на внешнюю линию",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": 1,
+          "goto": "ch01_s06_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch01_s07_n01",
+      "scene": "ch01_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Нерия потеряла костяную иглу. Галльский пленник умеет вырезать замену, но для этого ему придётся развязать руки. Пулон замечает, что связанный человек одинаково плохо шьёт и душит. Ворен требует сначала убрать оружие с рабочего стола.",
+        "en": ""
+      },
+      "next": "ch01_s07_n90",
+      "set_flags": [
+        "visited_ch01_s07"
+      ]
+    },
+    {
+      "id": "ch01_s07_n91",
+      "scene": "ch01_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Игла получается грубой, но рабочей. Нерия благодарит не за доброту, а за полезное решение.",
+        "en": ""
+      },
+      "next": "ch01_s08_n01"
+    },
+    {
+      "id": "ch01_s07_n92",
+      "scene": "ch01_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Новая игла появляется к вечеру. Пленник уходит, так и не получив возможности быть полезным.",
+        "en": ""
+      },
+      "next": "ch01_s08_n01"
+    },
+    {
+      "id": "ch01_s07_n90",
+      "scene": "ch01_s07",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s07_needle",
+          "text": {
+            "ru": "Развязать пленника под надзором",
+            "en": ""
+          },
+          "set_flags": [
+            "prisoner_spared"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 4,
+          "goto": "ch01_s07_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s07_carpenter",
+          "text": {
+            "ru": "Попросить римского плотника",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -1,
+          "goto": "ch01_s07_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch01_s08_n01",
+      "scene": "ch01_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Верцингеториг сдаётся. В лагере говорят о конце войны, хотя за каждым победным криком слышатся новые распоряжения. Веттий считает пленных; Нерия считает оставшиеся повязки. Пулон впервые спрашивает Ворена не о следующем походе, а о дороге домой.",
+        "en": ""
+      },
+      "next": "ch01_s08_n90"
+    },
+    {
+      "id": "ch01_s08_n91",
+      "scene": "ch01_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ворен обещает обсудить срок службы после возвращения. Это первая их общая договорённость о мире.",
+        "en": ""
+      },
+      "next": "ch02_s01_n01"
+    },
+    {
+      "id": "ch01_s08_n92",
+      "scene": "ch01_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Друзья садятся у одного котла, но разговор остаётся служебным.",
+        "en": ""
+      },
+      "next": "ch02_s01_n01"
+    },
+    {
+      "id": "ch01_s08_n90",
+      "scene": "ch01_s08",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_s08_home",
+          "text": {
+            "ru": "Спросить о дороге домой",
+            "en": ""
+          },
+          "set_flags": [
+            "home_promised"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 3,
+          "goto": "ch01_s08_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch01_s08_orders",
+          "text": {
+            "ru": "Говорить только о новом назначении",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -2,
+          "goto": "ch01_s08_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch01_optional_07",
+      "scene": "ch01_s06",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch01_optional_07_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch01_s07_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch01_optional_07_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch01_s08_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    }
+  ]
+}

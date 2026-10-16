@@ -46,6 +46,10 @@ func _ready() -> void:
 	if ResourceLoader.exists("res://assets/ui/arrows.png"):
 		arrow_art = load("res://assets/ui/arrows.png")
 	_build_ui()
+	if ResourceLoader.exists("res://scenes/StoryMain.tscn"):
+		var words = JSON.parse_string(FileAccess.get_file_as_string("res://story/ui_ru.json"))
+		_button(words.get("return_gallery", "Menu"), Rect2(276, 0, 44, 15),
+			func(): get_tree().change_scene_to_file("res://scenes/StoryMain.tscn"))
 	_select_group(0)
 	# Automation uses this same real scene; no fake screenshot renderer.
 	for arg in OS.get_cmdline_user_args():

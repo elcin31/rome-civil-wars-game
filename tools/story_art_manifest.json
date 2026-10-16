@@ -1,0 +1,365 @@
+{
+  "version": 2,
+  "assets": [
+    {
+      "id": "pullo",
+      "title": "Пулон: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_pullo.png",
+      "file": "assets/portraits/pullo_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "vorenus",
+      "title": "Ворен: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_vorenus.png",
+      "file": "assets/portraits/vorenus_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "caesar",
+      "title": "Цезарь: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_caesar.png",
+      "file": "assets/portraits/caesar_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "octavian",
+      "title": "Октавиан: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_octavian.png",
+      "file": "assets/portraits/octavian_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "augustus",
+      "title": "Август: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_augustus.png",
+      "file": "assets/portraits/augustus_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "antony",
+      "title": "Антоний: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_antony.png",
+      "file": "assets/portraits/antony_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "cleopatra",
+      "title": "Клеопатра: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_cleopatra.png",
+      "file": "assets/portraits/cleopatra_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "pompey",
+      "title": "Помпей: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_pompey.png",
+      "file": "assets/portraits/pompey_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "brutus",
+      "title": "Брут: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_brutus.png",
+      "file": "assets/portraits/brutus_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "cicero",
+      "title": "Цицерон: 4 эмоции",
+      "category": "emotions",
+      "source": "art_src/story/emotions_cicero.png",
+      "file": "assets/portraits/cicero_sheet.png",
+      "size": [
+        192,
+        192
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "camp_defense",
+      "title": "Ночная оборона лагеря Цицерона",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_camp_defense.png",
+      "file": "assets/story/camp_defense.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "alesia_assault",
+      "title": "Штурм вала при Алезии",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_alesia_assault.png",
+      "file": "assets/story/alesia_assault.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "rubicon_dawn",
+      "title": "Цезарь у Рубикона",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_rubicon_dawn.png",
+      "file": "assets/story/rubicon_dawn.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "empty_rome",
+      "title": "Опустевший Рим",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_empty_rome.png",
+      "file": "assets/story/empty_rome.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "pharsalus_battle",
+      "title": "Битва при Фарсале",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_pharsalus_battle.png",
+      "file": "assets/story/pharsalus_battle.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "mutual_rescue",
+      "title": "Взаимное спасение",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_mutual_rescue.png",
+      "file": "assets/story/mutual_rescue.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "ides",
+      "title": "Мартовские иды",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_ides.png",
+      "file": "assets/story/ides.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "caesar_funeral",
+      "title": "Похороны Цезаря",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_caesar_funeral.png",
+      "file": "assets/story/caesar_funeral.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "proscription_wall",
+      "title": "Стена проскрипций",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_proscription_wall.png",
+      "file": "assets/story/proscription_wall.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "night_escape",
+      "title": "Ночное бегство",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_night_escape.png",
+      "file": "assets/story/night_escape.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "philippi_start",
+      "title": "Начало Филипп",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_philippi_start.png",
+      "file": "assets/story/philippi_start.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "commanders_council",
+      "title": "Соглашение в Брундизии",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_commanders_council.png",
+      "file": "assets/story/commanders_council.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "actium_battle",
+      "title": "Сражение при Акции",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_actium_battle.png",
+      "file": "assets/story/actium_battle.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "alexandria_defeat",
+      "title": "Александрия после поражения",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_alexandria_defeat.png",
+      "file": "assets/story/alexandria_defeat.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "augustan_marble",
+      "title": "Рим при Августе",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_augustan_marble.png",
+      "file": "assets/story/augustan_marble.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "old_friends",
+      "title": "Старые друзья на закате",
+      "category": "cutscenes",
+      "source": "art_src/story/cutscenes_old_friends.png",
+      "file": "assets/story/old_friends.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "together",
+      "title": "Два места у очага",
+      "category": "endings",
+      "source": "art_src/story/endings_together.png",
+      "file": "assets/story/together.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "apart",
+      "title": "Письма через море",
+      "category": "endings",
+      "source": "art_src/story/endings_apart.png",
+      "file": "assets/story/apart.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "sacrifice",
+      "title": "Один светильник",
+      "category": "endings",
+      "source": "art_src/story/endings_sacrifice.png",
+      "file": "assets/story/sacrifice.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    },
+    {
+      "id": "bad",
+      "title": "Список без имён",
+      "category": "endings",
+      "source": "art_src/story/endings_bad.png",
+      "file": "assets/story/bad.png",
+      "size": [
+        480,
+        270
+      ],
+      "status": "pending_review"
+    }
+  ]
+}

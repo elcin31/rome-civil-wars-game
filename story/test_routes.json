@@ -1,0 +1,3780 @@
+{
+  "routes": [
+    {
+      "ending": "together",
+      "state": {
+        "flags": {
+          "neria_trust": true,
+          "mutual_rescue": true,
+          "shared_record": true,
+          "prisoner_spared": true,
+          "home_promised": true,
+          "lucilla_helped": true,
+          "sources_kept": true,
+          "seal_returned": true,
+          "lucilla_paid": true,
+          "route_legion": true,
+          "route_citizen": false,
+          "aglaia_safe": true,
+          "ledger_salvaged": false,
+          "grain_accounted": false,
+          "civic_watch": true,
+          "no_mob": true,
+          "witnesses_shared": true,
+          "ledger_survives": true,
+          "side_octavian": false,
+          "side_antony": false,
+          "side_republicans": false,
+          "side_neutral": true,
+          "serranus_safe": true,
+          "lucilla_safe": true,
+          "aulus_safe": true,
+          "neria_supplied": true,
+          "seal_evidence": true,
+          "betrayed": false,
+          "water_shared": true,
+          "home_claim": true,
+          "aulus_learned": true,
+          "safe_passage": true,
+          "mercy_vettius": true,
+          "boat_roster": true,
+          "rescued_together": true,
+          "friend_lost": false,
+          "archive_copied": true,
+          "truth_kept": true,
+          "archive_public": true,
+          "last_honesty": true,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": true,
+          "visited_ch03_s16": false,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 3,
+          "citizens": 35,
+          "octavian": 0,
+          "antony": 0,
+          "republicans": 0
+        },
+        "bond": 100
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n91",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n91",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n91",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n91",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n91",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n91",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n91",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n91",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n91",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n91",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n91",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n91",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n91",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n91",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n91",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n91",
+        "ch03_entry",
+        "ch03_s01_n01",
+        "ch03_s01_n90",
+        "ch03_s02_n01",
+        "ch03_s02_n80",
+        "ch03_s02_n90",
+        "ch03_s02_n91",
+        "ch03_s03_n01",
+        "ch03_s03_n90",
+        "ch03_s04_n01",
+        "ch03_s04_n90",
+        "ch03_s05_n01",
+        "ch03_s05_n90",
+        "ch03_s05_n91",
+        "ch03_s06_n01",
+        "ch03_s06_n90",
+        "ch03_s07_n01",
+        "ch03_s07_n90",
+        "ch03_optional_08",
+        "ch03_s08_n01",
+        "ch03_s08_n90",
+        "ch03_s08_n91",
+        "ch03_s09_n01",
+        "ch03_s09_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n91",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n91",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n91",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n91",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n94",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n91",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n91",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n91",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n91",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n91",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n91",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n91",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n91",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n91",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n91",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n91",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n91",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n91",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n91",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n91",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n91",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n91",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s05_n01",
+        "ch08_s05_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_shared_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_cloth"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_rescue_neria"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_return"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_two_names"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_inner"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_needle"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_home"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_listen"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_work"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_sources"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_promises"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_shelter"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_seal"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_pay"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_legion"
+        },
+        {
+          "node": "ch03_s02_n90",
+          "choice": "ch03_s02_wounded"
+        },
+        {
+          "node": "ch03_s05_n90",
+          "choice": "ch03_s05_boat"
+        },
+        {
+          "node": "ch03_optional_08",
+          "choice": "ch03_optional_08_visit"
+        },
+        {
+          "node": "ch03_s08_n90",
+          "choice": "ch03_s08_witness"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_watch"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_protect"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_read"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_keep_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_neutral"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_serranus"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_tools"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_evidence"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_water"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_owners"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_need"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_evacuate"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_teach"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_mercy"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_roster"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_together"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_queue"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_copy"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_truth"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_public"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_amnesty"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_speak"
+        }
+      ],
+      "words": 3034,
+      "minutes": 15.2,
+      "route": "legion",
+      "policy": "together",
+      "side_quests": true
+    },
+    {
+      "ending": "apart",
+      "state": {
+        "flags": {
+          "neria_trust": true,
+          "mutual_rescue": true,
+          "shared_record": true,
+          "prisoner_spared": true,
+          "home_promised": true,
+          "lucilla_helped": true,
+          "sources_kept": true,
+          "seal_returned": true,
+          "lucilla_paid": true,
+          "route_legion": true,
+          "route_citizen": false,
+          "aglaia_safe": true,
+          "ledger_salvaged": false,
+          "grain_accounted": false,
+          "civic_watch": true,
+          "no_mob": true,
+          "witnesses_shared": true,
+          "ledger_survives": true,
+          "side_octavian": false,
+          "side_antony": true,
+          "side_republicans": false,
+          "side_neutral": false,
+          "serranus_safe": true,
+          "lucilla_safe": true,
+          "aulus_safe": true,
+          "neria_supplied": true,
+          "seal_evidence": true,
+          "betrayed": false,
+          "water_shared": true,
+          "home_claim": false,
+          "aulus_learned": true,
+          "safe_passage": false,
+          "mercy_vettius": true,
+          "boat_roster": true,
+          "rescued_together": true,
+          "friend_lost": false,
+          "archive_copied": true,
+          "truth_kept": true,
+          "archive_public": false,
+          "last_honesty": true,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": true,
+          "visited_ch03_s16": false,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 3,
+          "citizens": 29,
+          "octavian": 2,
+          "antony": 3,
+          "republicans": 0
+        },
+        "bond": 100
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n91",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n91",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n91",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n91",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n91",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n91",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n91",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n91",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n91",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n91",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n91",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n91",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n91",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n91",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n91",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n91",
+        "ch03_entry",
+        "ch03_s01_n01",
+        "ch03_s01_n90",
+        "ch03_s02_n01",
+        "ch03_s02_n80",
+        "ch03_s02_n90",
+        "ch03_s02_n91",
+        "ch03_s03_n01",
+        "ch03_s03_n90",
+        "ch03_s04_n01",
+        "ch03_s04_n90",
+        "ch03_s05_n01",
+        "ch03_s05_n90",
+        "ch03_s05_n91",
+        "ch03_s06_n01",
+        "ch03_s06_n90",
+        "ch03_s07_n01",
+        "ch03_s07_n90",
+        "ch03_optional_08",
+        "ch03_s08_n01",
+        "ch03_s08_n90",
+        "ch03_s08_n91",
+        "ch03_s09_n01",
+        "ch03_s09_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n91",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n91",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n91",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n91",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n92",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n91",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n91",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n91",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n91",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n91",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n91",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n91",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n91",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n91",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n91",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n91",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n91",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n91",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n91",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n92",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n92",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n91",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s06_n01",
+        "ch08_s06_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_shared_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_cloth"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_rescue_neria"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_return"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_two_names"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_inner"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_needle"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_home"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_listen"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_work"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_sources"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_promises"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_shelter"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_seal"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_pay"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_legion"
+        },
+        {
+          "node": "ch03_s02_n90",
+          "choice": "ch03_s02_wounded"
+        },
+        {
+          "node": "ch03_s05_n90",
+          "choice": "ch03_s05_boat"
+        },
+        {
+          "node": "ch03_optional_08",
+          "choice": "ch03_optional_08_visit"
+        },
+        {
+          "node": "ch03_s08_n90",
+          "choice": "ch03_s08_witness"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_watch"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_protect"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_read"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_keep_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_antony"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_serranus"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_tools"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_evidence"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_water"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_owners"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_need"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_evacuate"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_teach"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_mercy"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_roster"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_together"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_queue"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_copy"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_truth"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_private"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_rank"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_speak"
+        }
+      ],
+      "words": 3026,
+      "minutes": 15.1,
+      "route": "legion",
+      "policy": "apart",
+      "side_quests": true
+    },
+    {
+      "ending": "sacrifice",
+      "state": {
+        "flags": {
+          "neria_trust": true,
+          "mutual_rescue": true,
+          "shared_record": true,
+          "prisoner_spared": true,
+          "home_promised": true,
+          "lucilla_helped": true,
+          "sources_kept": true,
+          "seal_returned": true,
+          "lucilla_paid": true,
+          "route_legion": true,
+          "route_citizen": false,
+          "aglaia_safe": true,
+          "ledger_salvaged": false,
+          "grain_accounted": false,
+          "civic_watch": true,
+          "no_mob": true,
+          "witnesses_shared": true,
+          "ledger_survives": true,
+          "side_octavian": true,
+          "side_antony": false,
+          "side_republicans": false,
+          "side_neutral": false,
+          "serranus_safe": true,
+          "lucilla_safe": true,
+          "aulus_safe": true,
+          "neria_supplied": true,
+          "seal_evidence": true,
+          "betrayed": false,
+          "water_shared": true,
+          "home_claim": true,
+          "aulus_learned": true,
+          "safe_passage": true,
+          "mercy_vettius": true,
+          "boat_roster": true,
+          "rescued_together": false,
+          "friend_lost": true,
+          "archive_copied": true,
+          "truth_kept": true,
+          "archive_public": true,
+          "last_honesty": true,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": true,
+          "visited_ch03_s16": false,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 3,
+          "citizens": 33,
+          "octavian": 3,
+          "antony": 0,
+          "republicans": 0
+        },
+        "bond": 100
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n91",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n91",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n91",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n91",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n91",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n91",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n91",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n91",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n91",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n91",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n91",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n91",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n91",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n91",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n91",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n91",
+        "ch03_entry",
+        "ch03_s01_n01",
+        "ch03_s01_n90",
+        "ch03_s02_n01",
+        "ch03_s02_n80",
+        "ch03_s02_n90",
+        "ch03_s02_n91",
+        "ch03_s03_n01",
+        "ch03_s03_n90",
+        "ch03_s04_n01",
+        "ch03_s04_n90",
+        "ch03_s05_n01",
+        "ch03_s05_n90",
+        "ch03_s05_n91",
+        "ch03_s06_n01",
+        "ch03_s06_n90",
+        "ch03_s07_n01",
+        "ch03_s07_n90",
+        "ch03_optional_08",
+        "ch03_s08_n01",
+        "ch03_s08_n90",
+        "ch03_s08_n91",
+        "ch03_s09_n01",
+        "ch03_s09_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n91",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n91",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n91",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n91",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n91",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n91",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n91",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n91",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n91",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n91",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n91",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n91",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n91",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n91",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n91",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n92",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n91",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n91",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n91",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n91",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n91",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n91",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s07_n01",
+        "ch08_s07_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_shared_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_cloth"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_rescue_neria"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_return"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_two_names"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_inner"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_needle"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_home"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_listen"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_work"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_sources"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_promises"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_shelter"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_seal"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_pay"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_legion"
+        },
+        {
+          "node": "ch03_s02_n90",
+          "choice": "ch03_s02_wounded"
+        },
+        {
+          "node": "ch03_s05_n90",
+          "choice": "ch03_s05_boat"
+        },
+        {
+          "node": "ch03_optional_08",
+          "choice": "ch03_optional_08_visit"
+        },
+        {
+          "node": "ch03_s08_n90",
+          "choice": "ch03_s08_witness"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_watch"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_protect"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_read"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_keep_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_octavian"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_serranus"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_tools"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_evidence"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_water"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_owners"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_need"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_evacuate"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_teach"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_mercy"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_roster"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_sacrifice"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_queue"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_copy"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_truth"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_public"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_amnesty"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_speak"
+        }
+      ],
+      "words": 3040,
+      "minutes": 15.2,
+      "route": "legion",
+      "policy": "sacrifice",
+      "side_quests": true
+    },
+    {
+      "ending": "bad",
+      "state": {
+        "flags": {
+          "neria_trust": false,
+          "mutual_rescue": true,
+          "shared_record": false,
+          "prisoner_spared": false,
+          "home_promised": false,
+          "lucilla_helped": false,
+          "sources_kept": false,
+          "seal_returned": false,
+          "lucilla_paid": false,
+          "route_legion": true,
+          "route_citizen": false,
+          "aglaia_safe": false,
+          "ledger_salvaged": true,
+          "grain_accounted": false,
+          "civic_watch": false,
+          "no_mob": false,
+          "witnesses_shared": false,
+          "ledger_survives": false,
+          "side_octavian": true,
+          "side_antony": false,
+          "side_republicans": false,
+          "side_neutral": false,
+          "serranus_safe": false,
+          "lucilla_safe": false,
+          "aulus_safe": true,
+          "neria_supplied": false,
+          "seal_evidence": false,
+          "betrayed": true,
+          "water_shared": false,
+          "home_claim": false,
+          "aulus_learned": false,
+          "safe_passage": false,
+          "mercy_vettius": false,
+          "boat_roster": false,
+          "rescued_together": false,
+          "friend_lost": false,
+          "archive_copied": false,
+          "truth_kept": false,
+          "archive_public": false,
+          "last_honesty": false,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": true,
+          "visited_ch03_s16": false,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 36,
+          "citizens": 1,
+          "octavian": 8,
+          "antony": 0,
+          "republicans": 0
+        },
+        "bond": 0
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n92",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n92",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n92",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n92",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n92",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n92",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n92",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n92",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n92",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n92",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n92",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n92",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n92",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n92",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n92",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n91",
+        "ch03_entry",
+        "ch03_s01_n01",
+        "ch03_s01_n90",
+        "ch03_s02_n01",
+        "ch03_s02_n80",
+        "ch03_s02_n90",
+        "ch03_s02_n92",
+        "ch03_s03_n01",
+        "ch03_s03_n90",
+        "ch03_s04_n01",
+        "ch03_s04_n90",
+        "ch03_s05_n01",
+        "ch03_s05_n90",
+        "ch03_s05_n92",
+        "ch03_s06_n01",
+        "ch03_s06_n90",
+        "ch03_s07_n01",
+        "ch03_s07_n90",
+        "ch03_optional_08",
+        "ch03_s08_n01",
+        "ch03_s08_n90",
+        "ch03_s08_n92",
+        "ch03_s09_n01",
+        "ch03_s09_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n92",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n92",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n92",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n92",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n91",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n92",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n92",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n92",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n92",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n92",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n92",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n92",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n92",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n92",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n92",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n93",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n92",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n92",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n92",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n92",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n92",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n92",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s08_n01",
+        "ch08_s08_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_own_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_inspect"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_hold_rampart"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_cover"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_one_name"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_outer"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_carpenter"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_orders"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_duty"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_patron"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_rumour"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_march"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_reserve"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_bread"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_convoy"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_legion"
+        },
+        {
+          "node": "ch03_s02_n90",
+          "choice": "ch03_s02_formation"
+        },
+        {
+          "node": "ch03_s05_n90",
+          "choice": "ch03_s05_records"
+        },
+        {
+          "node": "ch03_optional_08",
+          "choice": "ch03_optional_08_visit"
+        },
+        {
+          "node": "ch03_s08_n90",
+          "choice": "ch03_s08_total"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_veterans"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_leave"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_trust_vettius"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_burn_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_octavian"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_lucilla"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_clothes"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_betray"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_unit"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_plot"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_equal"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_roster"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_enlist"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_refuse"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_station"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_orders"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_own"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_sell"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_legend"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_private"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_rank"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_silence"
+        }
+      ],
+      "words": 2982,
+      "minutes": 14.9,
+      "route": "legion",
+      "policy": "bad",
+      "side_quests": true
+    },
+    {
+      "ending": "together",
+      "state": {
+        "flags": {
+          "neria_trust": true,
+          "mutual_rescue": true,
+          "shared_record": true,
+          "prisoner_spared": true,
+          "home_promised": true,
+          "lucilla_helped": true,
+          "sources_kept": true,
+          "seal_returned": true,
+          "lucilla_paid": true,
+          "route_legion": false,
+          "route_citizen": true,
+          "aglaia_safe": true,
+          "ledger_salvaged": false,
+          "grain_accounted": true,
+          "civic_watch": true,
+          "no_mob": true,
+          "witnesses_shared": true,
+          "ledger_survives": true,
+          "side_octavian": false,
+          "side_antony": false,
+          "side_republicans": false,
+          "side_neutral": true,
+          "serranus_safe": true,
+          "lucilla_safe": true,
+          "aulus_safe": true,
+          "neria_supplied": true,
+          "seal_evidence": true,
+          "betrayed": false,
+          "water_shared": true,
+          "home_claim": true,
+          "aulus_learned": true,
+          "safe_passage": true,
+          "mercy_vettius": true,
+          "boat_roster": true,
+          "rescued_together": true,
+          "friend_lost": false,
+          "archive_copied": true,
+          "truth_kept": true,
+          "archive_public": true,
+          "last_honesty": true,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": false,
+          "visited_ch03_s16": true,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 1,
+          "citizens": 39,
+          "octavian": 0,
+          "antony": 0,
+          "republicans": 0
+        },
+        "bond": 100
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n91",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n91",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n91",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n91",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n91",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n91",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n91",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n91",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n91",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n91",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n91",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n91",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n91",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n91",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n91",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n92",
+        "ch03_entry",
+        "ch03_s10_n01",
+        "ch03_s10_n90",
+        "ch03_s11_n01",
+        "ch03_s11_n80",
+        "ch03_s11_n90",
+        "ch03_s11_n91",
+        "ch03_s12_n01",
+        "ch03_s12_n90",
+        "ch03_s13_n01",
+        "ch03_s13_n90",
+        "ch03_s13_n91",
+        "ch03_s14_n01",
+        "ch03_s14_n90",
+        "ch03_s15_n01",
+        "ch03_s15_n90",
+        "ch03_optional_16",
+        "ch03_s16_n01",
+        "ch03_s16_n90",
+        "ch03_s16_n91",
+        "ch03_s17_n01",
+        "ch03_s17_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n91",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n91",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n91",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n91",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n94",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n91",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n91",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n91",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n91",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n91",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n91",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n91",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n91",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n91",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n91",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n91",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n91",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n91",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n91",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n91",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n91",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n91",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s05_n01",
+        "ch08_s05_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_shared_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_cloth"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_rescue_neria"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_return"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_two_names"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_inner"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_needle"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_home"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_listen"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_work"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_sources"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_promises"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_shelter"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_seal"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_pay"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_citizen"
+        },
+        {
+          "node": "ch03_s11_n90",
+          "choice": "ch03_s11_grain"
+        },
+        {
+          "node": "ch03_s13_n90",
+          "choice": "ch03_s13_boat"
+        },
+        {
+          "node": "ch03_optional_16",
+          "choice": "ch03_optional_16_visit"
+        },
+        {
+          "node": "ch03_s16_n90",
+          "choice": "ch03_s16_recount"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_watch"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_protect"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_read"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_keep_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_neutral"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_serranus"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_tools"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_evidence"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_water"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_owners"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_need"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_evacuate"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_teach"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_mercy"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_roster"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_together"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_queue"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_copy"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_truth"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_public"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_amnesty"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_speak"
+        }
+      ],
+      "words": 2993,
+      "minutes": 15.0,
+      "route": "citizen",
+      "policy": "together",
+      "side_quests": true
+    },
+    {
+      "ending": "apart",
+      "state": {
+        "flags": {
+          "neria_trust": true,
+          "mutual_rescue": true,
+          "shared_record": true,
+          "prisoner_spared": true,
+          "home_promised": true,
+          "lucilla_helped": true,
+          "sources_kept": true,
+          "seal_returned": true,
+          "lucilla_paid": true,
+          "route_legion": false,
+          "route_citizen": true,
+          "aglaia_safe": true,
+          "ledger_salvaged": false,
+          "grain_accounted": true,
+          "civic_watch": true,
+          "no_mob": true,
+          "witnesses_shared": true,
+          "ledger_survives": true,
+          "side_octavian": false,
+          "side_antony": true,
+          "side_republicans": false,
+          "side_neutral": false,
+          "serranus_safe": true,
+          "lucilla_safe": true,
+          "aulus_safe": true,
+          "neria_supplied": true,
+          "seal_evidence": true,
+          "betrayed": false,
+          "water_shared": true,
+          "home_claim": false,
+          "aulus_learned": true,
+          "safe_passage": false,
+          "mercy_vettius": true,
+          "boat_roster": true,
+          "rescued_together": true,
+          "friend_lost": false,
+          "archive_copied": true,
+          "truth_kept": true,
+          "archive_public": false,
+          "last_honesty": true,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": false,
+          "visited_ch03_s16": true,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 1,
+          "citizens": 33,
+          "octavian": 2,
+          "antony": 3,
+          "republicans": 0
+        },
+        "bond": 100
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n91",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n91",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n91",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n91",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n91",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n91",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n91",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n91",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n91",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n91",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n91",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n91",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n91",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n91",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n91",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n92",
+        "ch03_entry",
+        "ch03_s10_n01",
+        "ch03_s10_n90",
+        "ch03_s11_n01",
+        "ch03_s11_n80",
+        "ch03_s11_n90",
+        "ch03_s11_n91",
+        "ch03_s12_n01",
+        "ch03_s12_n90",
+        "ch03_s13_n01",
+        "ch03_s13_n90",
+        "ch03_s13_n91",
+        "ch03_s14_n01",
+        "ch03_s14_n90",
+        "ch03_s15_n01",
+        "ch03_s15_n90",
+        "ch03_optional_16",
+        "ch03_s16_n01",
+        "ch03_s16_n90",
+        "ch03_s16_n91",
+        "ch03_s17_n01",
+        "ch03_s17_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n91",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n91",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n91",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n91",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n92",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n91",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n91",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n91",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n91",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n91",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n91",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n91",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n91",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n91",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n91",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n91",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n91",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n91",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n91",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n92",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n92",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n91",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s06_n01",
+        "ch08_s06_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_shared_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_cloth"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_rescue_neria"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_return"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_two_names"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_inner"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_needle"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_home"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_listen"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_work"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_sources"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_promises"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_shelter"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_seal"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_pay"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_citizen"
+        },
+        {
+          "node": "ch03_s11_n90",
+          "choice": "ch03_s11_grain"
+        },
+        {
+          "node": "ch03_s13_n90",
+          "choice": "ch03_s13_boat"
+        },
+        {
+          "node": "ch03_optional_16",
+          "choice": "ch03_optional_16_visit"
+        },
+        {
+          "node": "ch03_s16_n90",
+          "choice": "ch03_s16_recount"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_watch"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_protect"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_read"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_keep_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_antony"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_serranus"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_tools"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_evidence"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_water"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_owners"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_need"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_evacuate"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_teach"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_mercy"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_roster"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_together"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_queue"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_copy"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_truth"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_private"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_rank"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_speak"
+        }
+      ],
+      "words": 2985,
+      "minutes": 14.9,
+      "route": "citizen",
+      "policy": "apart",
+      "side_quests": true
+    },
+    {
+      "ending": "sacrifice",
+      "state": {
+        "flags": {
+          "neria_trust": true,
+          "mutual_rescue": true,
+          "shared_record": true,
+          "prisoner_spared": true,
+          "home_promised": true,
+          "lucilla_helped": true,
+          "sources_kept": true,
+          "seal_returned": true,
+          "lucilla_paid": true,
+          "route_legion": false,
+          "route_citizen": true,
+          "aglaia_safe": true,
+          "ledger_salvaged": false,
+          "grain_accounted": true,
+          "civic_watch": true,
+          "no_mob": true,
+          "witnesses_shared": true,
+          "ledger_survives": true,
+          "side_octavian": true,
+          "side_antony": false,
+          "side_republicans": false,
+          "side_neutral": false,
+          "serranus_safe": true,
+          "lucilla_safe": true,
+          "aulus_safe": true,
+          "neria_supplied": true,
+          "seal_evidence": true,
+          "betrayed": false,
+          "water_shared": true,
+          "home_claim": true,
+          "aulus_learned": true,
+          "safe_passage": true,
+          "mercy_vettius": true,
+          "boat_roster": true,
+          "rescued_together": false,
+          "friend_lost": true,
+          "archive_copied": true,
+          "truth_kept": true,
+          "archive_public": true,
+          "last_honesty": true,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": false,
+          "visited_ch03_s16": true,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 1,
+          "citizens": 37,
+          "octavian": 3,
+          "antony": 0,
+          "republicans": 0
+        },
+        "bond": 100
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n91",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n91",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n91",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n91",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n91",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n91",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n91",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n91",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n91",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n91",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n91",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n91",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n91",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n91",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n91",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n92",
+        "ch03_entry",
+        "ch03_s10_n01",
+        "ch03_s10_n90",
+        "ch03_s11_n01",
+        "ch03_s11_n80",
+        "ch03_s11_n90",
+        "ch03_s11_n91",
+        "ch03_s12_n01",
+        "ch03_s12_n90",
+        "ch03_s13_n01",
+        "ch03_s13_n90",
+        "ch03_s13_n91",
+        "ch03_s14_n01",
+        "ch03_s14_n90",
+        "ch03_s15_n01",
+        "ch03_s15_n90",
+        "ch03_optional_16",
+        "ch03_s16_n01",
+        "ch03_s16_n90",
+        "ch03_s16_n91",
+        "ch03_s17_n01",
+        "ch03_s17_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n91",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n91",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n91",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n91",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n91",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n91",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n91",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n91",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n91",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n91",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n91",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n91",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n91",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n91",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n91",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n92",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n91",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n91",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n91",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n91",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n91",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n91",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s07_n01",
+        "ch08_s07_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_shared_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_cloth"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_rescue_neria"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_return"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_two_names"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_inner"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_needle"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_home"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_listen"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_work"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_sources"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_promises"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_shelter"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_seal"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_pay"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_citizen"
+        },
+        {
+          "node": "ch03_s11_n90",
+          "choice": "ch03_s11_grain"
+        },
+        {
+          "node": "ch03_s13_n90",
+          "choice": "ch03_s13_boat"
+        },
+        {
+          "node": "ch03_optional_16",
+          "choice": "ch03_optional_16_visit"
+        },
+        {
+          "node": "ch03_s16_n90",
+          "choice": "ch03_s16_recount"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_watch"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_protect"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_read"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_keep_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_octavian"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_serranus"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_tools"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_evidence"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_water"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_owners"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_need"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_evacuate"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_teach"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_mercy"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_roster"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_sacrifice"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_queue"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_copy"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_truth"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_public"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_amnesty"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_speak"
+        }
+      ],
+      "words": 2999,
+      "minutes": 15.0,
+      "route": "citizen",
+      "policy": "sacrifice",
+      "side_quests": true
+    },
+    {
+      "ending": "bad",
+      "state": {
+        "flags": {
+          "neria_trust": false,
+          "mutual_rescue": true,
+          "shared_record": false,
+          "prisoner_spared": false,
+          "home_promised": false,
+          "lucilla_helped": false,
+          "sources_kept": false,
+          "seal_returned": false,
+          "lucilla_paid": false,
+          "route_legion": false,
+          "route_citizen": true,
+          "aglaia_safe": false,
+          "ledger_salvaged": true,
+          "grain_accounted": false,
+          "civic_watch": false,
+          "no_mob": false,
+          "witnesses_shared": false,
+          "ledger_survives": false,
+          "side_octavian": true,
+          "side_antony": false,
+          "side_republicans": false,
+          "side_neutral": false,
+          "serranus_safe": false,
+          "lucilla_safe": false,
+          "aulus_safe": true,
+          "neria_supplied": false,
+          "seal_evidence": false,
+          "betrayed": true,
+          "water_shared": false,
+          "home_claim": false,
+          "aulus_learned": false,
+          "safe_passage": false,
+          "mercy_vettius": false,
+          "boat_roster": false,
+          "rescued_together": false,
+          "friend_lost": false,
+          "archive_copied": false,
+          "truth_kept": false,
+          "archive_public": false,
+          "last_honesty": false,
+          "visited_ch01_s07": true,
+          "visited_ch02_s06": true,
+          "visited_ch03_s08": false,
+          "visited_ch03_s16": true,
+          "visited_ch04_s06": true,
+          "visited_ch05_s06": true,
+          "visited_ch05_s08": true,
+          "visited_ch06_s04": true,
+          "visited_ch06_s07": true,
+          "visited_ch07_s04": true,
+          "visited_ch07_s07": true
+        },
+        "rep": {
+          "legion": 31,
+          "citizens": 2,
+          "octavian": 8,
+          "antony": 0,
+          "republicans": 0
+        },
+        "bond": 0
+      },
+      "nodes": [
+        "ch01_s01_n01",
+        "ch01_s01_n90",
+        "ch01_s01_n92",
+        "ch01_s02_n01",
+        "ch01_s02_n90",
+        "ch01_s02_n92",
+        "ch01_s03_n01",
+        "ch01_s03_n80",
+        "ch01_s03_n90",
+        "ch01_s03_n92",
+        "ch01_s04_n01",
+        "ch01_s04_n90",
+        "ch01_s04_n92",
+        "ch01_s05_n01",
+        "ch01_s05_n90",
+        "ch01_s05_n92",
+        "ch01_s06_n01",
+        "ch01_s06_n80",
+        "ch01_s06_n90",
+        "ch01_s06_n92",
+        "ch01_optional_07",
+        "ch01_s07_n01",
+        "ch01_s07_n90",
+        "ch01_s07_n92",
+        "ch01_s08_n01",
+        "ch01_s08_n90",
+        "ch01_s08_n92",
+        "ch02_s01_n01",
+        "ch02_s01_n90",
+        "ch02_s01_n92",
+        "ch02_s02_n01",
+        "ch02_s02_n90",
+        "ch02_s02_n92",
+        "ch02_s03_n01",
+        "ch02_s03_n90",
+        "ch02_s03_n92",
+        "ch02_s04_n01",
+        "ch02_s04_n80",
+        "ch02_s04_n90",
+        "ch02_s04_n92",
+        "ch02_s05_n01",
+        "ch02_s05_n90",
+        "ch02_s05_n92",
+        "ch02_optional_06",
+        "ch02_s06_n01",
+        "ch02_s06_n90",
+        "ch02_s06_n92",
+        "ch02_s07_n01",
+        "ch02_s07_n90",
+        "ch02_s07_n92",
+        "ch02_s08_n01",
+        "ch02_s08_n90",
+        "ch02_s08_n92",
+        "ch03_entry",
+        "ch03_s10_n01",
+        "ch03_s10_n90",
+        "ch03_s11_n01",
+        "ch03_s11_n80",
+        "ch03_s11_n90",
+        "ch03_s11_n92",
+        "ch03_s12_n01",
+        "ch03_s12_n90",
+        "ch03_s13_n01",
+        "ch03_s13_n90",
+        "ch03_s13_n92",
+        "ch03_s14_n01",
+        "ch03_s14_n90",
+        "ch03_s15_n01",
+        "ch03_s15_n90",
+        "ch03_optional_16",
+        "ch03_s16_n01",
+        "ch03_s16_n90",
+        "ch03_s16_n92",
+        "ch03_s17_n01",
+        "ch03_s17_n90",
+        "ch04_s01_n01",
+        "ch04_s01_n90",
+        "ch04_s02_n01",
+        "ch04_s02_n90",
+        "ch04_s03_n01",
+        "ch04_s03_n90",
+        "ch04_s03_n92",
+        "ch04_s04_n01",
+        "ch04_s04_n80",
+        "ch04_s04_n90",
+        "ch04_s04_n92",
+        "ch04_s05_n01",
+        "ch04_s05_n90",
+        "ch04_optional_06",
+        "ch04_s06_n01",
+        "ch04_s06_n90",
+        "ch04_s06_n92",
+        "ch04_s07_n01",
+        "ch04_s07_n90",
+        "ch04_s07_n92",
+        "ch04_s08_n01",
+        "ch04_s08_n90",
+        "ch05_s01_n01",
+        "ch05_s01_n90",
+        "ch05_s01_n91",
+        "ch05_s02_n01",
+        "ch05_s02_n90",
+        "ch05_s03_n01",
+        "ch05_s03_n90",
+        "ch05_s04_n01",
+        "ch05_s04_n90",
+        "ch05_s04_n92",
+        "ch05_s05_n01",
+        "ch05_s05_n80",
+        "ch05_s05_n90",
+        "ch05_optional_06",
+        "ch05_s06_n01",
+        "ch05_s06_n90",
+        "ch05_s06_n92",
+        "ch05_s07_n01",
+        "ch05_s07_n90",
+        "ch05_optional_08",
+        "ch05_s08_n01",
+        "ch05_s08_n90",
+        "ch05_s08_n92",
+        "ch05_s09_n01",
+        "ch05_s09_n90",
+        "ch06_s01_n01",
+        "ch06_s01_n80",
+        "ch06_s01_n90",
+        "ch06_s02_n01",
+        "ch06_s02_n90",
+        "ch06_s02_n92",
+        "ch06_s03_n01",
+        "ch06_s03_n90",
+        "ch06_s03_n92",
+        "ch06_optional_04",
+        "ch06_s04_n01",
+        "ch06_s04_n90",
+        "ch06_s04_n92",
+        "ch06_s05_n01",
+        "ch06_s05_n80",
+        "ch06_s05_n90",
+        "ch06_s05_n92",
+        "ch06_s06_n01",
+        "ch06_s06_n90",
+        "ch06_optional_07",
+        "ch06_s07_n01",
+        "ch06_s07_n90",
+        "ch06_s07_n92",
+        "ch06_s08_n01",
+        "ch06_s08_n90",
+        "ch06_s08_n92",
+        "ch06_s09_n01",
+        "ch06_s09_n90",
+        "ch07_s01_n01",
+        "ch07_s01_n90",
+        "ch07_s01_n92",
+        "ch07_s02_n01",
+        "ch07_s02_n80",
+        "ch07_s02_n90",
+        "ch07_s03_n01",
+        "ch07_s03_n80",
+        "ch07_s03_n90",
+        "ch07_s03_n93",
+        "ch07_optional_04",
+        "ch07_s04_n01",
+        "ch07_s04_n90",
+        "ch07_s04_n92",
+        "ch07_s05_n01",
+        "ch07_s05_n90",
+        "ch07_s06_n01",
+        "ch07_s06_n90",
+        "ch07_optional_07",
+        "ch07_s07_n01",
+        "ch07_s07_n90",
+        "ch07_s07_n92",
+        "ch07_s08_n01",
+        "ch07_s08_n90",
+        "ch07_s08_n92",
+        "ch07_s09_n01",
+        "ch07_s09_n90",
+        "ch08_s01_n01",
+        "ch08_s01_n80",
+        "ch08_s01_n90",
+        "ch08_s01_n92",
+        "ch08_s02_n01",
+        "ch08_s02_n90",
+        "ch08_s02_n92",
+        "ch08_s03_n01",
+        "ch08_s03_n90",
+        "ch08_s03_n92",
+        "ch08_s04_n01",
+        "ch08_s04_n90",
+        "ch08_resolution",
+        "ch08_s08_n01",
+        "ch08_s08_n90"
+      ],
+      "decisions": [
+        {
+          "node": "ch01_s01_n90",
+          "choice": "ch01_s01_own_measure"
+        },
+        {
+          "node": "ch01_s02_n90",
+          "choice": "ch01_s02_inspect"
+        },
+        {
+          "node": "ch01_s03_n90",
+          "choice": "ch01_s03_hold_rampart"
+        },
+        {
+          "node": "ch01_s04_n90",
+          "choice": "ch01_s04_cover"
+        },
+        {
+          "node": "ch01_s05_n90",
+          "choice": "ch01_s05_one_name"
+        },
+        {
+          "node": "ch01_s06_n90",
+          "choice": "ch01_s06_outer"
+        },
+        {
+          "node": "ch01_optional_07",
+          "choice": "ch01_optional_07_visit"
+        },
+        {
+          "node": "ch01_s07_n90",
+          "choice": "ch01_s07_carpenter"
+        },
+        {
+          "node": "ch01_s08_n90",
+          "choice": "ch01_s08_orders"
+        },
+        {
+          "node": "ch02_s01_n90",
+          "choice": "ch02_s01_duty"
+        },
+        {
+          "node": "ch02_s02_n90",
+          "choice": "ch02_s02_patron"
+        },
+        {
+          "node": "ch02_s03_n90",
+          "choice": "ch02_s03_rumour"
+        },
+        {
+          "node": "ch02_s04_n90",
+          "choice": "ch02_s04_march"
+        },
+        {
+          "node": "ch02_s05_n90",
+          "choice": "ch02_s05_reserve"
+        },
+        {
+          "node": "ch02_optional_06",
+          "choice": "ch02_optional_06_visit"
+        },
+        {
+          "node": "ch02_s06_n90",
+          "choice": "ch02_s06_bread"
+        },
+        {
+          "node": "ch02_s07_n90",
+          "choice": "ch02_s07_convoy"
+        },
+        {
+          "node": "ch02_s08_n90",
+          "choice": "ch02_s08_citizen"
+        },
+        {
+          "node": "ch03_s11_n90",
+          "choice": "ch03_s11_lock"
+        },
+        {
+          "node": "ch03_s13_n90",
+          "choice": "ch03_s13_records"
+        },
+        {
+          "node": "ch03_optional_16",
+          "choice": "ch03_optional_16_visit"
+        },
+        {
+          "node": "ch03_s16_n90",
+          "choice": "ch03_s16_private"
+        },
+        {
+          "node": "ch04_s03_n90",
+          "choice": "ch04_s03_veterans"
+        },
+        {
+          "node": "ch04_s04_n90",
+          "choice": "ch04_s04_leave"
+        },
+        {
+          "node": "ch04_optional_06",
+          "choice": "ch04_optional_06_visit"
+        },
+        {
+          "node": "ch04_s06_n90",
+          "choice": "ch04_s06_trust_vettius"
+        },
+        {
+          "node": "ch04_s07_n90",
+          "choice": "ch04_s07_burn_ledger"
+        },
+        {
+          "node": "ch05_s01_n90",
+          "choice": "ch05_s01_octavian"
+        },
+        {
+          "node": "ch05_s04_n90",
+          "choice": "ch05_s04_lucilla"
+        },
+        {
+          "node": "ch05_optional_06",
+          "choice": "ch05_optional_06_visit"
+        },
+        {
+          "node": "ch05_s06_n90",
+          "choice": "ch05_s06_clothes"
+        },
+        {
+          "node": "ch05_optional_08",
+          "choice": "ch05_optional_08_visit"
+        },
+        {
+          "node": "ch05_s08_n90",
+          "choice": "ch05_s08_betray"
+        },
+        {
+          "node": "ch06_s02_n90",
+          "choice": "ch06_s02_unit"
+        },
+        {
+          "node": "ch06_s03_n90",
+          "choice": "ch06_s03_plot"
+        },
+        {
+          "node": "ch06_optional_04",
+          "choice": "ch06_optional_04_visit"
+        },
+        {
+          "node": "ch06_s04_n90",
+          "choice": "ch06_s04_equal"
+        },
+        {
+          "node": "ch06_s05_n90",
+          "choice": "ch06_s05_roster"
+        },
+        {
+          "node": "ch06_optional_07",
+          "choice": "ch06_optional_07_visit"
+        },
+        {
+          "node": "ch06_s07_n90",
+          "choice": "ch06_s07_enlist"
+        },
+        {
+          "node": "ch06_s08_n90",
+          "choice": "ch06_s08_refuse"
+        },
+        {
+          "node": "ch07_s01_n90",
+          "choice": "ch07_s01_station"
+        },
+        {
+          "node": "ch07_s03_n90",
+          "choice": "ch07_s03_orders"
+        },
+        {
+          "node": "ch07_optional_04",
+          "choice": "ch07_optional_04_visit"
+        },
+        {
+          "node": "ch07_s04_n90",
+          "choice": "ch07_s04_own"
+        },
+        {
+          "node": "ch07_optional_07",
+          "choice": "ch07_optional_07_visit"
+        },
+        {
+          "node": "ch07_s07_n90",
+          "choice": "ch07_s07_sell"
+        },
+        {
+          "node": "ch07_s08_n90",
+          "choice": "ch07_s08_legend"
+        },
+        {
+          "node": "ch08_s01_n90",
+          "choice": "ch08_s01_private"
+        },
+        {
+          "node": "ch08_s02_n90",
+          "choice": "ch08_s02_rank"
+        },
+        {
+          "node": "ch08_s03_n90",
+          "choice": "ch08_s03_silence"
+        }
+      ],
+      "words": 2936,
+      "minutes": 14.7,
+      "route": "citizen",
+      "policy": "bad",
+      "side_quests": true
+    }
+  ]
+}

@@ -1,0 +1,1166 @@
+{
+  "schema_version": 1,
+  "id": "ch03",
+  "number": 3,
+  "title": {
+    "ru": "Гражданская война",
+    "en": ""
+  },
+  "years": "49–45 до н. э.",
+  "entry": "ch03_entry",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch03_s01",
+      "title": {
+        "ru": "Камни Брундизия",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch03_s01_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "brundisium"
+      ]
+    },
+    {
+      "id": "ch03_s02",
+      "title": {
+        "ru": "Пыль Фарсала",
+        "en": ""
+      },
+      "year": "48 до н. э.",
+      "entry": "ch03_s02_n01",
+      "illustration": "assets/story/pharsalus_battle.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "pharsalus"
+      ]
+    },
+    {
+      "id": "ch03_s03",
+      "title": {
+        "ru": "Берег, где не встретили",
+        "en": ""
+      },
+      "year": "48 до н. э.",
+      "entry": "ch03_s03_n01",
+      "illustration": "assets/locations/alexandria.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "pompey_death"
+      ]
+    },
+    {
+      "id": "ch03_s04",
+      "title": {
+        "ru": "Незнакомая пристань",
+        "en": ""
+      },
+      "year": "48–47 до н. э.",
+      "entry": "ch03_s04_n01",
+      "illustration": "assets/locations/cleopatra_palace.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "alexandrian_war",
+        "cleopatra"
+      ]
+    },
+    {
+      "id": "ch03_s05",
+      "title": {
+        "ru": "Лодка и ящик",
+        "en": ""
+      },
+      "year": "47 до н. э.",
+      "entry": "ch03_s05_n01",
+      "illustration": "assets/locations/alexandria.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch03_s06",
+      "title": {
+        "ru": "После Тапса",
+        "en": ""
+      },
+      "year": "46 до н. э.",
+      "entry": "ch03_s06_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "thapsus"
+      ]
+    },
+    {
+      "id": "ch03_s07",
+      "title": {
+        "ru": "Холмы Мунды",
+        "en": ""
+      },
+      "year": "45 до н. э.",
+      "entry": "ch03_s07_n01",
+      "illustration": "assets/locations/pharsalus.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "munda"
+      ]
+    },
+    {
+      "id": "ch03_s08",
+      "title": {
+        "ru": "Третья копия",
+        "en": ""
+      },
+      "year": "45 до н. э.",
+      "entry": "ch03_s08_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": true,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch03_s09",
+      "title": {
+        "ru": "Возвращение со щитом",
+        "en": ""
+      },
+      "year": "45 до н. э.",
+      "entry": "ch03_s09_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "legion",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch03_s10",
+      "title": {
+        "ru": "Город вместо строя",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch03_s10_n01",
+      "illustration": "assets/story/empty_rome.png",
+      "optional": false,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch03_s11",
+      "title": {
+        "ru": "Мешки без хозяина",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch03_s11_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch03_s12",
+      "title": {
+        "ru": "Война в двух письмах",
+        "en": ""
+      },
+      "year": "48 до н. э.",
+      "entry": "ch03_s12_n01",
+      "illustration": "assets/locations/pharsalus.png",
+      "optional": false,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "brundisium",
+        "pharsalus",
+        "pompey_death"
+      ]
+    },
+    {
+      "id": "ch03_s13",
+      "title": {
+        "ru": "Гостья с Востока",
+        "en": ""
+      },
+      "year": "48–47 до н. э.",
+      "entry": "ch03_s13_n01",
+      "illustration": "assets/locations/alexandria.png",
+      "optional": false,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "alexandrian_war",
+        "cleopatra"
+      ]
+    },
+    {
+      "id": "ch03_s14",
+      "title": {
+        "ru": "Цена победы",
+        "en": ""
+      },
+      "year": "46 до н. э.",
+      "entry": "ch03_s14_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "thapsus"
+      ]
+    },
+    {
+      "id": "ch03_s15",
+      "title": {
+        "ru": "Испанская новость",
+        "en": ""
+      },
+      "year": "45 до н. э.",
+      "entry": "ch03_s15_n01",
+      "illustration": "assets/locations/rome_night.png",
+      "optional": false,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "munda"
+      ]
+    },
+    {
+      "id": "ch03_s16",
+      "title": {
+        "ru": "Вес расписки",
+        "en": ""
+      },
+      "year": "45 до н. э.",
+      "entry": "ch03_s16_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": true,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch03_s17",
+      "title": {
+        "ru": "Возвращение с письмом",
+        "en": ""
+      },
+      "year": "45 до н. э.",
+      "entry": "ch03_s17_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "citizen",
+      "prose_status": "draft",
+      "historical_anchors": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch03_entry",
+      "scene": "ch03_s01",
+      "kind": "branch",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "branches": [
+        {
+          "condition": "route_citizen",
+          "goto": "ch03_s10_n01"
+        }
+      ],
+      "next": "ch03_s01_n01"
+    },
+    {
+      "id": "ch03_s01_n01",
+      "scene": "ch03_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "У Брундизия римляне перекрывают римлянам выход к морю. Пулон и Ворен несут доски к заграждению. На другой стороне гавани собирается войско Помпея. Плотники говорят о приливе так, словно он единственная сила, которой ещё можно доверять.",
+        "en": ""
+      },
+      "next": "ch03_s01_n90"
+    },
+    {
+      "id": "ch03_s01_n90",
+      "scene": "ch03_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s02_n01"
+    },
+    {
+      "id": "ch03_s02_n01",
+      "scene": "ch03_s02",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "pompey_neutral",
+      "text": {
+        "ru": "На равнине Фарсала знакомые щиты оказываются по обе стороны. Ворен проверяет интервалы в строю. Пулон замечает вражеского знаменосца, который держит древко точно так же, как их собственный. Победа Цезаря не делает эту похожесть менее тяжёлой.",
+        "en": ""
+      },
+      "next": "ch03_s02_n80"
+    },
+    {
+      "id": "ch03_s02_n80",
+      "scene": "ch03_s02",
+      "kind": "beat",
+      "beat": "beat_ch03_s02",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s02_n90"
+    },
+    {
+      "id": "ch03_s02_n91",
+      "scene": "ch03_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ворен меняет расположение нескольких щитов. Победа остаётся исторической, но несколько человек получают дорогу к лекарю.",
+        "en": ""
+      },
+      "next": "ch03_s03_n01"
+    },
+    {
+      "id": "ch03_s02_n92",
+      "scene": "ch03_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Друзья выполняют назначение. После боя Пулон сам несёт воду к тем, кого не смогли вынести.",
+        "en": ""
+      },
+      "next": "ch03_s03_n01"
+    },
+    {
+      "id": "ch03_s02_n90",
+      "scene": "ch03_s02",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_s02_wounded",
+          "text": {
+            "ru": "Прикрыть отход раненых",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 4,
+          "goto": "ch03_s02_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch03_s02_formation",
+          "text": {
+            "ru": "Сохранить порядок строя",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 2
+          },
+          "bond": -2,
+          "goto": "ch03_s02_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch03_s03_n01",
+      "scene": "ch03_s03",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "pompey_worried",
+      "text": {
+        "ru": "Приходит известие о гибели Помпея в Египте после поражения. Серран старательно отделяет услышанные обстоятельства убийства от догадок солдат. Пулон спрашивает, может ли человек перестать быть врагом, когда у него больше нет войска. Ворен не отвечает сразу.",
+        "en": ""
+      },
+      "next": "ch03_s03_n90"
+    },
+    {
+      "id": "ch03_s03_n90",
+      "scene": "ch03_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s04_n01"
+    },
+    {
+      "id": "ch03_s04_n01",
+      "scene": "ch03_s04",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "cleopatra_neutral",
+      "text": {
+        "ru": "Александрийская война делает склады укрытиями, а лодочников проводниками между чужими караулами. Аглая, мастерица папируса, требует сначала назвать число раненых, потом число вооружённых. Союз Цезаря и Клеопатры решает судьбы царства; её собственная лодка решает судьбы нескольких семей.",
+        "en": ""
+      },
+      "next": "ch03_s04_n90"
+    },
+    {
+      "id": "ch03_s04_n90",
+      "scene": "ch03_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s05_n01"
+    },
+    {
+      "id": "ch03_s05_n01",
+      "scene": "ch03_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "На пристани остался один свободный рейс. В ящике Серрана лежат записи частных долгов и военных поставок; у Аглаи ждут люди, которым нужны места. Пулон не может загрузить всё сразу. Ворен предупреждает, что потерянные бумаги тоже могут лишить людей дома.",
+        "en": ""
+      },
+      "next": "ch03_s05_n90"
+    },
+    {
+      "id": "ch03_s05_n91",
+      "scene": "ch03_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Люди выходят из гавани. Аглая запоминает дорогу к римским друзьям; часть записей уходит под воду.",
+        "en": ""
+      },
+      "next": "ch03_s06_n01"
+    },
+    {
+      "id": "ch03_s05_n92",
+      "scene": "ch03_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ящик прибывает целым. Родные Аглаи ищут другую лодку без обещания безопасного прохода.",
+        "en": ""
+      },
+      "next": "ch03_s06_n01"
+    },
+    {
+      "id": "ch03_s05_n90",
+      "scene": "ch03_s05",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_s05_boat",
+          "text": {
+            "ru": "Отдать рейс семьям Аглаи",
+            "en": ""
+          },
+          "set_flags": [
+            "aglaia_safe"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 8,
+          "goto": "ch03_s05_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch03_s05_records",
+          "text": {
+            "ru": "Погрузить ящик со свидетельствами",
+            "en": ""
+          },
+          "set_flags": [
+            "ledger_salvaged"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "legion": 2
+          },
+          "bond": -5,
+          "goto": "ch03_s05_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "harbor_priority"
+    },
+    {
+      "id": "ch03_s06_n01",
+      "scene": "ch03_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Весть о победе Цезаря при Тапсе приходит раньше точного списка потерь. Слово «конец» снова появляется в разговорах. Ворен больше не исправляет каждого, кто его произносит. Пулон складывает запасные ремни в дорожный мешок, но не завязывает горловину.",
+        "en": ""
+      },
+      "next": "ch03_s06_n90"
+    },
+    {
+      "id": "ch03_s06_n90",
+      "scene": "ch03_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s07_n01"
+    },
+    {
+      "id": "ch03_s07_n01",
+      "scene": "ch03_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "В Испании снова приходится идти против римских подразделений. После Мунды победители выглядят слишком усталыми для обещанного ликования. Веттий велит считать имущество; Пулон просит сначала пересчитать живых. Серран заводит две колонки, оставляя между ними широкий промежуток.",
+        "en": ""
+      },
+      "next": "ch03_s07_n90"
+    },
+    {
+      "id": "ch03_s07_n90",
+      "scene": "ch03_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_optional_08"
+    },
+    {
+      "id": "ch03_s08_n01",
+      "scene": "ch03_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "У Серрана разбухли от сырости таблички. Он просит каждого свидетеля подтвердить только ту часть расходов, которую тот видел сам. Пулон предлагает назвать общий итог по памяти. Ворен впервые благодарит писца за недоверие к удобному ответу.",
+        "en": ""
+      },
+      "next": "ch03_s08_n90",
+      "set_flags": [
+        "visited_ch03_s08"
+      ]
+    },
+    {
+      "id": "ch03_s08_n91",
+      "scene": "ch03_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "В копии остаётся несколько пробелов. Зато ни один из них не закрыт удобным вымыслом.",
+        "en": ""
+      },
+      "next": "ch03_s09_n01"
+    },
+    {
+      "id": "ch03_s08_n92",
+      "scene": "ch03_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Копию заканчивают быстро. Пулон берёт на себя долг, размер которого он не проверил.",
+        "en": ""
+      },
+      "next": "ch03_s09_n01"
+    },
+    {
+      "id": "ch03_s08_n90",
+      "scene": "ch03_s08",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_s08_witness",
+          "text": {
+            "ru": "Подтвердить только увиденное",
+            "en": ""
+          },
+          "set_flags": [
+            "sources_kept"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 3,
+          "goto": "ch03_s08_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch03_s08_total",
+          "text": {
+            "ru": "Поручиться за весь итог",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -2,
+          "goto": "ch03_s08_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch03_s09_n01",
+      "scene": "ch03_s09",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Дорога в Рим не похожа на въезд в захваченный город. Оба центуриона понимают это раньше, чем успевают подобрать слова. Пулон несёт собственный щит как слишком большую дверцу. Ворен замечает, что он всё ещё подстраивает шаг под чужую хромоту.",
+        "en": ""
+      },
+      "next": "ch03_s09_n90"
+    },
+    {
+      "id": "ch03_s09_n90",
+      "scene": "ch03_s09",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch04_s01_n01"
+    },
+    {
+      "id": "ch03_s10_n01",
+      "scene": "ch03_s10",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон остаётся в Риме. Ворен уходит с легионом, и их разговор заканчивается обещанием писать без посредников. Луцилла показывает бывшему центуриону печь, которую надо починить. Четыре ровные стены оказываются не проще лагерного вала.",
+        "en": ""
+      },
+      "next": "ch03_s10_n90"
+    },
+    {
+      "id": "ch03_s10_n90",
+      "scene": "ch03_s10",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s11_n01"
+    },
+    {
+      "id": "ch03_s11_n01",
+      "scene": "ch03_s11",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "На складе спорят о зерне, оставленном бежавшим подрядчиком. Пулон слышит и голодных соседей, и опасения Луциллы: если исчезнут расписки, весь недостающий хлеб припишут ей. Впервые его сила не позволяет просто поднять нужную вещь и унести.",
+        "en": ""
+      },
+      "next": "ch03_s11_n80"
+    },
+    {
+      "id": "ch03_s11_n80",
+      "scene": "ch03_s11",
+      "kind": "beat",
+      "beat": "beat_ch03_s11",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s11_n90"
+    },
+    {
+      "id": "ch03_s11_n91",
+      "scene": "ch03_s11",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Люди получают зерно, а Луцилла — свидетельства передачи. Серрану придётся работать всю ночь.",
+        "en": ""
+      },
+      "next": "ch03_s12_n01"
+    },
+    {
+      "id": "ch03_s11_n92",
+      "scene": "ch03_s11",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Запас остаётся цел. Пулон слышит шаги уходящих соседей за дверью.",
+        "en": ""
+      },
+      "next": "ch03_s12_n01"
+    },
+    {
+      "id": "ch03_s11_n90",
+      "scene": "ch03_s11",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_s11_grain",
+          "text": {
+            "ru": "Выдать хлеб с именными расписками",
+            "en": ""
+          },
+          "set_flags": [
+            "grain_accounted"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 4,
+          "goto": "ch03_s11_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch03_s11_lock",
+          "text": {
+            "ru": "Запереть склад до решения властей",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch03_s11_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch03_s12_n01",
+      "scene": "ch03_s12",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "pompey_neutral",
+      "text": {
+        "ru": "Сначала пришло письмо Ворена о Брундизии: в 49 году Помпей вывел войско морем, пока люди Цезаря пытались закрыть гавань. О Фарсале и гибели Помпея Пулон узнаёт из писем, пришедших с разницей в несколько дней. Ворен сообщает о живых товарищах, торговец — о закрывшихся дорогах. Серран просит не смешивать пересказ и подтверждённую запись.",
+        "en": ""
+      },
+      "next": "ch03_s12_n90"
+    },
+    {
+      "id": "ch03_s12_n90",
+      "scene": "ch03_s12",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s13_n01"
+    },
+    {
+      "id": "ch03_s13_n01",
+      "scene": "ch03_s13",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "cleopatra_worried",
+      "text": {
+        "ru": "Через посредников приходит просьба Аглаи помочь её родным и сохранить торговые обязательства. Город слышит об Александрии, Цезаре и Клеопатре как о далёком зрелище; для беженцев это потерянная мастерская и неизвестная цена следующего дня.",
+        "en": ""
+      },
+      "next": "ch03_s13_n90"
+    },
+    {
+      "id": "ch03_s13_n91",
+      "scene": "ch03_s13",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Найденный проводник обещает провести её близких. Пулон отказывается от выгодного заказа ради платы за дорогу.",
+        "en": ""
+      },
+      "next": "ch03_s14_n01"
+    },
+    {
+      "id": "ch03_s13_n92",
+      "scene": "ch03_s13",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Бумаги остаются при мастерской. Аглая больше не рассчитывает на обещанный римский адрес.",
+        "en": ""
+      },
+      "next": "ch03_s14_n01"
+    },
+    {
+      "id": "ch03_s13_n90",
+      "scene": "ch03_s13",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_s13_boat",
+          "text": {
+            "ru": "Помочь семье Аглаи с переправой",
+            "en": ""
+          },
+          "set_flags": [
+            "aglaia_safe"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 8,
+          "goto": "ch03_s13_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch03_s13_records",
+          "text": {
+            "ru": "Сохранить деньги и долговую копию",
+            "en": ""
+          },
+          "set_flags": [
+            "ledger_salvaged"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -5,
+          "goto": "ch03_s13_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "harbor_priority_civic"
+    },
+    {
+      "id": "ch03_s14_n01",
+      "scene": "ch03_s14",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Рим празднует победы Цезаря, в том числе африканский поход после Тапса. Луцилла подсчитывает новые сборы и старые неоплаченные заказы. Нерия говорит, что чужая война остаётся в городе в виде недостающей руки у рабочего стола.",
+        "en": ""
+      },
+      "next": "ch03_s14_n90"
+    },
+    {
+      "id": "ch03_s14_n90",
+      "scene": "ch03_s14",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_s15_n01"
+    },
+    {
+      "id": "ch03_s15_n01",
+      "scene": "ch03_s15",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Известие о Мунде доходит до мастерской к концу рабочего дня. Авл хочет знать, теперь ли вернётся Ворен. Пулон отвечает, что победа ещё не расписание. Луцилла ставит перед ним лишнюю миску, не объясняя для кого.",
+        "en": ""
+      },
+      "next": "ch03_s15_n90"
+    },
+    {
+      "id": "ch03_s15_n90",
+      "scene": "ch03_s15",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch03_optional_16"
+    },
+    {
+      "id": "ch03_s16_n01",
+      "scene": "ch03_s16",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "На весах у торговца обнаруживается подпиленная гиря. Пулон может потребовать пересчёта всех поставок или ограничиться сегодняшней покупкой. Серран объясняет, почему маленькая ложь в расходе однажды становится большой правдой в судебной бумаге.",
+        "en": ""
+      },
+      "next": "ch03_s16_n90",
+      "set_flags": [
+        "visited_ch03_s16"
+      ]
+    },
+    {
+      "id": "ch03_s16_n91",
+      "scene": "ch03_s16",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Люди теряют день, но получают исправленные расписки. Серран оставляет подпись рядом с чужими.",
+        "en": ""
+      },
+      "next": "ch03_s17_n01"
+    },
+    {
+      "id": "ch03_s16_n92",
+      "scene": "ch03_s16",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Сегодняшняя доля верна. Остальные покупатели уходят со старой гирей.",
+        "en": ""
+      },
+      "next": "ch03_s17_n01"
+    },
+    {
+      "id": "ch03_s16_n90",
+      "scene": "ch03_s16",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_s16_recount",
+          "text": {
+            "ru": "Потребовать общего пересчёта",
+            "en": ""
+          },
+          "set_flags": [
+            "grain_accounted"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch03_s16_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch03_s16_private",
+          "text": {
+            "ru": "Исправить только свою покупку",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "citizens": -1
+          },
+          "bond": -2,
+          "goto": "ch03_s16_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch03_s17_n01",
+      "scene": "ch03_s17",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ворен возвращается в Рим, где за время его отсутствия научились обходиться без его приказов. Пулон не спрашивает, почему письма стали короче. Он показывает починенную печь. Ворен долго рассматривает раствор между кирпичами и просит дать ему мастерок.",
+        "en": ""
+      },
+      "next": "ch03_s17_n90"
+    },
+    {
+      "id": "ch03_s17_n90",
+      "scene": "ch03_s17",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch04_s01_n01"
+    },
+    {
+      "id": "ch03_optional_08",
+      "scene": "ch03_s07",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_optional_08_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch03_s08_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch03_optional_08_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch03_s09_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    },
+    {
+      "id": "ch03_optional_16",
+      "scene": "ch03_s15",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch03_optional_16_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch03_s16_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch03_optional_16_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch03_s17_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    }
+  ]
+}

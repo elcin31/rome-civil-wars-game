@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "id": "ch04",
+  "number": 4,
+  "title": {
+    "ru": "Мартовские иды",
+    "en": ""
+  },
+  "years": "44 до н. э.",
+  "entry": "ch04_s01_n01",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch04_s01",
+      "title": {
+        "ru": "Непривычный мир",
+        "en": ""
+      },
+      "year": "44 до н. э.",
+      "entry": "ch04_s01_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch04_s02",
+      "title": {
+        "ru": "Пятнадцатое марта",
+        "en": ""
+      },
+      "year": "15 марта 44 до н. э.",
+      "entry": "ch04_s02_n01",
+      "illustration": "assets/story/ides.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "ides"
+      ]
+    },
+    {
+      "id": "ch04_s03",
+      "title": {
+        "ru": "Кому принадлежит тишина",
+        "en": ""
+      },
+      "year": "март 44 до н. э.",
+      "entry": "ch04_s03_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch04_s04",
+      "title": {
+        "ru": "Форум и огонь",
+        "en": ""
+      },
+      "year": "март 44 до н. э.",
+      "entry": "ch04_s04_n01",
+      "illustration": "assets/story/caesar_funeral.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "caesar_funeral"
+      ]
+    },
+    {
+      "id": "ch04_s05",
+      "title": {
+        "ru": "Наследник имени",
+        "en": ""
+      },
+      "year": "весна 44 до н. э.",
+      "entry": "ch04_s05_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "octavian_inherits"
+      ]
+    },
+    {
+      "id": "ch04_s06",
+      "title": {
+        "ru": "Скамья для свидетеля",
+        "en": ""
+      },
+      "year": "44 до н. э.",
+      "entry": "ch04_s06_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch04_s07",
+      "title": {
+        "ru": "Частная копия",
+        "en": ""
+      },
+      "year": "44 до н. э.",
+      "entry": "ch04_s07_n01",
+      "illustration": "assets/locations/rome_night.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch04_s08",
+      "title": {
+        "ru": "Общий порог",
+        "en": ""
+      },
+      "year": "конец 44 до н. э.",
+      "entry": "ch04_s08_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch04_s01_n01",
+      "scene": "ch04_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Утром Пулон видит Ворена без пояса с мечом и едва узнаёт его. В городе спорят о почестях Цезарю. Луцилла требует убрать оружие со стола, где будут месить глину. Это первый приказ, который оба исполняют без возражений.",
+        "en": ""
+      },
+      "next": "ch04_s01_n90"
+    },
+    {
+      "id": "ch04_s01_n90",
+      "scene": "ch04_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch04_s02_n01"
+    },
+    {
+      "id": "ch04_s02_n01",
+      "scene": "ch04_s02",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "caesar_worried",
+      "text": {
+        "ru": "Цезарь убит на заседании сената в комплексе театра Помпея. В мастерскую сначала приносят несовместимые слухи, потом известие подтверждается. Ни один из двух бывших центурионов не находился в зале и не может изменить случившееся.",
+        "en": ""
+      },
+      "next": "ch04_s02_n90"
+    },
+    {
+      "id": "ch04_s02_n90",
+      "scene": "ch04_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch04_s03_n01"
+    },
+    {
+      "id": "ch04_s03_n01",
+      "scene": "ch04_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Соседи просят Ворена выставить караул у переулка. Пулон боится, что караул без законного распоряжения станет началом нового отряда. Серран предлагает записать имена дежурных и время смены. Всем хочется порядка, но смысл этого слова расходится.",
+        "en": ""
+      },
+      "next": "ch04_s03_n90"
+    },
+    {
+      "id": "ch04_s03_n91",
+      "scene": "ch04_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "У каждого караульного есть имя и срок. Стража не становится личным отрядом Ворена.",
+        "en": ""
+      },
+      "next": "ch04_s04_n01"
+    },
+    {
+      "id": "ch04_s03_n92",
+      "scene": "ch04_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "В переулке спокойнее. Соседи начинают спрашивать разрешение у людей с оружием.",
+        "en": ""
+      },
+      "next": "ch04_s04_n01"
+    },
+    {
+      "id": "ch04_s03_n90",
+      "scene": "ch04_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch04_s03_watch",
+          "text": {
+            "ru": "Назначить открытые смены соседей",
+            "en": ""
+          },
+          "set_flags": [
+            "civic_watch"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 4,
+          "goto": "ch04_s03_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch04_s03_veterans",
+          "text": {
+            "ru": "Доверить порядок ветеранам",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 2
+          },
+          "bond": -3,
+          "goto": "ch04_s03_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch04_s04_n01",
+      "scene": "ch04_s04",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "antony_neutral",
+      "text": {
+        "ru": "Похороны Цезаря собирают людей, чьи причины скорбеть и гневаться различны. Антоний выступает перед толпой. Пулон старается удержать проход для Нерии; Ворен не позволяет соседям броситься за человеком, которого кто-то без доказательств назвал заговорщиком.",
+        "en": ""
+      },
+      "next": "ch04_s04_n80"
+    },
+    {
+      "id": "ch04_s04_n80",
+      "scene": "ch04_s04",
+      "kind": "beat",
+      "beat": "beat_ch04_s04",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch04_s04_n90"
+    },
+    {
+      "id": "ch04_s04_n91",
+      "scene": "ch04_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ворен удерживает проход. Имени обвинённого пока никто не знает; этого достаточно, чтобы не выносить приговор.",
+        "en": ""
+      },
+      "next": "ch04_s05_n01"
+    },
+    {
+      "id": "ch04_s04_n92",
+      "scene": "ch04_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Мастерская возвращается домой. Чужую судьбу приходится оставить за дымом Форума.",
+        "en": ""
+      },
+      "next": "ch04_s05_n01"
+    },
+    {
+      "id": "ch04_s04_n90",
+      "scene": "ch04_s04",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch04_s04_protect",
+          "text": {
+            "ru": "Не отдавать человека толпе",
+            "en": ""
+          },
+          "set_flags": [
+            "no_mob"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 4,
+          "goto": "ch04_s04_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch04_s04_leave",
+          "text": {
+            "ru": "Отвести только своих",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch04_s04_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch04_s05_n01",
+      "scene": "ch04_s05",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "octavian_neutral",
+      "text": {
+        "ru": "Октавиан принимает наследство и имя Цезаря. Для ветеранов это не отвлечённая перемена в родословной: они связывают с именем обещания, выплаты, прежнюю службу. Ворен хочет увидеть продолжение порядка. Пулон опасается нового обязательства, которое выглядит как возвращение старого.",
+        "en": ""
+      },
+      "next": "ch04_s05_n90"
+    },
+    {
+      "id": "ch04_s05_n90",
+      "scene": "ch04_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch04_optional_06"
+    },
+    {
+      "id": "ch04_s06_n01",
+      "scene": "ch04_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Серран просит Нерию засвидетельствовать передачу мастерской на время отсутствия владельца. Она умеет различать повреждения тела, но не ловушки в длинной формуле. Пулон предлагает прочитать документ вслух всем соседям. Веттий считает такую осторожность оскорблением.",
+        "en": ""
+      },
+      "next": "ch04_s06_n90",
+      "set_flags": [
+        "visited_ch04_s06"
+      ]
+    },
+    {
+      "id": "ch04_s06_n91",
+      "scene": "ch04_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Нерия останавливает чтение на непонятном слове. Соседи исправляют срок передачи, прежде чем появляется печать.",
+        "en": ""
+      },
+      "next": "ch04_s07_n01"
+    },
+    {
+      "id": "ch04_s06_n92",
+      "scene": "ch04_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Документ подписывают до вечера. Луцилла остаётся должна объяснение, которого никто не записал.",
+        "en": ""
+      },
+      "next": "ch04_s07_n01"
+    },
+    {
+      "id": "ch04_s06_n90",
+      "scene": "ch04_s06",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch04_s06_read",
+          "text": {
+            "ru": "Прочитать договор всем свидетелям",
+            "en": ""
+          },
+          "set_flags": [
+            "witnesses_shared"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch04_s06_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch04_s06_trust_vettius",
+          "text": {
+            "ru": "Принять заверение Веттия",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -2,
+          "goto": "ch04_s06_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch04_s07_n01",
+      "scene": "ch04_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Веттий предлагает уничтожить тетрадь частных долгов: исчезнут и основания для будущих обвинений. Серран возражает, что вместе с обвинениями исчезнут доказательства чужой собственности. Ворен должен решить, какую опасность он готов оставить людям вместо себя.",
+        "en": ""
+      },
+      "next": "ch04_s07_n90"
+    },
+    {
+      "id": "ch04_s07_n91",
+      "scene": "ch04_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Серран прячет копию отдельно от оригинала. Теперь её можно использовать и для защиты, и против свидетелей.",
+        "en": ""
+      },
+      "next": "ch04_s08_n01"
+    },
+    {
+      "id": "ch04_s07_n92",
+      "scene": "ch04_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "В огне исчезают обвинения и права. На следующий день доказательств уже не станет больше.",
+        "en": ""
+      },
+      "next": "ch04_s08_n01"
+    },
+    {
+      "id": "ch04_s07_n90",
+      "scene": "ch04_s07",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch04_s07_keep_ledger",
+          "text": {
+            "ru": "Сохранить частную копию",
+            "en": ""
+          },
+          "set_flags": [
+            "ledger_survives"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 6,
+          "goto": "ch04_s07_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch04_s07_burn_ledger",
+          "text": {
+            "ru": "Сжечь список долгов",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [
+            "ledger_survives"
+          ],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -6,
+          "goto": "ch04_s07_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "private_evidence"
+    },
+    {
+      "id": "ch04_s08_n01",
+      "scene": "ch04_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Две дороги снова сходятся у мастерской. Здесь никто не может остаться только легионером или только горожанином. Пулон кладёт на порог запасной ключ. Ворен обещает, что больше не будет давать обязательств за обоих без разговора.",
+        "en": ""
+      },
+      "next": "ch04_s08_n90"
+    },
+    {
+      "id": "ch04_s08_n90",
+      "scene": "ch04_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch05_s01_n01"
+    },
+    {
+      "id": "ch04_optional_06",
+      "scene": "ch04_s05",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch04_optional_06_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch04_s06_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch04_optional_06_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch04_s07_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    }
+  ]
+}

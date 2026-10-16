@@ -1,0 +1,32 @@
+{
+  "required_events": [
+    "gallic_war",
+    "quintus_cicero_camp",
+    "mutual_rescue",
+    "alesia",
+    "vercingetorix",
+    "rubicon",
+    "pompey_leaves_rome",
+    "brundisium",
+    "pharsalus",
+    "pompey_death",
+    "alexandrian_war",
+    "cleopatra",
+    "thapsus",
+    "munda",
+    "ides",
+    "caesar_funeral",
+    "octavian_inherits",
+    "second_triumvirate",
+    "proscriptions",
+    "cicero_death",
+    "philippi",
+    "perusia",
+    "sextus_pompey",
+    "actium",
+    "alexandria_falls",
+    "antony_and_cleopatra_deaths",
+    "principate",
+    "augustus_death"
+  ]
+}

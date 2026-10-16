@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "beats": [
+    {
+      "id": "beat_ch01_s03",
+      "type": "tactical",
+      "title": {
+        "ru": "Ночная оборона",
+        "en": ""
+      },
+      "place": {
+        "ru": "Лагерь Квинта Цицерона",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Удержать проход и вывести раненых",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Проход к навесу открыт",
+          "en": ""
+        },
+        {
+          "ru": "Раненые под прикрытием",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch01_s03_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch01_s06",
+      "type": "platformer",
+      "title": {
+        "ru": "Связь между валами",
+        "en": ""
+      },
+      "place": {
+        "ru": "Алезия",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Доставить сообщение между двумя линиями",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Сообщение доставлено",
+          "en": ""
+        },
+        {
+          "ru": "Посыльный возвращён",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch01_s06_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch02_s04",
+      "type": "rpg",
+      "title": {
+        "ru": "Перед переправой",
+        "en": ""
+      },
+      "place": {
+        "ru": "Рубикон",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Завершить частные расчёты перед уходом",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Личные обязательства названы",
+          "en": ""
+        },
+        {
+          "ru": "Путь выбран осознанно",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch02_s04_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch03_s02",
+      "type": "tactical",
+      "title": {
+        "ru": "Пыль и щиты",
+        "en": ""
+      },
+      "place": {
+        "ru": "Фарсал",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Вывести своё звено с поля",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Раненые переданы лекарям",
+          "en": ""
+        },
+        {
+          "ru": "Звено собрано",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch03_s02_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch03_s11",
+      "type": "rpg",
+      "title": {
+        "ru": "Городской склад",
+        "en": ""
+      },
+      "place": {
+        "ru": "Рим",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Решить спор о выдаче зерна",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Получатели пересчитаны",
+          "en": ""
+        },
+        {
+          "ru": "Решение о запасе записано",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch03_s11_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch04_s04",
+      "type": "platformer",
+      "title": {
+        "ru": "Проход на Форуме",
+        "en": ""
+      },
+      "place": {
+        "ru": "Рим",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Вывести соседей из давки",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Переулок достигнут",
+          "en": ""
+        },
+        {
+          "ru": "Никто не потерян в толпе",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch04_s04_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch05_s05",
+      "type": "platformer",
+      "title": {
+        "ru": "Боковые ворота",
+        "en": ""
+      },
+      "place": {
+        "ru": "Рим",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Провести предупреждённых к дороге",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Выход открыт",
+          "en": ""
+        },
+        {
+          "ru": "Группа у условленного места",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch05_s05_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch06_s01",
+      "type": "tactical",
+      "title": {
+        "ru": "Болотный проход",
+        "en": ""
+      },
+      "place": {
+        "ru": "Филиппы",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Подготовить путь для раненых",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Маршрут обозначен",
+          "en": ""
+        },
+        {
+          "ru": "Носильщики на месте",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch06_s01_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch06_s05",
+      "type": "rpg",
+      "title": {
+        "ru": "Зимняя дорога",
+        "en": ""
+      },
+      "place": {
+        "ru": "Перузия",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Решить судьбу укрываемых семей",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Выбран способ помощи",
+          "en": ""
+        },
+        {
+          "ru": "Цена решения принята",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch06_s05_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch07_s02",
+      "type": "tactical",
+      "title": {
+        "ru": "Между галерами",
+        "en": ""
+      },
+      "place": {
+        "ru": "Акций",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Найти проход для малой лодки",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Ряды вёсел пройдены",
+          "en": ""
+        },
+        {
+          "ru": "Лодка у каната",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch07_s02_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch07_s03",
+      "type": "platformer",
+      "title": {
+        "ru": "Натянутый канат",
+        "en": ""
+      },
+      "place": {
+        "ru": "Акций",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Завершить выбранный план спасения",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Решение о канате исполнено",
+          "en": ""
+        },
+        {
+          "ru": "Люди пересчитаны",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch07_s03_n80",
+      "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch08_s01",
+      "type": "rpg",
+      "title": {
+        "ru": "Свидетельская скамья",
+        "en": ""
+      },
+      "place": {
+        "ru": "Рим",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Определить назначение сохранившихся записей",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Обязательства свидетелей названы",
+          "en": ""
+        },
+        {
+          "ru": "Копия передана по решению",
+          "en": ""
+        }
+      ],
+      "condition": "",
+      "node": "ch08_s01_n80",
+      "implementation": "placeholder"
+    }
+  ]
+}

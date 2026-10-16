@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "initial_bond": 35,
+  "flags": {
+    "neria_trust": {
+      "type": "bool",
+      "default": false
+    },
+    "mutual_rescue": {
+      "type": "bool",
+      "default": false
+    },
+    "shared_record": {
+      "type": "bool",
+      "default": false
+    },
+    "prisoner_spared": {
+      "type": "bool",
+      "default": false
+    },
+    "home_promised": {
+      "type": "bool",
+      "default": false
+    },
+    "lucilla_helped": {
+      "type": "bool",
+      "default": false
+    },
+    "sources_kept": {
+      "type": "bool",
+      "default": false
+    },
+    "seal_returned": {
+      "type": "bool",
+      "default": false
+    },
+    "lucilla_paid": {
+      "type": "bool",
+      "default": false
+    },
+    "route_legion": {
+      "type": "bool",
+      "default": false
+    },
+    "route_citizen": {
+      "type": "bool",
+      "default": false
+    },
+    "aglaia_safe": {
+      "type": "bool",
+      "default": false
+    },
+    "ledger_salvaged": {
+      "type": "bool",
+      "default": false
+    },
+    "grain_accounted": {
+      "type": "bool",
+      "default": false
+    },
+    "civic_watch": {
+      "type": "bool",
+      "default": false
+    },
+    "no_mob": {
+      "type": "bool",
+      "default": false
+    },
+    "witnesses_shared": {
+      "type": "bool",
+      "default": false
+    },
+    "ledger_survives": {
+      "type": "bool",
+      "default": false
+    },
+    "side_octavian": {
+      "type": "bool",
+      "default": false
+    },
+    "side_antony": {
+      "type": "bool",
+      "default": false
+    },
+    "side_republicans": {
+      "type": "bool",
+      "default": false
+    },
+    "side_neutral": {
+      "type": "bool",
+      "default": false
+    },
+    "serranus_safe": {
+      "type": "bool",
+      "default": false
+    },
+    "lucilla_safe": {
+      "type": "bool",
+      "default": false
+    },
+    "aulus_safe": {
+      "type": "bool",
+      "default": false
+    },
+    "neria_supplied": {
+      "type": "bool",
+      "default": false
+    },
+    "seal_evidence": {
+      "type": "bool",
+      "default": false
+    },
+    "betrayed": {
+      "type": "bool",
+      "default": false
+    },
+    "water_shared": {
+      "type": "bool",
+      "default": false
+    },
+    "home_claim": {
+      "type": "bool",
+      "default": false
+    },
+    "aulus_learned": {
+      "type": "bool",
+      "default": false
+    },
+    "safe_passage": {
+      "type": "bool",
+      "default": false
+    },
+    "mercy_vettius": {
+      "type": "bool",
+      "default": false
+    },
+    "boat_roster": {
+      "type": "bool",
+      "default": false
+    },
+    "rescued_together": {
+      "type": "bool",
+      "default": false
+    },
+    "friend_lost": {
+      "type": "bool",
+      "default": false
+    },
+    "archive_copied": {
+      "type": "bool",
+      "default": false
+    },
+    "truth_kept": {
+      "type": "bool",
+      "default": false
+    },
+    "archive_public": {
+      "type": "bool",
+      "default": false
+    },
+    "last_honesty": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch01_s07": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch02_s06": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch03_s08": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch03_s16": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch04_s06": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch05_s06": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch05_s08": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch06_s04": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch06_s07": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch07_s04": {
+      "type": "bool",
+      "default": false
+    },
+    "visited_ch07_s07": {
+      "type": "bool",
+      "default": false
+    }
+  },
+  "reputation": {
+    "legion": 0,
+    "citizens": 0,
+    "octavian": 0,
+    "antony": 0,
+    "republicans": 0
+  }
+}

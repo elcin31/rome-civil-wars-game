@@ -1,0 +1,172 @@
+{
+  "characters": {
+    "narrator": {
+      "name": {
+        "ru": "Рассказчик",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": ""
+    },
+    "history": {
+      "name": {
+        "ru": "Историческая хроника",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": ""
+    },
+    "pullo": {
+      "name": {
+        "ru": "Тит Пулон",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "pullo_neutral",
+      "arc": ""
+    },
+    "vorenus": {
+      "name": {
+        "ru": "Луций Ворен",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "vorenus_neutral",
+      "arc": ""
+    },
+    "caesar": {
+      "name": {
+        "ru": "Гай Юлий Цезарь",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "caesar_neutral",
+      "arc": ""
+    },
+    "octavian": {
+      "name": {
+        "ru": "Октавиан",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "octavian_neutral",
+      "arc": ""
+    },
+    "augustus": {
+      "name": {
+        "ru": "Август",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "augustus_neutral",
+      "arc": ""
+    },
+    "antony": {
+      "name": {
+        "ru": "Марк Антоний",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "antony_neutral",
+      "arc": ""
+    },
+    "cleopatra": {
+      "name": {
+        "ru": "Клеопатра VII",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "cleopatra_neutral",
+      "arc": ""
+    },
+    "pompey": {
+      "name": {
+        "ru": "Гней Помпей",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "pompey_neutral",
+      "arc": ""
+    },
+    "brutus": {
+      "name": {
+        "ru": "Марк Юний Брут",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "brutus_neutral",
+      "arc": ""
+    },
+    "cicero": {
+      "name": {
+        "ru": "Марк Туллий Цицерон",
+        "en": ""
+      },
+      "historical": true,
+      "default_portrait": "cicero_neutral",
+      "arc": ""
+    },
+    "neria": {
+      "name": {
+        "ru": "Нерия Фауста",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": "Вольноотпущенница и целительница: от выпрошенного полотна к собственной сети помощи; её доверие открывает двойную эвакуацию."
+    },
+    "lucilla": {
+      "name": {
+        "ru": "Луцилла Вибия",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": "Италийская гончарка: от неоплаченного заказа к борьбе за дом и праву отказаться от чужого покровительства."
+    },
+    "serranus": {
+      "name": {
+        "ru": "Гай Серран",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": "Молодой писец: учится отделять свидетельство от удобного итога; частная копия делает его уязвимым и необходимым."
+    },
+    "aglaia": {
+      "name": {
+        "ru": "Аглая",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": "Александрийская мастерица папируса и лодочница: помощь в 47 году определяет её участие в спасении при Акции."
+    },
+    "vettius": {
+      "name": {
+        "ru": "Децим Веттий",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": "Центурион-соперник: ищет безопасность у сменяющихся покровителей; может получить помощь без оправдания своих поступков."
+    },
+    "aulus": {
+      "name": {
+        "ru": "Авл Вибий",
+        "en": ""
+      },
+      "historical": false,
+      "default_portrait": "",
+      "arc": "Сын Луциллы: от ребёнка с чужой печатью к гребцу и хранителю памяти; в 14 году н. э. ему около 66 лет."
+    }
+  },
+  "birth_years_bce": {
+    "pullo": 82,
+    "vorenus": 84,
+    "aulus": 53
+  },
+  "historical_speech_policy": "Реальные деятели показаны в пересказе хроники; вымышленные последние слова не приписываются."
+}

@@ -1,0 +1,560 @@
+{
+  "schema_version": 1,
+  "id": "ch08",
+  "number": 8,
+  "title": {
+    "ru": "Эпилог",
+    "en": ""
+  },
+  "years": "29 до н. э. — 14 н. э.",
+  "entry": "ch08_s01_n01",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch08_s01",
+      "title": {
+        "ru": "Триумф и мастерская",
+        "en": ""
+      },
+      "year": "29 до н. э.",
+      "entry": "ch08_s01_n01",
+      "illustration": "assets/story/augustan_marble.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch08_s02",
+      "title": {
+        "ru": "Новое старое имя",
+        "en": ""
+      },
+      "year": "27 до н. э.",
+      "entry": "ch08_s02_n01",
+      "illustration": "assets/story/augustan_marble.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "principate"
+      ]
+    },
+    {
+      "id": "ch08_s03",
+      "title": {
+        "ru": "Две чаши",
+        "en": ""
+      },
+      "year": "12 до н. э.",
+      "entry": "ch08_s03_n01",
+      "illustration": "assets/story/old_friends.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [],
+      "illustration_variants": [
+        {
+          "condition": "friend_lost",
+          "file": "assets/story/sacrifice.png"
+        },
+        {
+          "condition": "bond<65",
+          "file": "assets/story/apart.png"
+        }
+      ]
+    },
+    {
+      "id": "ch08_s04",
+      "title": {
+        "ru": "Август умер",
+        "en": ""
+      },
+      "year": "14 н. э.",
+      "entry": "ch08_s04_n01",
+      "illustration": "assets/story/augustan_marble.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "augustus_death"
+      ]
+    },
+    {
+      "id": "ch08_s05",
+      "title": {
+        "ru": "Два места у очага",
+        "en": ""
+      },
+      "year": "память о 12 до н. э.",
+      "entry": "ch08_s05_n01",
+      "illustration": "assets/story/together.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [],
+      "ending": "together"
+    },
+    {
+      "id": "ch08_s06",
+      "title": {
+        "ru": "Письма через море",
+        "en": ""
+      },
+      "year": "память о 12 до н. э.",
+      "entry": "ch08_s06_n01",
+      "illustration": "assets/story/apart.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [],
+      "ending": "apart"
+    },
+    {
+      "id": "ch08_s07",
+      "title": {
+        "ru": "Один светильник",
+        "en": ""
+      },
+      "year": "память о 31–12 до н. э.",
+      "entry": "ch08_s07_n01",
+      "illustration": "assets/story/sacrifice.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [],
+      "ending": "sacrifice"
+    },
+    {
+      "id": "ch08_s08",
+      "title": {
+        "ru": "Список без имён",
+        "en": ""
+      },
+      "year": "14 н. э.",
+      "entry": "ch08_s08_n01",
+      "illustration": "assets/story/bad.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [],
+      "ending": "bad"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch08_s01_n01",
+      "scene": "ch08_s01",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Рим празднует победы Октавиана. В мастерской чинят дверь и спорят о цене топлива. Авл уже взрослый человек; ему не нужны разрешения друзей матери, но ему нужны их честные свидетельства. Пулон должен решить, отдаст ли сохранившиеся записи для восстановления чужих прав.",
+        "en": ""
+      },
+      "next": "ch08_s01_n80"
+    },
+    {
+      "id": "ch08_s01_n80",
+      "scene": "ch08_s01",
+      "kind": "beat",
+      "beat": "beat_ch08_s01",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch08_s01_n90"
+    },
+    {
+      "id": "ch08_s01_n91",
+      "scene": "ch08_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Авл принимает свидетельства вместе с обязанностью отвечать на возражения. Дом перестаёт быть частной наградой.",
+        "en": ""
+      },
+      "next": "ch08_s02_n01"
+    },
+    {
+      "id": "ch08_s01_n92",
+      "scene": "ch08_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Бумаги защищают близких, но чужие просьбы остаются за дверью.",
+        "en": ""
+      },
+      "next": "ch08_s02_n01"
+    },
+    {
+      "id": "ch08_s01_n90",
+      "scene": "ch08_s01",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch08_s01_public",
+          "text": {
+            "ru": "Передать записи для восстановления прав",
+            "en": ""
+          },
+          "set_flags": [
+            "home_claim",
+            "archive_public"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 6,
+          "goto": "ch08_s01_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch08_s01_private",
+          "text": {
+            "ru": "Оставить записи в семье",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [
+            "home_claim",
+            "archive_public"
+          ],
+          "rep": {
+            "citizens": -1
+          },
+          "bond": -2,
+          "goto": "ch08_s01_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "archive_legacy"
+    },
+    {
+      "id": "ch08_s02_n01",
+      "scene": "ch08_s02",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "octavian_neutral",
+      "text": {
+        "ru": "Октавиан получает имя Август. Формы республиканских учреждений сохраняются в новой системе власти. Для жителей переулка принципат начинается не с определения, а с очередного ответа на просьбу, которой много лет. Тишина после войны не стирает её цену.",
+        "en": ""
+      },
+      "next": "ch08_s02_n90"
+    },
+    {
+      "id": "ch08_s02_n91",
+      "scene": "ch08_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "У Авла появляется работа, за которую не хвалит ни одно знамя. Дороги для друзей снова открываются.",
+        "en": ""
+      },
+      "next": "ch08_s03_n01"
+    },
+    {
+      "id": "ch08_s02_n92",
+      "scene": "ch08_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Мастерская получает удобный заказ. На письмах с другого берега дольше проверяют печати.",
+        "en": ""
+      },
+      "next": "ch08_s03_n01"
+    },
+    {
+      "id": "ch08_s02_n90",
+      "scene": "ch08_s02",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch08_s02_amnesty",
+          "text": {
+            "ru": "Дать место и прежним противникам",
+            "en": ""
+          },
+          "set_flags": [
+            "safe_passage"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 4,
+          "goto": "ch08_s02_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch08_s02_rank",
+          "text": {
+            "ru": "Пользоваться связями победителей",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [
+            "safe_passage"
+          ],
+          "rep": {
+            "octavian": 2
+          },
+          "bond": -2,
+          "goto": "ch08_s02_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch08_s03_n01",
+      "scene": "ch08_s03",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Старые друзья — или один из них — смотрят на вечерний свет над оливами. К этому году Пулону около семидесяти, Ворену немного больше. Они уже не могут обещать ещё одну войну. Осталось выяснить, на что хватит мира.",
+        "en": ""
+      },
+      "next": "ch08_s03_n90"
+    },
+    {
+      "id": "ch08_s03_n91",
+      "scene": "ch08_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон впервые не отвечает шуткой на трудный вопрос. Чаша напротив не становится доказательством его правоты.",
+        "en": ""
+      },
+      "next": "ch08_s04_n01"
+    },
+    {
+      "id": "ch08_s03_n92",
+      "scene": "ch08_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Вечер проходит тихо. Некоторые слова навсегда останутся ненаписанными.",
+        "en": ""
+      },
+      "next": "ch08_s04_n01"
+    },
+    {
+      "id": "ch08_s03_n90",
+      "scene": "ch08_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch08_s03_speak",
+          "text": {
+            "ru": "Говорить о том, что осталось невысказанным",
+            "en": ""
+          },
+          "set_flags": [
+            "last_honesty"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 4,
+          "goto": "ch08_s03_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch08_s03_silence",
+          "text": {
+            "ru": "Оставить рассказ без спора",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {},
+          "bond": -4,
+          "goto": "ch08_s03_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch08_s04_n01",
+      "scene": "ch08_s04",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "augustus_neutral",
+      "text": {
+        "ru": "Приходит известие о смерти Августа в Ноле. Авл, которому теперь за шестьдесят, разбирает старые записи для следующего поколения. История принцепса завершилась; частная история двух центурионов становится памятью, которую можно передать точно или превратить в удобную легенду.",
+        "en": ""
+      },
+      "next": "ch08_s04_n90"
+    },
+    {
+      "id": "ch08_s04_n90",
+      "scene": "ch08_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch08_resolution"
+    },
+    {
+      "id": "ch08_s05_n01",
+      "scene": "ch08_s05",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "В мастерской сохраняются два места. Пулон и Ворен научились не решать друг за друга даже самые благородные вопросы. Авл получает не доказательство безупречности отцовского поколения, а привычку спрашивать согласия тех, чью жизнь собираются улучшить.",
+        "en": ""
+      },
+      "next": "ch08_s05_n90"
+    },
+    {
+      "id": "ch08_s05_n90",
+      "scene": "ch08_s05",
+      "kind": "ending",
+      "ending": "together",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": ""
+    },
+    {
+      "id": "ch08_s06_n01",
+      "scene": "ch08_s06",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Друзья остаются живы в памяти двух разных домов. Между ними ходят редкие письма. В них больше нет приказов и состязаний. Примирение не всегда означает возвращение под одну крышу; иногда оно начинается с признания, что другой вправе остаться на своём берегу.",
+        "en": ""
+      },
+      "next": "ch08_s06_n90"
+    },
+    {
+      "id": "ch08_s06_n90",
+      "scene": "ch08_s06",
+      "kind": "ending",
+      "ending": "apart",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": ""
+    },
+    {
+      "id": "ch08_s07_n01",
+      "scene": "ch08_s07",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон сохраняет вторую чашу, хотя поставить её больше некому. Потеря Ворена не становится удобной притчей о славе. Авл помнит канат и руки, которые удерживали его лодку. Когда он рассказывает детям о спасении, он называет цену, а не только победителя.",
+        "en": ""
+      },
+      "next": "ch08_s07_n90"
+    },
+    {
+      "id": "ch08_s07_n90",
+      "scene": "ch08_s07",
+      "kind": "ending",
+      "ending": "sacrifice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": ""
+    },
+    {
+      "id": "ch08_s08_n01",
+      "scene": "ch08_s08",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Из частных записей осталось слишком мало, чтобы вернуть людям их место. Два старых щита стоят у разных закрытых дверей. Авл знает последовательность побед, но не знает, кому из живших рядом верить. Предательство не изменило Рим; оно сделало чужими тех, ради кого можно было вернуться.",
+        "en": ""
+      },
+      "next": "ch08_s08_n90"
+    },
+    {
+      "id": "ch08_s08_n90",
+      "scene": "ch08_s08",
+      "kind": "ending",
+      "ending": "bad",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": ""
+    },
+    {
+      "id": "ch08_resolution",
+      "scene": "ch08_s04",
+      "kind": "branch",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "branches": [
+        {
+          "condition": "betrayed&!ledger_survives|bond<25&!lucilla_safe&!serranus_safe",
+          "goto": "ch08_s08_n01"
+        },
+        {
+          "condition": "friend_lost",
+          "goto": "ch08_s07_n01"
+        },
+        {
+          "condition": "bond>=65&ledger_survives&aulus_safe&home_claim&side_neutral|bond>=65&ledger_survives&aulus_safe&home_claim&side_octavian|bond>=80&ledger_survives&aulus_safe&safe_passage&side_antony|bond>=80&ledger_survives&aulus_safe&safe_passage&side_republicans",
+          "goto": "ch08_s05_n01"
+        }
+      ],
+      "next": "ch08_s06_n01"
+    }
+  ]
+}

@@ -1,0 +1,810 @@
+{
+  "schema_version": 1,
+  "id": "ch05",
+  "number": 5,
+  "title": {
+    "ru": "Проскрипции",
+    "en": ""
+  },
+  "years": "43 до н. э.",
+  "entry": "ch05_s01_n01",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch05_s01",
+      "title": {
+        "ru": "Трое и множество",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s01_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "second_triumvirate"
+      ]
+    },
+    {
+      "id": "ch05_s02",
+      "title": {
+        "ru": "Стена имён",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s02_n01",
+      "illustration": "assets/story/proscription_wall.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "proscriptions"
+      ]
+    },
+    {
+      "id": "ch05_s03",
+      "title": {
+        "ru": "Молчание оратора",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s03_n01",
+      "illustration": "assets/locations/rome_night.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "cicero_death"
+      ]
+    },
+    {
+      "id": "ch05_s04",
+      "title": {
+        "ru": "Два предупреждения",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s04_n01",
+      "illustration": "assets/story/proscription_wall.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch05_s05",
+      "title": {
+        "ru": "Чужой ключ",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s05_n01",
+      "illustration": "assets/story/night_escape.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch05_s06",
+      "title": {
+        "ru": "Лечебный мешок",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s06_n01",
+      "illustration": "assets/locations/rome_night.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch05_s07",
+      "title": {
+        "ru": "Тень защищающего",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s07_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch05_s08",
+      "title": {
+        "ru": "Отпечаток Веттия",
+        "en": ""
+      },
+      "year": "43 до н. э.",
+      "entry": "ch05_s08_n01",
+      "illustration": "assets/locations/rome_night.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch05_s09",
+      "title": {
+        "ru": "Те, кого пересчитали",
+        "en": ""
+      },
+      "year": "конец 43 до н. э.",
+      "entry": "ch05_s09_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch05_s01_n01",
+      "scene": "ch05_s01",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "octavian_angry",
+      "text": {
+        "ru": "После борьбы этого года Октавиан, Антоний и Лепид образуют Второй триумвират. Их соглашение не спрашивает жителей переулка о согласии. Веттий требует назвать сторону. Нейтралитет Пулона не отменяет угрозы конфискации и доноса.",
+        "en": ""
+      },
+      "next": "ch05_s01_n90"
+    },
+    {
+      "id": "ch05_s01_n91",
+      "scene": "ch05_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ворен обращается к людям наследника Цезаря. Пулон требует не называть защиту безусловной.",
+        "en": ""
+      },
+      "next": "ch05_s02_n01"
+    },
+    {
+      "id": "ch05_s01_n92",
+      "scene": "ch05_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Знакомые военные связи открывают дорогу. За неё попросят службу.",
+        "en": ""
+      },
+      "next": "ch05_s02_n01"
+    },
+    {
+      "id": "ch05_s01_n93",
+      "scene": "ch05_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Друзья ищут защиту у противников триумвиров. Теперь сам адрес письма может стать уликой.",
+        "en": ""
+      },
+      "next": "ch05_s02_n01"
+    },
+    {
+      "id": "ch05_s01_n94",
+      "scene": "ch05_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон отказывается от знамени. Веттий не вычёркивает переулок из своего перечня.",
+        "en": ""
+      },
+      "next": "ch05_s02_n01"
+    },
+    {
+      "id": "ch05_s01_n90",
+      "scene": "ch05_s01",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch05_s01_octavian",
+          "text": {
+            "ru": "Поддержать Октавиана",
+            "en": ""
+          },
+          "set_flags": [
+            "side_octavian"
+          ],
+          "clear_flags": [
+            "side_antony",
+            "side_republicans",
+            "side_neutral"
+          ],
+          "rep": {
+            "octavian": 3
+          },
+          "bond": 2,
+          "goto": "ch05_s01_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch05_s01_antony",
+          "text": {
+            "ru": "Поддержать Антония",
+            "en": ""
+          },
+          "set_flags": [
+            "side_antony"
+          ],
+          "clear_flags": [
+            "side_octavian",
+            "side_republicans",
+            "side_neutral"
+          ],
+          "rep": {
+            "antony": 3
+          },
+          "bond": 1,
+          "goto": "ch05_s01_n92",
+          "condition": ""
+        },
+        {
+          "id": "ch05_s01_republicans",
+          "text": {
+            "ru": "Держаться республиканцев",
+            "en": ""
+          },
+          "set_flags": [
+            "side_republicans"
+          ],
+          "clear_flags": [
+            "side_octavian",
+            "side_antony",
+            "side_neutral"
+          ],
+          "rep": {
+            "republicans": 3
+          },
+          "bond": -1,
+          "goto": "ch05_s01_n93",
+          "condition": ""
+        },
+        {
+          "id": "ch05_s01_neutral",
+          "text": {
+            "ru": "Сохранить нейтралитет",
+            "en": ""
+          },
+          "set_flags": [
+            "side_neutral"
+          ],
+          "clear_flags": [
+            "side_octavian",
+            "side_antony",
+            "side_republicans"
+          ],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 3,
+          "goto": "ch05_s01_n94",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "faction"
+    },
+    {
+      "id": "ch05_s02_n01",
+      "scene": "ch05_s02",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "У стены с проскрипционными списками люди читают не по порядку. Они ищут сначала собственное имя, потом знакомые. Серран замечает в руках помощника Веттия выписку из частных долгов. Не всякая пометка здесь означает смертный приговор, но всякая может стать поводом.",
+        "en": ""
+      },
+      "next": "ch05_s02_n90"
+    },
+    {
+      "id": "ch05_s02_n90",
+      "scene": "ch05_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch05_s03_n01"
+    },
+    {
+      "id": "ch05_s03_n01",
+      "scene": "ch05_s03",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "cicero_worried",
+      "text": {
+        "ru": "Марка Туллия Цицерона убивают во время проскрипций. Ворен вспоминает, что когда-то защищал лагерь его брата Квинта. Пулон не находит между этими двумя воспоминаниями никакой утешительной связи. В мастерской перестают обсуждать, чьё имя достаточно известно для защиты.",
+        "en": ""
+      },
+      "next": "ch05_s03_n90"
+    },
+    {
+      "id": "ch05_s03_n90",
+      "scene": "ch05_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch05_s04_n01"
+    },
+    {
+      "id": "ch05_s04_n01",
+      "scene": "ch05_s04",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "У Пулона есть время предупредить Серрана или добраться до Луциллы раньше чужого обыска. Если Нерия доверяет друзьям, а их собственная связь крепка, она согласится провести второй маршрут. Иначе одному придётся ждать без обещанной помощи.",
+        "en": ""
+      },
+      "next": "ch05_s04_n90"
+    },
+    {
+      "id": "ch05_s04_n91",
+      "scene": "ch05_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Писец уходит до обыска. Луцилле приходится прятаться без проводника.",
+        "en": ""
+      },
+      "next": "ch05_s05_n01"
+    },
+    {
+      "id": "ch05_s04_n92",
+      "scene": "ch05_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Семья покидает двор. Серран остаётся ждать условленного стука, который уже не прозвучит.",
+        "en": ""
+      },
+      "next": "ch05_s05_n01"
+    },
+    {
+      "id": "ch05_s04_n93",
+      "scene": "ch05_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Нерия берёт один маршрут, центурионы — другой. Две группы встречаются на дороге после рассвета.",
+        "en": ""
+      },
+      "next": "ch05_s05_n01"
+    },
+    {
+      "id": "ch05_s04_n90",
+      "scene": "ch05_s04",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch05_s04_serranus",
+          "text": {
+            "ru": "Предупредить Серрана",
+            "en": ""
+          },
+          "set_flags": [
+            "serranus_safe"
+          ],
+          "clear_flags": [
+            "lucilla_safe",
+            "aulus_safe"
+          ],
+          "rep": {},
+          "bond": 4,
+          "goto": "ch05_s04_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch05_s04_lucilla",
+          "text": {
+            "ru": "Предупредить Луциллу и Авла",
+            "en": ""
+          },
+          "set_flags": [
+            "lucilla_safe",
+            "aulus_safe"
+          ],
+          "clear_flags": [
+            "serranus_safe"
+          ],
+          "rep": {},
+          "bond": -4,
+          "goto": "ch05_s04_n92",
+          "condition": ""
+        },
+        {
+          "id": "ch05_s04_both",
+          "text": {
+            "ru": "Разделиться вместе с Нерией",
+            "en": ""
+          },
+          "set_flags": [
+            "serranus_safe",
+            "lucilla_safe",
+            "aulus_safe"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 8,
+          "goto": "ch05_s04_n93",
+          "condition": "neria_trust&bond>=60",
+          "requirement_text": {
+            "ru": "Доверие Нерии и связь 60+",
+            "en": ""
+          }
+        }
+      ],
+      "next": "",
+      "major_branch": "warning_routes"
+    },
+    {
+      "id": "ch05_s05_n01",
+      "scene": "ch05_s05",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ночью решётку на боковом проходе держит не закон, а тонкая железная петля. Пулон помогает людям выйти с пустыми руками. Ворен понимает, что приказ не всегда идёт от того, кому надлежит повиноваться. Огни за спиной не становятся от этого менее настоящими.",
+        "en": ""
+      },
+      "next": "ch05_s05_n80"
+    },
+    {
+      "id": "ch05_s05_n80",
+      "scene": "ch05_s05",
+      "kind": "beat",
+      "beat": "beat_ch05_s05",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch05_s05_n90"
+    },
+    {
+      "id": "ch05_s05_n90",
+      "scene": "ch05_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch05_optional_06"
+    },
+    {
+      "id": "ch05_s06_n01",
+      "scene": "ch05_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Нерия может взять запас инструментов или ещё один свёрток одежды для ребёнка. Она просит не называть этот выбор благородным: зимой одежда лечит не хуже иглы. Авл предлагает нести маленький мешок сам, но слишком быстро устаёт.",
+        "en": ""
+      },
+      "next": "ch05_s06_n90",
+      "set_flags": [
+        "visited_ch05_s06"
+      ]
+    },
+    {
+      "id": "ch05_s06_n91",
+      "scene": "ch05_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Нерия укладывает иглы. Авл получает плащ Пулона, а сам Пулон остаётся мёрзнуть у борта повозки.",
+        "en": ""
+      },
+      "next": "ch05_s07_n01"
+    },
+    {
+      "id": "ch05_s06_n92",
+      "scene": "ch05_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Авл засыпает в сухой ткани. Нерия начинает искать инструмент у попутных лекарей.",
+        "en": ""
+      },
+      "next": "ch05_s07_n01"
+    },
+    {
+      "id": "ch05_s06_n90",
+      "scene": "ch05_s06",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch05_s06_tools",
+          "text": {
+            "ru": "Сохранить инструменты для всех",
+            "en": ""
+          },
+          "set_flags": [
+            "neria_supplied"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch05_s06_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch05_s06_clothes",
+          "text": {
+            "ru": "Взять одежду для ребёнка",
+            "en": ""
+          },
+          "set_flags": [
+            "aulus_safe"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 1,
+          "goto": "ch05_s06_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch05_s07_n01",
+      "scene": "ch05_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Представители выбранной стороны предлагают друзьям защитные письма. У каждого письма есть цена: служба, сведения или молчание. Для нейтральных цена выражается в деньгах и отказе от части имущества. Ни одна сторона не выдаёт безопасности навсегда.",
+        "en": ""
+      },
+      "next": "ch05_s07_n90"
+    },
+    {
+      "id": "ch05_s07_n90",
+      "scene": "ch05_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch05_optional_08"
+    },
+    {
+      "id": "ch05_s08_n01",
+      "scene": "ch05_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Серран оставил условный знак на копии долговой записи. Отпечаток показывает, через чьи руки она прошла. Можно сохранить улику, договориться с Веттием или передать удобную ложную версию его покровителю. Пулон знает, что лёгкое решение будет иметь имя.",
+        "en": ""
+      },
+      "next": "ch05_s08_n90",
+      "set_flags": [
+        "visited_ch05_s08"
+      ]
+    },
+    {
+      "id": "ch05_s08_n91",
+      "scene": "ch05_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Невыгодная правда остаётся в копии. Веттий узнаёт, что друзья не выдали его за удобную ложь.",
+        "en": ""
+      },
+      "next": "ch05_s09_n01"
+    },
+    {
+      "id": "ch05_s08_n92",
+      "scene": "ch05_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Письмо о защите получено. Чужое имя становится ценой, о которой теперь нельзя сказать, что её не знали.",
+        "en": ""
+      },
+      "next": "ch05_s09_n01"
+    },
+    {
+      "id": "ch05_s08_n90",
+      "scene": "ch05_s08",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch05_s08_evidence",
+          "text": {
+            "ru": "Сохранить подлинный отпечаток",
+            "en": ""
+          },
+          "set_flags": [
+            "seal_evidence"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 4,
+          "goto": "ch05_s08_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch05_s08_betray",
+          "text": {
+            "ru": "Выдать подложную копию ради защиты",
+            "en": ""
+          },
+          "set_flags": [
+            "betrayed"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "legion": 2
+          },
+          "bond": -15,
+          "goto": "ch05_s08_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch05_s09_n01",
+      "scene": "ch05_s09",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "На привале считают людей, выбравшихся из Рима. Пропавший не всегда мёртв; спасённый не всегда в безопасности. Ворен оставляет в списке пустые строки и запрещает закрывать их догадками. Пулон впервые не спорит с писаным порядком.",
+        "en": ""
+      },
+      "next": "ch05_s09_n90"
+    },
+    {
+      "id": "ch05_s09_n90",
+      "scene": "ch05_s09",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch06_s01_n01"
+    },
+    {
+      "id": "ch05_optional_06",
+      "scene": "ch05_s05",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch05_optional_06_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch05_s06_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch05_optional_06_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch05_s07_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    },
+    {
+      "id": "ch05_optional_08",
+      "scene": "ch05_s07",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch05_optional_08_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch05_s08_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch05_optional_08_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch05_s09_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    }
+  ]
+}

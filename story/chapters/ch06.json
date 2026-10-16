@@ -1,0 +1,835 @@
+{
+  "schema_version": 1,
+  "id": "ch06",
+  "number": 6,
+  "title": {
+    "ru": "Война за наследие",
+    "en": ""
+  },
+  "years": "42–36 до н. э.",
+  "entry": "ch06_s01_n01",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch06_s01",
+      "title": {
+        "ru": "Мокрая равнина",
+        "en": ""
+      },
+      "year": "42 до н. э.",
+      "entry": "ch06_s01_n01",
+      "illustration": "assets/story/philippi_start.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "philippi"
+      ]
+    },
+    {
+      "id": "ch06_s02",
+      "title": {
+        "ru": "Два сражения",
+        "en": ""
+      },
+      "year": "42 до н. э.",
+      "entry": "ch06_s02_n01",
+      "illustration": "assets/locations/philippi.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "philippi"
+      ]
+    },
+    {
+      "id": "ch06_s03",
+      "title": {
+        "ru": "Участки на карте",
+        "en": ""
+      },
+      "year": "41 до н. э.",
+      "entry": "ch06_s03_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch06_s04",
+      "title": {
+        "ru": "Мера муки",
+        "en": ""
+      },
+      "year": "41 до н. э.",
+      "entry": "ch06_s04_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch06_s05",
+      "title": {
+        "ru": "Зима Перузии",
+        "en": ""
+      },
+      "year": "41–40 до н. э.",
+      "entry": "ch06_s05_n01",
+      "illustration": "assets/locations/rome_night.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "perusia"
+      ]
+    },
+    {
+      "id": "ch06_s06",
+      "title": {
+        "ru": "Мир и море",
+        "en": ""
+      },
+      "year": "40–36 до н. э.",
+      "entry": "ch06_s06_n01",
+      "illustration": "assets/story/commanders_council.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "sextus_pompey"
+      ]
+    },
+    {
+      "id": "ch06_s07",
+      "title": {
+        "ru": "Первое весло",
+        "en": ""
+      },
+      "year": "36 до н. э.",
+      "entry": "ch06_s07_n01",
+      "illustration": "assets/locations/alexandria.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch06_s08",
+      "title": {
+        "ru": "Обещание старого врага",
+        "en": ""
+      },
+      "year": "36 до н. э.",
+      "entry": "ch06_s08_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch06_s09",
+      "title": {
+        "ru": "Письма редеют",
+        "en": ""
+      },
+      "year": "36 до н. э.",
+      "entry": "ch06_s09_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch06_s01_n01",
+      "scene": "ch06_s01",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "brutus_neutral",
+      "text": {
+        "ru": "Перед Филиппами римские знамёна снова стоят друг против друга. Пулон больше не верит, что одинаковые щиты остановят бой. Ворен проверяет путь для раненых. Друзьям приходится действовать рядом или из разных лагерей — согласно выбранной стороне.",
+        "en": ""
+      },
+      "next": "ch06_s01_n80"
+    },
+    {
+      "id": "ch06_s01_n80",
+      "scene": "ch06_s01",
+      "kind": "beat",
+      "beat": "beat_ch06_s01",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch06_s01_n90"
+    },
+    {
+      "id": "ch06_s01_n90",
+      "scene": "ch06_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch06_s02_n01"
+    },
+    {
+      "id": "ch06_s02_n01",
+      "scene": "ch06_s02",
+      "kind": "dialogue",
+      "speaker": "history",
+      "portrait": "brutus_worried",
+      "text": {
+        "ru": "Кассий и Брут терпят поражение в ходе двух сражений при Филиппах и погибают. Судьбу республики друзья не могут переписать. Зато они могут решить, кому достанется вода на пути от поля: своим по знамени или ближайшему по беде.",
+        "en": ""
+      },
+      "next": "ch06_s02_n90"
+    },
+    {
+      "id": "ch06_s02_n91",
+      "scene": "ch06_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон подаёт ковш через чужой щит. Несколько человек перестают быть только противниками.",
+        "en": ""
+      },
+      "next": "ch06_s03_n01"
+    },
+    {
+      "id": "ch06_s02_n92",
+      "scene": "ch06_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Воды хватает на назначенную смену. Ворен запоминает лица тех, кому пришлось отказать.",
+        "en": ""
+      },
+      "next": "ch06_s03_n01"
+    },
+    {
+      "id": "ch06_s02_n90",
+      "scene": "ch06_s02",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_s02_water",
+          "text": {
+            "ru": "Раздать воду ближайшим раненым",
+            "en": ""
+          },
+          "set_flags": [
+            "water_shared"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 4,
+          "goto": "ch06_s02_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch06_s02_unit",
+          "text": {
+            "ru": "Оставить запас своему отряду",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -2,
+          "goto": "ch06_s02_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch06_s03_n01",
+      "scene": "ch06_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Земля, обещанная ветеранам, уже кем-то обрабатывается. Луцилла показывает погреб, в котором сохранились её старые формы для посуды. Веттий предлагает занять место в новом списке владельцев. Пулон спрашивает, почему прежние жильцы должны исчезнуть из него совсем.",
+        "en": ""
+      },
+      "next": "ch06_s03_n90"
+    },
+    {
+      "id": "ch06_s03_n91",
+      "scene": "ch06_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Луцилла приносит старые формы и квитанции. Решение откладывают; это ещё не победа, но их выслушали.",
+        "en": ""
+      },
+      "next": "ch06_optional_04"
+    },
+    {
+      "id": "ch06_s03_n92",
+      "scene": "ch06_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Веттий находит быстрый путь. Чужие вещи остаются на дворе, когда новые владельцы приходят за ключом.",
+        "en": ""
+      },
+      "next": "ch06_optional_04"
+    },
+    {
+      "id": "ch06_s03_n90",
+      "scene": "ch06_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_s03_owners",
+          "text": {
+            "ru": "Проверить прежних владельцев",
+            "en": ""
+          },
+          "set_flags": [
+            "home_claim"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 4,
+          "goto": "ch06_s03_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch06_s03_plot",
+          "text": {
+            "ru": "Принять назначенный участок",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [
+            "home_claim"
+          ],
+          "rep": {
+            "octavian": 1
+          },
+          "bond": -4,
+          "goto": "ch06_s03_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch06_s04_n01",
+      "scene": "ch06_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Авл помогает делить муку между семьями, ожидающими решения о земле. Он уже не прячет печати как игрушки. Ему хочется выдать каждой семье поровну, но Нерия просит сначала узнать, сколько в каждом доме детей и больных.",
+        "en": ""
+      },
+      "next": "ch06_s04_n90",
+      "set_flags": [
+        "visited_ch06_s04"
+      ]
+    },
+    {
+      "id": "ch06_s04_n91",
+      "scene": "ch06_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Авл выслушивает людей и оставляет таблицу открытой. Равная мера перестаёт означать одинаковый мешок.",
+        "en": ""
+      },
+      "next": "ch06_s05_n01"
+    },
+    {
+      "id": "ch06_s04_n92",
+      "scene": "ch06_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Спор заканчивается быстро. Нерия отдаёт собственную долю самой большой семье.",
+        "en": ""
+      },
+      "next": "ch06_s05_n01"
+    },
+    {
+      "id": "ch06_s04_n90",
+      "scene": "ch06_s04",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_s04_need",
+          "text": {
+            "ru": "Учитывать нужду каждой семьи",
+            "en": ""
+          },
+          "set_flags": [
+            "aulus_learned"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch06_s04_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch06_s04_equal",
+          "text": {
+            "ru": "Разделить поровну без вопросов",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": -1,
+          "goto": "ch06_s04_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch06_s05_n01",
+      "scene": "ch06_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Перузинская война приносит голод и осаду. Веттий требует список людей, укрывшихся под чужими именами. Ворен видит, как точная запись может стать оружием. Пулон предлагает вывезти семьи, потеряв право на собственный участок. Лёгкого выхода нет.",
+        "en": ""
+      },
+      "next": "ch06_s05_n80"
+    },
+    {
+      "id": "ch06_s05_n80",
+      "scene": "ch06_s05",
+      "kind": "beat",
+      "beat": "beat_ch06_s05",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch06_s05_n90"
+    },
+    {
+      "id": "ch06_s05_n91",
+      "scene": "ch06_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон теряет обещанную землю. Луцилла получает дорогу из голода; Ворен видит предел своего старого понятия порядка.",
+        "en": ""
+      },
+      "next": "ch06_s06_n01"
+    },
+    {
+      "id": "ch06_s05_n92",
+      "scene": "ch06_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Участок оставляют друзьям. Несколько чужих имён уходят с посыльным Веттия.",
+        "en": ""
+      },
+      "next": "ch06_s06_n01"
+    },
+    {
+      "id": "ch06_s05_n90",
+      "scene": "ch06_s05",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_s05_evacuate",
+          "text": {
+            "ru": "Вывезти семьи и отказаться от участка",
+            "en": ""
+          },
+          "set_flags": [
+            "lucilla_safe",
+            "safe_passage"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 3
+          },
+          "bond": 8,
+          "goto": "ch06_s05_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch06_s05_roster",
+          "text": {
+            "ru": "Передать список ради своего права",
+            "en": ""
+          },
+          "set_flags": [
+            "home_claim",
+            "betrayed"
+          ],
+          "clear_flags": [
+            "lucilla_safe",
+            "safe_passage"
+          ],
+          "rep": {
+            "octavian": 2
+          },
+          "bond": -10,
+          "goto": "ch06_s05_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "perusia_roster"
+    },
+    {
+      "id": "ch06_s06_n01",
+      "scene": "ch06_s06",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "antony_neutral",
+      "text": {
+        "ru": "В Брундизии Октавиан и Антоний договариваются о примирении. Позднее договор с Секстом Помпеем даёт короткую передышку, но морская война возобновляется и завершается его поражением при Навлохе в 36 году. Мирные договоры не отменяют цен хлеба.",
+        "en": ""
+      },
+      "next": "ch06_s06_n90"
+    },
+    {
+      "id": "ch06_s06_n90",
+      "scene": "ch06_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch06_optional_07"
+    },
+    {
+      "id": "ch06_s07_n01",
+      "scene": "ch06_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Подросший Авл хочет наняться на судно. Аглая объясняет ему, что море не различает наследников великих имён и детей гончаров. Пулон не вправе приказать ему остаться ребёнком. Ворен предлагает сначала научиться держать весло вместе с другими.",
+        "en": ""
+      },
+      "next": "ch06_s07_n90",
+      "set_flags": [
+        "visited_ch06_s07"
+      ]
+    },
+    {
+      "id": "ch06_s07_n91",
+      "scene": "ch06_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ворен показывает движение весла, а Пулон не выбирает за юношу корабль. Аглая обещает проверить команду.",
+        "en": ""
+      },
+      "next": "ch06_s08_n01"
+    },
+    {
+      "id": "ch06_s07_n92",
+      "scene": "ch06_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Наём оформляют без промедления. Юноша не успевает узнать, кто будет сидеть с ним на банке.",
+        "en": ""
+      },
+      "next": "ch06_s08_n01"
+    },
+    {
+      "id": "ch06_s07_n90",
+      "scene": "ch06_s07",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_s07_teach",
+          "text": {
+            "ru": "Учить Авла и оставить выбор ему",
+            "en": ""
+          },
+          "set_flags": [
+            "aulus_safe",
+            "aulus_learned"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 4,
+          "goto": "ch06_s07_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch06_s07_enlist",
+          "text": {
+            "ru": "Устроить Авла через покровителя",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch06_s07_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch06_s08_n01",
+      "scene": "ch06_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Веттий просит помочь ему выйти из очередной перемены покровителей. Он не стал невиновным, но у него есть сведения о потерянных людях. Пулон и Ворен должны решить, можно ли спасти человека, не объявляя правильным всё, что он сделал.",
+        "en": ""
+      },
+      "next": "ch06_s08_n90"
+    },
+    {
+      "id": "ch06_s08_n91",
+      "scene": "ch06_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Веттий получает дорогу, но оставляет свидетельства. Прощение не уничтожает запись о поступке.",
+        "en": ""
+      },
+      "next": "ch06_s09_n01"
+    },
+    {
+      "id": "ch06_s08_n92",
+      "scene": "ch06_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Веттий уходит искать прежних покровителей. Друзья не получают его сведений.",
+        "en": ""
+      },
+      "next": "ch06_s09_n01"
+    },
+    {
+      "id": "ch06_s08_n90",
+      "scene": "ch06_s08",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_s08_mercy",
+          "text": {
+            "ru": "Помочь Веттию с письменным условием",
+            "en": ""
+          },
+          "set_flags": [
+            "mercy_vettius",
+            "safe_passage"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 5,
+          "goto": "ch06_s08_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch06_s08_refuse",
+          "text": {
+            "ru": "Отказать в личной помощи",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {},
+          "bond": -3,
+          "goto": "ch06_s08_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch06_s09_n01",
+      "scene": "ch06_s09",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "После победы над Секстом Помпеем напряжение между Октавианом и Антонием нарастает. Пулон пересчитывает годы по росту Авла, Ворен — по именам в приказах. Оба понимают, что следующая встреча может случиться слишком поздно.",
+        "en": ""
+      },
+      "next": "ch06_s09_n90"
+    },
+    {
+      "id": "ch06_s09_n90",
+      "scene": "ch06_s09",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch07_s01_n01"
+    },
+    {
+      "id": "ch06_optional_04",
+      "scene": "ch06_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_optional_04_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch06_s04_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch06_optional_04_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch06_s05_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    },
+    {
+      "id": "ch06_optional_07",
+      "scene": "ch06_s06",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch06_optional_07_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch06_s07_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch06_optional_07_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch06_s08_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    }
+  ]
+}

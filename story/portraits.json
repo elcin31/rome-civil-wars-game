@@ -1,0 +1,210 @@
+{
+  "version": 1,
+  "portraits": {
+    "pullo_neutral": {
+      "file": "assets/portraits/pullo_neutral.png",
+      "emotion": "neutral",
+      "character": "pullo"
+    },
+    "pullo_angry": {
+      "file": "assets/portraits/pullo_angry.png",
+      "emotion": "angry",
+      "character": "pullo"
+    },
+    "pullo_worried": {
+      "file": "assets/portraits/pullo_worried.png",
+      "emotion": "worried",
+      "character": "pullo"
+    },
+    "pullo_smile": {
+      "file": "assets/portraits/pullo_smile.png",
+      "emotion": "smile",
+      "character": "pullo"
+    },
+    "vorenus_neutral": {
+      "file": "assets/portraits/vorenus_neutral.png",
+      "emotion": "neutral",
+      "character": "vorenus"
+    },
+    "vorenus_angry": {
+      "file": "assets/portraits/vorenus_angry.png",
+      "emotion": "angry",
+      "character": "vorenus"
+    },
+    "vorenus_worried": {
+      "file": "assets/portraits/vorenus_worried.png",
+      "emotion": "worried",
+      "character": "vorenus"
+    },
+    "vorenus_smile": {
+      "file": "assets/portraits/vorenus_smile.png",
+      "emotion": "smile",
+      "character": "vorenus"
+    },
+    "caesar_neutral": {
+      "file": "assets/portraits/caesar_neutral.png",
+      "emotion": "neutral",
+      "character": "caesar"
+    },
+    "caesar_angry": {
+      "file": "assets/portraits/caesar_angry.png",
+      "emotion": "angry",
+      "character": "caesar"
+    },
+    "caesar_worried": {
+      "file": "assets/portraits/caesar_worried.png",
+      "emotion": "worried",
+      "character": "caesar"
+    },
+    "caesar_smile": {
+      "file": "assets/portraits/caesar_smile.png",
+      "emotion": "smile",
+      "character": "caesar"
+    },
+    "octavian_neutral": {
+      "file": "assets/portraits/octavian_neutral.png",
+      "emotion": "neutral",
+      "character": "octavian"
+    },
+    "octavian_angry": {
+      "file": "assets/portraits/octavian_angry.png",
+      "emotion": "angry",
+      "character": "octavian"
+    },
+    "octavian_worried": {
+      "file": "assets/portraits/octavian_worried.png",
+      "emotion": "worried",
+      "character": "octavian"
+    },
+    "octavian_smile": {
+      "file": "assets/portraits/octavian_smile.png",
+      "emotion": "smile",
+      "character": "octavian"
+    },
+    "augustus_neutral": {
+      "file": "assets/portraits/augustus_neutral.png",
+      "emotion": "neutral",
+      "character": "augustus"
+    },
+    "augustus_angry": {
+      "file": "assets/portraits/augustus_angry.png",
+      "emotion": "angry",
+      "character": "augustus"
+    },
+    "augustus_worried": {
+      "file": "assets/portraits/augustus_worried.png",
+      "emotion": "worried",
+      "character": "augustus"
+    },
+    "augustus_smile": {
+      "file": "assets/portraits/augustus_smile.png",
+      "emotion": "smile",
+      "character": "augustus"
+    },
+    "antony_neutral": {
+      "file": "assets/portraits/antony_neutral.png",
+      "emotion": "neutral",
+      "character": "antony"
+    },
+    "antony_angry": {
+      "file": "assets/portraits/antony_angry.png",
+      "emotion": "angry",
+      "character": "antony"
+    },
+    "antony_worried": {
+      "file": "assets/portraits/antony_worried.png",
+      "emotion": "worried",
+      "character": "antony"
+    },
+    "antony_smile": {
+      "file": "assets/portraits/antony_smile.png",
+      "emotion": "smile",
+      "character": "antony"
+    },
+    "cleopatra_neutral": {
+      "file": "assets/portraits/cleopatra_neutral.png",
+      "emotion": "neutral",
+      "character": "cleopatra"
+    },
+    "cleopatra_angry": {
+      "file": "assets/portraits/cleopatra_angry.png",
+      "emotion": "angry",
+      "character": "cleopatra"
+    },
+    "cleopatra_worried": {
+      "file": "assets/portraits/cleopatra_worried.png",
+      "emotion": "worried",
+      "character": "cleopatra"
+    },
+    "cleopatra_smile": {
+      "file": "assets/portraits/cleopatra_smile.png",
+      "emotion": "smile",
+      "character": "cleopatra"
+    },
+    "pompey_neutral": {
+      "file": "assets/portraits/pompey_neutral.png",
+      "emotion": "neutral",
+      "character": "pompey"
+    },
+    "pompey_angry": {
+      "file": "assets/portraits/pompey_angry.png",
+      "emotion": "angry",
+      "character": "pompey"
+    },
+    "pompey_worried": {
+      "file": "assets/portraits/pompey_worried.png",
+      "emotion": "worried",
+      "character": "pompey"
+    },
+    "pompey_smile": {
+      "file": "assets/portraits/pompey_smile.png",
+      "emotion": "smile",
+      "character": "pompey"
+    },
+    "brutus_neutral": {
+      "file": "assets/portraits/brutus_neutral.png",
+      "emotion": "neutral",
+      "character": "brutus"
+    },
+    "brutus_angry": {
+      "file": "assets/portraits/brutus_angry.png",
+      "emotion": "angry",
+      "character": "brutus"
+    },
+    "brutus_worried": {
+      "file": "assets/portraits/brutus_worried.png",
+      "emotion": "worried",
+      "character": "brutus"
+    },
+    "brutus_smile": {
+      "file": "assets/portraits/brutus_smile.png",
+      "emotion": "smile",
+      "character": "brutus"
+    },
+    "cicero_neutral": {
+      "file": "assets/portraits/cicero_neutral.png",
+      "emotion": "neutral",
+      "character": "cicero"
+    },
+    "cicero_angry": {
+      "file": "assets/portraits/cicero_angry.png",
+      "emotion": "angry",
+      "character": "cicero"
+    },
+    "cicero_worried": {
+      "file": "assets/portraits/cicero_worried.png",
+      "emotion": "worried",
+      "character": "cicero"
+    },
+    "cicero_smile": {
+      "file": "assets/portraits/cicero_smile.png",
+      "emotion": "smile",
+      "character": "cicero"
+    },
+    "vorenus_stern": {
+      "file": "assets/portraits/vorenus_angry.png",
+      "emotion": "angry",
+      "character": "vorenus"
+    }
+  }
+}

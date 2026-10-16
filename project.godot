@@ -3,9 +3,12 @@ config_version=5
 
 [application]
 config/name="CINIS LAURI — Пепел лавра"
-run/main_scene="res://scenes/AssetGallery.tscn"
+run/main_scene="res://scenes/StoryMain.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/description="Original historical pixel-art game, visual foundation / part 1."
+config/description="Original historical pixel-art game — branching Russian narrative."
+
+[autoload]
+StoryRuntime="*res://scripts/story_runtime.gd"
 
 [display]
 window/size/viewport_width=320
@@ -25,3 +28,6 @@ textures/default_filters/use_nearest_mipmap_filter=false
 environment/defaults/default_clear_color=Color(0.168627, 0.105882, 0.078431, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
+
+[input_devices]
+pointing/emulate_mouse_from_touch=true

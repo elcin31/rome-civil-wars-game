@@ -1,0 +1,809 @@
+{
+  "schema_version": 1,
+  "id": "ch07",
+  "number": 7,
+  "title": {
+    "ru": "Акций",
+    "en": ""
+  },
+  "years": "31–30 до н. э.",
+  "entry": "ch07_s01_n01",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch07_s01",
+      "title": {
+        "ru": "Долгая стоянка",
+        "en": ""
+      },
+      "year": "31 до н. э.",
+      "entry": "ch07_s01_n01",
+      "illustration": "assets/locations/actium.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch07_s02",
+      "title": {
+        "ru": "Второе сентября",
+        "en": ""
+      },
+      "year": "2 сентября 31 до н. э.",
+      "entry": "ch07_s02_n01",
+      "illustration": "assets/story/actium_battle.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "actium"
+      ]
+    },
+    {
+      "id": "ch07_s03",
+      "title": {
+        "ru": "Канат на ладони",
+        "en": ""
+      },
+      "year": "31 до н. э.",
+      "entry": "ch07_s03_n01",
+      "illustration": "assets/story/actium_battle.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch07_s04",
+      "title": {
+        "ru": "Последний ковш",
+        "en": ""
+      },
+      "year": "31 до н. э.",
+      "entry": "ch07_s04_n01",
+      "illustration": "assets/locations/actium.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch07_s05",
+      "title": {
+        "ru": "Город после флота",
+        "en": ""
+      },
+      "year": "30 до н. э.",
+      "entry": "ch07_s05_n01",
+      "illustration": "assets/story/alexandria_defeat.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "alexandria_falls"
+      ]
+    },
+    {
+      "id": "ch07_s06",
+      "title": {
+        "ru": "Две смерти",
+        "en": ""
+      },
+      "year": "30 до н. э.",
+      "entry": "ch07_s06_n01",
+      "illustration": "assets/story/alexandria_defeat.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "antony_and_cleopatra_deaths"
+      ]
+    },
+    {
+      "id": "ch07_s07",
+      "title": {
+        "ru": "Сухие листы",
+        "en": ""
+      },
+      "year": "30 до н. э.",
+      "entry": "ch07_s07_n01",
+      "illustration": "assets/locations/cleopatra_palace.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch07_s08",
+      "title": {
+        "ru": "Счёт без победителей",
+        "en": ""
+      },
+      "year": "30 до н. э.",
+      "entry": "ch07_s08_n01",
+      "illustration": "assets/locations/alexandria.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch07_s09",
+      "title": {
+        "ru": "Дорога к дому",
+        "en": ""
+      },
+      "year": "конец 30 до н. э.",
+      "entry": "ch07_s09_n01",
+      "illustration": "assets/story/old_friends.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [],
+      "illustration_variants": [
+        {
+          "condition": "friend_lost",
+          "file": "assets/story/sacrifice.png"
+        },
+        {
+          "condition": "bond<65",
+          "file": "assets/story/apart.png"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch07_s01_n01",
+      "scene": "ch07_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Лагеря у Амбракийского залива истощаются ожиданием. Аглая считает свободные лодки, Авл — своих гребцов. Пулон и Ворен уже не самые сильные люди на пристани. Их опыт ещё нужен, но тело больше не принимает обещаний без счёта.",
+        "en": ""
+      },
+      "next": "ch07_s01_n90"
+    },
+    {
+      "id": "ch07_s01_n91",
+      "scene": "ch07_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Аглая исправляет два имени. Для них находится место до того, как начинается бой.",
+        "en": ""
+      },
+      "next": "ch07_s02_n01"
+    },
+    {
+      "id": "ch07_s01_n92",
+      "scene": "ch07_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Причальная смена остаётся на месте. Резервной лодки для пропавших пока нет.",
+        "en": ""
+      },
+      "next": "ch07_s02_n01"
+    },
+    {
+      "id": "ch07_s01_n90",
+      "scene": "ch07_s01",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch07_s01_roster",
+          "text": {
+            "ru": "Сверить списки людей и лодок",
+            "en": ""
+          },
+          "set_flags": [
+            "boat_roster"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch07_s01_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch07_s01_station",
+          "text": {
+            "ru": "Сохранить назначение любой ценой",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch07_s01_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch07_s02_n01",
+      "scene": "ch07_s02",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "При Акции флот Октавиана и Агриппы сражается с силами Антония и Клеопатры. Исход нельзя изменить частным решением. Между большими кораблями остаются маленькие лодки, где человеку приходится выбирать, кого вытянуть из дыма прежде, чем оборвётся канат.",
+        "en": ""
+      },
+      "next": "ch07_s02_n80"
+    },
+    {
+      "id": "ch07_s02_n80",
+      "scene": "ch07_s02",
+      "kind": "beat",
+      "beat": "beat_ch07_s02",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch07_s02_n90"
+    },
+    {
+      "id": "ch07_s02_n90",
+      "scene": "ch07_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch07_s03_n01"
+    },
+    {
+      "id": "ch07_s03_n01",
+      "scene": "ch07_s03",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Лодка Авла зажата у борта горящей галеры. Двое старых центурионов могут удержать канат вместе, если ещё доверяют одному счёту. Можно сохранить приказ и отойти. Можно остаться одному, чтобы другой успел вывести людей. Здесь прежние решения становятся весом на руках.",
+        "en": ""
+      },
+      "next": "ch07_s03_n80"
+    },
+    {
+      "id": "ch07_s03_n80",
+      "scene": "ch07_s03",
+      "kind": "beat",
+      "beat": "beat_ch07_s03",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch07_s03_n90"
+    },
+    {
+      "id": "ch07_s03_n91",
+      "scene": "ch07_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Друзья удерживают один счёт. Лодка проходит между бортами; Авл остаётся с людьми, а оба центуриона возвращаются.",
+        "en": ""
+      },
+      "next": "ch07_optional_04"
+    },
+    {
+      "id": "ch07_s03_n92",
+      "scene": "ch07_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Канат выдерживает до последнего перехода. Авл видит Пулона у руля; Ворен не возвращается с горящего борта.",
+        "en": ""
+      },
+      "next": "ch07_optional_04"
+    },
+    {
+      "id": "ch07_s03_n93",
+      "scene": "ch07_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Лодка исчезает в дыму и позже выходит к чужому причалу. Авл спасается без друзей. Ворен перестаёт ждать от Пулона общего решения.",
+        "en": ""
+      },
+      "next": "ch07_optional_04"
+    },
+    {
+      "id": "ch07_s03_n90",
+      "scene": "ch07_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch07_s03_together",
+          "text": {
+            "ru": "Тянуть вместе и вывести лодку",
+            "en": ""
+          },
+          "set_flags": [
+            "aulus_safe",
+            "rescued_together"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 10,
+          "goto": "ch07_s03_n91",
+          "condition": "bond>=65&aglaia_safe",
+          "requirement_text": {
+            "ru": "Спасённая Аглая и связь 65+",
+            "en": ""
+          }
+        },
+        {
+          "id": "ch07_s03_sacrifice",
+          "text": {
+            "ru": "Пулон выводит лодку, Ворен остаётся",
+            "en": ""
+          },
+          "set_flags": [
+            "aulus_safe",
+            "friend_lost"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 6,
+          "goto": "ch07_s03_n92",
+          "condition": ""
+        },
+        {
+          "id": "ch07_s03_orders",
+          "text": {
+            "ru": "Отойти с приказом и не рисковать отрядом",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [
+            "rescued_together"
+          ],
+          "rep": {
+            "legion": 2
+          },
+          "bond": -15,
+          "goto": "ch07_s03_n93",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "actium_rescue"
+    },
+    {
+      "id": "ch07_s04_n01",
+      "scene": "ch07_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "На спасательной лодке осталось мало воды. Нерия требует сначала проверить, кто уже пил. Пулон больше не смеётся над её аккуратностью. Для истощённого гребца лишний ковш — такая же доля будущего, как земля для ветерана.",
+        "en": ""
+      },
+      "next": "ch07_s04_n90",
+      "set_flags": [
+        "visited_ch07_s04"
+      ]
+    },
+    {
+      "id": "ch07_s04_n91",
+      "scene": "ch07_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Нерия делает отметки на горлышках сосудов. Вода не исчезает дважды у одной банки.",
+        "en": ""
+      },
+      "next": "ch07_s05_n01"
+    },
+    {
+      "id": "ch07_s04_n92",
+      "scene": "ch07_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Чужие гребцы ищут запас на следующем причале. Пулон не может объяснить им выбранное знамя.",
+        "en": ""
+      },
+      "next": "ch07_s05_n01"
+    },
+    {
+      "id": "ch07_s04_n90",
+      "scene": "ch07_s04",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch07_s04_queue",
+          "text": {
+            "ru": "Раздать воду по очереди нужды",
+            "en": ""
+          },
+          "set_flags": [
+            "water_shared"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch07_s04_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch07_s04_own",
+          "text": {
+            "ru": "Оставить воду своим",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch07_s04_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch07_s05_n01",
+      "scene": "ch07_s05",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "После поражения при Акции борьба переносится в Египет. В 30 году Октавиан овладевает Александрией. Аглая ищет среди опечатанных складов свою мастерскую. Пулон замечает, что победившие солдаты говорят о порядке теми же словами, которые он слышал много лет назад.",
+        "en": ""
+      },
+      "next": "ch07_s05_n90"
+    },
+    {
+      "id": "ch07_s05_n90",
+      "scene": "ch07_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch07_s06_n01"
+    },
+    {
+      "id": "ch07_s06_n01",
+      "scene": "ch07_s06",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Антоний и Клеопатра умирают после поражения. Частные свидетели игры не присутствуют в их последних комнатах. Город получает известия, а не право на достоверную последнюю реплику. Воренов старый список вновь оказывается слишком коротким для всего случившегося.",
+        "en": ""
+      },
+      "next": "ch07_s06_n90"
+    },
+    {
+      "id": "ch07_s06_n90",
+      "scene": "ch07_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch07_optional_07"
+    },
+    {
+      "id": "ch07_s07_n01",
+      "scene": "ch07_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Аглая находит связку папируса, которой не коснулись вода и пожар. Её можно продать, чтобы оплатить дорогу, или использовать для копий частных свидетельств. У Пулона наконец есть возможность спросить не только что потеряно, но и что стоит сохранить.",
+        "en": ""
+      },
+      "next": "ch07_s07_n90",
+      "set_flags": [
+        "visited_ch07_s07"
+      ]
+    },
+    {
+      "id": "ch07_s07_n91",
+      "scene": "ch07_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Аглая отдаёт сухие листы под имена живых. Уходящим придётся заработать на дорогу иначе.",
+        "en": ""
+      },
+      "next": "ch07_s08_n01"
+    },
+    {
+      "id": "ch07_s07_n92",
+      "scene": "ch07_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Место на судне оплачено. Часть рассказов останется только в памяти тех, кто сумеет вернуться.",
+        "en": ""
+      },
+      "next": "ch07_s08_n01"
+    },
+    {
+      "id": "ch07_s07_n90",
+      "scene": "ch07_s07",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch07_s07_copy",
+          "text": {
+            "ru": "Сделать копии свидетельств",
+            "en": ""
+          },
+          "set_flags": [
+            "archive_copied",
+            "safe_passage"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 5,
+          "goto": "ch07_s07_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch07_s07_sell",
+          "text": {
+            "ru": "Продать листы ради возвращения",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -4,
+          "goto": "ch07_s07_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch07_s08_n01",
+      "scene": "ch07_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "На пристани сравнивают записи: кто вышел на лодку, кто вернулся к караулу, чьи имена успели передать. Приказы больше не расходятся в разные стороны, но между друзьями может остаться расстояние, которого не измерить длиной гавани.",
+        "en": ""
+      },
+      "next": "ch07_s08_n90"
+    },
+    {
+      "id": "ch07_s08_n91",
+      "scene": "ch07_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон не позволяет назвать отсутствие друга красивой случайностью. Серрану оставляют и неудобные строки.",
+        "en": ""
+      },
+      "next": "ch07_s09_n01"
+    },
+    {
+      "id": "ch07_s08_n92",
+      "scene": "ch07_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Рассказ становится гладким. Авл замечает место, где из него исчез его собственный страх.",
+        "en": ""
+      },
+      "next": "ch07_s09_n01"
+    },
+    {
+      "id": "ch07_s08_n90",
+      "scene": "ch07_s08",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch07_s08_truth",
+          "text": {
+            "ru": "Записать свою долю вины",
+            "en": ""
+          },
+          "set_flags": [
+            "truth_kept"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 5,
+          "goto": "ch07_s08_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch07_s08_legend",
+          "text": {
+            "ru": "Оставить только выгодную версию",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -6,
+          "goto": "ch07_s08_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch07_s09_n01",
+      "scene": "ch07_s09",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Дом оказывается направлением, а не наградой, которую выдают при увольнении. Кто-то возвращается с друзьями, кто-то с чужими вещами. Пулон сохраняет место в мешке для второй чаши, даже если пока не знает, кому её подать.",
+        "en": ""
+      },
+      "next": "ch07_s09_n90"
+    },
+    {
+      "id": "ch07_s09_n90",
+      "scene": "ch07_s09",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch08_s01_n01"
+    },
+    {
+      "id": "ch07_optional_04",
+      "scene": "ch07_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch07_optional_04_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch07_s04_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch07_optional_04_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch07_s05_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    },
+    {
+      "id": "ch07_optional_07",
+      "scene": "ch07_s06",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch07_optional_07_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch07_s07_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch07_optional_07_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch07_s08_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    }
+  ]
+}

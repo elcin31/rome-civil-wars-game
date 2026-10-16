@@ -1,0 +1,846 @@
+{
+  "schema_version": 1,
+  "id": "ch02",
+  "number": 2,
+  "title": {
+    "ru": "Рубикон",
+    "en": ""
+  },
+  "years": "50–49 до н. э.",
+  "entry": "ch02_s01_n01",
+  "prose_status": "draft",
+  "scenes": [
+    {
+      "id": "ch02_s01",
+      "title": {
+        "ru": "Срок",
+        "en": ""
+      },
+      "year": "50 до н. э.",
+      "entry": "ch02_s01_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch02_s02",
+      "title": {
+        "ru": "Глина и хлеб",
+        "en": ""
+      },
+      "year": "50 до н. э.",
+      "entry": "ch02_s02_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch02_s03",
+      "title": {
+        "ru": "Письмо без приказа",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch02_s03_n01",
+      "illustration": "assets/locations/roman_camp.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch02_s04",
+      "title": {
+        "ru": "Мелкая вода",
+        "en": ""
+      },
+      "year": "январь 49 до н. э.",
+      "entry": "ch02_s04_n01",
+      "illustration": "assets/story/rubicon_dawn.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "rubicon"
+      ]
+    },
+    {
+      "id": "ch02_s05",
+      "title": {
+        "ru": "Пустеющие ворота",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch02_s05_n01",
+      "illustration": "assets/story/empty_rome.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": [
+        "pompey_leaves_rome"
+      ]
+    },
+    {
+      "id": "ch02_s06",
+      "title": {
+        "ru": "Половина печати",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch02_s06_n01",
+      "illustration": "assets/locations/roman_forum.png",
+      "optional": true,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch02_s07",
+      "title": {
+        "ru": "Последний расчёт",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch02_s07_n01",
+      "illustration": "assets/locations/rubicon.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    },
+    {
+      "id": "ch02_s08",
+      "title": {
+        "ru": "Дорога делится",
+        "en": ""
+      },
+      "year": "49 до н. э.",
+      "entry": "ch02_s08_n01",
+      "illustration": "assets/story/rubicon_dawn.png",
+      "optional": false,
+      "route": "shared",
+      "prose_status": "draft",
+      "historical_anchors": []
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ch02_s01_n01",
+      "scene": "ch02_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон кладёт перед Вореном свою грамоту о выслуженном сроке. Бумага не становится убедительнее от того, что её много раз разглаживали. Ворен спрашивает, что он будет делать без строя. Пулон отвечает, что для начала попробует есть сидя.",
+        "en": ""
+      },
+      "next": "ch02_s01_n90"
+    },
+    {
+      "id": "ch02_s01_n91",
+      "scene": "ch02_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Ворен не прячет грамоту под другими бумагами. Разговор ещё ничего не решил, но право на него признано.",
+        "en": ""
+      },
+      "next": "ch02_s02_n01"
+    },
+    {
+      "id": "ch02_s01_n92",
+      "scene": "ch02_s01",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон забирает грамоту. На этот раз он не отвечает шуткой.",
+        "en": ""
+      },
+      "next": "ch02_s02_n01"
+    },
+    {
+      "id": "ch02_s01_n90",
+      "scene": "ch02_s01",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s01_listen",
+          "text": {
+            "ru": "Выслушать Пулона до конца",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 4,
+          "goto": "ch02_s01_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s01_duty",
+          "text": {
+            "ru": "Назвать уход неблагодарностью",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -5,
+          "goto": "ch02_s01_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch02_s02_n01",
+      "scene": "ch02_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Луцилла Вибия обжигает горшки для военных подрядчиков. Её маленький сын Авл узнаёт солдата по походке раньше, чем по плащу. Луцилла спрашивает о доставке глины, а не о славе. Пулону непривычно, что от него хотят ответа с определённым днём.",
+        "en": ""
+      },
+      "next": "ch02_s02_n90"
+    },
+    {
+      "id": "ch02_s02_n91",
+      "scene": "ch02_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Луцилла записывает срок и плату. Пулон понимает, что гражданский договор тоже требует верности.",
+        "en": ""
+      },
+      "next": "ch02_s03_n01"
+    },
+    {
+      "id": "ch02_s02_n92",
+      "scene": "ch02_s02",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Луцилла отказывается от неясной услуги. Ей нужен работающий обжиг, а не новый защитник.",
+        "en": ""
+      },
+      "next": "ch02_s03_n01"
+    },
+    {
+      "id": "ch02_s02_n90",
+      "scene": "ch02_s02",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s02_work",
+          "text": {
+            "ru": "Принять работу по оговорённой цене",
+            "en": ""
+          },
+          "set_flags": [
+            "lucilla_helped"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch02_s02_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s02_patron",
+          "text": {
+            "ru": "Предложить военное покровительство",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -2,
+          "goto": "ch02_s02_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch02_s03_n01",
+      "scene": "ch02_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Из Рима идут противоречивые вести о требованиях сената и намерениях Цезаря. Серран предлагает переписать каждую новость отдельно, чтобы позднее не выдать догадку за приказ. Веттий возражает: солдатам нужна одна ясная строка.",
+        "en": ""
+      },
+      "next": "ch02_s03_n90"
+    },
+    {
+      "id": "ch02_s03_n91",
+      "scene": "ch02_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "В журнале остаются даты и источники. Серран сможет позднее объяснить, что было известно в тот день.",
+        "en": ""
+      },
+      "next": "ch02_s04_n01"
+    },
+    {
+      "id": "ch02_s03_n92",
+      "scene": "ch02_s03",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Людям становится спокойнее. Ворен замечает, что уверенность получилась длиннее подтверждений.",
+        "en": ""
+      },
+      "next": "ch02_s04_n01"
+    },
+    {
+      "id": "ch02_s03_n90",
+      "scene": "ch02_s03",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s03_sources",
+          "text": {
+            "ru": "Хранить разные сообщения отдельно",
+            "en": ""
+          },
+          "set_flags": [
+            "sources_kept"
+          ],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 3,
+          "goto": "ch02_s03_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s03_rumour",
+          "text": {
+            "ru": "Составить одно ободряющее известие",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -2,
+          "goto": "ch02_s03_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch02_s04_n01",
+      "scene": "ch02_s04",
+      "kind": "cutscene",
+      "speaker": "history",
+      "portrait": "caesar_neutral",
+      "text": {
+        "ru": "Рубикон оказывается тише разговоров о нём. Над водой дышат кони. Историческое решение Цезаря уже не зависит от двух центурионов; их собственное решение касается людей, которым они обещали вернуться. Пулон смотрит на противоположный берег, Ворен — на колонну.",
+        "en": ""
+      },
+      "next": "ch02_s04_n80"
+    },
+    {
+      "id": "ch02_s04_n80",
+      "scene": "ch02_s04",
+      "kind": "beat",
+      "beat": "beat_ch02_s04",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "next": "ch02_s04_n90"
+    },
+    {
+      "id": "ch02_s04_n91",
+      "scene": "ch02_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Оба понимают, кого оставляют за новым берегом. Ни один не отменяет решения Цезаря.",
+        "en": ""
+      },
+      "next": "ch02_s05_n01"
+    },
+    {
+      "id": "ch02_s04_n92",
+      "scene": "ch02_s04",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Колонна движется ровно. Пулон отводит взгляд от воды.",
+        "en": ""
+      },
+      "next": "ch02_s05_n01"
+    },
+    {
+      "id": "ch02_s04_n90",
+      "scene": "ch02_s04",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s04_promises",
+          "text": {
+            "ru": "Обсудить личные обещания",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {},
+          "bond": 4,
+          "goto": "ch02_s04_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s04_march",
+          "text": {
+            "ru": "Закончить разговор приказом",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -3,
+          "goto": "ch02_s04_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch02_s05_n01",
+      "scene": "ch02_s05",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Помпей и многие сенаторы покидают Рим. За ними уходят обозы и привычная уверенность, что власть всегда находится в одном месте. Оставшиеся жители закрывают ставни ещё до темноты. В мастерской Луциллы лежит заказ, который теперь некому оплатить.",
+        "en": ""
+      },
+      "next": "ch02_s05_n90"
+    },
+    {
+      "id": "ch02_s05_n91",
+      "scene": "ch02_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Во дворе собираются люди, которым некуда идти. Луцилла отдаёт им место у печи.",
+        "en": ""
+      },
+      "next": "ch02_optional_06"
+    },
+    {
+      "id": "ch02_s05_n92",
+      "scene": "ch02_s05",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Двор остаётся свободным. Соседи ищут крышу в другом переулке.",
+        "en": ""
+      },
+      "next": "ch02_optional_06"
+    },
+    {
+      "id": "ch02_s05_n90",
+      "scene": "ch02_s05",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s05_shelter",
+          "text": {
+            "ru": "Открыть мастерскую соседям",
+            "en": ""
+          },
+          "set_flags": [
+            "lucilla_helped"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": 3,
+          "goto": "ch02_s05_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s05_reserve",
+          "text": {
+            "ru": "Беречь запас на непредвиденное",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "citizens": -1
+          },
+          "bond": -1,
+          "goto": "ch02_s05_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch02_s06_n01",
+      "scene": "ch02_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Авл прячет глиняную копию чужой печати, решив, что это монета. Луцилла просит вернуть вещь владельцу. Серран замечает, что отпечаток может помочь опознать потерянный груз. Взрослым предстоит объяснить ребёнку разницу между находкой и присвоением.",
+        "en": ""
+      },
+      "next": "ch02_s06_n90",
+      "set_flags": [
+        "visited_ch02_s06"
+      ]
+    },
+    {
+      "id": "ch02_s06_n91",
+      "scene": "ch02_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Авл учится, что свидетели защищают и того, кто возвращает, и того, кто получает.",
+        "en": ""
+      },
+      "next": "ch02_s07_n01"
+    },
+    {
+      "id": "ch02_s06_n92",
+      "scene": "ch02_s06",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Хлеб делят поровну, но Серран не может больше подтвердить происхождение печати.",
+        "en": ""
+      },
+      "next": "ch02_s07_n01"
+    },
+    {
+      "id": "ch02_s06_n90",
+      "scene": "ch02_s06",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s06_seal",
+          "text": {
+            "ru": "Вернуть печать с записью о находке",
+            "en": ""
+          },
+          "set_flags": [
+            "seal_returned"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 2,
+          "goto": "ch02_s06_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s06_bread",
+          "text": {
+            "ru": "Продать находку и купить хлеб",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": -2,
+          "goto": "ch02_s06_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch02_s07_n01",
+      "scene": "ch02_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Веттий требует оплатить подрядчикам доставленное зерно до ухода колонны. В казне не хватает мелкой монеты. Пулон может оставить свою долю Луцилле или передать её через военного писца. Ни одна расписка не гарантирует, что деньги дойдут.",
+        "en": ""
+      },
+      "next": "ch02_s07_n90"
+    },
+    {
+      "id": "ch02_s07_n91",
+      "scene": "ch02_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Луцилла выдаёт расписку о получении. Пулон лишается части запаса, зато обязательство исполнено сейчас.",
+        "en": ""
+      },
+      "next": "ch02_s08_n01"
+    },
+    {
+      "id": "ch02_s07_n92",
+      "scene": "ch02_s07",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Военный писец запечатывает мешочек. Его путь займёт больше времени, чем обещание.",
+        "en": ""
+      },
+      "next": "ch02_s08_n01"
+    },
+    {
+      "id": "ch02_s07_n90",
+      "scene": "ch02_s07",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s07_pay",
+          "text": {
+            "ru": "Оставить долю Луцилле",
+            "en": ""
+          },
+          "set_flags": [
+            "lucilla_paid"
+          ],
+          "clear_flags": [],
+          "rep": {
+            "citizens": 1
+          },
+          "bond": 3,
+          "goto": "ch02_s07_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s07_convoy",
+          "text": {
+            "ru": "Передать деньги через обоз",
+            "en": ""
+          },
+          "set_flags": [],
+          "clear_flags": [],
+          "rep": {
+            "legion": 1
+          },
+          "bond": -1,
+          "goto": "ch02_s07_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": ""
+    },
+    {
+      "id": "ch02_s08_n01",
+      "scene": "ch02_s08",
+      "kind": "cutscene",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон должен выбрать, продлить ли службу рядом с Вореном или воспользоваться выслуженным правом уйти к гражданской жизни. Ворен не обещает последовать за ним. Дружба, которая выдержала вал, впервые сталкивается с двумя разными дорогами.",
+        "en": ""
+      },
+      "next": "ch02_s08_n90"
+    },
+    {
+      "id": "ch02_s08_n91",
+      "scene": "ch02_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон затягивает ремень. Ворен не произносит победной речи: теперь он отвечает и за чужое сомнение.",
+        "en": ""
+      },
+      "next": "ch03_entry"
+    },
+    {
+      "id": "ch02_s08_n92",
+      "scene": "ch02_s08",
+      "kind": "dialogue",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "Пулон оставляет запасной ремень Ворену. Они договариваются писать, даже когда не смогут согласиться.",
+        "en": ""
+      },
+      "next": "ch03_entry"
+    },
+    {
+      "id": "ch02_s08_n90",
+      "scene": "ch02_s08",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_s08_legion",
+          "text": {
+            "ru": "Продлить службу: линия легиона",
+            "en": ""
+          },
+          "set_flags": [
+            "route_legion"
+          ],
+          "clear_flags": [
+            "route_citizen"
+          ],
+          "rep": {
+            "legion": 2
+          },
+          "bond": 6,
+          "goto": "ch02_s08_n91",
+          "condition": ""
+        },
+        {
+          "id": "ch02_s08_citizen",
+          "text": {
+            "ru": "Уйти в город: линия гражданина",
+            "en": ""
+          },
+          "set_flags": [
+            "route_citizen"
+          ],
+          "clear_flags": [
+            "route_legion"
+          ],
+          "rep": {
+            "citizens": 2
+          },
+          "bond": -2,
+          "goto": "ch02_s08_n92",
+          "condition": ""
+        }
+      ],
+      "next": "",
+      "major_branch": "life_path"
+    },
+    {
+      "id": "ch02_optional_06",
+      "scene": "ch02_s05",
+      "kind": "choice",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "choices": [
+        {
+          "id": "ch02_optional_06_visit",
+          "text": {
+            "ru": "Остаться и помочь",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 1,
+          "goto": "ch02_s06_n01",
+          "condition": ""
+        },
+        {
+          "id": "ch02_optional_06_skip",
+          "text": {
+            "ru": "Продолжить дорогу",
+            "en": ""
+          },
+          "set_flags": [],
+          "rep": {},
+          "bond": 0,
+          "goto": "ch02_s07_n01",
+          "condition": ""
+        }
+      ],
+      "next": ""
+    }
+  ]
+}
