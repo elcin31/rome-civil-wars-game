@@ -44,7 +44,7 @@ class Model:
     def initial(self):
         return {'flags':{k:v['default'] for k,v in self.definitions['flags'].items()},'rep':deepcopy(self.definitions['reputation']),'bond':self.definitions['initial_bond']}
 
-    def walk(self,policy='together',route='legion',faction=None,visit_side=True):
+    def walk(self,policy='together',route='legion',faction=None,visit_side=True,overrides=None):
         state=self.initial();target='ch01_s01_n01';visited=[];decisions=[];words=0
         for step in range(10000):
             node=self.nodes[target]
@@ -68,6 +68,10 @@ class Model:
                 if target=='ch08_s01_n90' and policy=='apart':option=ending('_private')
                 if target=='ch08_s02_n90' and policy=='apart':option=ending('_rank')
                 if '_optional_' in target:option=ending('_visit' if visit_side else '_skip')
+                if target in (overrides or {}):
+                    wanted=overrides[target]
+                    option=next((o for o in available if o['id']==wanted),None)
+                    if option is None:raise ValueError('Requested choice unavailable: '+target+'/'+wanted)
                 effects(option,state);words+=len(WORD.findall(option['text']['ru']))
                 decisions.append({'node':target,'choice':option['id']});target=option['goto']
             else:target=node['next']

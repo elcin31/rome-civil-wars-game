@@ -241,7 +241,19 @@ func load_game() -> bool:
 		return false
 	if data.bond < 0 or data.bond > 100:
 		return false
+	if not data.get("decisions") is Array:
+		return false
+	for decision in data.decisions:
+		if not decision is Dictionary or not decision.get("choice") is String:
+			return false
 	for key in definitions.flags:
+		# Additive story flags can be recovered from actual choices in older saves.
+		var definition: Dictionary = definitions.flags[key]
+		if not data.flags.has(key) and definition.has("restore_from_choices"):
+			data.flags[key] = definition.get("default", false)
+			for decision in data.decisions:
+				if decision.choice in definition.restore_from_choices:
+					data.flags[key] = true
 		if not data.flags.get(key) is bool:
 			return false
 	for key in definitions.reputation:

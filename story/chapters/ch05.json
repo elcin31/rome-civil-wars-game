@@ -354,7 +354,7 @@
           "rep": {
             "octavian": 3
           },
-          "bond": 2,
+          "bond": 1,
           "goto": "ch05_s01_n91",
           "condition": ""
         },
@@ -375,7 +375,7 @@
           "rep": {
             "antony": 3
           },
-          "bond": 1,
+          "bond": 0,
           "goto": "ch05_s01_n92",
           "condition": ""
         },
@@ -417,7 +417,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch05_s01_n94",
           "condition": ""
         }
@@ -923,7 +923,7 @@
             "aulus_safe"
           ],
           "rep": {},
-          "bond": 4,
+          "bond": 2,
           "goto": "ch05_s04_n91",
           "condition": ""
         },
@@ -942,7 +942,7 @@
             "serranus_safe"
           ],
           "rep": {},
-          "bond": -4,
+          "bond": -2,
           "goto": "ch05_s04_n92",
           "condition": ""
         },
@@ -961,7 +961,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 8,
+          "bond": 4,
           "goto": "ch05_s04_n93",
           "condition": "neria_trust&bond>=60",
           "requirement_text": {
@@ -1247,7 +1247,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch05_s06_n91",
           "condition": ""
         },
@@ -1543,7 +1543,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 4,
+          "bond": 1,
           "goto": "ch05_s08_n91",
           "condition": ""
         },
@@ -1749,7 +1749,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch05_s06_n01",
           "condition": ""
         },
@@ -1787,7 +1787,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch05_s08_n01",
           "condition": ""
         },

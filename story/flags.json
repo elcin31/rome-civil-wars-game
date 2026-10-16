@@ -284,11 +284,19 @@
     },
     "warned_serranus": {
       "type": "bool",
-      "default": false
+      "default": false,
+      "restore_from_choices": [
+        "ch05_s04_serranus",
+        "ch05_s04_both"
+      ]
     },
     "warned_lucilla": {
       "type": "bool",
-      "default": false
+      "default": false,
+      "restore_from_choices": [
+        "ch05_s04_lucilla",
+        "ch05_s04_both"
+      ]
     }
   },
   "reputation": {

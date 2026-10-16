@@ -672,7 +672,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch04_s03_n91",
           "condition": ""
         },
@@ -915,7 +915,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch04_s04_n80",
           "condition": ""
         },
@@ -1233,7 +1233,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch04_s06_n91",
           "condition": ""
         },
@@ -1450,7 +1450,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 6,
+          "bond": 3,
           "goto": "ch04_s07_n91",
           "condition": ""
         },
@@ -1467,7 +1467,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": -6,
+          "bond": -3,
           "goto": "ch04_s07_n92",
           "condition": ""
         }
@@ -1652,7 +1652,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch04_s06_n01",
           "condition": ""
         },

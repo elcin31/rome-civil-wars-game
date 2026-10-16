@@ -346,7 +346,7 @@
           "set_flags": [],
           "clear_flags": [],
           "rep": {},
-          "bond": 3,
+          "bond": 1,
           "goto": "ch01_s01_n91",
           "condition": ""
         },
@@ -585,7 +585,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch01_s02_n91",
           "condition": ""
         },
@@ -826,7 +826,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 10,
+          "bond": 6,
           "goto": "ch01_s03_n80",
           "condition": ""
         },
@@ -843,7 +843,7 @@
           "rep": {
             "legion": 2
           },
-          "bond": -5,
+          "bond": -4,
           "goto": "ch01_s03_n80",
           "condition": ""
         }
@@ -1029,7 +1029,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 8,
+          "bond": 6,
           "goto": "ch01_s04_n91",
           "condition": ""
         },
@@ -1046,7 +1046,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": -2,
+          "bond": -1,
           "goto": "ch01_s04_n92",
           "condition": ""
         }
@@ -1244,7 +1244,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 4,
+          "bond": 1,
           "goto": "ch01_s05_n91",
           "condition": ""
         },
@@ -1259,7 +1259,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": -4,
+          "bond": -3,
           "goto": "ch01_s05_n92",
           "condition": ""
         }
@@ -1472,7 +1472,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": 2,
+          "bond": 1,
           "goto": "ch01_s06_n80",
           "condition": ""
         },
@@ -1692,7 +1692,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch01_s07_n91",
           "condition": ""
         },
@@ -1929,7 +1929,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 3,
+          "bond": 1,
           "goto": "ch01_s08_n91",
           "condition": ""
         },
@@ -1971,7 +1971,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch01_s07_n01",
           "condition": ""
         },

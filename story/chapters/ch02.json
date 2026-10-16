@@ -328,7 +328,7 @@
           "set_flags": [],
           "clear_flags": [],
           "rep": {},
-          "bond": 4,
+          "bond": 1,
           "goto": "ch02_s01_n91",
           "condition": ""
         },
@@ -343,7 +343,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": -5,
+          "bond": -3,
           "goto": "ch02_s01_n92",
           "condition": ""
         }
@@ -567,7 +567,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch02_s02_n91",
           "condition": ""
         },
@@ -780,7 +780,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 3,
+          "bond": 1,
           "goto": "ch02_s03_n91",
           "condition": ""
         },
@@ -1006,7 +1006,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 4,
+          "bond": 1,
           "goto": "ch02_s04_n80",
           "condition": ""
         },
@@ -1235,7 +1235,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch02_s05_n91",
           "condition": ""
         },
@@ -1453,7 +1453,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 2,
+          "bond": 1,
           "goto": "ch02_s06_n91",
           "condition": ""
         },
@@ -1680,7 +1680,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch02_s07_n91",
           "condition": ""
         },
@@ -1909,7 +1909,7 @@
           "rep": {
             "legion": 2
           },
-          "bond": 6,
+          "bond": 2,
           "goto": "ch02_s08_n91",
           "condition": ""
         },
@@ -1928,7 +1928,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": -2,
+          "bond": 0,
           "goto": "ch02_s08_n92",
           "condition": ""
         }
@@ -1955,7 +1955,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch02_s06_n01",
           "condition": ""
         },

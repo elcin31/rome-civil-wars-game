@@ -10,6 +10,7 @@ from collections import Counter
 from pathlib import Path
 from PIL import Image
 from story_model import Model, WORD, NUMERIC, read
+from story_scenarios import verify_scenarios
 from pixelize import palette_colors
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -25,6 +26,11 @@ def main():
     beats={b['id']:b for b in read('story/beats.json')['beats']}
     all_ids=[n['id'] for c in model.chapters for n in c['nodes']]
     if len(all_ids)!=len(set(all_ids)):errors.append('Duplicate node IDs')
+    choice_ids=[o['id'] for n in nodes.values() for o in n.get('choices',[])]
+    if len(choice_ids)!=len(set(choice_ids)):errors.append('Duplicate choice IDs')
+    for flag,definition in flags.items():
+        for choice in definition.get('restore_from_choices',[]):
+            if choice not in choice_ids:errors.append(f'{flag}: invalid saved-choice migration {choice}')
     edges={}
     words=0;used_portraits=set();choices=0;majors=[];texts=[]
     def expression(value,where):
@@ -85,11 +91,16 @@ def main():
     if set(nodes)-visited:errors.append(f'{len(set(nodes)-visited)} unreachable nodes')
     for scene in scenes.values():
         if scene.get('entry') not in nodes:errors.append(scene['id']+': missing entry')
+        for variant in scene.get('illustration_variants',[]):expression(variant.get('condition',''),scene['id'])
         for path in [scene.get('illustration','')]+[v['file'] for v in scene.get('illustration_variants',[])]:
             if not (ROOT/path).is_file():errors.append(scene['id']+': missing illustration '+path)
     palette=set(palette_colors());art=read('tools/story_art_manifest.json')['assets'];pngs=set()
     for asset in art:
         if not (ROOT/asset['source']).is_file():errors.append('Missing source '+asset['source'])
+        if asset['category']=='emotions':
+            if not any(p.startswith(asset['id']+'_') for p in used_portraits):errors.append('Unused emotion character '+asset['id'])
+        elif not any(asset['file'] in [s.get('illustration')]+[v['file'] for v in s.get('illustration_variants',[])] for s in scenes.values()):
+            errors.append('Unlinked story illustration '+asset['id'])
         pngs.add((asset['file'],tuple(asset['size'])))
     for portrait in portraits.values():pngs.add((portrait['file'],(96,96)))
     for file,size in sorted(pngs):
@@ -103,7 +114,7 @@ def main():
         if not image.getbbox():errors.append(file+': blank PNG')
         imp=Path(str(path)+'.import')
         if not imp.is_file() or 'mipmaps/generate=false' not in imp.read_text():errors.append(file+': no explicit no-mipmap import')
-    witnesses=[]
+    witnesses=[];scenario_routes=[];locked_choices=0
     if not any('broken transition' in e for e in errors):
         for route in ['legion','citizen']:
             for policy in ['together','apart','sacrifice','bad']:
@@ -112,9 +123,8 @@ def main():
                     witnesses.append(result)
                     if result['ending']!=policy:errors.append(f'{route}/{policy}: reached {result["ending"]}')
                 except Exception as error:errors.append(f'{route}/{policy}: {error}')
-        for faction in ['octavian','antony','republicans','neutral']:
-            try:model.walk('together','legion',faction)
-            except Exception as error:errors.append('Faction '+faction+': '+str(error))
+        try:scenario_routes,locked_choices=verify_scenarios(model)
+        except Exception as error:errors.append('Major decision regression: '+str(error))
     if len(scenes)<60:requirements.append('At least 60 scenes required')
     if choices<40:requirements.append('At least 40 decision nodes required')
     if len(set(majors))<8:requirements.append('At least 8 major branches required')
@@ -125,16 +135,21 @@ def main():
     unfinished=[s['id'] for s in scenes.values() if s.get('prose_status')!='complete']
     if unfinished:requirements.append(f'{len(unfinished)} scenes still marked draft')
     # Reading time is reported from actual traversals; branch-only prose is not counted twice.
-    normal_routes=[model.walk('together',route,visit_side=side) for route in ['legion','citizen'] for side in [False,True]]
+    normal_routes=[]
+    for route in ['legion','citizen']:
+        for faction in ['neutral','octavian','antony','republicans']:
+            for side in [False,True]:
+                result=model.walk('together',route,faction,visit_side=side)
+                result['faction']=faction;normal_routes.append(result)
     required_events=set(read('story/history_events.json')['required_events'])
     for route in normal_routes:
         covered_scenes={nodes[n]['scene'] for n in route['nodes']}
         covered={event for scene in covered_scenes for event in scenes[scene].get('historical_anchors',[])}
         if required_events-covered:errors.append(f"{route['route']}: missing historical anchors {sorted(required_events-covered)}")
     if any(r['minutes']<120 or r['minutes']>180 for r in normal_routes):requirements.append('Normal route reading time must be 120..180 minutes at 200 words/min')
-    report={'mode':'draft' if args.draft else 'strict','nodes':len(nodes),'scenes':len(scenes),'choices':choices,'major_branches':len(set(majors)),'side_scenes':side_count,'narrative_words':words,'all_text_minutes':round(words/200,1),'finished_scenes':len(scenes)-len(unfinished),'illustrations':len(art),'new_pngs':len(pngs),'normal_routes':[{k:r[k] for k in ['route','side_quests','words','minutes']} for r in normal_routes],'errors':errors,'unmet_requirements':requirements}
+    report={'mode':'draft' if args.draft else 'strict','nodes':len(nodes),'scenes':len(scenes),'choices':choices,'major_branches':len(set(majors)),'side_scenes':side_count,'narrative_words':words,'all_text_minutes':round(words/200,1),'finished_scenes':len(scenes)-len(unfinished),'illustrations':len(art),'new_pngs':len(pngs),'verified_scenarios':len(witnesses)+len(scenario_routes),'locked_choices_checked':locked_choices,'normal_routes':[{k:r[k] for k in ['route','faction','side_quests','words','minutes']} for r in normal_routes],'errors':errors,'unmet_requirements':requirements}
     (ROOT/'docs/story_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    (ROOT/'story/test_routes.json').write_text(json.dumps({'routes':witnesses},ensure_ascii=False,indent=2)+'\n')
+    (ROOT/'story/test_routes.json').write_text(json.dumps({'routes':witnesses,'scenarios':scenario_routes},ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k not in ['normal_routes','errors','unmet_requirements']},ensure_ascii=False))
     for route in report['normal_routes']:print('ROUTE',route)
     for error in errors:print('ERROR',error)

@@ -1,44 +1,131 @@
 {
-  "mode": "draft",
-  "nodes": 964,
+  "mode": "strict",
+  "nodes": 1042,
   "scenes": 76,
   "choices": 55,
   "major_branches": 10,
   "side_scenes": 11,
-  "narrative_words": 30624,
-  "all_text_minutes": 153.1,
-  "finished_scenes": 68,
+  "narrative_words": 34355,
+  "all_text_minutes": 171.8,
+  "finished_scenes": 76,
   "illustrations": 30,
   "new_pngs": 70,
+  "verified_scenarios": 24,
+  "locked_choices_checked": 6,
   "normal_routes": [
     {
       "route": "legion",
+      "faction": "neutral",
       "side_quests": false,
-      "words": 22179,
-      "minutes": 110.9
+      "words": 24483,
+      "minutes": 122.4
     },
     {
       "route": "legion",
+      "faction": "neutral",
       "side_quests": true,
-      "words": 24801,
-      "minutes": 124.0
+      "words": 27148,
+      "minutes": 135.7
     },
     {
-      "route": "citizen",
+      "route": "legion",
+      "faction": "octavian",
       "side_quests": false,
-      "words": 21832,
-      "minutes": 109.2
+      "words": 24472,
+      "minutes": 122.4
+    },
+    {
+      "route": "legion",
+      "faction": "octavian",
+      "side_quests": true,
+      "words": 27137,
+      "minutes": 135.7
+    },
+    {
+      "route": "legion",
+      "faction": "antony",
+      "side_quests": false,
+      "words": 24468,
+      "minutes": 122.3
+    },
+    {
+      "route": "legion",
+      "faction": "antony",
+      "side_quests": true,
+      "words": 27133,
+      "minutes": 135.7
+    },
+    {
+      "route": "legion",
+      "faction": "republicans",
+      "side_quests": false,
+      "words": 24490,
+      "minutes": 122.5
+    },
+    {
+      "route": "legion",
+      "faction": "republicans",
+      "side_quests": true,
+      "words": 27155,
+      "minutes": 135.8
     },
     {
       "route": "citizen",
+      "faction": "neutral",
+      "side_quests": false,
+      "words": 24129,
+      "minutes": 120.6
+    },
+    {
+      "route": "citizen",
+      "faction": "neutral",
       "side_quests": true,
-      "words": 24456,
-      "minutes": 122.3
+      "words": 26800,
+      "minutes": 134.0
+    },
+    {
+      "route": "citizen",
+      "faction": "octavian",
+      "side_quests": false,
+      "words": 24118,
+      "minutes": 120.6
+    },
+    {
+      "route": "citizen",
+      "faction": "octavian",
+      "side_quests": true,
+      "words": 26789,
+      "minutes": 133.9
+    },
+    {
+      "route": "citizen",
+      "faction": "antony",
+      "side_quests": false,
+      "words": 24114,
+      "minutes": 120.6
+    },
+    {
+      "route": "citizen",
+      "faction": "antony",
+      "side_quests": true,
+      "words": 26785,
+      "minutes": 133.9
+    },
+    {
+      "route": "citizen",
+      "faction": "republicans",
+      "side_quests": false,
+      "words": 24136,
+      "minutes": 120.7
+    },
+    {
+      "route": "citizen",
+      "faction": "republicans",
+      "side_quests": true,
+      "words": 26807,
+      "minutes": 134.0
     }
   ],
   "errors": [],
-  "unmet_requirements": [
-    "8 scenes still marked draft",
-    "Normal route reading time must be 120..180 minutes at 200 words/min"
-  ]
+  "unmet_requirements": []
 }

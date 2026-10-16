@@ -136,21 +136,11 @@
       },
       "year": "конец 30 до н. э.",
       "entry": "ch07_s09_n01",
-      "illustration": "assets/story/old_friends.png",
+      "illustration": "assets/locations/alexandria.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": [],
-      "illustration_variants": [
-        {
-          "condition": "friend_lost",
-          "file": "assets/story/sacrifice.png"
-        },
-        {
-          "condition": "bond<65",
-          "file": "assets/story/apart.png"
-        }
-      ]
+      "historical_anchors": []
     }
   ],
   "nodes": [
@@ -352,7 +342,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch07_s01_n91",
           "condition": ""
         },
@@ -707,7 +697,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 10,
+          "bond": 5,
           "goto": "ch07_s03_n80",
           "condition": "bond>=65&aglaia_safe",
           "requirement_text": {
@@ -728,7 +718,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 6,
+          "bond": 4,
           "goto": "ch07_s03_n80",
           "condition": ""
         },
@@ -742,12 +732,13 @@
             "choice_ch07_s03_2"
           ],
           "clear_flags": [
-            "rescued_together"
+            "rescued_together",
+            "aulus_safe"
           ],
           "rep": {
             "legion": 2
           },
-          "bond": -15,
+          "bond": -12,
           "goto": "ch07_s03_n80",
           "condition": ""
         }
@@ -866,7 +857,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch07_s04_n91",
           "condition": ""
         },
@@ -1297,7 +1288,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 5,
+          "bond": 1,
           "goto": "ch07_s07_n91",
           "condition": ""
         },
@@ -1312,7 +1303,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": -4,
+          "bond": -3,
           "goto": "ch07_s07_n92",
           "condition": ""
         }
@@ -1515,7 +1506,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 5,
+          "bond": 1,
           "goto": "ch07_s08_n91",
           "condition": ""
         },
@@ -1530,7 +1521,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": -6,
+          "bond": -3,
           "goto": "ch07_s08_n92",
           "condition": ""
         }
@@ -1721,7 +1712,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch07_s04_n01",
           "condition": ""
         },
@@ -1759,7 +1750,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch07_s07_n01",
           "condition": ""
         },

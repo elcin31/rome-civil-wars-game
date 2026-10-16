@@ -503,7 +503,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch06_s02_n91",
           "condition": ""
         },
@@ -720,7 +720,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch06_s03_n91",
           "condition": ""
         },
@@ -737,7 +737,7 @@
           "rep": {
             "octavian": 1
           },
-          "bond": -4,
+          "bond": -3,
           "goto": "ch06_s03_n92",
           "condition": ""
         }
@@ -856,7 +856,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch06_s04_n91",
           "condition": ""
         },
@@ -1100,7 +1100,7 @@
           "rep": {
             "citizens": 3
           },
-          "bond": 8,
+          "bond": 5,
           "goto": "ch06_s05_n80",
           "condition": ""
         },
@@ -1390,7 +1390,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch06_s07_n91",
           "condition": ""
         },
@@ -1594,7 +1594,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 5,
+          "bond": 3,
           "goto": "ch06_s08_n91",
           "condition": ""
         },
@@ -1780,7 +1780,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch06_s04_n01",
           "condition": ""
         },
@@ -1818,7 +1818,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch06_s07_n01",
           "condition": ""
         },

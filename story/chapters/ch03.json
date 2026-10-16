@@ -655,7 +655,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch03_s02_n80",
           "condition": ""
         },
@@ -1196,7 +1196,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 8,
+          "bond": 4,
           "goto": "ch03_s05_n91",
           "condition": ""
         },
@@ -1213,7 +1213,7 @@
           "rep": {
             "legion": 2
           },
-          "bond": -5,
+          "bond": -3,
           "goto": "ch03_s05_n92",
           "condition": ""
         }
@@ -1632,7 +1632,7 @@
           ],
           "clear_flags": [],
           "rep": {},
-          "bond": 3,
+          "bond": 1,
           "goto": "ch03_s08_n91",
           "condition": ""
         },
@@ -2163,7 +2163,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 4,
+          "bond": 1,
           "goto": "ch03_s11_n80",
           "condition": ""
         },
@@ -2524,7 +2524,7 @@
           "rep": {
             "citizens": 2
           },
-          "bond": 8,
+          "bond": 4,
           "goto": "ch03_s13_n91",
           "condition": ""
         },
@@ -2541,7 +2541,7 @@
           "rep": {
             "legion": 1
           },
-          "bond": -5,
+          "bond": -3,
           "goto": "ch03_s13_n92",
           "condition": ""
         }
@@ -2950,7 +2950,7 @@
           "rep": {
             "citizens": 1
           },
-          "bond": 3,
+          "bond": 1,
           "goto": "ch03_s16_n91",
           "condition": ""
         },
@@ -3138,7 +3138,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch03_s08_n01",
           "condition": ""
         },
@@ -3176,7 +3176,7 @@
           },
           "set_flags": [],
           "rep": {},
-          "bond": 1,
+          "bond": 0,
           "goto": "ch03_s16_n01",
           "condition": ""
         },
