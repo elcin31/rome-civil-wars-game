@@ -281,6 +281,14 @@
     "choice_ch08_s01_1": {
       "type": "bool",
       "default": false
+    },
+    "warned_serranus": {
+      "type": "bool",
+      "default": false
+    },
+    "warned_lucilla": {
+      "type": "bool",
+      "default": false
     }
   },
   "reputation": {
