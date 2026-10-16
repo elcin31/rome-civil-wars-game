@@ -22,7 +22,7 @@ def check(path, size, transparency=False, opaque=False):
         errors.append(f'Missing {path.relative_to(ROOT)}')
         return
     image = Image.open(path).convert('RGBA')
-    unique = set(image.getdata())
+    unique = {color for count, color in image.getcolors(maxcolors=image.width * image.height)}
     visible = {(r, g, b) for r, g, b, a in unique if a}
     alphas = {a for r, g, b, a in unique}
     if image.size != tuple(size):

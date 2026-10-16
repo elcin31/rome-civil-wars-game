@@ -120,7 +120,10 @@ def character(source, output):
         if distance(anchors[nearest]) < (source.width * .06) ** 2:
             groups[nearest].append(item)
     crops = [isolate(source, labels, group) for group in groups]
-    scale = min(44 / max(c.width for c in crops[:9]), 60 / max(c.height for c in crops[:9]))
+    # Shared standing height across the cast. Wide sword keys keep their scale,
+    # rather than shrinking only an attack or making civilians larger than centurions.
+    scale = min(44 / max(c.width for c in crops[:9]), 40 / crops[0].height,
+                60 / max(c.height for c in crops[:9]))
     atlas = Image.new("RGBA", (144, 192))
     for n, crop in enumerate(crops[:9]):
         sprite = crop.resize((max(1, round(crop.width * scale)), max(1, round(crop.height * scale))), NEAREST)

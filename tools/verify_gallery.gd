@@ -39,6 +39,33 @@ func _verify() -> void:
 		gallery._navigate(-1)
 		assert(gallery.asset_index == total - 1, "Backward wrap failed")
 	assert(count == 36, "Unexpected asset count")
+	# Exercise input events and real button signal bindings, including cyclic navigation.
+	gallery._select_group(0)
+	gallery._select_asset(0)
+	var down = InputEventScreenTouch.new()
+	down.pressed = true
+	down.position = Vector2(250, 90)
+	gallery._unhandled_input(down)
+	var up = InputEventScreenTouch.new()
+	up.pressed = false
+	up.position = Vector2(70, 90)
+	gallery._unhandled_input(up)
+	assert(gallery.asset_index == 1, "Touch swipe failed")
+	var key = InputEventKey.new()
+	key.pressed = true
+	key.keycode = KEY_RIGHT
+	gallery._unhandled_input(key)
+	assert(gallery.asset_index == 2, "Keyboard navigation failed")
+	gallery.tabs[2].pressed.emit()
+	assert(gallery.group_index == 2, "Category button binding failed")
+	var previous_motion: bool = gallery.moving
+	gallery.action_button.pressed.emit()
+	assert(gallery.moving != previous_motion, "Action button binding failed")
+	await process_frame
+	for button in gallery.tabs:
+		assert(button.size.y <= 18, "Category exceeds allocated height")
+	assert(gallery.action_button.position.y + gallery.action_button.size.y <= 180,
+		"Footer button exceeds viewport")
 	gallery._toggle_fullscreen()
 	assert(not gallery.chrome.visible)
 	gallery._toggle_fullscreen()
