@@ -284,7 +284,7 @@
         "ru": "Лодка Авла зажата у борта горящей галеры. Двое старых центурионов могут удержать канат вместе, если ещё доверяют одному счёту. Можно сохранить приказ и отойти. Можно остаться одному, чтобы другой успел вывести людей. Здесь прежние решения становятся весом на руках.",
         "en": ""
       },
-      "next": "ch07_s03_n80"
+      "next": "ch07_s03_n90"
     },
     {
       "id": "ch07_s03_n80",
@@ -297,7 +297,7 @@
         "ru": "",
         "en": ""
       },
-      "next": "ch07_s03_n90"
+      "next": "ch07_s03_n81"
     },
     {
       "id": "ch07_s03_n91",
@@ -354,12 +354,13 @@
           },
           "set_flags": [
             "aulus_safe",
-            "rescued_together"
+            "rescued_together",
+            "choice_ch07_s03_0"
           ],
           "clear_flags": [],
           "rep": {},
           "bond": 10,
-          "goto": "ch07_s03_n91",
+          "goto": "ch07_s03_n80",
           "condition": "bond>=65&aglaia_safe",
           "requirement_text": {
             "ru": "Спасённая Аглая и связь 65+",
@@ -374,12 +375,13 @@
           },
           "set_flags": [
             "aulus_safe",
-            "friend_lost"
+            "friend_lost",
+            "choice_ch07_s03_1"
           ],
           "clear_flags": [],
           "rep": {},
           "bond": 6,
-          "goto": "ch07_s03_n92",
+          "goto": "ch07_s03_n80",
           "condition": ""
         },
         {
@@ -388,7 +390,9 @@
             "ru": "Отойти с приказом и не рисковать отрядом",
             "en": ""
           },
-          "set_flags": [],
+          "set_flags": [
+            "choice_ch07_s03_2"
+          ],
           "clear_flags": [
             "rescued_together"
           ],
@@ -396,7 +400,7 @@
             "legion": 2
           },
           "bond": -15,
-          "goto": "ch07_s03_n93",
+          "goto": "ch07_s03_n80",
           "condition": ""
         }
       ],
@@ -804,6 +808,32 @@
         }
       ],
       "next": ""
+    },
+    {
+      "id": "ch07_s03_n81",
+      "scene": "ch07_s03",
+      "kind": "branch",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "branches": [
+        {
+          "condition": "choice_ch07_s03_0",
+          "goto": "ch07_s03_n91"
+        },
+        {
+          "condition": "choice_ch07_s03_1",
+          "goto": "ch07_s03_n92"
+        },
+        {
+          "condition": "choice_ch07_s03_2",
+          "goto": "ch07_s03_n93"
+        }
+      ],
+      "next": "ch07_s03_n91"
     }
   ]
 }

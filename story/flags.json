@@ -205,6 +205,82 @@
     "visited_ch07_s07": {
       "type": "bool",
       "default": false
+    },
+    "choice_ch01_s03_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch01_s03_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch01_s06_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch01_s06_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch02_s04_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch02_s04_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch03_s02_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch03_s02_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch03_s11_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch03_s11_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch04_s04_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch04_s04_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch06_s05_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch06_s05_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch07_s03_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch07_s03_1": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch07_s03_2": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch08_s01_0": {
+      "type": "bool",
+      "default": false
+    },
+    "choice_ch08_s01_1": {
+      "type": "bool",
+      "default": false
     }
   },
   "reputation": {

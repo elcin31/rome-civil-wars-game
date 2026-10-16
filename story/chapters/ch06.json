@@ -447,7 +447,7 @@
         "ru": "Перузинская война приносит голод и осаду. Веттий требует список людей, укрывшихся под чужими именами. Ворен видит, как точная запись может стать оружием. Пулон предлагает вывезти семьи, потеряв право на собственный участок. Лёгкого выхода нет.",
         "en": ""
       },
-      "next": "ch06_s05_n80"
+      "next": "ch06_s05_n90"
     },
     {
       "id": "ch06_s05_n80",
@@ -460,7 +460,7 @@
         "ru": "",
         "en": ""
       },
-      "next": "ch06_s05_n90"
+      "next": "ch06_s05_n81"
     },
     {
       "id": "ch06_s05_n91",
@@ -505,14 +505,15 @@
           },
           "set_flags": [
             "lucilla_safe",
-            "safe_passage"
+            "safe_passage",
+            "choice_ch06_s05_0"
           ],
           "clear_flags": [],
           "rep": {
             "citizens": 3
           },
           "bond": 8,
-          "goto": "ch06_s05_n91",
+          "goto": "ch06_s05_n80",
           "condition": ""
         },
         {
@@ -523,7 +524,8 @@
           },
           "set_flags": [
             "home_claim",
-            "betrayed"
+            "betrayed",
+            "choice_ch06_s05_1"
           ],
           "clear_flags": [
             "lucilla_safe",
@@ -533,7 +535,7 @@
             "octavian": 2
           },
           "bond": -10,
-          "goto": "ch06_s05_n92",
+          "goto": "ch06_s05_n80",
           "condition": ""
         }
       ],
@@ -830,6 +832,28 @@
         }
       ],
       "next": ""
+    },
+    {
+      "id": "ch06_s05_n81",
+      "scene": "ch06_s05",
+      "kind": "branch",
+      "speaker": "narrator",
+      "portrait": "",
+      "text": {
+        "ru": "",
+        "en": ""
+      },
+      "branches": [
+        {
+          "condition": "choice_ch06_s05_0",
+          "goto": "ch06_s05_n91"
+        },
+        {
+          "condition": "choice_ch06_s05_1",
+          "goto": "ch06_s05_n92"
+        }
+      ],
+      "next": "ch06_s05_n91"
     }
   ]
 }
