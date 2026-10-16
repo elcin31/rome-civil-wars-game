@@ -1,0 +1,699 @@
+{
+  "title": "CINIS LAURI / Пепел лавра",
+  "version": 1,
+  "assets": [
+    {
+      "id": "titus_pullo",
+      "title": "Тит Пулон",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_titus_pullo.png",
+      "file": "assets/characters/titus_pullo.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/titus_pullo_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "lucius_vorenus",
+      "title": "Луций Ворен",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_lucius_vorenus.png",
+      "file": "assets/characters/lucius_vorenus.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/lucius_vorenus_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "julius_caesar",
+      "title": "Юлий Цезарь",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_julius_caesar.png",
+      "file": "assets/characters/julius_caesar.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/julius_caesar_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "octavian_young",
+      "title": "Октавиан в юности",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_octavian_young.png",
+      "file": "assets/characters/octavian_young.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/octavian_young_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "augustus_old",
+      "title": "Август в старости",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_augustus_old.png",
+      "file": "assets/characters/augustus_old.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/augustus_old_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "mark_antony",
+      "title": "Марк Антоний",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_mark_antony.png",
+      "file": "assets/characters/mark_antony.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/mark_antony_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "cleopatra",
+      "title": "Клеопатра",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_cleopatra.png",
+      "file": "assets/characters/cleopatra.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/cleopatra_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "pompey",
+      "title": "Помпей Великий",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_pompey.png",
+      "file": "assets/characters/pompey.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/pompey_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "brutus",
+      "title": "Марк Юний Брут",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_brutus.png",
+      "file": "assets/characters/brutus.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/brutus_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "caesar_legionary",
+      "title": "Легионер Цезаря",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_caesar_legionary.png",
+      "file": "assets/characters/caesar_legionary.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/caesar_legionary_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "gallic_warrior",
+      "title": "Галльский воин",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_gallic_warrior.png",
+      "file": "assets/characters/gallic_warrior.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/gallic_warrior_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "pompeian_soldier",
+      "title": "Помпеянский солдат",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_pompeian_soldier.png",
+      "file": "assets/characters/pompeian_soldier.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/pompeian_soldier_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "roman_citizen",
+      "title": "Гражданин Рима",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_roman_citizen.png",
+      "file": "assets/characters/roman_citizen.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/roman_citizen_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "senator",
+      "title": "Сенатор",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_senator.png",
+      "file": "assets/characters/senator.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/senator_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "craftsman",
+      "title": "Римский ремесленник",
+      "category": "characters",
+      "kind": "character",
+      "source": "art_src/characters_craftsman.png",
+      "file": "assets/characters/craftsman.png",
+      "size": [
+        144,
+        192
+      ],
+      "frame_size": [
+        48,
+        64
+      ],
+      "portrait": "assets/characters/craftsman_portrait.png",
+      "status": "pending"
+    },
+    {
+      "id": "gaul_forest",
+      "title": "Галльский лес",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_gaul_forest.png",
+      "file": "assets/locations/gaul_forest.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/gaul_forest_far.png",
+        "assets/locations/gaul_forest_mid.png",
+        "assets/locations/gaul_forest_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "gallic_fort",
+      "title": "Галльский форт",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_gallic_fort.png",
+      "file": "assets/locations/gallic_fort.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/gallic_fort_far.png",
+        "assets/locations/gallic_fort_mid.png",
+        "assets/locations/gallic_fort_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "alesia",
+      "title": "Осада Алезии",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_alesia.png",
+      "file": "assets/locations/alesia.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/alesia_far.png",
+        "assets/locations/alesia_mid.png",
+        "assets/locations/alesia_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "roman_camp",
+      "title": "Римский лагерь",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_roman_camp.png",
+      "file": "assets/locations/roman_camp.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/roman_camp_far.png",
+        "assets/locations/roman_camp_mid.png",
+        "assets/locations/roman_camp_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "roman_forum",
+      "title": "Римский Форум",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_roman_forum.png",
+      "file": "assets/locations/roman_forum.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/roman_forum_far.png",
+        "assets/locations/roman_forum_mid.png",
+        "assets/locations/roman_forum_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "rome_night",
+      "title": "Рим: проскрипции",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_rome_night.png",
+      "file": "assets/locations/rome_night.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/rome_night_far.png",
+        "assets/locations/rome_night_mid.png",
+        "assets/locations/rome_night_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "rubicon",
+      "title": "Берег Рубикона",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_rubicon.png",
+      "file": "assets/locations/rubicon.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/rubicon_far.png",
+        "assets/locations/rubicon_mid.png",
+        "assets/locations/rubicon_near.png"
+      ],
+      "status": "pending",
+      "layer_offsets_y": [
+        0,
+        40,
+        0
+      ]
+    },
+    {
+      "id": "pharsalus",
+      "title": "Поле Фарсала",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_pharsalus.png",
+      "file": "assets/locations/pharsalus.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/pharsalus_far.png",
+        "assets/locations/pharsalus_mid.png",
+        "assets/locations/pharsalus_near.png"
+      ],
+      "status": "pending",
+      "layer_offsets_y": [
+        0,
+        40,
+        0
+      ]
+    },
+    {
+      "id": "alexandria",
+      "title": "Порт Александрии",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_alexandria.png",
+      "file": "assets/locations/alexandria.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/alexandria_far.png",
+        "assets/locations/alexandria_mid.png",
+        "assets/locations/alexandria_near.png"
+      ],
+      "status": "pending",
+      "layer_offsets_y": [
+        0,
+        24,
+        0
+      ]
+    },
+    {
+      "id": "cleopatra_palace",
+      "title": "Дворец Клеопатры",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_cleopatra_palace.png",
+      "file": "assets/locations/cleopatra_palace.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/cleopatra_palace_far.png",
+        "assets/locations/cleopatra_palace_mid.png",
+        "assets/locations/cleopatra_palace_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "philippi",
+      "title": "Поле Филипп",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_philippi.png",
+      "file": "assets/locations/philippi.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/philippi_far.png",
+        "assets/locations/philippi_mid.png",
+        "assets/locations/philippi_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "actium",
+      "title": "Битва при Акции",
+      "category": "locations",
+      "kind": "parallax",
+      "source": "art_src/locations_actium.png",
+      "file": "assets/locations/actium.png",
+      "size": [
+        320,
+        180
+      ],
+      "layers": [
+        "assets/locations/actium_far.png",
+        "assets/locations/actium_mid.png",
+        "assets/locations/actium_near.png"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "city",
+      "title": "Город",
+      "category": "tiles",
+      "kind": "image",
+      "source": "art_src/tiles_city.png",
+      "file": "assets/tiles/city.png",
+      "size": [
+        128,
+        128
+      ],
+      "tile_size": [
+        16,
+        16
+      ],
+      "key_background": true,
+      "status": "pending"
+    },
+    {
+      "id": "camp_fields",
+      "title": "Лагерь и поля",
+      "category": "tiles",
+      "kind": "image",
+      "source": "art_src/tiles_camp_fields.png",
+      "file": "assets/tiles/camp_fields.png",
+      "size": [
+        128,
+        128
+      ],
+      "tile_size": [
+        16,
+        16
+      ],
+      "key_background": true,
+      "status": "pending"
+    },
+    {
+      "id": "forest_siege",
+      "title": "Лес и осада",
+      "category": "tiles",
+      "kind": "image",
+      "source": "art_src/tiles_forest_siege.png",
+      "file": "assets/tiles/forest_siege.png",
+      "size": [
+        128,
+        128
+      ],
+      "tile_size": [
+        16,
+        16
+      ],
+      "key_background": true,
+      "status": "pending"
+    },
+    {
+      "id": "objects",
+      "title": "Предметы и орудия",
+      "category": "tiles",
+      "kind": "image",
+      "source": "art_src/tiles_objects.png",
+      "file": "assets/tiles/objects.png",
+      "size": [
+        128,
+        128
+      ],
+      "tile_size": [
+        16,
+        16
+      ],
+      "key_background": true,
+      "status": "pending",
+      "object_frame_size": [
+        32,
+        32
+      ]
+    },
+    {
+      "id": "dialogue",
+      "title": "Диалог и кнопки",
+      "category": "ui",
+      "kind": "image",
+      "source": "art_src/ui_dialogue.png",
+      "file": "assets/ui/dialogue.png",
+      "size": [
+        288,
+        64
+      ],
+      "key_background": true,
+      "status": "pending",
+      "crop": [
+        28,
+        65,
+        1509,
+        589
+      ],
+      "buttons_source_boxes": [
+        [
+          41,
+          665,
+          382,
+          800
+        ],
+        [
+          412,
+          665,
+          755,
+          800
+        ],
+        [
+          783,
+          665,
+          1127,
+          800
+        ],
+        [
+          1153,
+          665,
+          1496,
+          800
+        ]
+      ],
+      "arrows_source_boxes": [
+        [
+          35,
+          855,
+          158,
+          983
+        ],
+        [
+          1379,
+          855,
+          1506,
+          983
+        ]
+      ]
+    },
+    {
+      "id": "icons",
+      "title": "Иконки",
+      "category": "ui",
+      "kind": "icons",
+      "source": "art_src/ui_icons.png",
+      "file": "assets/ui/icons.png",
+      "size": [
+        112,
+        16
+      ],
+      "key_background": true,
+      "status": "pending"
+    },
+    {
+      "id": "campaign_map",
+      "title": "Карта Средиземноморья",
+      "category": "ui",
+      "kind": "image",
+      "source": "art_src/ui_campaign_map.png",
+      "file": "assets/ui/campaign_map.png",
+      "size": [
+        320,
+        180
+      ],
+      "key_background": false,
+      "status": "pending"
+    },
+    {
+      "id": "inventory",
+      "title": "Инвентарь и меню",
+      "category": "ui",
+      "kind": "image",
+      "source": "art_src/ui_inventory.png",
+      "file": "assets/ui/inventory.png",
+      "size": [
+        224,
+        144
+      ],
+      "key_background": true,
+      "status": "pending"
+    },
+    {
+      "id": "logo",
+      "title": "CINIS LAURI",
+      "category": "ui",
+      "kind": "logo",
+      "source": "art_src/ui_logo.png",
+      "file": "assets/ui/logo.png",
+      "size": [
+        256,
+        64
+      ],
+      "key_background": true,
+      "status": "pending"
+    }
+  ]
+}

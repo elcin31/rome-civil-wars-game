@@ -3,7 +3,6 @@
 *.tmp
 *.log
 export.cfg
-export_presets.cfg
 build/
 dist/
 *.apk
