@@ -23,10 +23,14 @@ def adb(*args, binary=False, check=True):
     return result.stdout if binary else result.stdout.decode(errors="replace").strip()
 
 
-def screenshot(name):
+def screenshot(name, verify_render=False):
     data = adb("exec-out", "screencap", "-p", binary=True)
     (OUTPUT / f"{name}.png").write_bytes(data)
-    return Image.open(io.BytesIO(data)).size
+    image = Image.open(io.BytesIO(data)).convert("RGB")
+    if verify_render:
+        colors = image.getcolors(image.width * image.height)
+        assert max(count for count, _ in colors) < image.width * image.height * 0.75, "Blank Android game frame"
+    return image.size
 
 
 def state():
@@ -98,7 +102,7 @@ for attempt in range(160):
 else:
     screenshot("failure_before_hub")
     raise AssertionError("Story input did not reach the first real RPG hub")
-screenshot("hub_before")
+screenshot("hub_before", verify_render=True)
 # Hold the joystick northeast, then interact with the actual scribe.
 position = point(56, 140)
 adb("shell", "input", "swipe", *position, *position, "800")
@@ -128,14 +132,14 @@ else:
     raise AssertionError("The restored hub did not respond to joystick movement")
 assert restored["node"] == node and restored["gameplay"]["encounter"]["state"]["quest"] == 1
 assert restored["flags"] == saved["flags"]
-screenshot("hub_after_cold_restart")
+screenshot("hub_after_cold_restart", verify_render=True)
 logs = adb("logcat", "-d", "-v", "brief")
 (OUTPUT / "logcat.txt").write_text(logs)
-for failure in ["SCRIPT ERROR:", "Parse Error:", "FATAL EXCEPTION: main", "Fatal signal"]:
+for failure in ["SCRIPT ERROR:", "Parse Error:", "Program linking failed", "FATAL EXCEPTION: main", "Fatal signal"]:
     assert failure not in logs, failure
 report = {"platform": "Android API 35 emulator, x86_64 smoke export", "commit_content": "same game as ARM64 release",
           "screen": [width, height], "story_to_hub": True, "joystick_and_interaction": True,
-          "cold_restart_restore": True, "post_restart_movement": True,
+          "cold_restart_restore": True, "post_restart_movement": True, "rendered_frames_verified": True,
           "launch_output": launch, "physical_arm64_test": False}
 (OUTPUT / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print("ANDROID SMOKE PASS:", report)

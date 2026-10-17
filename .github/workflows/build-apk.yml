@@ -137,7 +137,7 @@ jobs:
           arch: x86_64
           target: google_apis
           disable-animations: true
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none
           script: python tools/android_smoke.py smoke/cinis-smoke.apk
       - uses: actions/upload-artifact@v4.6.2
         if: always()
