@@ -52,10 +52,13 @@ def ui():
     return data
 
 
-def tap_caption(caption):
+def tap_caption(caption, allow_hub=False):
     deadline = time.monotonic() + 5
     while time.monotonic() < deadline:
-        for button in ui().get("buttons", []):
+        layout = ui()
+        if allow_hub and layout.get("encounter_type") == "rpg":
+            return
+        for button in layout.get("buttons", []):
             if button["text"] == caption and not button["disabled"]:
                 x, y, width, height = button["rect"]
                 adb("shell", "input", "tap", str(round(x + width / 2)), str(round(y + height / 2)))
@@ -127,7 +130,7 @@ for attempt in range(160):
     episode = saved.get("gameplay", {}).get("encounter", {})
     if episode.get("beat") == "beat_ch01_s01":
         break
-    tap_caption("Дальше")
+    tap_caption("Дальше", allow_hub=True)
 else:
     screenshot("failure_before_hub")
     raise AssertionError("Story input did not reach the first real RPG hub")
