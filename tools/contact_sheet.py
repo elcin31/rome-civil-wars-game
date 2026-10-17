@@ -23,7 +23,7 @@ def board(assets, filename, title):
     result = Image.new('RGBA', (COLS * CW + 16, rows * CH + 72), INK)
     draw = ImageDraw.Draw(result)
     draw.text((12, 8), title, font=TITLE, fill=IVORY)
-    draw.text((12, 40), '24 цвета / nearest / игровые PNG / ' + str(len(assets)) + ' наборов', font=FONT, fill=BRONZE)
+    draw.text((12, 40), '48 цветов / nearest / игровые PNG / ' + str(len(assets)) + ' наборов', font=FONT, fill=BRONZE)
     for index, item in enumerate(assets):
         x, y = 8 + index % COLS * CW, 64 + index // COLS * CH
         draw.rectangle((x, y, x + CW - 8, y + CH - 8), outline=BRONZE)
@@ -66,7 +66,7 @@ rows = (len(files) + cols - 1) // cols
 result = Image.new('RGBA', (cols * width + 16, rows * height + 72), INK)
 draw = ImageDraw.Draw(result)
 draw.text((12, 8), 'CINIS LAURI / Все игровые PNG', font=TITLE, fill=IVORY)
-draw.text((12, 40), f'{len(files)} файлов / 36 наборов / 24 цвета / nearest', font=FONT, fill=BRONZE)
+draw.text((12, 40), f'{len(files)} файлов / 36 наборов / 48 цветов / nearest', font=FONT, fill=BRONZE)
 for n, (path, title) in enumerate(files):
     x, y = 8 + n % cols * width, 64 + n // cols * height
     draw.rectangle((x, y, x + width - 8, y + height - 8), outline=BRONZE)

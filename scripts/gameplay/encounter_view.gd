@@ -619,12 +619,13 @@ func _sprite(
 	draw_circle(Vector2.ZERO, dimensions.x * 0.20, Color(0.05, 0.06, 0.08, 0.6))
 	var cell: Vector2 = sprites[ident].get_size() / Vector2(3, 3)
 	var bob: float = roundf(sin(Time.get_ticks_msec() * 0.006)) if pose == 4 else 0.0
+	var breathing: float = 1.0 + sin(Time.get_ticks_msec() * 0.002) * 0.012 if pose == 3 else 1.0
 	var tilt: float = 0.06 if pose == 8 else (-0.06 if pose == 6 else 0.0)
 	draw_set_transform_matrix(
 		(
 			world_transform
 			* Transform2D(
-				tilt, Vector2(-1, 1) if facing < 0 else Vector2.ONE, 0, point + Vector2(0, bob)
+				tilt, Vector2(-1 if facing < 0 else 1, breathing), 0, point + Vector2(0, bob)
 			)
 		)
 	)

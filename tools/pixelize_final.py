@@ -1,4 +1,4 @@
-"""Nine final compositions, using the existing nearest/24-colour pipeline."""
+"""Nine final compositions, using the existing nearest/48-colour pipeline."""
 import json
 from pathlib import Path
 from PIL import Image, ImageOps, ImageDraw, ImageFont

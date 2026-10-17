@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Part II: same 24-color pipeline, four-emotion busts and 480x270 illustrations."""
+"""Part II: same 48-color pipeline, four-emotion busts and 480x270 illustrations."""
 import json
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageOps
@@ -49,7 +49,7 @@ def main():
         font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',13)
     except OSError:
         font=ImageFont.load_default(size=13)
-    draw.text((10,10),'CINIS LAURI / Часть II / 30 исходных композиций / 24 цвета',font=font,fill='#EDE3CC')
+    draw.text((10,10),'CINIS LAURI / Часть II / 30 исходных композиций / 48 цветов',font=font,fill='#EDE3CC')
     for i,asset in enumerate(manifest['assets']):
         x,y=8+i%3*width,48+i//3*height
         draw.rectangle((x,y,x+492,y+288),outline='#A87B3D')

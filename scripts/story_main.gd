@@ -9,6 +9,7 @@ const EncounterView = preload("res://scripts/gameplay/encounter_view.gd")
 var layer: Control
 var mode: String = "menu"
 var background: Texture2D
+var background_layers: Array[Texture2D] = []
 var face: Texture2D
 var body: RichTextLabel
 var pages: Array[String] = []
@@ -96,6 +97,12 @@ func _reading_panel(value: String, top: float, bottom: float, font_size: int = 2
 func _set_background(path: String) -> void:
 	if ResourceLoader.exists(path):
 		background = load(path)
+		background_layers.clear()
+		if path.begins_with("res://assets/locations/"):
+			for suffix in ["far", "mid", "near"]:
+				var layer_path: String = path.trim_suffix(".png") + "_" + suffix + ".png"
+				if ResourceLoader.exists(layer_path):
+					background_layers.append(load(layer_path))
 
 
 func _label(value: String, rect: Rect2, size_value: int = 24, color: Color = IVORY) -> Label:
@@ -273,7 +280,12 @@ func refresh() -> void:
 	var portrait_view = TextureRect.new()
 	portrait_view.texture = face
 	portrait_view.position = portrait_rect.position
-	portrait_view.size = portrait_rect.size
+	var physical_scale: float = get_viewport().get_screen_transform().get_scale().y
+	var portrait_factor: float = (
+		maxf(1, floorf(128 * physical_scale / face.get_width())) / physical_scale
+	)
+	portrait_view.size = face.get_size() * portrait_factor
+	portrait_view.position += (portrait_rect.size - portrait_view.size) / 2
 	portrait_view.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	portrait_view.mouse_filter = MOUSE_FILTER_IGNORE
 	layer.add_child(portrait_view)
@@ -698,9 +710,17 @@ func _draw() -> void:
 		var drift: float = (
 			roundf(sin(ambience_clock * 0.12) * 2) if dimensions.x > bounds.size.x + 4 else 0
 		)
-		draw_texture_rect(
-			background, Rect2((bounds.size - dimensions) / 2 + Vector2(drift, 0), dimensions), false
-		)
+		var target = Rect2((bounds.size - dimensions) / 2 + Vector2(drift, 0), dimensions)
+		if background_layers.size() == 3:
+			for index in range(3):
+				var shift: float = roundf(sin(ambience_clock * 0.17) * index * 2) / physical
+				draw_texture_rect(
+					background_layers[index],
+					Rect2(target.position + Vector2(shift, 0), target.size),
+					false
+				)
+		else:
+			draw_texture_rect(background, target, false)
 	var shade: float = 0.16 if mode in ["menu", "play", "loading"] else 0.82
 	draw_rect(bounds, Color(0.078, 0.082, 0.121, shade))
 	for step in range(3):

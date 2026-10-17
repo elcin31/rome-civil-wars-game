@@ -43,7 +43,7 @@ def main():
         pixels = {color for _, color in colors}
         assert {pixel[3] for pixel in pixels} <= {0, 255}, path
         used = {pixel[:3] for pixel in pixels if pixel[3]}
-        assert used <= palette and len(used) <= 24, path
+        assert used <= palette and len(used) <= len(palette), path
         if path.with_suffix(".png.import").is_file():
             assert "mipmaps/generate=false" in path.with_suffix(".png.import").read_text()
     for entry in manifest["assets"]:
