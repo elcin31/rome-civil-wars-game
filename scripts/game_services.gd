@@ -65,17 +65,27 @@ func _update_volumes() -> void:
 
 
 func play_layer(value: String) -> void:
+	music.stream_paused = false
 	if value == music_layer:
 		return
 	music_layer = value
+	if DisplayServer.get_name() == "headless" or AudioServer.get_driver_name() == "Dummy":
+		return
 	var path: String = "res://assets/audio/" + value + ".ogg"
 	if ResourceLoader.exists(path):
+		music.stop()
 		music.stream = load(path)
+		if music.stream is AudioStreamOggVorbis:
+			music.stream.loop = true
 		music.play()
 
 
 func effect(value: String) -> void:
-	if voices.is_empty():
+	if (
+		voices.is_empty()
+		or DisplayServer.get_name() == "headless"
+		or AudioServer.get_driver_name() == "Dummy"
+	):
 		return
 	var path: String = "res://assets/audio/" + value + ".ogg"
 	if not ResourceLoader.exists(path):
@@ -84,3 +94,13 @@ func effect(value: String) -> void:
 	voice_index = (voice_index + 1) % voices.size()
 	voice.stream = load(path)
 	voice.play()
+
+
+func _exit_tree() -> void:
+	if is_instance_valid(music):
+		music.stream_paused = false
+		music.stop()
+		music.stream = null
+	for voice in voices:
+		voice.stop()
+		voice.stream = null

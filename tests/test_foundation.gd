@@ -84,3 +84,56 @@ func test_reward_and_shop_cannot_duplicate_or_overspend() -> void:
 	assert_true(Progression.buy(data, "shield"))
 	assert_false(Progression.buy(data, "sword"))
 	assert_gte(data.coins, 0)
+
+
+func test_lost_companion_cannot_remain_the_controlled_hero() -> void:
+	game.state.gameplay.hero = "vorenus"
+	game.apply_effects({"set_flags": ["friend_lost"]})
+	assert_eq(game.state.gameplay.hero, "pullo")
+	assert_true(game.save_game())
+	assert_true(game.load_game())
+	assert_eq(game.state.gameplay.hero, "pullo")
+
+
+func test_corrupt_records_do_not_overwrite_the_last_valid_backup() -> void:
+	assert_true(game.save_game())
+	var backup: String = FileAccess.get_file_as_string(game.save_path + ".bak")
+	var corrupt: Dictionary = game.state.duplicate(true)
+	corrupt.history = [{"node": "ch01_s01_n01", "speaker": 5, "text": {}}]
+	var file = FileAccess.open(game.save_path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(corrupt))
+	file.close()
+	assert_false(game.load_game())
+	assert_true(game.save_game())
+	assert_eq(FileAccess.get_file_as_string(game.save_path + ".bak"), backup)
+
+
+func test_supplies_heal_only_an_active_wounded_episode() -> void:
+	game.go("ch01_s06_n80")
+	var factory = load("res://scripts/gameplay/encounter_factory.gd")
+	var model = factory.create(game.beats[game.current().beat], game.state.gameplay, 35)
+	model.state.hp = 1
+	game.state.gameplay.encounter = {"beat": game.current().beat, "state": model.state}
+	var before: int = game.state.gameplay.supplies
+	assert_true(game.use_supply())
+	assert_eq(int(game.state.gameplay.supplies), before - 1)
+
+	assert_eq(int(game.state.gameplay.encounter.state.hp), 4)
+	game.state.gameplay.encounter.state.hp = model.state.max_hp
+	assert_false(game.use_supply())
+	assert_eq(int(game.state.gameplay.supplies), before - 1)
+
+
+func test_legacy_story_save_recovers_completed_mission_progression_once() -> void:
+	game.start_new(4)
+	var legacy: Dictionary = game.state.duplicate(true)
+	legacy.erase("gameplay")
+	var expected_xp: int = legacy.beats_completed.size() * 45
+	var file = FileAccess.open(game.save_path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(legacy))
+	file.close()
+	assert_true(game.load_game())
+	assert_eq(int(game.state.gameplay.xp), expected_xp)
+	assert_true(game.save_game())
+	assert_true(game.load_game())
+	assert_eq(int(game.state.gameplay.xp), expected_xp)

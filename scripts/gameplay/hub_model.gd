@@ -1,4 +1,7 @@
 extends RefCounted
+
+const Snapshot = preload("res://scripts/gameplay/snapshot.gd")
+const Progression = preload("res://scripts/gameplay/progression.gd")
 ## Walkable hub: receive a request, collect supplies, deliver, then leave.
 
 var state: Dictionary = {}
@@ -28,18 +31,22 @@ func setup(beat: Dictionary, _progress: Dictionary, _bond: int, _companion: bool
 
 
 func restore(snapshot: Dictionary) -> bool:
-	for key in ["x", "y", "quest"]:
-		if not (snapshot.get(key) is float or snapshot.get(key) is int):
-			return false
-	if snapshot.x < 12 or snapshot.x > 308 or snapshot.y < 66 or snapshot.y > 132:
+	if not Snapshot.matches(snapshot, state):
 		return false
 	if (
-		not snapshot.get("interactions") is Array
-		or not snapshot.get("won") is bool
-		or not snapshot.get("message") is String
+		snapshot.x < 12
+		or snapshot.x > 308
+		or snapshot.y < 66
+		or snapshot.y > 132
+		or snapshot.quest < 0
+		or snapshot.quest > 3
 	):
 		return false
+	for item in snapshot.interactions:
+		if item not in ["scribe", "supplies", "witness", "merchant", "exit"]:
+			return false
 	state = snapshot.duplicate(true)
+	state.quest = int(state.quest)
 	return true
 
 
@@ -114,3 +121,11 @@ func bot_step(delta: float) -> void:
 		interact()
 	else:
 		tick(delta, bot_axis())
+
+
+func buy(progress: Dictionary, item: String, discount: int) -> bool:
+	return nearest() == "merchant" and Progression.buy(progress, item, discount)
+
+
+func train(progress: Dictionary, skill: String) -> bool:
+	return nearest() == "merchant" and Progression.train(progress, skill)

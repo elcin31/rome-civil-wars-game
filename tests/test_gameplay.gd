@@ -75,8 +75,49 @@ func test_hub_requires_walking_and_delivery_before_exit() -> void:
 func test_snapshot_roundtrip_and_corrupt_snapshot_rejection() -> void:
 	for kind in ["tactical", "platformer", "rpg"]:
 		var model = Factory.create(_beat(kind), Progression.fresh(), 60)
+		if kind == "tactical":
+			model.bot_turn()
+		elif kind == "platformer":
+			for step in range(120):
+				var action: Dictionary = model.bot_input()
+				model.tick(
+					1.0 / 60.0, action.axis, action.jump, action.strike, action.block, action.dodge
+				)
+		else:
+			for step in range(120):
+				model.bot_step(1.0 / 60.0)
 		var snapshot: Dictionary = JSON.parse_string(JSON.stringify(model.state))
 		var resumed = Factory.create(_beat(kind), Progression.fresh(), 60)
 		assert_true(resumed.restore(snapshot), kind)
 		assert_gt(Factory.solve(resumed, kind), 0, kind)
 		assert_false(resumed.restore({"x": "invalid"}))
+
+
+func test_shop_requires_reaching_the_merchant() -> void:
+	var progress: Dictionary = Progression.fresh()
+	var model = Factory.create(_beat("rpg"), progress, 35)
+	assert_false(model.buy(progress, "sword", 0))
+	assert_false(model.train(progress, "strength"))
+	assert_eq(int(progress.coins), 24)
+	model.state.x = 184.0
+	model.state.y = 76.0
+	assert_true(model.buy(progress, "sword", 0))
+	assert_true(model.train(progress, "strength"))
+
+
+func test_heroes_and_bond_change_platforming_defense() -> void:
+	var pullo = Factory.create(_beat("platformer"), Progression.fresh(), 35, false)
+	var advancement: Dictionary = Progression.fresh()
+	advancement.hero = "vorenus"
+	var vorenus = Factory.create(_beat("platformer"), advancement, 35, false)
+	pullo.state.block = true
+	vorenus.state.block = true
+	pullo._damage(2)
+	vorenus._damage(2)
+	assert_eq(int(pullo.state.max_hp) - int(pullo.state.hp), 1)
+	assert_eq(int(vorenus.state.max_hp) - int(vorenus.state.hp), 0)
+	var supported = Factory.create(_beat("platformer"), Progression.fresh(), 65, true)
+	var solitary = Factory.create(_beat("platformer"), Progression.fresh(), 35, false)
+	supported.tick(1.0 / 60.0, 0, true, false, false, false)
+	solitary.tick(1.0 / 60.0, 0, true, false, false, false)
+	assert_lt(float(supported.state.vy), float(solitary.state.vy))

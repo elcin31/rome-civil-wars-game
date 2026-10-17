@@ -5,7 +5,6 @@ signal pause_requested
 signal completed
 
 const Factory = preload("res://scripts/gameplay/encounter_factory.gd")
-const Progression = preload("res://scripts/gameplay/progression.gd")
 const INK = Color("14151f")
 const IVORY = Color("ede3cc")
 const OCHRE = Color("d9a441")
@@ -71,9 +70,9 @@ func _ready() -> void:
 			_button("Конец хода", Rect2(246, 114, 70, 24), _end_turn)
 			GameServices.play_layer("battle")
 		"rpg":
-			_button("Дело", Rect2(180, 148, 42, 28), _interact)
-			_button("Герой", Rect2(226, 148, 42, 28), _switch_hero)
-			_button("Лавка", Rect2(272, 148, 44, 28), _shop)
+			_button("Дело", _action_rect(0), _interact)
+			_button("Герой", _action_rect(1), _switch_hero)
+			_button("Лавка", _action_rect(2), _shop)
 			GameServices.play_layer("city")
 		_:
 			GameServices.play_layer("march")
@@ -97,6 +96,7 @@ func _label(
 
 
 func _button(text: String, rect: Rect2, callback: Callable, parent: Node = self) -> Button:
+	rect.size.y = maxf(26, rect.size.y)
 	var button = Button.new()
 	button.text = text
 	button.position = rect.position
@@ -148,7 +148,8 @@ func _physics_process(delta: float) -> void:
 	_update_status()
 	if (model.state.won or model.state.failed) and not result_shown:
 		_result()
-	queue_redraw()
+	if beat.type != "tactical":
+		queue_redraw()
 
 
 func _update_status() -> void:
@@ -303,7 +304,7 @@ func _shop() -> void:
 func _buy(item: String, discount: int) -> void:
 	model.state.message = (
 		"Куплено."
-		if Progression.buy(StoryRuntime.state.gameplay, item, discount)
+		if model.buy(StoryRuntime.state.gameplay, item, discount)
 		else "Недостаточно монет или достигнут предел."
 	)
 	persist()
@@ -313,7 +314,7 @@ func _buy(item: String, discount: int) -> void:
 func _train(skill: String) -> void:
 	model.state.message = (
 		"Навык улучшен."
-		if Progression.train(StoryRuntime.state.gameplay, skill)
+		if model.train(StoryRuntime.state.gameplay, skill)
 		else "Нет свободных очков или достигнут предел."
 	)
 	persist()
@@ -523,13 +524,12 @@ func _sprite(
 ) -> void:
 	if not sprites.has(ident):
 		return
-	var target = Rect2(point - Vector2(dimensions.x * 0.5, dimensions.y), dimensions)
-	if facing < 0:
-		target.position.x += dimensions.x
-		target.size.x = -dimensions.x
+	var target = Rect2(Vector2(-dimensions.x * 0.5, -dimensions.y), dimensions)
+	draw_set_transform(point, 0.0, Vector2(-1, 1) if facing < 0 else Vector2.ONE)
 	draw_texture_rect_region(
-		sprites[ident], target, Rect2((pose % 3) * 48, (pose / 3) * 64, 48, 64)
+		sprites[ident], target, Rect2((pose % 3) * 48, floori(pose / 3.0) * 64, 48, 64)
 	)
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 
 
 func _hero_sprite() -> String:
@@ -677,6 +677,9 @@ func _draw_platformer() -> void:
 		if model.state.block
 		else (6 if model.state.attack > 0.18 else (4 if absf(model.state.vx) > 1 else 3))
 	)
+	var hero_point = Vector2(model.state.x - camera, model.state.y - 14)
+	draw_circle(hero_point - Vector2(0, 14), 10, Color("1e2a44"))
+	draw_string(font, hero_point - Vector2(5, 31), "Вы", HORIZONTAL_ALIGNMENT_LEFT, -1, 8, OCHRE)
 	_sprite(
 		_hero_sprite(),
 		Vector2(model.state.x - camera, model.state.y - 14),
@@ -718,9 +721,10 @@ func _draw_hub() -> void:
 			Vector2(model.state.x - 18, model.state.y + 2),
 			4
 		)
-	_sprite(
-		_hero_sprite(), Vector2(model.state.x, model.state.y), 4 if joy_axis.length() > 0.1 else 3
-	)
+	var hero_point = Vector2(model.state.x, model.state.y)
+	draw_circle(hero_point - Vector2(0, 11), 8, Color("1e2a44"))
+	draw_string(font, hero_point - Vector2(5, 25), "Вы", HORIZONTAL_ALIGNMENT_LEFT, -1, 8, OCHRE)
+	_sprite(_hero_sprite(), hero_point, 4 if joy_axis.length() > 0.1 else 3)
 	draw_string(
 		font, Vector2(98, 171), "Подойдите: Дело / E", HORIZONTAL_ALIGNMENT_LEFT, -1, 7, BRONZE
 	)

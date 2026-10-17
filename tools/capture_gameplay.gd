@@ -36,6 +36,23 @@ func _capture() -> void:
 	await _shot("saves")
 	view.menu()
 	await _shot("menu")
+	view._chapters()
+	await _shot("campaign")
+	view._open_settings(view.menu)
+	view._credits()
+	await _shot("credits")
+	view._licenses()
+	await _shot("licenses")
+	game.go("ch01_s03_n80")
+	view._enter_current()
+	await _shot("loading")
+	await create_timer(0.4).timeout
+	var audio = root.get_node("GameServices")
+	audio.music.stop()
+	for voice in audio.voices:
+		voice.stop()
+	await process_frame
+	await process_frame
 	for suffix in ["", ".bak", ".tmp"]:
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(game.save_path + suffix))
 	print("GAMEPLAY CAPTURES PASS")

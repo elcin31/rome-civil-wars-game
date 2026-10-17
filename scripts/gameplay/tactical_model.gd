@@ -1,4 +1,6 @@
 extends RefCounted
+
+const Snapshot = preload("res://scripts/gameplay/snapshot.gd")
 ## Deterministic grid combat. Rendering and touch handling never change these rules.
 
 const WIDTH = 9
@@ -53,24 +55,51 @@ func _add_unit(team: int, kind: String, x: int, y: int, health: int, damage: int
 
 
 func restore(snapshot: Dictionary) -> bool:
-	if not snapshot.get("units") is Array or snapshot.units.size() != state.units.size():
+	if not Snapshot.matches(snapshot, state) or snapshot.units.size() != state.units.size():
+		return false
+	if (
+		snapshot.selected < 0
+		or snapshot.selected >= snapshot.units.size()
+		or snapshot.round < 1
+		or snapshot.round > 31
+	):
 		return false
 	for unit in snapshot.units:
-		if not unit is Dictionary:
+		if not _valid_unit(unit):
 			return false
-		for key in ["team", "x", "y", "hp", "max_hp", "damage", "ap", "morale"]:
-			if not (unit.get(key) is float or unit.get(key) is int):
-				return false
-		if (
-			not inside(Vector2i(int(unit.x), int(unit.y)))
-			or unit.kind not in ["legion", "archer", "cavalry"]
-		):
-			return false
-	for key in ["round", "selected", "won", "failed", "message", "cooperation"]:
-		if not snapshot.has(key):
-			return false
+	if (
+		not inside(Vector2i(snapshot.convoy.x, snapshot.convoy.y))
+		or snapshot.convoy.hp < 0
+		or snapshot.convoy.hp > 3
+	):
+		return false
 	state = snapshot.duplicate(true)
+	for key in ["round", "selected"]:
+		state[key] = int(state[key])
+	for key in ["x", "y", "hp"]:
+		state.convoy[key] = int(state.convoy[key])
+	for unit in state.units:
+		for key in ["team", "x", "y", "hp", "max_hp", "damage", "ap", "morale"]:
+			unit[key] = int(unit[key])
 	return true
+
+
+func _valid_unit(unit: Dictionary) -> bool:
+	return (
+		inside(_cell(unit))
+		and unit.kind in ["legion", "archer", "cavalry"]
+		and int(unit.team) in [0, 1]
+		and unit.hp >= 0
+		and unit.hp <= unit.max_hp
+		and unit.max_hp >= 1
+		and unit.max_hp <= 100
+		and unit.ap >= 0
+		and unit.ap <= 2
+		and unit.damage >= 1
+		and unit.damage <= 30
+		and unit.morale >= 0
+		and unit.morale <= 5
+	)
 
 
 func inside(cell: Vector2i) -> bool:

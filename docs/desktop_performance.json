@@ -1,0 +1,54 @@
+{
+	"aspects": [
+		{
+			"viewport": [
+				1280,
+				720
+			],
+			"window": [
+				1280,
+				720
+			]
+		},
+		{
+			"viewport": [
+				1280,
+				720
+			],
+			"window": [
+				1680,
+				720
+			]
+		}
+	],
+	"device": "Linux desktop, Xorg dummy, Mesa llvmpipe software OpenGL",
+	"godot": "4.6.3-stable (official)",
+	"layers": [
+		{
+			"cpu_frame_max_ms": 15.58,
+			"fps_max": 60.0,
+			"fps_min": 60.0,
+			"layer": "tactical",
+			"static_memory_max_mib": 31.36
+		},
+		{
+			"cpu_frame_max_ms": 10.61,
+			"fps_max": 60.0,
+			"fps_min": 60.0,
+			"layer": "platformer",
+			"static_memory_max_mib": 31.37
+		},
+		{
+			"cpu_frame_max_ms": 10.78,
+			"fps_max": 60.0,
+			"fps_min": 60.0,
+			"layer": "rpg",
+			"static_memory_max_mib": 31.57
+		}
+	],
+	"nodes_after_pause_cycles": 15,
+	"nodes_before_pause_cycles": 15,
+	"pause_cycles": 20,
+	"physical_android": false,
+	"samples_per_layer": 120
+}

@@ -16,13 +16,19 @@ var ui: Dictionary = {}
 var state: Dictionary = {}
 var last_error: String = ""
 var suppress_save: bool = false
+var loaded_chapters: Dictionary = {}
 
 
 func read_json(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
 		return {}
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file == null or file.get_length() > 8 * 1024 * 1024:
+		return {}
 	var parser = JSON.new()
-	if parser.parse(FileAccess.get_file_as_string(path)) != OK:
+	var contents: String = file.get_as_text()
+	file.close()
+	if parser.parse(contents) != OK:
 		return {}
 	return parser.data if parser.data is Dictionary else {}
 
@@ -34,13 +40,25 @@ func _ready() -> void:
 	portraits = read_json("res://story/portraits.json").get("portraits", {})
 	for beat in read_json("res://story/beats.json").get("beats", []):
 		beats[beat.id] = beat
-	for i in range(1, 9):
-		var chapter = read_json("res://story/chapters/ch%02d.json" % i)
-		chapters.append(chapter)
-		for scene in chapter.get("scenes", []):
-			scenes[scene.id] = scene
-		for node in chapter.get("nodes", []):
-			nodes[node.id] = node
+	chapters = read_json("res://story/chapter_index.json").get("chapters", [])
+	_load_chapter(1)
+
+
+func _load_chapter(number: int) -> void:
+	if loaded_chapters.has(number) or number < 1 or number > 8:
+		return
+	var chapter: Dictionary = read_json("res://story/chapters/ch%02d.json" % number)
+	for scene in chapter.get("scenes", []):
+		scenes[scene.id] = scene
+	for node in chapter.get("nodes", []):
+		nodes[node.id] = node
+	loaded_chapters[number] = true
+
+
+func _ensure_node(ident: String) -> bool:
+	if not nodes.has(ident) and ident.begins_with("ch") and ident.length() > 4:
+		_load_chapter(int(ident.substr(2, 2)))
+	return nodes.has(ident)
 
 
 func tr_ui(key: String) -> String:
@@ -48,6 +66,7 @@ func tr_ui(key: String) -> String:
 
 
 func current() -> Dictionary:
+	_ensure_node(state.get("node", ""))
 	return nodes.get(state.get("node", ""), {})
 
 
@@ -118,19 +137,14 @@ func _atom(atom: String) -> bool:
 		var key: String = match_value.get_string(1)
 		var lhs: int = int(state.bond) if key == "bond" else int(state.rep.get(key.substr(4), 0))
 		var rhs: int = int(match_value.get_string(3))
-		match match_value.get_string(2):
-			">=":
-				return lhs >= rhs
-			"<=":
-				return lhs <= rhs
-			"==":
-				return lhs == rhs
-			"!=":
-				return lhs != rhs
-			">":
-				return lhs > rhs
-			"<":
-				return lhs < rhs
+		return {
+			">=": lhs >= rhs,
+			"<=": lhs <= rhs,
+			"==": lhs == rhs,
+			"!=": lhs != rhs,
+			">": lhs > rhs,
+			"<": lhs < rhs
+		}[match_value.get_string(2)]
 	return bool(state.flags.get(atom, false))
 
 
@@ -144,10 +158,16 @@ func apply_effects(effect: Dictionary) -> void:
 		state.rep[faction] = clampi(
 			int(state.rep.get(faction, 0)) + int(effect.rep[faction]), -100, 100
 		)
+	_synchronize_hero()
+
+
+func _synchronize_hero() -> void:
+	if state.flags.get("friend_lost", false) and state.has("gameplay"):
+		state.gameplay.hero = "pullo"
 
 
 func go(target: String) -> bool:
-	if not nodes.has(target):
+	if not _ensure_node(target):
 		last_error = "Unknown node: " + target
 		push_error(last_error)
 		return false
@@ -232,6 +252,8 @@ func complete_beat() -> bool:
 	if current().beat not in state.beats_completed:
 		state.beats_completed.append(current().beat)
 		Progression.reward(state.gameplay, current().beat)
+		if beats[current().beat].type == "rpg":
+			state.gameplay.quests[current().beat] = true
 	state.gameplay.encounter = {}
 	return go(current().get("next", ""))
 
@@ -258,10 +280,19 @@ func save_game() -> bool:
 		return false
 	file.store_string(JSON.stringify(state))
 	file.flush()
+	var write_error: Error = file.get_error()
 	file.close()
+	if write_error != OK:
+		last_error = tr_ui("save_error")
+		return false
 	# Keep the last parseable version; a damaged main file must not replace it.
 	var previous = read_json(save_path)
-	if previous.get("schema_version") == 2 and nodes.has(previous.get("node", "")):
+	if (
+		_valid_save_fields(previous)
+		and _valid_save_records(previous)
+		and _migrate_flags(previous)
+		and (not previous.has("gameplay") or Progression.valid(previous.gameplay))
+	):
 		DirAccess.copy_absolute(
 			ProjectSettings.globalize_path(save_path),
 			ProjectSettings.globalize_path(save_path + ".bak")
@@ -287,22 +318,72 @@ func load_game(use_backup: bool = false) -> bool:
 func _load_path(path: String) -> bool:
 	if not FileAccess.file_exists(path):
 		return false
-	var data = read_json(path)
-	if data.get("schema_version") != 2 or not nodes.has(data.get("node", "")):
+	var data: Dictionary = read_json(path)
+	if not _valid_save_fields(data) or not _valid_save_records(data):
+		return false
+	if not _migrate_flags(data):
+		return false
+	if not data.has("gameplay"):
+		data.gameplay = Progression.fresh()
+		for ident in data.beats_completed:
+			if beats.has(ident):
+				Progression.reward(data.gameplay, ident)
+				if beats[ident].type == "rpg":
+					data.gameplay.quests[ident] = true
+	if not Progression.valid(data.gameplay):
+		return false
+	state = data
+	_synchronize_hero()
+	_settle()
+	return true
+
+
+func _numeric(value: Variant) -> bool:
+	return (value is float or value is int) and is_finite(float(value))
+
+
+func _valid_save_fields(data: Dictionary) -> bool:
+	if (
+		data.get("schema_version") != 2
+		or not data.get("node") is String
+		or not _ensure_node(data.node)
+	):
 		return false
 	if not data.get("flags") is Dictionary or not data.get("rep") is Dictionary:
 		return false
-	if not data.get("bond") is float and not data.get("bond") is int:
+	if not _numeric(data.get("bond")) or data.bond < 0 or data.bond > 100:
 		return false
-	if data.bond < 0 or data.bond > 100:
-		return false
-	if not data.get("decisions") is Array:
-		return false
-	for decision in data.decisions:
-		if not decision is Dictionary or not decision.get("choice") is String:
+	for key in ["history", "applied", "decisions", "beats_completed"]:
+		if not data.get(key) is Array:
 			return false
+	if not data.get("progress") is Dictionary or not data.progress.get("visited") is Array:
+		return false
+	return true
+
+
+func _valid_save_records(data: Dictionary) -> bool:
+	for decision in data.decisions:
+		if (
+			not decision is Dictionary
+			or not decision.get("choice") is String
+			or not decision.get("node") is String
+		):
+			return false
+	for item in data.history:
+		if not item is Dictionary:
+			return false
+		for key in ["node", "speaker", "text"]:
+			if not item.get(key) is String:
+				return false
+	for key in ["applied", "beats_completed"]:
+		for item in data[key]:
+			if not item is String:
+				return false
+	return true
+
+
+func _migrate_flags(data: Dictionary) -> bool:
 	for key in definitions.flags:
-		# Additive story flags can be recovered from actual choices in older saves.
 		var definition: Dictionary = definitions.flags[key]
 		if not data.flags.has(key) and definition.has("restore_from_choices"):
 			data.flags[key] = definition.get("default", false)
@@ -312,20 +393,26 @@ func _load_path(path: String) -> bool:
 		if not data.flags.get(key) is bool:
 			return false
 	for key in definitions.reputation:
-		if not data.rep.get(key) is float and not data.rep.get(key) is int:
+		if not _numeric(data.rep.get(key)) or absf(float(data.rep[key])) > 100:
 			return false
-	for key in ["history", "applied", "decisions", "beats_completed"]:
-		if not data.get(key) is Array:
-			return false
-	if not data.get("progress") is Dictionary or not data.progress.get("visited") is Array:
-		return false
-	if not data.has("gameplay"):
-		data.gameplay = Progression.fresh()
-	if not Progression.valid(data.gameplay):
-		return false
-	state = data
-	_settle()
 	return true
+
+
+func use_supply() -> bool:
+	var progress: Dictionary = state.get("gameplay", {})
+	var saved: Dictionary = progress.get("encounter", {})
+	if int(progress.get("supplies", 0)) <= 0 or saved.get("beat") != current().get("beat"):
+		return false
+	if beats.get(saved.get("beat"), {}).get("type") != "platformer":
+		return false
+	var episode: Dictionary = saved.get("state", {})
+	if not _numeric(episode.get("hp")) or not _numeric(episode.get("max_hp")):
+		return false
+	if episode.hp <= 0 or episode.hp >= episode.max_hp:
+		return false
+	progress.supplies -= 1
+	episode.hp = mini(int(episode.max_hp), int(episode.hp) + 3)
+	return save_game()
 
 
 func save_slot(slot: int) -> bool:

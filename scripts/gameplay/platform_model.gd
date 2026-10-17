@@ -1,4 +1,6 @@
 extends RefCounted
+
+const Snapshot = preload("res://scripts/gameplay/snapshot.gd")
 ## Fixed-step platform physics, checkpoints, melee, shielding and a following ally.
 
 var state: Dictionary = {}
@@ -20,10 +22,18 @@ func setup(
 	companion = has_companion
 	var difficulty: int = int(beat.get("difficulty", 1))
 	width = 880.0 + difficulty * 32.0
+	var variant: int = int(beat.get("variant", 1))
+	var first: float = 170.0 + (variant % 3) * 14
+	var second: float = 365.0 + (variant % 4) * 12
+	var third: float = 600.0 + (variant % 3) * 18
 	ground = [
-		[0.0, 190.0, 132.0], [222.0, 390.0, 132.0], [426.0, 620.0, 132.0], [654.0, width, 132.0]
+		[0.0, first, 132.0],
+		[first + 28 + (variant % 2) * 4, second, 132.0],
+		[second + 32 + (variant % 3) * 2, third, 132.0],
+		[third + 30 + (variant % 3) * 3, width, 132.0]
 	]
 	var health: int = 6 + int(progress.equipment.shield) + int(progress.skills.formation)
+	health += 1 if progress.hero == "vorenus" else 0
 	state = {
 		"x": 24.0,
 		"y": 132.0,
@@ -58,48 +68,34 @@ func setup(
 
 
 func restore(snapshot: Dictionary) -> bool:
-	for key in state:
-		if not snapshot.has(key):
-			return false
-	for key in [
-		"x",
-		"y",
-		"vx",
-		"vy",
-		"hp",
-		"max_hp",
-		"checkpoint",
-		"attack",
-		"invincible",
-		"dodge",
-		"dodge_cooldown",
-		"ally_x",
-		"ally_y",
-		"ally_cooldown",
-		"retries",
-		"facing"
-	]:
-		if (
-			not (snapshot[key] is float or snapshot[key] is int)
-			or not is_finite(float(snapshot[key]))
-		):
-			return false
-	if not snapshot.tokens is Array or not snapshot.enemies is Array:
+	if not Snapshot.matches(snapshot, state) or snapshot.enemies.size() != state.enemies.size():
 		return false
 	if (
 		snapshot.x < 0
 		or snapshot.x > width
 		or snapshot.checkpoint < 0
 		or snapshot.checkpoint > width
+		or absf(snapshot.y) > 1000
+		or snapshot.hp < 0
+		or snapshot.hp > snapshot.max_hp
 	):
 		return false
-	for enemy in snapshot.enemies:
-		if not enemy is Dictionary:
+	for token in snapshot.tokens:
+		if not (token is float or token is int) or int(token) not in [0, 1, 2]:
 			return false
-		for key in ["x", "y", "hp", "cooldown", "charge"]:
-			if not (enemy.get(key) is float or enemy.get(key) is int):
-				return false
+	for enemy in snapshot.enemies:
+		if enemy.x < 0 or enemy.x > width or enemy.hp < 0 or enemy.hp > 20:
+			return false
 	state = snapshot.duplicate(true)
+	for key in ["hp", "max_hp", "facing", "retries"]:
+		state[key] = int(state[key])
+	var collected: Array = []
+	for token in state.tokens:
+		if int(token) not in collected:
+			collected.append(int(token))
+	state.tokens = collected
+	for enemy in state.enemies:
+		enemy.hp = int(enemy.hp)
 	return true
 
 
@@ -121,7 +117,10 @@ func tick(delta: float, axis: float, jump: bool, strike: bool, block: bool, dodg
 	if state.dodge > 0:
 		state.vx = state.facing * speed * 1.65
 	if jump and state.on_ground:
-		state.vy = -168.0
+		state.vy = -168.0 if progress.hero == "pullo" else -160.0
+		if companion and bond >= 65 and absf(state.ally_x - state.x) < 30:
+			state.vy -= 8.0
+			state.message = "Напарник помог подняться."
 		state.on_ground = false
 	var previous_y: float = state.y
 	state.x = clampf(float(state.x) + float(state.vx) * dt, 6.0, width - 6.0)
@@ -149,6 +148,7 @@ func tick(delta: float, axis: float, jump: bool, strike: bool, block: bool, dodg
 						(
 							int(enemy.hp)
 							- 2
+							- (1 if progress.hero == "pullo" else 0)
 							- int(progress.skills.strength)
 							- int(progress.equipment.sword)
 						)
@@ -186,7 +186,13 @@ func _damage(amount: int) -> void:
 	if state.invincible > 0:
 		return
 	if state.block:
-		amount = maxi(0, amount - 1 - int(progress.skills.formation))
+		amount = maxi(
+			0,
+			amount - 1 - int(progress.skills.formation) - (1 if progress.hero == "vorenus" else 0)
+		)
+	if companion and bond >= 55 and state.ally_cooldown <= 0 and absf(state.ally_x - state.x) < 30:
+		amount = maxi(0, amount - 1)
+		state.ally_cooldown = 2.0
 	state.hp = maxi(0, int(state.hp) - amount)
 	state.invincible = 0.65
 	state.message = "Щит принял удар." if amount == 0 else "Удар. Используйте щит или уклонение."

@@ -1,6 +1,7 @@
 extends SceneTree
 ## Headless integration check: load every resource, traverse every gallery item and pose.
 
+
 func _initialize() -> void:
 	call_deferred("_verify")
 
@@ -22,14 +23,18 @@ func _verify() -> void:
 			assert(gallery.texture != null, "Missing texture")
 			if group == 0:
 				assert(gallery.portrait != null, "Missing portrait")
-				var frames = load("res://assets/characters/" + gallery.current.id + ".tres") as SpriteFrames
+				var frames = (
+					load("res://assets/characters/" + gallery.current.id + ".tres") as SpriteFrames
+				)
 				assert(frames != null and frames.get_animation_names().size() == 9)
 				for pose in range(9):
 					gallery._action()
 			elif group == 1:
 				assert(gallery.layers.size() == 3, "Missing parallax layer")
 			elif group == 2:
-				var tiles = load("res://" + gallery.current.file.replace(".png", ".tres")) as TileSet
+				var tiles = (
+					load("res://" + gallery.current.file.replace(".png", ".tres")) as TileSet
+				)
 				assert(tiles != null and tiles.tile_size == Vector2i(16, 16))
 				assert(tiles.get_source(0).get_tiles_count() == 64)
 			await process_frame
@@ -64,11 +69,15 @@ func _verify() -> void:
 	await process_frame
 	for button in gallery.tabs:
 		assert(button.size.y <= 18, "Category exceeds allocated height")
-	assert(gallery.action_button.position.y + gallery.action_button.size.y <= 180,
-		"Footer button exceeds viewport")
+	assert(
+		gallery.action_button.position.y + gallery.action_button.size.y <= 180,
+		"Footer button exceeds viewport"
+	)
 	gallery._toggle_fullscreen()
 	assert(not gallery.chrome.visible)
 	gallery._toggle_fullscreen()
 	assert(gallery.chrome.visible)
-	print("GALLERY PASS: ", count, " assets, 135 character keys, 36 parallax layers, 256 tile regions")
+	print(
+		"GALLERY PASS: ", count, " assets, 135 character keys, 36 parallax layers, 256 tile regions"
+	)
 	quit(0)

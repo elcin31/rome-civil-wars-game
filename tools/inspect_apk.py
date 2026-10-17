@@ -9,6 +9,7 @@ metadata = Path(sys.argv[2]).read_text()
 assert apk.stat().st_size <= 150 * 1024 * 1024, "APK exceeds 150 MiB"
 assert "package: name='org.cinislauri.game'" in metadata
 assert "versionName='0.3.0'" in metadata and "versionCode='3'" in metadata
+assert "uses-permission: name='android.permission.INTERNET'" not in metadata
 assert re.search(r"sdkVersion:'24'", metadata), "Wrong minimum SDK"
 assert re.search(r"targetSdkVersion:'36'", metadata), "Wrong target SDK"
 with ZipFile(apk) as archive:

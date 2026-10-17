@@ -2,7 +2,6 @@ extends SceneTree
 ## Play narrative witnesses using real gameplay actions, without victory flag injection.
 
 const Factory = preload("res://scripts/gameplay/encounter_factory.gd")
-const Progression = preload("res://scripts/gameplay/progression.gd")
 var game: Node
 var chapter_filter: int = 0
 var counts: Dictionary = {"tactical": 0, "platformer": 0, "rpg": 0}
@@ -59,20 +58,9 @@ func _walk(route: Dictionary) -> bool:
 		if chapter_filter == chapter:
 			reached_chapter = true
 		if node.get("kind") == "ending":
-			if node.get("ending") != route.ending:
-				push_error("Unexpected ending in gameplay bot")
-				return false
-			print("PLAYED ", route.get("case", route.get("route", "coverage")), " / ", route.ending)
-			return true
+			return _verify_ending(node, route)
 		if node.has("choices"):
-			if decision >= route.decisions.size() or route.decisions[decision].node != node.id:
-				push_error("Choice witness diverged at " + node.id)
-				return false
-			var index: int = -1
-			for option in range(node.choices.size()):
-				if node.choices[option].id == route.decisions[decision].choice:
-					index = option
-			if not game.choose(index):
+			if not _choose_witness(node, route, decision):
 				return false
 			decision += 1
 		elif node.get("kind") == "beat":
@@ -130,8 +118,26 @@ func _prepare_hub(model: RefCounted) -> void:
 	var progress: Dictionary = game.state.gameplay
 	for skill in ["strength", "formation", "diplomacy"]:
 		for rank in range(3):
-			Progression.train(progress, skill)
+			model.train(progress, skill)
 	var discount: int = maxi(0, int(game.state.rep.citizens) / 5) + int(progress.skills.diplomacy)
 	for item in ["sword", "shield"]:
 		for rank in range(3):
-			Progression.buy(progress, item, discount)
+			model.buy(progress, item, discount)
+
+
+func _choose_witness(node: Dictionary, route: Dictionary, decision: int) -> bool:
+	if decision >= route.decisions.size() or route.decisions[decision].node != node.id:
+		push_error("Choice witness diverged at " + node.id)
+		return false
+	for index in range(node.choices.size()):
+		if node.choices[index].id == route.decisions[decision].choice:
+			return game.choose(index)
+	return false
+
+
+func _verify_ending(node: Dictionary, route: Dictionary) -> bool:
+	if node.get("ending") != route.ending:
+		push_error("Unexpected ending in gameplay bot")
+		return false
+	print("PLAYED ", route.get("case", route.get("route", "coverage")), " / ", route.ending)
+	return true

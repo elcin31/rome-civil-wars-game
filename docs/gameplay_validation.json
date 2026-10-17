@@ -1,0 +1,21 @@
+{
+  "encounters": 29,
+  "types": {
+    "tactical": 10,
+    "platformer": 10,
+    "rpg": 9
+  },
+  "routes": 24,
+  "choices_covered": 114,
+  "endings": [
+    "apart",
+    "bad",
+    "sacrifice",
+    "together"
+  ],
+  "logical_art_compositions": 75,
+  "game_pngs": 173,
+  "music_layers": 3,
+  "effects": 5,
+  "errors": []
+}

@@ -17,6 +17,7 @@ var font: Font
 var test_route: String = "legion"
 var settings_return: Callable
 var encounter: Control
+var transition_serial: int = 0
 
 
 func _ready() -> void:
@@ -29,6 +30,7 @@ func _ready() -> void:
 
 
 func _clear(new_mode: String) -> void:
+	transition_serial += 1
 	if is_instance_valid(encounter):
 		encounter.persist()
 		encounter = null
@@ -64,7 +66,7 @@ func _label(value: String, rect: Rect2, size_value: int = 9, color: Color = IVOR
 
 
 func _button(value: String, rect: Rect2, callback: Callable, enabled: bool = true) -> Button:
-	rect.size.y = maxf(24, rect.size.y)
+	rect.size.y = maxf(26, rect.size.y)
 	rect.position.y = minf(rect.position.y, 180 - rect.size.y)
 	var button = Button.new()
 	button.disabled = not enabled
@@ -98,6 +100,8 @@ func _button(value: String, rect: Rect2, callback: Callable, enabled: bool = tru
 
 func menu(message: String = "") -> void:
 	_clear("menu")
+	_set_background("res://assets/final/menu.png")
+	GameServices.play_layer("city")
 	_label(StoryRuntime.tr_ui("title"), Rect2(77, 10, 200, 22), 19, OCHRE)
 	_label(StoryRuntime.tr_ui("subtitle"), Rect2(115, 35, 180, 18), 11)
 	_button(StoryRuntime.tr_ui("new_game"), Rect2(80, 60, 160, 24), _new_request)
@@ -107,7 +111,7 @@ func menu(message: String = "") -> void:
 		_continue,
 		FileAccess.file_exists(StoryRuntime.save_path)
 	)
-	_button(StoryRuntime.tr_ui("chapters"), Rect2(80, 116, 160, 24), _chapters)
+	_button("Карта кампании", Rect2(80, 116, 160, 26), _chapters)
 	_button(StoryRuntime.tr_ui("gallery"), Rect2(80, 144, 78, 24), _gallery)
 	_button("Настройки", Rect2(162, 144, 78, 24), _open_settings.bind(menu))
 	if not message.is_empty():
@@ -139,23 +143,39 @@ func _continue() -> void:
 
 func _chapters() -> void:
 	_clear("chapters")
-	_label(StoryRuntime.tr_ui("chapter_test"), Rect2(40, 8, 260, 20), 12, OCHRE)
-	for i in range(8):
-		var chapter = StoryRuntime.chapters[i]
+	_set_background("res://assets/ui/campaign_map.png")
+	_label("Карта кампании", Rect2(86, 3, 230, 24), 13, OCHRE)
+	var progress: Dictionary = StoryRuntime.state.get("progress", {})
+	if progress.is_empty():
+		var saved: Dictionary = StoryRuntime.read_json(StoryRuntime.save_path)
+		if saved.get("progress") is Dictionary:
+			progress = saved.progress
+	var unlocked: int = clampi(int(progress.get("chapter", 1)), 1, 8)
+	for index in range(8):
+		var caption: String = "%d. %s" % [index + 1, StoryRuntime.chapters[index].title.ru]
+		if index + 1 < unlocked:
+			caption += " · пройдено"
+		elif index + 1 == unlocked:
+			caption += " · здесь"
+		else:
+			caption += " · закрыто"
 		_button(
-			str(i + 1) + ". " + chapter.title.ru,
-			Rect2(4 + i % 4 * 79, 35 + (i / 4) * 43, 75, 39),
-			_new_game.bind(i + 1)
+			caption,
+			Rect2(6 + (index % 4) * 78, 35 + (index / 4) * 45, 74, 41),
+			_campaign_resume,
+			index + 1 <= unlocked
 		)
-	_button(StoryRuntime.tr_ui("legion"), Rect2(24, 127, 126, 20), _set_route.bind("legion"))
-	_button(StoryRuntime.tr_ui("citizen"), Rect2(170, 127, 126, 20), _set_route.bind("citizen"))
-	_label(StoryRuntime.tr_ui(test_route), Rect2(136, 151, 100, 15), 8, OCHRE)
-	_button(StoryRuntime.tr_ui("back"), Rect2(4, 158, 70, 20), menu)
+	_button("Меню", Rect2(6, 148, 74, 28), menu)
+	_button("К текущему событию", Rect2(88, 148, 226, 28), _campaign_resume)
 
 
-func _set_route(value: String) -> void:
-	test_route = value
-	_chapters()
+func _campaign_resume() -> void:
+	if not StoryRuntime.state.is_empty():
+		refresh()
+	elif FileAccess.file_exists(StoryRuntime.save_path):
+		_continue()
+	else:
+		_new_game()
 
 
 func _gallery() -> void:
@@ -175,6 +195,7 @@ func refresh() -> void:
 	if node.get("kind") == "beat":
 		_show_beat(node)
 		return
+	GameServices.play_layer("city")
 	_button(StoryRuntime.tr_ui("menu"), Rect2(2, 1, 42, 16), _pause)
 	_label(scene.get("title", {}).get("ru", ""), Rect2(49, 1, 120, 14), 8, OCHRE)
 	_label(
@@ -307,11 +328,34 @@ func _next() -> void:
 		_show_page()
 	else:
 		StoryRuntime.advance()
-		refresh()
+		_enter_current()
 
 
 func _choose(index: int) -> void:
+	GameServices.effect("choice")
 	if StoryRuntime.choose(index):
+		_enter_current()
+
+
+func _enter_current() -> void:
+	var node: Dictionary = StoryRuntime.current()
+	if node.get("kind") != "beat":
+		refresh()
+		return
+	var beat: Dictionary = StoryRuntime.beats[node.beat]
+	var art: String = {
+		"tactical": "loading_battle", "platformer": "loading_march", "rpg": "loading_city"
+	}[beat.type]
+	if int(StoryRuntime.state.progress.chapter) == 8:
+		art = "loading_memory"
+	elif beat.id == "beat_ch01_s03":
+		art = "loading_oath"
+	_clear("loading")
+	_set_background("res://assets/final/" + art + ".png")
+	_label(beat.title.ru, Rect2(12, 145, 296, 26), 16, OCHRE)
+	var serial: int = transition_serial
+	await get_tree().create_timer(0.3).timeout
+	if is_inside_tree() and mode == "loading" and serial == transition_serial:
 		refresh()
 
 
@@ -335,14 +379,42 @@ func _complete_beat() -> void:
 
 
 func _pause() -> void:
+	var had_encounter: bool = is_instance_valid(encounter)
 	_clear("pause")
 	_label(StoryRuntime.tr_ui("pause"), Rect2(130, 8, 120, 20), 13, OCHRE)
-	StoryRuntime.save_game()
+	if not had_encounter:
+		StoryRuntime.save_game()
+	GameServices.music.stream_paused = true
+	_label(
+		(
+			"Ур. %d · %d монет"
+			% [int(StoryRuntime.state.gameplay.level), int(StoryRuntime.state.gameplay.coins)]
+		),
+		Rect2(4, 4, 120, 22),
+		8,
+		BRONZE
+	)
+	var episode: Dictionary = StoryRuntime.state.gameplay.encounter.get("state", {})
+	_button(
+		"Припас · %d" % int(StoryRuntime.state.gameplay.supplies),
+		Rect2(234, 1, 82, 26),
+		_use_supply,
+		(
+			episode.has("max_hp")
+			and episode.get("hp", 0) < episode.max_hp
+			and StoryRuntime.state.gameplay.supplies > 0
+		)
+	)
 	_button(StoryRuntime.tr_ui("resume"), Rect2(75, 30, 170, 24), refresh)
 	_button("Сохранения", Rect2(75, 58, 170, 24), _slots)
 	_button("Настройки", Rect2(75, 86, 170, 24), _open_settings.bind(_pause))
 	_button(StoryRuntime.tr_ui("log"), Rect2(75, 114, 170, 24), _log)
 	_button(StoryRuntime.tr_ui("menu"), Rect2(75, 142, 170, 24), menu)
+
+
+func _use_supply() -> void:
+	StoryRuntime.use_supply()
+	_pause()
 
 
 func _slots(message: String = "") -> void:
@@ -351,9 +423,11 @@ func _slots(message: String = "") -> void:
 	for index in range(1, 4):
 		var path: String = StoryRuntime.slot_prefix + str(index) + ".json"
 		var data: Dictionary = StoryRuntime.read_json(path)
-		var caption: String = (
-			"Слот %d · глава %s" % [index, data.get("progress", {}).get("chapter", "—")]
+		var summary: Variant = data.get("progress")
+		var chapter_text: String = (
+			str(summary.get("chapter", "—")) if summary is Dictionary else "—"
 		)
+		var caption: String = "Слот %d · глава %s" % [index, chapter_text]
 		_label(caption, Rect2(8, 32 + (index - 1) * 36, 150, 24))
 		_button("Записать", Rect2(154, 30 + (index - 1) * 36, 76, 28), _save_slot.bind(index))
 		_button(
@@ -385,7 +459,8 @@ func _open_settings(back: Callable) -> void:
 func _settings() -> void:
 	_clear("settings")
 	_button("Назад", Rect2(4, 2, 72, 24), settings_return)
-	_label("Настройки · Русский", Rect2(92, 2, 222, 24), 11, OCHRE)
+	_label("Настройки · Русский", Rect2(82, 2, 150, 24), 10, OCHRE)
+	_button("Об игре", Rect2(238, 2, 76, 26), _credits)
 	var rows: Array = [
 		["music", "Музыка", 0.1],
 		["effects", "Эффекты", 0.1],
@@ -400,6 +475,47 @@ func _settings() -> void:
 		_button("−", Rect2(146, 29 + index * 28, 44, 26), _adjust.bind(row[0], -row[2]))
 		_label("%.1f" % value, Rect2(198, 31 + index * 28, 58, 24), 10, OCHRE)
 		_button("+", Rect2(266, 29 + index * 28, 44, 26), _adjust.bind(row[0], row[2]))
+
+
+func _credits() -> void:
+	_clear("credits")
+	_set_background("res://assets/final/banner.png")
+	_label("CINIS LAURI · Пепел лавра", Rect2(9, 9, 302, 26), 15, OCHRE)
+	var note = _label(
+		(
+			"Оригинальная история и 75 художественных композиций. "
+			+ "Изображения созданы генератором для проекта; музыка и эффекты — оригинальный синтез. "
+			+ "Источники: Цезарь, Плутарх, Аппиан, Светоний, Кассий Дион."
+		),
+		Rect2(12, 50, 296, 72),
+		10
+	)
+	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_button("Лицензии движка", Rect2(82, 122, 156, 26), _licenses)
+	_button("Назад", Rect2(102, 152, 116, 26), _settings)
+
+
+func _licenses() -> void:
+	_clear("legal")
+	_button("Назад", Rect2(4, 2, 74, 26), _credits)
+	_label("Godot 4.6.3 и компоненты", Rect2(86, 4, 226, 23), 11, OCHRE)
+	var notice: String = Engine.get_license_text() + "\n\n"
+	for item in Engine.get_copyright_info():
+		notice += str(item.get("name", "")) + "\n"
+		for part in item.get("parts", []):
+			for copyright_line in part.get("copyright", []):
+				notice += str(copyright_line) + "\n"
+			notice += str(part.get("license", "")) + "\n"
+	var licenses: Dictionary = Engine.get_license_info()
+	for key in licenses:
+		notice += "\n" + str(key) + "\n" + str(licenses[key]) + "\n"
+	var text = RichTextLabel.new()
+	text.position = Vector2(8, 33)
+	text.size = Vector2(304, 141)
+	text.bbcode_enabled = false
+	text.text = notice
+	text.add_theme_font_size_override("normal_font_size", 8)
+	layer.add_child(text)
 
 
 func _adjust(key: String, amount: float) -> void:
@@ -431,9 +547,10 @@ func _notification(what: int) -> void:
 		]
 	):
 		if not StoryRuntime.state.is_empty():
-			StoryRuntime.save_game()
 			if mode == "play":
 				_pause()
+			else:
+				StoryRuntime.save_game()
 
 
 func _skip() -> void:
@@ -445,6 +562,13 @@ func _log() -> void:
 	_clear("log")
 	_button(StoryRuntime.tr_ui("back"), Rect2(2, 1, 60, 20), refresh)
 	var log_text: String = ""
+	var active: String = StoryRuntime.current().get("beat", "")
+	if StoryRuntime.beats.has(active):
+		log_text += "Текущее поручение: " + StoryRuntime.beats[active].objective.ru + "\n\n"
+	for ident in StoryRuntime.state.get("gameplay", {}).get("quests", {}):
+		if StoryRuntime.beats.has(ident):
+			log_text += "Выполнено: " + StoryRuntime.beats[ident].title.ru + "\n"
+	log_text += "\n"
 	for item in StoryRuntime.state.get("history", []):
 		log_text += (
 			StoryRuntime.characters.get(item.speaker, {}).get("name", {}).get("ru", item.speaker)
@@ -496,4 +620,5 @@ func _draw() -> void:
 		else:
 			draw_rect(Rect2(5, 22, 310, 156), Color(0.078, 0.082, 0.121, .86))
 	else:
-		draw_rect(Rect2(0, 0, 320, 180), Color(0.078, 0.082, 0.121, .9))
+		var shade: float = 0.4 if mode in ["menu", "chapters", "loading", "credits"] else 0.9
+		draw_rect(Rect2(0, 0, 320, 180), Color(0.078, 0.082, 0.121, shade))

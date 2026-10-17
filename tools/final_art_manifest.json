@@ -1,0 +1,119 @@
+{
+  "composition_count": 9,
+  "source_count": 2,
+  "assets": [
+    {
+      "id": "loading_oath",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        0,
+        0
+      ],
+      "file": "assets/final/loading_oath.png",
+      "size": [
+        480,
+        270
+      ]
+    },
+    {
+      "id": "splash",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        1,
+        0
+      ],
+      "file": "assets/final/splash.png",
+      "size": [
+        480,
+        270
+      ]
+    },
+    {
+      "id": "menu",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        0,
+        1
+      ],
+      "file": "assets/final/menu.png",
+      "size": [
+        480,
+        270
+      ]
+    },
+    {
+      "id": "loading_city",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        1,
+        1
+      ],
+      "file": "assets/final/loading_city.png",
+      "size": [
+        480,
+        270
+      ]
+    },
+    {
+      "id": "loading_march",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        0,
+        2
+      ],
+      "file": "assets/final/loading_march.png",
+      "size": [
+        480,
+        270
+      ]
+    },
+    {
+      "id": "loading_battle",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        1,
+        2
+      ],
+      "file": "assets/final/loading_battle.png",
+      "size": [
+        480,
+        270
+      ]
+    },
+    {
+      "id": "banner",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        0,
+        3
+      ],
+      "file": "assets/final/banner.png",
+      "size": [
+        960,
+        320
+      ]
+    },
+    {
+      "id": "loading_memory",
+      "source": "art_src/final/contact_source.png",
+      "cell": [
+        1,
+        3
+      ],
+      "file": "assets/final/loading_memory.png",
+      "size": [
+        480,
+        270
+      ]
+    },
+    {
+      "id": "app_icon",
+      "source": "art_src/final/icon_source.png",
+      "file": "assets/final/app_icon.png",
+      "size": [
+        512,
+        512
+      ]
+    }
+  ]
+}

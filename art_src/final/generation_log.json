@@ -1,0 +1,15 @@
+{
+  "generated": "2026-10-17",
+  "original": true,
+  "references": [
+    "assets/locations/roman_camp.png",
+    "assets/characters/titus_pullo_portrait.png"
+  ],
+  "contact_prompt_summary": "Eight independent compositions, two columns/four rows: shield/oil-lamp emblem, laurel on ash, two original centurions approaching Rome, artisan courtyard, march through olives, palisade after defense, Alexandria harbor, wax tablet and two cups. Original late-Republic 16-bit pixel art, restricted project palette, no text/actors/gore.",
+  "icon_prompt_summary": "Square recomposition of the top-left emblem with two distinct oval shields, an oil lamp and laurel; transparent background, centered for Android adaptive masks, chunky readable pixel clusters.",
+  "source_files": [
+    "art_src/final/contact_source.png",
+    "art_src/final/icon_source.png"
+  ],
+  "review": "Agent inspected generated source compositions; processing and palette validation are reproducible. No separate user approval claimed."
+}

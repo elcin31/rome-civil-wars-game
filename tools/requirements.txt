@@ -1,1 +1,2 @@
 Pillow>=10.4,<13
+gdtoolkit==4.5.0

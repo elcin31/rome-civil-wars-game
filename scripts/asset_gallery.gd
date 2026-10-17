@@ -48,8 +48,11 @@ func _ready() -> void:
 	_build_ui()
 	if ResourceLoader.exists("res://scenes/StoryMain.tscn"):
 		var words = JSON.parse_string(FileAccess.get_file_as_string("res://story/ui_ru.json"))
-		_button(words.get("return_gallery", "Menu"), Rect2(276, 0, 44, 15),
-			func(): get_tree().change_scene_to_file("res://scenes/StoryMain.tscn"))
+		_button(
+			words.get("return_gallery", "Menu"),
+			Rect2(276, 0, 44, 15),
+			func(): get_tree().change_scene_to_file("res://scenes/StoryMain.tscn")
+		)
 	_select_group(0)
 	# Automation uses this same real scene; no fake screenshot renderer.
 	for arg in OS.get_cmdline_user_args():
@@ -189,11 +192,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		_toggle_fullscreen()
 	elif event is InputEventKey and event.pressed and not event.echo:
 		match event.keycode:
-			KEY_RIGHT: _navigate(1)
-			KEY_LEFT: _navigate(-1)
-			KEY_TAB: _select_group(group_index + 1)
-			KEY_SPACE: _action()
-			KEY_F, KEY_ESCAPE: _toggle_fullscreen()
+			KEY_RIGHT:
+				_navigate(1)
+			KEY_LEFT:
+				_navigate(-1)
+			KEY_TAB:
+				_select_group(group_index + 1)
+			KEY_SPACE:
+				_action()
+			KEY_F, KEY_ESCAPE:
+				_toggle_fullscreen()
 
 
 func _draw() -> void:
@@ -212,7 +220,11 @@ func _draw() -> void:
 			draw_texture(texture, (Vector2(320, 180) - texture.get_size()) / 2)
 			if current.get("id", "") == "dialogue" and button_art:
 				for state in range(4):
-					draw_texture_rect_region(button_art, Rect2(14 + state * 76, 117, 64, 20), Rect2(0, state * 20, 64, 20))
+					draw_texture_rect_region(
+						button_art,
+						Rect2(14 + state * 76, 117, 64, 20),
+						Rect2(0, state * 20, 64, 20)
+					)
 				if arrow_art:
 					draw_texture(arrow_art, Vector2(144, 142))
 	if not fullscreen:
@@ -221,7 +233,9 @@ func _draw() -> void:
 		draw_rect(Rect2(0, 140, 320, 40), INK)
 		draw_line(Vector2(0, 140), Vector2(320, 140), BRONZE)
 		if not texture:
-			draw_string(font, Vector2(88, 90), "Исходник в работе", HORIZONTAL_ALIGNMENT_LEFT, -1, 9, IVORY)
+			draw_string(
+				font, Vector2(88, 90), "Исходник в работе", HORIZONTAL_ALIGNMENT_LEFT, -1, 9, IVORY
+			)
 
 
 func _draw_checker() -> void:

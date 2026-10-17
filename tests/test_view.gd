@@ -14,6 +14,7 @@ func before_each() -> void:
 
 func after_each() -> void:
 	view._clear("menu")
+	await get_tree().process_frame
 	for suffix in ["", ".bak", ".tmp"]:
 		DirAccess.remove_absolute(ProjectSettings.globalize_path(game.save_path + suffix))
 
@@ -38,7 +39,7 @@ func test_two_finger_controls_pause_and_in_episode_reload() -> void:
 	var start_x: float = encounter.model.state.x
 	encounter._physics_process(1.0 / 60.0)
 	assert_gt(float(encounter.model.state.x), start_x)
-	assert_lt(float(encounter.model.state.vy), 0)
+	assert_lt(float(encounter.model.state.vy), 0.0)
 	encounter._input(_touch(0, Vector2(56, 152), false))
 	assert_eq(encounter.joy_axis, Vector2.ZERO)
 	assert_true(encounter.controls.jump)
@@ -64,3 +65,20 @@ func test_gameplay_cannot_finish_before_objective_is_won() -> void:
 	view._complete_beat()
 	assert_ne(game.state.node, original)
 	assert_true("beat_ch01_s03" in game.state.beats_completed)
+
+
+func test_campaign_map_preserves_current_story_decisions() -> void:
+	for step in range(200):
+		if game.current().has("choices"):
+			break
+		if game.current().get("kind") == "beat":
+			game.complete_beat()
+		else:
+			game.advance()
+	game.choose(game.first_choice())
+	var node: String = game.state.node
+	var decisions: Array = game.state.decisions.duplicate(true)
+	view._chapters()
+	view._campaign_resume()
+	assert_eq(game.state.node, node)
+	assert_eq(game.state.decisions, decisions)

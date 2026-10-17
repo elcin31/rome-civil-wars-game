@@ -1,6 +1,7 @@
 extends SceneTree
 ## Run with a real display (e.g. DISPLAY=:99), not the headless dummy renderer.
 
+
 func _initialize() -> void:
 	call_deferred("_capture")
 
