@@ -78,7 +78,7 @@ jobs:
       - name: Export and inspect ARM64 APK
         run: |
           mkdir -p build
-          godot --headless --path . --install-android-build-template --export-debug Android build/cinis-lauri.apk
+          godot --headless --path . --export-debug Android build/cinis-lauri.apk
           aapt dump badging build/cinis-lauri.apk | tee build/apk-metadata.txt
           python tools/inspect_apk.py build/cinis-lauri.apk build/apk-metadata.txt
           python tools/package_android.py
