@@ -40,12 +40,44 @@ def state():
         return {}
 
 
-def point(x, y):
-    return str(round(offset_x + x * factor)), str(round(offset_y + y * factor))
+
+def ui():
+    try:
+        data = json.loads(adb("exec-out", "run-as", PACKAGE, "cat", "files/cinis_ui_layout.json"))
+    except (ValueError, RuntimeError):
+        return {}
+    density = max(1.0, data.get("dpi", 160) / 160.0)
+    for button in data.get("buttons", []):
+        assert min(button["rect"][2:]) / density >= 47.9, "Android target below 48 dp: " + button["text"]
+    return data
 
 
-def tap(x, y):
-    adb("shell", "input", "tap", *point(x, y))
+def tap_caption(caption):
+    deadline = time.monotonic() + 5
+    while time.monotonic() < deadline:
+        for button in ui().get("buttons", []):
+            if button["text"] == caption and not button["disabled"]:
+                x, y, width, height = button["rect"]
+                adb("shell", "input", "tap", str(round(x + width / 2)), str(round(y + height / 2)))
+                return
+        time.sleep(0.1)
+    raise AssertionError("Visible enabled button not found: " + caption)
+
+
+def wait_for_hub():
+    deadline = time.monotonic() + 8
+    while time.monotonic() < deadline:
+        if ui().get("encounter_type") == "rpg":
+            return
+        time.sleep(0.1)
+    raise AssertionError("RPG interface did not appear")
+
+
+def hold_joystick(axis_x, axis_y, duration):
+    data = ui()
+    x, y, radius = data["joystick"]
+    point = (str(round(x + axis_x * radius)), str(round(y + axis_y * radius)))
+    adb("shell", "input", "swipe", *point, *point, str(duration))
 
 
 def dismiss_fullscreen_hint():
@@ -71,7 +103,9 @@ def record_failure(kind, value, traceback):
 sys.excepthook = record_failure
 
 
+assert adb("shell", "getprop", "ro.kernel.qemu") == "1", "This smoke runner requires an emulator"
 adb("install", "-r", sys.argv[1])
+adb("shell", "pm", "clear", PACKAGE)
 adb("shell", "wm", "size", "720x1280")
 adb("shell", "wm", "density", "320")
 adb("shell", "settings", "put", "system", "accelerometer_rotation", "0")
@@ -87,27 +121,21 @@ time.sleep(2)
 dismiss_fullscreen_hint()
 width, height = screenshot("menu")
 assert width > height, f"Landscape was not applied: {width}x{height}"
-factor = min(width / 960, height / 540)
-offset_x, offset_y = (width - 960 * factor) / 2, (height - 540 * factor) / 2
-for attempt in range(20):
-    tap(240, 170)
-    if state().get("node"):
-        break
-    time.sleep(0.2)
+tap_caption("Новая игра")
 for attempt in range(160):
     saved = state()
     episode = saved.get("gameplay", {}).get("encounter", {})
     if episode.get("beat") == "beat_ch01_s01":
         break
-    tap(848, 488)
+    tap_caption("Дальше")
 else:
     screenshot("failure_before_hub")
     raise AssertionError("Story input did not reach the first real RPG hub")
+wait_for_hub()
 screenshot("hub_before", verify_render=True)
 # Hold the joystick northeast, then interact with the actual scribe.
-position = point(108, 470)
-adb("shell", "input", "swipe", *position, *position, "800")
-tap(590, 488)
+hold_joystick(0.96, -0.27, 800)
+tap_caption("Дело")
 time.sleep(0.3)
 saved = state()
 assert saved["gameplay"]["encounter"]["state"]["quest"] == 1, "Touch interaction did not accept the hub quest"
@@ -119,18 +147,13 @@ adb("shell", "am", "start", "-W", "-n", activity)
 time.sleep(2)
 dismiss_fullscreen_hint()
 before_x = saved["gameplay"]["encounter"]["state"]["x"]
-for attempt in range(4):
-    tap(240, 248)
-    time.sleep(0.4)
-    position = point(24, 482)
-    adb("shell", "input", "swipe", *position, *position, "350")
-    tap(590, 488)
-    time.sleep(0.3)
-    restored = state()
-    if restored["gameplay"]["encounter"]["state"]["x"] < before_x - 3:
-        break
-else:
-    raise AssertionError("The restored hub did not respond to joystick movement")
+tap_caption("Продолжить")
+wait_for_hub()
+hold_joystick(-1, 0, 350)
+tap_caption("Дело")
+time.sleep(0.3)
+restored = state()
+assert restored["gameplay"]["encounter"]["state"]["x"] < before_x - 3, "Restored hub did not respond to joystick"
 assert restored["node"] == node and restored["gameplay"]["encounter"]["state"]["quest"] == 1
 assert restored["flags"] == saved["flags"]
 screenshot("hub_after_cold_restart", verify_render=True)
@@ -140,7 +163,8 @@ for failure in ["SCRIPT ERROR:", "Parse Error:", "Program linking failed", "FATA
     assert failure not in logs, failure
 report = {"platform": "Android API 35 emulator, x86_64 smoke export", "commit_content": "same game as ARM64 release",
           "screen": [width, height], "story_to_hub": True, "joystick_and_interaction": True,
-          "cold_restart_restore": True, "post_restart_movement": True, "rendered_frames_verified": True,
+          "cold_restart_restore": True, "post_restart_movement": True, "rendered_frames_verified": True, "native_layout_probe": True, "android_48dp_checked": True,
           "launch_output": launch, "physical_arm64_test": False}
+(OUTPUT / "ui-layout.json").write_text(json.dumps(ui(), ensure_ascii=False, indent=2) + "\n")
 (OUTPUT / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print("ANDROID SMOKE PASS:", report)

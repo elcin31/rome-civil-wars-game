@@ -24,6 +24,7 @@ var resizing: bool = false
 var portrait_rect: Rect2
 var text_size: int = 24
 var ambience_clock: float = 0.0
+var probe_clock: float = 0.0
 
 
 func _ready() -> void:
@@ -193,7 +194,7 @@ func _chapters() -> void:
 				else ("Текущее событие" if index + 1 == unlocked else "Закрыто")
 			)
 		)
-		_button(
+		var card: Button = _button(
 			caption,
 			Rect2(
 				Vector2(
@@ -204,6 +205,16 @@ func _chapters() -> void:
 			_campaign_resume,
 			index + 1 <= unlocked
 		)
+		var image = TextureRect.new()
+		image.texture = load("res://assets/chapter_cards/ch%02d.png" % (index + 1))
+		image.position = Vector2(8, 8)
+		image.size = cell - Vector2(16, 16)
+		image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		image.modulate.a = 0.24 if index + 1 <= unlocked else 0.12
+		image.mouse_filter = MOUSE_FILTER_IGNORE
+		card.add_child(image)
+		card.move_child(image, 0)
 	_button("К текущему событию", Rect2(16, _footer_y(), _width() - 32, _touch()), _campaign_resume)
 
 
@@ -354,11 +365,16 @@ func _show_page() -> void:
 
 
 func _process(delta: float) -> void:
+	if OS.has_feature("android_smoke"):
+		probe_clock += delta
+		if probe_clock >= 0.25:
+			probe_clock = 0.0
+			preload("res://scripts/mobile_test_probe.gd").write(self)
 	ambience_clock += delta
 	queue_redraw()
-	if mode == "play" and is_instance_valid(body):
+	if mode == "play" and is_instance_valid(body) and body.visible_characters >= 0:
 		letters += delta * float(GameServices.settings.text_speed)
-		body.visible_characters = mini(int(letters), body.text.length())
+		body.visible_characters = -1 if letters >= body.text.length() else int(letters)
 
 
 func _reveal() -> void:
@@ -698,7 +714,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _draw() -> void:
 	var bounds: Rect2 = get_viewport_rect()
-	draw_rect(bounds, INK)
+	if mode == "play" and is_instance_valid(encounter):
+		# The encounter covers the safe area; do not render a second world underneath it.
+		return
+	var shade: float = 0.16 if mode in ["menu", "play", "loading"] else 0.82
+	var tint = Color(1 - shade, 1 - shade, 1 - shade * 0.85)
 	if background:
 		# Cover the complete display, including the extra width of 20:9 phones.
 		var physical: float = get_viewport().get_screen_transform().get_scale().y
@@ -717,12 +737,13 @@ func _draw() -> void:
 				draw_texture_rect(
 					background_layers[index],
 					Rect2(target.position + Vector2(shift, 0), target.size),
-					false
+					false,
+					tint
 				)
 		else:
-			draw_texture_rect(background, target, false)
-	var shade: float = 0.16 if mode in ["menu", "play", "loading"] else 0.82
-	draw_rect(bounds, Color(0.078, 0.082, 0.121, shade))
+			draw_texture_rect(background, target, false, tint)
+	else:
+		draw_rect(bounds, INK)
 	for step in range(3):
 		var margin: float = 8 + step * 10
 		var shadow = Color(0.03, 0.04, 0.06, 0.08)

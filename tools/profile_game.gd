@@ -55,17 +55,56 @@ func _profile() -> void:
 				"static_memory_max_mib": snappedf(memory_max, 0.01)
 			}
 		)
+	for presentation in ["menu", "dialogue", "gallery"]:
+		var gallery: Control
+		if presentation == "menu":
+			view.menu()
+		elif presentation == "dialogue":
+			game.start_new()
+			view.refresh()
+			view._reveal()
+		else:
+			view.menu()
+			view.hide()
+			gallery = load("res://scenes/AssetGallery.tscn").instantiate()
+			root.add_child(gallery)
+		var samples: Array = []
+		var cpu_max: float = 0.0
+		var memory_max: float = 0.0
+		for frame in range(300):
+			await process_frame
+			if frame >= 180:
+				samples.append(Performance.get_monitor(Performance.TIME_FPS))
+				cpu_max = maxf(cpu_max, Performance.get_monitor(Performance.TIME_PROCESS) * 1000)
+				memory_max = maxf(
+					memory_max, Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576
+				)
+		results.append(
+			{
+				"layer": presentation,
+				"fps_min": samples.min(),
+				"fps_max": samples.max(),
+				"cpu_frame_max_ms": snappedf(cpu_max, 0.01),
+				"static_memory_max_mib": snappedf(memory_max, 0.01)
+			}
+		)
+		if is_instance_valid(gallery):
+			gallery.queue_free()
+			await process_frame
+			view.show()
 	game.go("ch01_s06_n80")
 	view.refresh()
 	await process_frame
 	await process_frame
 	var before: int = Performance.get_monitor(Performance.OBJECT_NODE_COUNT)
+	var memory_before: float = Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576
 	for cycle in range(20):
 		view._pause()
 		view.refresh()
 		await process_frame
 		await process_frame
 	var after: int = Performance.get_monitor(Performance.OBJECT_NODE_COUNT)
+	var memory_after: float = Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576
 	var aspect_results: Array = []
 	for dimensions in [Vector2i(1280, 720), Vector2i(1680, 720)]:
 		DisplayServer.window_set_size(dimensions)
@@ -82,6 +121,8 @@ func _profile() -> void:
 		"layers": results,
 		"nodes_before_pause_cycles": before,
 		"nodes_after_pause_cycles": after,
+		"static_memory_before_pause_mib": snappedf(memory_before, 0.01),
+		"static_memory_after_pause_mib": snappedf(memory_after, 0.01),
 		"pause_cycles": 20,
 		"aspects": aspect_results
 	}

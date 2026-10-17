@@ -625,7 +625,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO, size), INK)
 	if scene_background:
 		var physical: float = get_viewport().get_screen_transform().get_scale().y
 		var ratio: float = maxf(
@@ -633,8 +632,14 @@ func _draw() -> void:
 		)
 		ratio = ceilf(ratio * physical) / physical
 		var dimensions: Vector2 = scene_background.get_size() * ratio
-		draw_texture_rect(scene_background, Rect2((size - dimensions) / 2, dimensions), false)
-		draw_rect(Rect2(Vector2.ZERO, size), Color(0.078, 0.082, 0.121, 0.20))
+		draw_texture_rect(
+			scene_background,
+			Rect2((size - dimensions) / 2, dimensions),
+			false,
+			Color(0.82, 0.82, 0.85)
+		)
+	else:
+		draw_rect(Rect2(Vector2.ZERO, size), INK)
 	draw_set_transform_matrix(world_transform)
 	match beat.type:
 		"tactical":
@@ -825,6 +830,29 @@ func _draw_hub() -> void:
 	draw_colored_polygon(
 		PackedVector2Array([Vector2(0, 114), Vector2(320, 97), Vector2(320, 128), Vector2(0, 132)]),
 		Color("76503b")
+	)
+	# A small brazier has a recognisable bowl, feet and two flickering flame clusters.
+	var flicker: float = float(int(Time.get_ticks_msec() / 180) % 2)
+	draw_line(Vector2(32, 89), Vector2(32, 98), Color("737e82"), 2)
+	draw_line(Vector2(26, 98), Vector2(38, 98), Color("737e82"), 2)
+	draw_colored_polygon(
+		PackedVector2Array([Vector2(26, 85), Vector2(38, 85), Vector2(36, 89), Vector2(28, 89)]),
+		BRONZE
+	)
+	draw_colored_polygon(
+		PackedVector2Array(
+			[
+				Vector2(28, 85),
+				Vector2(31, 77 + flicker),
+				Vector2(33, 81),
+				Vector2(35, 76 - flicker),
+				Vector2(37, 85)
+			]
+		),
+		Color("ed803e")
+	)
+	draw_colored_polygon(
+		PackedVector2Array([Vector2(31, 85), Vector2(33, 80 + flicker), Vector2(35, 85)]), OCHRE
 	)
 	var actors: Array = []
 	var target: String = ["scribe", "supplies", "witness", "exit"][clampi(
