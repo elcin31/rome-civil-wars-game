@@ -808,6 +808,8 @@ func _draw_platformer() -> void:
 		if model.state.block
 		else (6 if model.state.attack > 0.18 else (4 if absf(model.state.vx) > 1 else 3))
 	)
+	if float(model.state.invincible) > 0.5:
+		pose = 8
 	var hero_point = Vector2(model.state.x - camera, model.state.y - 14)
 	draw_circle(hero_point - Vector2(0, 14), 10, Color("1e2a44"))
 	draw_string(font, hero_point - Vector2(5, 31), "Вы", HORIZONTAL_ALIGNMENT_LEFT, -1, 8, OCHRE)

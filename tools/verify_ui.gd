@@ -142,6 +142,8 @@ func _shot(caption: String, tap: bool = false) -> void:
 		else:
 			picture.save_png(output + "/" + caption + ".png")
 	if tap:
+		if is_instance_valid(view.get("body")):
+			view._show_page()
 		await _tap_buttons(buttons)
 	frames.append(caption)
 

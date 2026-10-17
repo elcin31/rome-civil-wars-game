@@ -25,6 +25,8 @@ var portrait_rect: Rect2
 var text_size: int = 24
 var ambience_clock: float = 0.0
 var probe_clock: float = 0.0
+var previous_button: Button
+var reveal_button: Button
 
 
 func _ready() -> void:
@@ -45,6 +47,8 @@ func _clear(new_mode: String) -> void:
 	mode = new_mode
 	body = null
 	face = null
+	previous_button = null
+	reveal_button = null
 	if is_instance_valid(layer):
 		remove_child(layer)
 		layer.queue_free()
@@ -318,8 +322,10 @@ func refresh() -> void:
 	pages = _paginate(node.get("text", {}).get("ru", ""))
 	page_index = 0
 	_show_page()
-	_button("Назад", Rect2(16, _footer_y(), 144, _touch()), _previous_page)
-	_button("Показать текст", Rect2(172, _footer_y(), _width() - 392, _touch()), _reveal)
+	previous_button = _button("Назад", Rect2(16, _footer_y(), 144, _touch()), _previous_page, false)
+	reveal_button = _button(
+		"Показать текст", Rect2(172, _footer_y(), _width() - 392, _touch()), _reveal
+	)
 	_button("Дальше", Rect2(_width() - 208, _footer_y(), 192, _touch()), _next)
 
 
@@ -362,6 +368,8 @@ func _show_page() -> void:
 	letters = 0
 	body.text = pages[page_index]
 	body.visible_characters = 0
+	UI.enable_button(previous_button, page_index > 0)
+	UI.enable_button(reveal_button, true)
 
 
 func _process(delta: float) -> void:
@@ -375,12 +383,15 @@ func _process(delta: float) -> void:
 	if mode == "play" and is_instance_valid(body) and body.visible_characters >= 0:
 		letters += delta * float(GameServices.settings.text_speed)
 		body.visible_characters = -1 if letters >= body.text.length() else int(letters)
+		if body.visible_characters == -1:
+			UI.enable_button(reveal_button, false)
 
 
 func _reveal() -> void:
 	if is_instance_valid(body):
 		letters = body.text.length()
 		body.visible_characters = -1
+		UI.enable_button(reveal_button, false)
 
 
 func _previous_page() -> void:

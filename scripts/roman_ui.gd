@@ -115,3 +115,12 @@ static func panel(parent: Node, rect: Rect2, kind: String = "stone") -> Panel:
 	control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	parent.add_child(control)
 	return control
+
+
+static func enable_button(button: Button, enabled: bool) -> void:
+	if not is_instance_valid(button):
+		return
+	button.disabled = not enabled
+	for child in button.get_children():
+		if child is Label:
+			child.add_theme_color_override("font_color", IVORY if enabled else Color("8a8577"))

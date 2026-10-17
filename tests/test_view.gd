@@ -97,6 +97,21 @@ func test_gameplay_cannot_finish_before_objective_is_won() -> void:
 	assert_true("beat_ch01_s03" in game.state.beats_completed)
 
 
+func test_dialogue_buttons_follow_page_and_reveal_state() -> void:
+	view._new_game()
+	assert_gt(view.pages.size(), 1)
+	assert_true(view.previous_button.disabled)
+	assert_false(view.reveal_button.disabled)
+	view._reveal()
+	assert_true(view.reveal_button.disabled)
+	view._next()
+	assert_eq(view.page_index, 1)
+	assert_false(view.previous_button.disabled)
+	view._previous_page()
+	assert_eq(view.page_index, 0)
+	assert_true(view.previous_button.disabled)
+
+
 func test_campaign_map_preserves_current_story_decisions() -> void:
 	for step in range(200):
 		if game.current().has("choices"):
