@@ -1,0 +1,93 @@
+name: Android APK
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  GODOT_VERSION: 4.6.3
+  ANDROID_BUILD_TOOLS: 35.0.0
+  ANDROID_PLATFORM: android-35
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-python@v5.6.0
+        with:
+          python-version: '3.12.9'
+      - uses: actions/setup-java@v4.7.1
+        with:
+          distribution: temurin
+          java-version: '17.0.13+11'
+      - uses: actions/cache@v4.2.3
+        with:
+          path: |
+            ~/.local/share/godot/export_templates
+            ~/.cache/cinis-godot
+            .godot/imported
+          key: godot-4.6.3-android-${{ hashFiles('assets/**', 'project.godot') }}
+          restore-keys: godot-4.6.3-android-
+      - name: Install pinned Godot and Android templates
+        run: |
+          mkdir -p "$HOME/.cache/cinis-godot" "$HOME/.local/share/godot/export_templates/4.6.3.stable"
+          cd "$HOME/.cache/cinis-godot"
+          if [ ! -f godot ]; then
+            curl -fL --retry 2 -o godot.zip "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip"
+            unzip -qo godot.zip
+            mv Godot_v4.6.3-stable_linux.x86_64 godot
+            chmod +x godot
+            rm godot.zip
+          fi
+          echo "$HOME/.cache/cinis-godot" >> "$GITHUB_PATH"
+          if [ ! -f "$HOME/.local/share/godot/export_templates/4.6.3.stable/android_debug.apk" ]; then
+            curl -fL --retry 2 -o templates.tpz "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz"
+            unzip -jo templates.tpz 'templates/android_debug.apk' 'templates/android_release.apk' -d "$HOME/.local/share/godot/export_templates/4.6.3.stable"
+            rm templates.tpz
+          fi
+      - name: Configure Android SDK and debug signing
+        run: |
+          mkdir -p "$RUNNER_TEMP/cinis-sdk/cmdline-tools"
+          curl -fL --retry 2 -o "$RUNNER_TEMP/cmdline.zip" https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+          unzip -q "$RUNNER_TEMP/cmdline.zip" -d "$RUNNER_TEMP/cinis-sdk/cmdline-tools"
+          mv "$RUNNER_TEMP/cinis-sdk/cmdline-tools/cmdline-tools" "$RUNNER_TEMP/cinis-sdk/cmdline-tools/latest"
+          export ANDROID_HOME="$RUNNER_TEMP/cinis-sdk"
+          set +o pipefail
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null
+          set -o pipefail
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "build-tools;$ANDROID_BUILD_TOOLS" "platforms;$ANDROID_PLATFORM"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> "$GITHUB_ENV"
+          echo "$ANDROID_HOME/build-tools/$ANDROID_BUILD_TOOLS" >> "$GITHUB_PATH"
+          mkdir -p "$HOME/.config/godot" "$RUNNER_TEMP/cinis-signing"
+          keytool -genkeypair -keystore "$RUNNER_TEMP/cinis-signing/debug.keystore" -storepass android -alias androiddebugkey -keypass android -dname 'CN=Android Debug,O=Android,C=US' -keyalg RSA -keysize 2048 -validity 10000
+          python tools/configure_android.py "$ANDROID_HOME" "$JAVA_HOME" "$RUNNER_TEMP/cinis-signing/debug.keystore"
+      - name: Validate and test
+        run: |
+          python -m pip install -r tools/requirements.txt
+          godot --headless --editor --path . --import --quit
+          python tools/validate_assets.py
+          python tools/validate_story.py
+          timeout 120 godot --headless --path . --script tools/verify_gallery.gd
+          timeout 120 godot --headless --path . --script tools/verify_story.gd
+      - name: Export and inspect ARM64 APK
+        run: |
+          mkdir -p build
+          godot --headless --path . --export-debug Android build/cinis-lauri.apk
+          aapt dump badging build/cinis-lauri.apk | tee build/apk-metadata.txt
+          python tools/inspect_apk.py build/cinis-lauri.apk build/apk-metadata.txt
+          python tools/package_android.py
+      - uses: actions/upload-artifact@v4.6.2
+        with:
+          name: cinis-lauri-android-arm64
+          path: |
+            build/*.apk
+            build/*.zip
+            build/README_INSTALL.txt
+            build/apk-metadata.txt
+          if-no-files-found: error
+          retention-days: 30
