@@ -259,7 +259,8 @@ func _draw() -> void:
 	)
 	if group_index == 0:
 		var cell: Vector2 = texture.get_size() / Vector2(3, 3)
-		var factor: float = maxf(1, floorf(preview.size.y / cell.y))
+		var physical: float = get_viewport().get_screen_transform().get_scale().y
+		var factor: float = maxf(1, floorf(preview.size.y / cell.y * physical)) / physical
 		var point: Vector2 = preview.position + Vector2(preview.size.x * 0.32, preview.size.y)
 		var bob: float = roundf(sin(clock * 3)) if moving else 0.0
 		draw_set_transform(point + Vector2(0, bob))
@@ -270,7 +271,10 @@ func _draw() -> void:
 		)
 		draw_set_transform(Vector2.ZERO)
 		if portrait:
-			var dimensions: Vector2 = portrait.get_size()
+			var portrait_factor: float = (
+				maxf(1, floorf(preview.size.y / portrait.get_height() * physical)) / physical
+			)
+			var dimensions: Vector2 = portrait.get_size() * portrait_factor
 			draw_texture_rect(
 				portrait,
 				Rect2(

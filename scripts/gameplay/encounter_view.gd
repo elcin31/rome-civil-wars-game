@@ -64,6 +64,11 @@ func _ready() -> void:
 	var path: String = "res://assets/locations/" + str(beat.get("location", "roman_camp")) + ".png"
 	if ResourceLoader.exists(path):
 		scene_background = load(path)
+	if beat.type == "tactical":
+		for ident in ["caesar_legionary", "pompeian_soldier", "roman_citizen"]:
+			sprites[ident + "_tactical"] = load(
+				"res://assets/characters/" + ident + "_tactical.png"
+			)
 	if beat.type == "rpg":
 		var chapter: int = int(StoryRuntime.state.progress.chapter)
 		var place: String = [
@@ -104,9 +109,9 @@ func _ready() -> void:
 		Vector2((size.x - 320 * factor) / 2, (size.y - 180 * factor) / 2 - 30)
 	)
 	if beat.type == "tactical":
-		var board_top: float = maxf(90, UI.touch_height(self) + 32)
+		var board_top: float = maxf(90, UI.touch_height(self) + 28)
 		var fit: float = minf(
-			(size.x - 196) / (CELL.x * 9), (size.y - 90 - board_top) / (CELL.y * 5)
+			(size.x - 196) / (CELL.x * 9), (size.y - 80 - board_top) / (CELL.y * 5)
 		)
 		var board_scale: float = maxf(2, floorf(fit * physical_scale / 2) * 2) / physical_scale
 		world_transform = Transform2D(
@@ -150,8 +155,8 @@ func _ready() -> void:
 		18 if beat.type == "tactical" else 22
 	)
 	if beat.type == "tactical":
-		UI.panel(self, Rect2(16, size.y - 84, size.x - 32, 68))
-		status = _label("", Rect2(32, size.y - 76, size.x - 64, 52), 22, OCHRE)
+		UI.panel(self, Rect2(16, size.y - 76, size.x - 32, 60))
+		status = _label("", Rect2(32, size.y - 72, size.x - 64, 52), 22, OCHRE)
 	else:
 		UI.panel(self, Rect2(148, size.y - _action_rect(0).size.y - 108, size.x - 164, 76))
 		status = _label(
@@ -721,12 +726,14 @@ func _draw_tactics() -> void:
 		var unit: Dictionary = model.state.units[index]
 		if unit.hp <= 0:
 			continue
-		var point: Vector2 = GRID_ORIGIN + Vector2(unit.x + 0.5, unit.y + 0.9) * CELL
+		var point: Vector2 = GRID_ORIGIN + Vector2(unit.x + 0.5, unit.y + 0.98) * CELL
 		draw_circle(
 			point - Vector2(0, 4), 8, Color("2d4855") if unit.team == 0 else Color("7a1f1f")
 		)
-		var ident: String = "caesar_legionary" if unit.team == 0 else "pompeian_soldier"
-		_sprite(ident, point, 7 if unit.guard else 3, 1 if unit.team == 0 else -1, Vector2(14, 21))
+		var ident: String = (
+			"caesar_legionary_tactical" if unit.team == 0 else "pompeian_soldier_tactical"
+		)
+		_sprite(ident, point, 7 if unit.guard else 3, 1 if unit.team == 0 else -1, Vector2(16, 24))
 		draw_rect(Rect2(point + Vector2(-9, 0), Vector2(18, 2)), INK)
 		draw_rect(Rect2(point + Vector2(-9, 0), Vector2(18.0 * unit.hp / unit.max_hp, 2)), OCHRE)
 		draw_string(
@@ -739,11 +746,11 @@ func _draw_tactics() -> void:
 			IVORY
 		)
 		if index == int(model.state.selected):
-			draw_arc(point - Vector2(0, 4), 10, 0, TAU, 20, OCHRE)
+			draw_arc(point - Vector2(0, 12), 10, 0, TAU, 20, OCHRE)
 	if beat.get("goal") == "escort":
 		var convoy: Dictionary = model.state.convoy
 		var point: Vector2 = GRID_ORIGIN + Vector2(convoy.x + 0.5, convoy.y + 0.9) * CELL
-		_sprite("roman_citizen", point, 4, 1, Vector2(19, 25))
+		_sprite("roman_citizen_tactical", point, 4, 1, Vector2(16, 24))
 		draw_string(
 			font,
 			point - Vector2(8, 22),

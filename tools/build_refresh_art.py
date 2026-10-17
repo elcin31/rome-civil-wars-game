@@ -183,6 +183,10 @@ def main():
                 asset['frame_size'] = [64,96]
                 asset['refresh_source'] = str(path.relative_to(ROOT))
                 asset['refresh_row'] = row
+    # Smaller tactical atlases keep battle icons on the same integer pixel grid.
+    for ident in ['caesar_legionary', 'pompeian_soldier', 'roman_citizen']:
+        source = Image.open(ROOT / f'assets/characters/{ident}.png').convert('RGBA')
+        dominant_resize(source, (96, 144)).save(ROOT / f'assets/characters/{ident}_tactical.png', optimize=True)
     cards = ROOT / 'art_src/refresh/chapter_cards.png'
     if cards.exists():
         source = Image.open(cards).convert('RGBA')
