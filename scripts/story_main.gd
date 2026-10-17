@@ -4,6 +4,7 @@ const INK = Color("14151f")
 const IVORY = Color("ede3cc")
 const BRONZE = Color("a87b3d")
 const OCHRE = Color("d9a441")
+const EncounterView = preload("res://scripts/gameplay/encounter_view.gd")
 var layer: Control
 var mode: String = "menu"
 var background: Texture2D
@@ -15,6 +16,7 @@ var letters: float = 0.0
 var font: Font
 var test_route: String = "legion"
 var settings_return: Callable
+var encounter: Control
 
 
 func _ready() -> void:
@@ -27,6 +29,9 @@ func _ready() -> void:
 
 
 func _clear(new_mode: String) -> void:
+	if is_instance_valid(encounter):
+		encounter.persist()
+		encounter = null
 	mode = new_mode
 	body = null
 	face = null
@@ -59,6 +64,8 @@ func _label(value: String, rect: Rect2, size_value: int = 9, color: Color = IVOR
 
 
 func _button(value: String, rect: Rect2, callback: Callable, enabled: bool = true) -> Button:
+	rect.size.y = maxf(24, rect.size.y)
+	rect.position.y = minf(rect.position.y, 180 - rect.size.y)
 	var button = Button.new()
 	button.disabled = not enabled
 	button.add_theme_font_size_override("font_size", 9)
@@ -165,6 +172,9 @@ func refresh() -> void:
 			picture = variant.file
 			break
 	_set_background("res://" + picture)
+	if node.get("kind") == "beat":
+		_show_beat(node)
+		return
 	_button(StoryRuntime.tr_ui("menu"), Rect2(2, 1, 42, 16), _pause)
 	_label(scene.get("title", {}).get("ru", ""), Rect2(49, 1, 120, 14), 8, OCHRE)
 	_label(
@@ -218,7 +228,7 @@ func refresh() -> void:
 		)
 	body = RichTextLabel.new()
 	body.position = Vector2(57, 100)
-	body.size = Vector2(258, 61)
+	body.size = Vector2(258, 54)
 	body.scroll_active = false
 	body.bbcode_enabled = false
 	body.add_theme_font_override("normal_font", font)
@@ -306,20 +316,22 @@ func _choose(index: int) -> void:
 
 
 func _show_beat(node: Dictionary) -> void:
-	var beat = StoryRuntime.beats[node.beat]
-	_label(beat.title.ru, Rect2(12, 28, 296, 24), 13, OCHRE)
-	var description: String = StoryRuntime.tr_ui("objective") + ": " + beat.objective.ru + "\n"
-	description += StoryRuntime.tr_ui("victory") + ":\n"
-	for requirement in beat.victory:
-		description += "• " + requirement.ru + "\n"
-	var label = _label(description, Rect2(12, 57, 296, 90), 10)
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_button(StoryRuntime.tr_ui("complete_plan"), Rect2(75, 151, 170, 25), _complete_beat)
+	encounter = EncounterView.new()
+	encounter.setup(StoryRuntime.beats[node.beat])
+	encounter.pause_requested.connect(_pause)
+	encounter.completed.connect(_after_encounter)
+	layer.add_child(encounter)
+
+
+func _after_encounter() -> void:
+	# The model has already committed its result. Do not save an old encounter into the next node.
+	encounter = null
+	refresh()
 
 
 func _complete_beat() -> void:
-	StoryRuntime.complete_beat()
-	refresh()
+	if is_instance_valid(encounter) and encounter.model.state.won:
+		encounter._finish()
 
 
 func _pause() -> void:

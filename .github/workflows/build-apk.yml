@@ -75,6 +75,7 @@ jobs:
           timeout 120 godot --headless --path . --script tools/verify_gallery.gd
           timeout 120 godot --headless --path . --script tools/verify_story.gd
           timeout 120 godot --headless --path . -s addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
+          timeout 120 godot --headless --path . --script tools/walk_game.gd
       - name: Export and inspect ARM64 APK
         run: |
           mkdir -p build

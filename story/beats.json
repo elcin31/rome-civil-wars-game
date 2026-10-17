@@ -9,26 +9,28 @@
         "en": ""
       },
       "place": {
-        "ru": "Лагерь Квинта Цицерона",
+        "ru": "Ночная оборона",
         "en": ""
       },
       "objective": {
-        "ru": "Удержать проход и вывести раненых",
+        "ru": "Удержите проход пять ходов, прикрывая отход раненых.",
         "en": ""
       },
       "victory": [
         {
-          "ru": "Проход к навесу открыт",
-          "en": ""
-        },
-        {
-          "ru": "Раненые под прикрытием",
+          "ru": "Удержите проход пять ходов, прикрывая отход раненых.",
           "en": ""
         }
       ],
       "condition": "",
       "node": "ch01_s03_n80",
-      "implementation": "placeholder"
+      "implementation": "playable",
+      "scene": "ch01_s03",
+      "location": "gallic_fort",
+      "tiles": "camp_fields",
+      "difficulty": 1,
+      "variant": 1,
+      "goal": "hold"
     },
     {
       "id": "beat_ch01_s06",
@@ -38,26 +40,28 @@
         "en": ""
       },
       "place": {
-        "ru": "Алезия",
+        "ru": "Связь между валами",
         "en": ""
       },
       "objective": {
-        "ru": "Доставить сообщение между двумя линиями",
+        "ru": "Соберите три части донесения и дойдите до сигнального знамени.",
         "en": ""
       },
       "victory": [
         {
-          "ru": "Сообщение доставлено",
-          "en": ""
-        },
-        {
-          "ru": "Посыльный возвращён",
+          "ru": "Соберите три части донесения и дойдите до сигнального знамени.",
           "en": ""
         }
       ],
       "condition": "",
       "node": "ch01_s06_n80",
-      "implementation": "placeholder"
+      "implementation": "playable",
+      "scene": "ch01_s06",
+      "location": "alesia",
+      "tiles": "camp_fields",
+      "difficulty": 1,
+      "variant": 1,
+      "goal": "exit"
     },
     {
       "id": "beat_ch02_s04",
@@ -348,6 +352,156 @@
       "condition": "",
       "node": "ch08_s01_n80",
       "implementation": "placeholder"
+    },
+    {
+      "id": "beat_ch01_s01",
+      "scene": "ch01_s01",
+      "type": "rpg",
+      "title": {
+        "ru": "Лагерный расчёт",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Получите поручение, заберите перевязь и передайте носильщику.",
+        "en": ""
+      },
+      "location": "roman_camp",
+      "tiles": "camp_fields",
+      "difficulty": 1,
+      "variant": 1,
+      "implementation": "playable",
+      "goal": "exit",
+      "node": "ch01_s01_n75",
+      "condition": "",
+      "place": {
+        "ru": "Лагерный расчёт",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Получите поручение, заберите перевязь и передайте носильщику.",
+          "en": ""
+        }
+      ],
+      "hub_dialogue": {
+        "intro": {
+          "ru": "У навеса стоит писец. К нему можно подойти и узнать поручение.",
+          "en": ""
+        },
+        "request": {
+          "ru": "Получите поручение, заберите перевязь и передайте носильщику. Запись остаётся частной: мы отвечаем за конкретного человека.",
+          "en": ""
+        },
+        "collected": {
+          "ru": "Печать и число сошлись. Теперь найдите получателя у дороги.",
+          "en": ""
+        },
+        "delivered": {
+          "ru": "Получатель принял свёрток и оставил отметку. Дорога открыта.",
+          "en": ""
+        },
+        "unassigned": {
+          "ru": "На этом грузе чужая метка. Писец знает, кому его отдать.",
+          "en": ""
+        },
+        "waiting": {
+          "ru": "Пока нечего подтверждать. У писца есть заявка на этот груз.",
+          "en": ""
+        }
+      }
+    },
+    {
+      "id": "beat_ch01_s04",
+      "scene": "ch01_s04",
+      "type": "tactical",
+      "title": {
+        "ru": "За наружным рвом",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Разбейте малый заслон и вернитесь под защиту лагеря.",
+        "en": ""
+      },
+      "location": "gaul_forest",
+      "tiles": "camp_fields",
+      "difficulty": 2,
+      "variant": 2,
+      "implementation": "playable",
+      "goal": "rout",
+      "node": "ch01_s04_n75",
+      "condition": "",
+      "place": {
+        "ru": "За наружным рвом",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Разбейте малый заслон и вернитесь под защиту лагеря.",
+          "en": ""
+        }
+      ]
+    },
+    {
+      "id": "beat_ch01_s06_tactical",
+      "scene": "ch01_s06",
+      "type": "tactical",
+      "title": {
+        "ru": "Подход к валу",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Очистите проход перед доставкой сообщения.",
+        "en": ""
+      },
+      "location": "alesia",
+      "tiles": "camp_fields",
+      "difficulty": 3,
+      "variant": 3,
+      "implementation": "playable",
+      "goal": "rout",
+      "node": "ch01_s06_n75",
+      "condition": "",
+      "place": {
+        "ru": "Подход к валу",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Очистите проход перед доставкой сообщения.",
+          "en": ""
+        }
+      ]
+    },
+    {
+      "id": "beat_ch01_s07",
+      "scene": "ch01_s07",
+      "type": "platformer",
+      "title": {
+        "ru": "Деревянная игла",
+        "en": ""
+      },
+      "objective": {
+        "ru": "Заберите крепления с трёх постов и вернитесь к дороге.",
+        "en": ""
+      },
+      "location": "gallic_fort",
+      "tiles": "camp_fields",
+      "difficulty": 2,
+      "variant": 2,
+      "implementation": "playable",
+      "goal": "exit",
+      "node": "ch01_s07_n75",
+      "condition": "",
+      "place": {
+        "ru": "Деревянная игла",
+        "en": ""
+      },
+      "victory": [
+        {
+          "ru": "Заберите крепления с трёх постов и вернитесь к дороге.",
+          "en": ""
+        }
+      ]
     }
   ]
 }

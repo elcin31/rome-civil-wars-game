@@ -26,7 +26,10 @@ func test_decision_is_persistent_and_not_applied_twice() -> void:
 	for step in range(200):
 		if game.current().has("choices"):
 			break
-		game.advance()
+		if game.current().get("kind") == "beat":
+			game.complete_beat()
+		else:
+			game.advance()
 	assert_true(game.choose(game.first_choice()))
 	var saved: Dictionary = game.state.duplicate(true)
 	assert_true(game.load_game())
