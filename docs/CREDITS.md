@@ -22,6 +22,8 @@ tools/pixelize_story.py, общая палитра из 24 цветов. Гот�
   https://github.com/godotengine/godot/blob/4.6.3-stable/COPYRIGHT.txt.
 - GUT 9.5.0, Tom «Butch» Wesley — MIT; проверочный инструмент в addons/gut,
   полный текст в addons/gut/THIRD_PARTY_LICENSE.txt; в APK не экспортируется.
+  Локальная совместимость с Godot 4.6: gut_loader.gd читает устаревший параметр
+  exclude_addons через get_setting с запасным true вместо Object.get.
 - Pillow — HPND, https://python-pillow.github.io/pillow-perf/ (инструмент обработки,
   не включается в APK).
 - gdtoolkit 4.5.0 — MIT, инструмент проверки GDScript, в APK не включается.
