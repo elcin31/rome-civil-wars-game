@@ -1,0 +1,11 @@
+{
+  "distinct_new_compositions": 58,
+  "categories": {
+    "story": 24,
+    "location": 16,
+    "npc_sheet": 10,
+    "chapter_card": 8
+  },
+  "palette_colors": 48,
+  "errors": []
+}

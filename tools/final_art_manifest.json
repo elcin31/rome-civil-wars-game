@@ -11,8 +11,8 @@
       ],
       "file": "assets/final/loading_oath.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ]
     },
     {
@@ -24,8 +24,8 @@
       ],
       "file": "assets/final/splash.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ]
     },
     {
@@ -37,9 +37,10 @@
       ],
       "file": "assets/final/menu.png",
       "size": [
-        480,
-        270
-      ]
+        640,
+        360
+      ],
+      "refresh_source": "art_src/refresh/menu_new.png"
     },
     {
       "id": "loading_city",
@@ -50,8 +51,8 @@
       ],
       "file": "assets/final/loading_city.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ]
     },
     {
@@ -63,8 +64,8 @@
       ],
       "file": "assets/final/loading_march.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ]
     },
     {
@@ -76,8 +77,8 @@
       ],
       "file": "assets/final/loading_battle.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ]
     },
     {
@@ -102,8 +103,8 @@
       ],
       "file": "assets/final/loading_memory.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ]
     },
     {

@@ -92,17 +92,17 @@ def main():
     for scene in scenes.values():
         if scene.get('entry') not in nodes:errors.append(scene['id']+': missing entry')
         for variant in scene.get('illustration_variants',[]):expression(variant.get('condition',''),scene['id'])
-        for path in [scene.get('illustration','')]+[v['file'] for v in scene.get('illustration_variants',[])]:
+        for path in [scene.get('illustration','')]+[v['file'] for v in scene.get('illustration_variants',[])]+scene.get('illustration_archive',[]):
             if not (ROOT/path).is_file():errors.append(scene['id']+': missing illustration '+path)
     palette=set(palette_colors());art=read('tools/story_art_manifest.json')['assets'];pngs=set()
     for asset in art:
         if not (ROOT/asset['source']).is_file():errors.append('Missing source '+asset['source'])
         if asset['category']=='emotions':
             if not any(p.startswith(asset['id']+'_') for p in used_portraits):errors.append('Unused emotion character '+asset['id'])
-        elif not any(asset['file'] in [s.get('illustration')]+[v['file'] for v in s.get('illustration_variants',[])] for s in scenes.values()):
+        elif not any(asset['file'] in [s.get('illustration')]+[v['file'] for v in s.get('illustration_variants',[])]+s.get('illustration_archive',[]) for s in scenes.values()):
             errors.append('Unlinked story illustration '+asset['id'])
         pngs.add((asset['file'],tuple(asset['size'])))
-    for portrait in portraits.values():pngs.add((portrait['file'],(96,96)))
+    for portrait in portraits.values():pngs.add((portrait['file'],(128,128)))
     for file,size in sorted(pngs):
         path=ROOT/file
         if not path.is_file():errors.append('Missing PNG '+file);continue

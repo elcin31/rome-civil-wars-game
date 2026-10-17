@@ -18,12 +18,15 @@
       },
       "year": "42 до н. э.",
       "entry": "ch06_s01_n01",
-      "illustration": "assets/story/philippi_start.png",
+      "illustration": "assets/illustrations/philippi_mist.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "philippi"
+      ],
+      "illustration_archive": [
+        "assets/story/philippi_start.png"
       ]
     },
     {
@@ -64,11 +67,14 @@
       },
       "year": "41 до н. э.",
       "entry": "ch06_s04_n01",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/illustrations/grain_queue.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
+      ]
     },
     {
       "id": "ch06_s05",
@@ -78,12 +84,15 @@
       },
       "year": "41–40 до н. э.",
       "entry": "ch06_s05_n01",
-      "illustration": "assets/locations/rome_night.png",
+      "illustration": "assets/illustrations/perusia_gates.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "perusia"
+      ],
+      "illustration_archive": [
+        "assets/locations/rome_night.png"
       ]
     },
     {

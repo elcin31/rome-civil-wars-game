@@ -8,8 +8,8 @@
       "source": "art_src/story/emotions_pullo.png",
       "file": "assets/portraits/pullo_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -20,8 +20,8 @@
       "source": "art_src/story/emotions_vorenus.png",
       "file": "assets/portraits/vorenus_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -32,8 +32,8 @@
       "source": "art_src/story/emotions_caesar.png",
       "file": "assets/portraits/caesar_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -44,8 +44,8 @@
       "source": "art_src/story/emotions_octavian.png",
       "file": "assets/portraits/octavian_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -56,8 +56,8 @@
       "source": "art_src/story/emotions_augustus.png",
       "file": "assets/portraits/augustus_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -68,8 +68,8 @@
       "source": "art_src/story/emotions_antony.png",
       "file": "assets/portraits/antony_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -80,8 +80,8 @@
       "source": "art_src/story/emotions_cleopatra.png",
       "file": "assets/portraits/cleopatra_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -92,8 +92,8 @@
       "source": "art_src/story/emotions_pompey.png",
       "file": "assets/portraits/pompey_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -104,8 +104,8 @@
       "source": "art_src/story/emotions_brutus.png",
       "file": "assets/portraits/brutus_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -116,8 +116,8 @@
       "source": "art_src/story/emotions_cicero.png",
       "file": "assets/portraits/cicero_sheet.png",
       "size": [
-        192,
-        192
+        256,
+        256
       ],
       "status": "reviewed_for_story"
     },
@@ -128,8 +128,8 @@
       "source": "art_src/story/cutscenes_camp_defense.png",
       "file": "assets/story/camp_defense.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -140,8 +140,8 @@
       "source": "art_src/story/cutscenes_alesia_assault.png",
       "file": "assets/story/alesia_assault.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -152,8 +152,8 @@
       "source": "art_src/story/cutscenes_rubicon_dawn.png",
       "file": "assets/story/rubicon_dawn.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -164,8 +164,8 @@
       "source": "art_src/story/cutscenes_empty_rome.png",
       "file": "assets/story/empty_rome.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -176,8 +176,8 @@
       "source": "art_src/story/cutscenes_pharsalus_battle.png",
       "file": "assets/story/pharsalus_battle.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -188,8 +188,8 @@
       "source": "art_src/story/cutscenes_mutual_rescue.png",
       "file": "assets/story/mutual_rescue.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -200,8 +200,8 @@
       "source": "art_src/story/cutscenes_ides.png",
       "file": "assets/story/ides.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -212,8 +212,8 @@
       "source": "art_src/story/cutscenes_caesar_funeral.png",
       "file": "assets/story/caesar_funeral.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -224,8 +224,8 @@
       "source": "art_src/story/cutscenes_proscription_wall.png",
       "file": "assets/story/proscription_wall.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -236,8 +236,8 @@
       "source": "art_src/story/cutscenes_night_escape.png",
       "file": "assets/story/night_escape.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -248,8 +248,8 @@
       "source": "art_src/story/cutscenes_philippi_start.png",
       "file": "assets/story/philippi_start.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -260,8 +260,8 @@
       "source": "art_src/story/cutscenes_commanders_council.png",
       "file": "assets/story/commanders_council.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -272,8 +272,8 @@
       "source": "art_src/story/cutscenes_actium_battle.png",
       "file": "assets/story/actium_battle.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -284,8 +284,8 @@
       "source": "art_src/story/cutscenes_alexandria_defeat.png",
       "file": "assets/story/alexandria_defeat.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -296,8 +296,8 @@
       "source": "art_src/story/cutscenes_augustan_marble.png",
       "file": "assets/story/augustan_marble.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -308,8 +308,8 @@
       "source": "art_src/story/cutscenes_old_friends.png",
       "file": "assets/story/old_friends.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -320,8 +320,8 @@
       "source": "art_src/story/endings_together.png",
       "file": "assets/story/together.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -332,8 +332,8 @@
       "source": "art_src/story/endings_apart.png",
       "file": "assets/story/apart.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -344,8 +344,8 @@
       "source": "art_src/story/endings_sacrifice.png",
       "file": "assets/story/sacrifice.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     },
@@ -356,8 +356,8 @@
       "source": "art_src/story/endings_bad.png",
       "file": "assets/story/bad.png",
       "size": [
-        480,
-        270
+        640,
+        360
       ],
       "status": "reviewed_for_story"
     }

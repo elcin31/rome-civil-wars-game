@@ -73,6 +73,7 @@ sys.excepthook = record_failure
 
 adb("install", "-r", sys.argv[1])
 adb("shell", "wm", "size", "720x1280")
+adb("shell", "wm", "density", "320")
 adb("shell", "settings", "put", "system", "accelerometer_rotation", "0")
 adb("shell", "settings", "put", "system", "user_rotation", "1")
 adb("shell", "settings", "put", "secure", "immersive_mode_confirmations", "confirmed")
@@ -86,10 +87,10 @@ time.sleep(2)
 dismiss_fullscreen_hint()
 width, height = screenshot("menu")
 assert width > height, f"Landscape was not applied: {width}x{height}"
-factor = max(1, math.floor(min(width / 320, height / 180)))
-offset_x, offset_y = (width - 320 * factor) / 2, (height - 180 * factor) / 2
+factor = min(width / 960, height / 540)
+offset_x, offset_y = (width - 960 * factor) / 2, (height - 540 * factor) / 2
 for attempt in range(20):
-    tap(160, 72)
+    tap(240, 170)
     if state().get("node"):
         break
     time.sleep(0.2)
@@ -98,15 +99,15 @@ for attempt in range(160):
     episode = saved.get("gameplay", {}).get("encounter", {})
     if episode.get("beat") == "beat_ch01_s01":
         break
-    tap(265, 167)
+    tap(848, 488)
 else:
     screenshot("failure_before_hub")
     raise AssertionError("Story input did not reach the first real RPG hub")
 screenshot("hub_before", verify_render=True)
 # Hold the joystick northeast, then interact with the actual scribe.
-position = point(56, 140)
+position = point(108, 470)
 adb("shell", "input", "swipe", *position, *position, "800")
-tap(199, 152)
+tap(590, 488)
 time.sleep(0.3)
 saved = state()
 assert saved["gameplay"]["encounter"]["state"]["quest"] == 1, "Touch interaction did not accept the hub quest"
@@ -119,11 +120,11 @@ time.sleep(2)
 dismiss_fullscreen_hint()
 before_x = saved["gameplay"]["encounter"]["state"]["x"]
 for attempt in range(4):
-    tap(160, 100)
+    tap(240, 248)
     time.sleep(0.4)
-    position = point(12, 152)
+    position = point(24, 482)
     adb("shell", "input", "swipe", *position, *position, "350")
-    tap(199, 152)
+    tap(590, 488)
     time.sleep(0.3)
     restored = state()
     if restored["gameplay"]["encounter"]["state"]["x"] < before_x - 3:

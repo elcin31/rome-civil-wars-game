@@ -2,8 +2,9 @@ extends Control
 ## Part 1 art viewer. All art is shown at its native pixel size in fullscreen.
 ## Animation here is explicitly procedural; each named pose has one painted key.
 
-const GROUPS = ["characters", "locations", "tiles", "ui"]
-const GROUP_NAMES = ["Герои", "Локации", "Тайлы", "Интерфейс"]
+const UI = preload("res://scripts/roman_ui.gd")
+const GROUPS = ["characters", "locations", "tiles", "ui", "illustrations"]
+const GROUP_NAMES = ["Герои", "Локации", "Тайлы", "Интерфейс", "Хроника"]
 const POSES = ["Анфас", "Профиль", "Спина", "Покой", "Шаг", "Бег", "Удар", "Блок", "Урон"]
 const INK = Color("14151f")
 const IVORY = Color("ede3cc")
@@ -35,10 +36,24 @@ var font: Font
 
 
 func _ready() -> void:
-	font = ThemeDB.fallback_font
+	theme = UI.theme_resource()
+	font = theme.default_font
+	get_viewport().size_changed.connect(_resize)
 	var data = JSON.parse_string(FileAccess.get_file_as_string("res://tools/manifest.json"))
 	if data is Dictionary:
 		assets = data.get("assets", [])
+	var additions: Dictionary = JSON.parse_string(
+		FileAccess.get_file_as_string("res://tools/refresh_art_manifest.json")
+	)
+	assets.append_array(additions.get("assets", []))
+	var previous: Dictionary = JSON.parse_string(
+		FileAccess.get_file_as_string("res://tools/story_art_manifest.json")
+	)
+	for asset in previous.get("assets", []):
+		if asset.category != "emotions":
+			var copy: Dictionary = asset.duplicate()
+			copy.category = "illustrations"
+			assets.append(copy)
 	if ResourceLoader.exists("res://assets/locations/gaul_forest.png"):
 		backdrop = load("res://assets/locations/gaul_forest.png")
 	if ResourceLoader.exists("res://assets/ui/buttons.png"):
@@ -46,13 +61,7 @@ func _ready() -> void:
 	if ResourceLoader.exists("res://assets/ui/arrows.png"):
 		arrow_art = load("res://assets/ui/arrows.png")
 	_build_ui()
-	if ResourceLoader.exists("res://scenes/StoryMain.tscn"):
-		var words = JSON.parse_string(FileAccess.get_file_as_string("res://story/ui_ru.json"))
-		_button(
-			words.get("return_gallery", "Menu"),
-			Rect2(276, 0, 44, 15),
-			func(): get_tree().change_scene_to_file("res://scenes/StoryMain.tscn")
-		)
+
 	_select_group(0)
 	# Automation uses this same real scene; no fake screenshot renderer.
 	for arg in OS.get_cmdline_user_args():
@@ -65,54 +74,87 @@ func _ready() -> void:
 
 
 func _button(text_value: String, box: Rect2, callback: Callable) -> Button:
-	var button = Button.new()
-	button.text = text_value
-	button.position = box.position
-	button.add_theme_font_size_override("font_size", 8)
-	button.add_theme_color_override("font_color", IVORY)
-	button.add_theme_color_override("font_hover_color", OCHRE)
-	for state in ["normal", "hover", "pressed", "focus", "disabled", "hover_pressed"]:
-		var style = StyleBoxFlat.new()
-		style.bg_color = Color("4a3026") if state == "pressed" else Color("2b1b14")
-		style.border_color = OCHRE if state == "focus" or state == "hover" else BRONZE
-		style.set_border_width_all(1)
-		style.content_margin_left = 2
-		style.content_margin_right = 2
-		style.content_margin_top = 1
-		style.content_margin_bottom = 1
-		button.add_theme_stylebox_override(state, style)
-	button.pressed.connect(callback)
-	chrome.add_child(button)
-	button.size = box.size
-	button.set_deferred("size", box.size)
-	return button
+	return UI.button(chrome, text_value, box, callback)
 
 
 func _label(text_value: String, pos: Vector2, color: Color = IVORY) -> Label:
-	var label = Label.new()
-	label.text = text_value
-	label.position = pos
-	label.add_theme_font_size_override("font_size", 8)
-	label.add_theme_color_override("font_color", color)
-	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	chrome.add_child(label)
-	return label
+	return UI.label(
+		chrome, text_value, Rect2(pos, Vector2(chrome.size.x - pos.x - 24, 40)), 24, color
+	)
 
 
 func _build_ui() -> void:
 	chrome = Control.new()
 	chrome.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var safe: Rect2 = UI.safe_rect(self)
+	chrome.position = safe.position
+	chrome.size = safe.size
 	add_child(chrome)
-	_label("C I N I S   L A U R I", Vector2(5, 1), OCHRE)
-	_label("ПЕПЕЛ ЛАВРА  /  ART I", Vector2(158, 1), BRONZE)
-	for i in range(4):
-		tabs.append(_button(GROUP_NAMES[i], Rect2(i * 80, 16, 80, 18), _select_group.bind(i)))
-	_button("<", Rect2(3, 143, 32, 32), _navigate.bind(-1))
-	_button(">", Rect2(285, 143, 32, 32), _navigate.bind(1))
-	name_label = _label("", Vector2(40, 141))
-	detail_label = _label("", Vector2(40, 151), BRONZE)
-	action_button = _button("", Rect2(40, 163, 117, 14), _action)
-	_button("Чистый вид 1:1", Rect2(163, 163, 117, 14), _toggle_fullscreen)
+	var width: float = chrome.size.x
+	var height: float = chrome.size.y
+	UI.panel(chrome, Rect2(8, 8, width - 16, 66))
+	_label("CINIS LAURI", Vector2(24, 20), OCHRE).size.x = 212
+	name_label = _label("", Vector2(252, 20))
+	name_label.size.x = width - 420
+	_button(
+		"Меню",
+		Rect2(width - 148, 12, 132, UI.touch_height(self)),
+		func(): get_tree().change_scene_to_file("res://scenes/StoryMain.tscn")
+	)
+	var column: float = (width - 64) / 5
+	tabs.clear()
+	for index in range(5):
+		tabs.append(
+			_button(
+				GROUP_NAMES[index],
+				Rect2(
+					16 + index * (column + 8),
+					maxf(82, UI.touch_height(self) + 32),
+					column,
+					UI.touch_height(self)
+				),
+				_select_group.bind(index)
+			)
+		)
+	detail_label = _label("", Vector2(24, height - UI.touch_height(self) - 52), BRONZE)
+	_button(
+		"←",
+		Rect2(
+			16,
+			height - UI.touch_height(self) - 16,
+			maxf(88, UI.touch_height(self)),
+			UI.touch_height(self)
+		),
+		_navigate.bind(-1)
+	)
+	_button(
+		"→",
+		Rect2(
+			width - 104,
+			height - UI.touch_height(self) - 16,
+			maxf(88, UI.touch_height(self)),
+			UI.touch_height(self)
+		),
+		_navigate.bind(1)
+	)
+	var half: float = (width - 256) / 2
+	action_button = _button(
+		"", Rect2(116, height - UI.touch_height(self) - 16, half, UI.touch_height(self)), _action
+	)
+	_button(
+		"Чистый вид",
+		Rect2(128 + half, height - UI.touch_height(self) - 16, half, UI.touch_height(self)),
+		_toggle_fullscreen
+	)
+
+
+func _resize() -> void:
+	if is_instance_valid(chrome):
+		remove_child(chrome)
+		chrome.queue_free()
+		_build_ui()
+		_select_group(group_index)
+		chrome.visible = not fullscreen
 
 
 func _select_group(index: int) -> void:
@@ -145,7 +187,7 @@ func _select_asset(index: int) -> void:
 			layers.append(load("res://" + layer_path))
 	name_label.text = "%02d/%02d  %s" % [asset_index + 1, filtered.size(), current.get("title", "")]
 	var dimensions = current.get("size", [0, 0])
-	detail_label.text = "%s x %s px  /  24 цвета" % [dimensions[0], dimensions[1]]
+	detail_label.text = "%s x %s px  /  48 цветов" % [dimensions[0], dimensions[1]]
 	_update_action()
 	queue_redraw()
 
@@ -205,37 +247,55 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _draw() -> void:
-	draw_rect(Rect2(0, 0, 320, 180), INK)
-	if current.is_empty():
+	var bounds: Rect2 = get_viewport_rect()
+	draw_rect(bounds, INK)
+	if current.is_empty() or not texture:
 		return
-	if group_index == 1 and not layers.is_empty():
-		for i in range(layers.size()):
-			var displacement = round(sin(clock * .3) * i * 2) if moving else 0.0
-			draw_texture(layers[i], Vector2(displacement, 0))
-	elif group_index == 0:
-		_draw_character()
-	else:
-		_draw_checker()
-		if texture:
-			draw_texture(texture, (Vector2(320, 180) - texture.get_size()) / 2)
-			if current.get("id", "") == "dialogue" and button_art:
-				for state in range(4):
-					draw_texture_rect_region(
-						button_art,
-						Rect2(14 + state * 76, 117, 64, 20),
-						Rect2(0, state * 20, 64, 20)
-					)
-				if arrow_art:
-					draw_texture(arrow_art, Vector2(144, 142))
-	if not fullscreen:
-		draw_rect(Rect2(0, 0, 320, 16), INK)
-		draw_line(Vector2(0, 15), Vector2(320, 15), BRONZE)
-		draw_rect(Rect2(0, 140, 320, 40), INK)
-		draw_line(Vector2(0, 140), Vector2(320, 140), BRONZE)
-		if not texture:
-			draw_string(
-				font, Vector2(88, 90), "Исходник в работе", HORIZONTAL_ALIGNMENT_LEFT, -1, 9, IVORY
+	var safe: Rect2 = UI.safe_rect(self)
+	var preview: Rect2 = (
+		safe
+		if fullscreen
+		else Rect2(safe.position + Vector2(16, 152), safe.size - Vector2(32, 272))
+	)
+	if group_index == 0:
+		var cell: Vector2 = texture.get_size() / Vector2(3, 3)
+		var factor: float = maxf(1, floorf(preview.size.y / cell.y))
+		var point: Vector2 = preview.position + Vector2(preview.size.x * 0.32, preview.size.y)
+		var bob: float = roundf(sin(clock * 3)) if moving else 0.0
+		draw_set_transform(point + Vector2(0, bob))
+		draw_texture_rect_region(
+			texture,
+			Rect2(-cell.x * factor / 2, -cell.y * factor, cell.x * factor, cell.y * factor),
+			Rect2(Vector2(pose_index % 3, floori(pose_index / 3.0)) * cell, cell)
+		)
+		draw_set_transform(Vector2.ZERO)
+		if portrait:
+			var dimensions: Vector2 = portrait.get_size()
+			draw_texture_rect(
+				portrait,
+				Rect2(
+					(
+						preview.position
+						+ Vector2(preview.size.x * 0.62, (preview.size.y - dimensions.y) / 2)
+					),
+					dimensions
+				),
+				false
 			)
+	else:
+		var physical: float = get_viewport().get_screen_transform().get_scale().y
+		var fit: float = minf(
+			preview.size.x / texture.get_width(), preview.size.y / texture.get_height()
+		)
+		var factor: float = maxf(1, floorf(fit * physical)) / physical
+		var dimensions: Vector2 = texture.get_size() * factor
+		var target = Rect2(preview.get_center() - dimensions / 2, dimensions)
+		var visible: Rect2 = target.intersection(preview)
+		draw_texture_rect_region(
+			texture,
+			visible,
+			Rect2((visible.position - target.position) / factor, visible.size / factor)
+		)
 
 
 func _draw_checker() -> void:

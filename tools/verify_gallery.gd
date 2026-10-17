@@ -68,9 +68,9 @@ func _verify() -> void:
 	assert(gallery.moving != previous_motion, "Action button binding failed")
 	await process_frame
 	for button in gallery.tabs:
-		assert(button.size.y <= 18, "Category exceeds allocated height")
+		assert(button.size.y >= 58, "Category touch target is too small")
 	assert(
-		gallery.action_button.position.y + gallery.action_button.size.y <= 180,
+		gallery.action_button.position.y + gallery.action_button.size.y <= gallery.chrome.size.y,
 		"Footer button exceeds viewport"
 	)
 	gallery._toggle_fullscreen()

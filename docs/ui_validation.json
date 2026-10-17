@@ -1,0 +1,36 @@
+[
+  {
+    "checks": 385,
+    "errors": [],
+    "frames": [
+      "menu",
+      "dialogue",
+      "pause",
+      "saves",
+      "settings",
+      "credits",
+      "licenses",
+      "campaign",
+      "log",
+      "hub",
+      "hub_result",
+      "tactical",
+      "tactical_result",
+      "platformer",
+      "platformer_result",
+      "shop",
+      "notch_menu",
+      "gallery_0",
+      "gallery_1",
+      "gallery_2",
+      "gallery_3",
+      "gallery_4"
+    ],
+    "resolution": [
+      1280,
+      720
+    ],
+    "touches": 127,
+    "exit_code": 0
+  }
+]

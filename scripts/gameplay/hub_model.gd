@@ -13,10 +13,10 @@ func setup(beat: Dictionary, _progress: Dictionary, _bond: int, _companion: bool
 	config = beat
 	var offset: int = int(beat.get("variant", 0)) % 3 * 5
 	stations = [
-		{"id": "scribe", "x": 76 + offset, "y": 86, "name": "Писец"},
+		{"id": "scribe", "x": 76 + offset, "y": 100, "name": "Писец"},
 		{"id": "supplies", "x": 164, "y": 120, "name": "Запасы"},
-		{"id": "merchant", "x": 184, "y": 76, "name": "Торговец"},
-		{"id": "witness", "x": 264 - offset, "y": 92, "name": "Получатель"},
+		{"id": "merchant", "x": 184, "y": 96, "name": "Торговец"},
+		{"id": "witness", "x": 264 - offset, "y": 108, "name": "Получатель"},
 		{"id": "exit", "x": 303, "y": 122, "name": "Дорога"}
 	]
 	state = {

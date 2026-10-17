@@ -4,39 +4,39 @@
 
 [sub_resource type="AtlasTexture" id="Pose_front"]
 atlas = ExtResource("1")
-region = Rect2(0, 0, 48, 64)
+region = Rect2(0, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_side"]
 atlas = ExtResource("1")
-region = Rect2(48, 0, 48, 64)
+region = Rect2(64, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_back"]
 atlas = ExtResource("1")
-region = Rect2(96, 0, 48, 64)
+region = Rect2(128, 0, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_idle"]
 atlas = ExtResource("1")
-region = Rect2(0, 64, 48, 64)
+region = Rect2(0, 96, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_walk"]
 atlas = ExtResource("1")
-region = Rect2(48, 64, 48, 64)
+region = Rect2(64, 96, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_run"]
 atlas = ExtResource("1")
-region = Rect2(96, 64, 48, 64)
+region = Rect2(128, 96, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_attack"]
 atlas = ExtResource("1")
-region = Rect2(0, 128, 48, 64)
+region = Rect2(0, 192, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_block"]
 atlas = ExtResource("1")
-region = Rect2(48, 128, 48, 64)
+region = Rect2(64, 192, 64, 96)
 
 [sub_resource type="AtlasTexture" id="Pose_hurt"]
 atlas = ExtResource("1")
-region = Rect2(96, 128, 48, 64)
+region = Rect2(128, 192, 64, 96)
 
 [resource]
 animations = [{"frames": [{"duration": 1.0, "texture": SubResource("Pose_front")}], "loop": true, "name": &"front", "speed": 4.0},

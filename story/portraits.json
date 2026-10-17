@@ -205,6 +205,166 @@
       "file": "assets/portraits/vorenus_angry.png",
       "emotion": "angry",
       "character": "vorenus"
+    },
+    "narrator_neutral": {
+      "file": "assets/portraits/narrator_neutral.png",
+      "emotion": "neutral",
+      "character": "narrator"
+    },
+    "narrator_angry": {
+      "file": "assets/portraits/narrator_angry.png",
+      "emotion": "angry",
+      "character": "narrator"
+    },
+    "narrator_worried": {
+      "file": "assets/portraits/narrator_worried.png",
+      "emotion": "worried",
+      "character": "narrator"
+    },
+    "narrator_smile": {
+      "file": "assets/portraits/narrator_smile.png",
+      "emotion": "smile",
+      "character": "narrator"
+    },
+    "history_neutral": {
+      "file": "assets/portraits/history_neutral.png",
+      "emotion": "neutral",
+      "character": "history"
+    },
+    "history_angry": {
+      "file": "assets/portraits/history_angry.png",
+      "emotion": "angry",
+      "character": "history"
+    },
+    "history_worried": {
+      "file": "assets/portraits/history_worried.png",
+      "emotion": "worried",
+      "character": "history"
+    },
+    "history_smile": {
+      "file": "assets/portraits/history_smile.png",
+      "emotion": "smile",
+      "character": "history"
+    },
+    "lucilla_neutral": {
+      "file": "assets/portraits/lucilla_neutral.png",
+      "emotion": "neutral",
+      "character": "lucilla"
+    },
+    "lucilla_angry": {
+      "file": "assets/portraits/lucilla_angry.png",
+      "emotion": "angry",
+      "character": "lucilla"
+    },
+    "lucilla_worried": {
+      "file": "assets/portraits/lucilla_worried.png",
+      "emotion": "worried",
+      "character": "lucilla"
+    },
+    "lucilla_smile": {
+      "file": "assets/portraits/lucilla_smile.png",
+      "emotion": "smile",
+      "character": "lucilla"
+    },
+    "serranus_neutral": {
+      "file": "assets/portraits/serranus_neutral.png",
+      "emotion": "neutral",
+      "character": "serranus"
+    },
+    "serranus_angry": {
+      "file": "assets/portraits/serranus_angry.png",
+      "emotion": "angry",
+      "character": "serranus"
+    },
+    "serranus_worried": {
+      "file": "assets/portraits/serranus_worried.png",
+      "emotion": "worried",
+      "character": "serranus"
+    },
+    "serranus_smile": {
+      "file": "assets/portraits/serranus_smile.png",
+      "emotion": "smile",
+      "character": "serranus"
+    },
+    "aulus_neutral": {
+      "file": "assets/portraits/aulus_neutral.png",
+      "emotion": "neutral",
+      "character": "aulus"
+    },
+    "aulus_angry": {
+      "file": "assets/portraits/aulus_angry.png",
+      "emotion": "angry",
+      "character": "aulus"
+    },
+    "aulus_worried": {
+      "file": "assets/portraits/aulus_worried.png",
+      "emotion": "worried",
+      "character": "aulus"
+    },
+    "aulus_smile": {
+      "file": "assets/portraits/aulus_smile.png",
+      "emotion": "smile",
+      "character": "aulus"
+    },
+    "vettius_neutral": {
+      "file": "assets/portraits/vettius_neutral.png",
+      "emotion": "neutral",
+      "character": "vettius"
+    },
+    "vettius_angry": {
+      "file": "assets/portraits/vettius_angry.png",
+      "emotion": "angry",
+      "character": "vettius"
+    },
+    "vettius_worried": {
+      "file": "assets/portraits/vettius_worried.png",
+      "emotion": "worried",
+      "character": "vettius"
+    },
+    "vettius_smile": {
+      "file": "assets/portraits/vettius_smile.png",
+      "emotion": "smile",
+      "character": "vettius"
+    },
+    "neria_neutral": {
+      "file": "assets/portraits/neria_neutral.png",
+      "emotion": "neutral",
+      "character": "neria"
+    },
+    "neria_angry": {
+      "file": "assets/portraits/neria_angry.png",
+      "emotion": "angry",
+      "character": "neria"
+    },
+    "neria_worried": {
+      "file": "assets/portraits/neria_worried.png",
+      "emotion": "worried",
+      "character": "neria"
+    },
+    "neria_smile": {
+      "file": "assets/portraits/neria_smile.png",
+      "emotion": "smile",
+      "character": "neria"
+    },
+    "aglaia_neutral": {
+      "file": "assets/portraits/aglaia_neutral.png",
+      "emotion": "neutral",
+      "character": "aglaia"
+    },
+    "aglaia_angry": {
+      "file": "assets/portraits/aglaia_angry.png",
+      "emotion": "angry",
+      "character": "aglaia"
+    },
+    "aglaia_worried": {
+      "file": "assets/portraits/aglaia_worried.png",
+      "emotion": "worried",
+      "character": "aglaia"
+    },
+    "aglaia_smile": {
+      "file": "assets/portraits/aglaia_smile.png",
+      "emotion": "smile",
+      "character": "aglaia"
     }
   }
 }

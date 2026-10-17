@@ -4,6 +4,7 @@ const INK = Color("14151f")
 const IVORY = Color("ede3cc")
 const BRONZE = Color("a87b3d")
 const OCHRE = Color("d9a441")
+const UI = preload("res://scripts/roman_ui.gd")
 const EncounterView = preload("res://scripts/gameplay/encounter_view.gd")
 var layer: Control
 var mode: String = "menu"
@@ -18,11 +19,16 @@ var test_route: String = "legion"
 var settings_return: Callable
 var encounter: Control
 var transition_serial: int = 0
+var resizing: bool = false
+var portrait_rect: Rect2
+var text_size: int = 24
+var ambience_clock: float = 0.0
 
 
 func _ready() -> void:
 	mouse_filter = MOUSE_FILTER_IGNORE
-	font = ThemeDB.fallback_font
+	theme = UI.theme_resource()
+	font = theme.default_font
 	_set_background("res://assets/locations/roman_camp.png")
 	get_viewport().size_changed.connect(_apply_safe_area)
 	_apply_safe_area()
@@ -42,8 +48,49 @@ func _clear(new_mode: String) -> void:
 		layer.queue_free()
 	layer = Control.new()
 	layer.mouse_filter = MOUSE_FILTER_IGNORE
+	var safe: Rect2 = UI.safe_rect(self)
+	layer.position = safe.position
+	layer.size = safe.size
 	add_child(layer)
 	queue_redraw()
+
+
+func _width() -> float:
+	return layer.size.x
+
+
+func _height() -> float:
+	return layer.size.y
+
+
+func _touch() -> float:
+	return UI.touch_height(self)
+
+
+func _footer_y() -> float:
+	return _height() - _touch() - 16
+
+
+func _content_top() -> float:
+	return maxf(96, _touch() + 32)
+
+
+func _heading(title: String, back: Callable, back_text: String = "Назад") -> void:
+	_button(back_text, Rect2(16, 14, 132, _touch()), back)
+	_label(title, Rect2(168, 14, _width() - 188, _touch()), 30, OCHRE)
+
+
+func _reading_panel(value: String, top: float, bottom: float, font_size: int = 24) -> RichTextLabel:
+	UI.panel(layer, Rect2(16, top, _width() - 32, _height() - top - bottom))
+	var text = RichTextLabel.new()
+	text.position = Vector2(36, top + 16)
+	text.size = Vector2(_width() - 72, _height() - top - bottom - 32)
+	text.text = value
+	text.bbcode_enabled = false
+	text.add_theme_font_size_override("normal_font_size", font_size)
+	text.set_meta("scroll_document", true)
+	layer.add_child(text)
+	return text
 
 
 func _set_background(path: String) -> void:
@@ -51,71 +98,47 @@ func _set_background(path: String) -> void:
 		background = load(path)
 
 
-func _label(value: String, rect: Rect2, size_value: int = 9, color: Color = IVORY) -> Label:
-	var label = Label.new()
-	label.text = value
-	label.position = rect.position
-	label.size = rect.size
-	label.clip_text = true
-	label.add_theme_font_size_override("font_size", size_value)
-	label.add_theme_color_override("font_color", color)
-	label.mouse_filter = MOUSE_FILTER_IGNORE
-	layer.add_child(label)
-	label.set_deferred("size", rect.size)
-	return label
+func _label(value: String, rect: Rect2, size_value: int = 24, color: Color = IVORY) -> Label:
+	return UI.label(layer, value, rect, size_value, color)
 
 
 func _button(value: String, rect: Rect2, callback: Callable, enabled: bool = true) -> Button:
-	rect.size.y = maxf(26, rect.size.y)
-	rect.position.y = minf(rect.position.y, 180 - rect.size.y)
-	var button = Button.new()
-	button.disabled = not enabled
-	button.add_theme_font_size_override("font_size", 9)
-	for state in ["normal", "hover", "pressed", "focus", "disabled", "hover_pressed"]:
-		var style = StyleBoxFlat.new()
-		style.bg_color = Color("4a3026") if state == "pressed" else INK
-		style.border_color = OCHRE if state in ["focus", "hover"] else BRONZE
-		style.set_border_width_all(1)
-		style.set_content_margin_all(1)
-		button.add_theme_stylebox_override(state, style)
-	button.position = rect.position
-	button.pressed.connect(callback)
-	layer.add_child(button)
-	button.size = rect.size
-	button.set_deferred("size", rect.size)
-	var label = Label.new()
-	label.text = value
-	label.position = Vector2(3, 1)
-	label.size = rect.size - Vector2(6, 2)
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.add_theme_font_size_override("font_size", 9)
-	label.add_theme_color_override("font_color", IVORY if enabled else BRONZE)
-	label.mouse_filter = MOUSE_FILTER_IGNORE
-	button.add_child(label)
-	label.set_deferred("size", rect.size - Vector2(6, 2))
-	return button
+	return UI.button(layer, value, rect, callback, enabled)
 
 
 func menu(message: String = "") -> void:
 	_clear("menu")
 	_set_background("res://assets/final/menu.png")
 	GameServices.play_layer("city")
-	_label(StoryRuntime.tr_ui("title"), Rect2(77, 10, 200, 22), 19, OCHRE)
-	_label(StoryRuntime.tr_ui("subtitle"), Rect2(115, 35, 180, 18), 11)
-	_button(StoryRuntime.tr_ui("new_game"), Rect2(80, 60, 160, 24), _new_request)
-	_button(
-		StoryRuntime.tr_ui("continue"),
-		Rect2(80, 88, 160, 24),
-		_continue,
-		FileAccess.file_exists(StoryRuntime.save_path)
-	)
-	_button("Карта кампании", Rect2(80, 116, 160, 26), _chapters)
-	_button(StoryRuntime.tr_ui("gallery"), Rect2(80, 144, 78, 24), _gallery)
-	_button("Настройки", Rect2(162, 144, 78, 24), _open_settings.bind(menu))
+	var panel_width: float = minf(456, _width() * 0.49)
+	UI.panel(layer, Rect2(24, 18, panel_width, _height() - 36))
+	_label("CINIS LAURI", Rect2(48, 34, panel_width - 48, 50), 42, OCHRE)
+	_label("ПЕПЕЛ ЛАВРА", Rect2(48, 86, panel_width - 48, 34), 26)
+	var captions: Array = ["Новая игра", "Продолжить", "Карта кампании", "Галерея", "Настройки"]
+	var actions: Array[Callable] = [
+		_new_request, _continue, _chapters, _gallery, _open_settings.bind(menu)
+	]
+	var dense: bool = (_height() - 156) / 5.0 < _touch() + 6
+	var row: float = (_height() - 156) / (3.0 if dense else 5.0)
+	var columns: int = 2 if dense else 1
+	var cell: float = (panel_width - 40 - (12 if dense else 0)) / columns
+	for index in range(5):
+		_button(
+			captions[index],
+			Rect2(
+				44 + (index % columns) * (cell + 12), 132 + row * (index / columns), cell, _touch()
+			),
+			actions[index],
+			index != 1 or FileAccess.file_exists(StoryRuntime.save_path)
+		)
 	if not message.is_empty():
-		_label(message, Rect2(4, 166, 312, 14), 8, OCHRE)
+		UI.panel(layer, Rect2(panel_width + 48, _height() - 112, _width() - panel_width - 72, 88))
+		_label(
+			message,
+			Rect2(panel_width + 64, _height() - 100, _width() - panel_width - 104, 64),
+			24,
+			OCHRE
+		)
 
 
 func _new_request() -> void:
@@ -123,10 +146,11 @@ func _new_request() -> void:
 		_new_game()
 		return
 	_clear("confirm")
-	var text = _label(StoryRuntime.tr_ui("confirm_new"), Rect2(30, 40, 260, 42), 11)
-	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_button(StoryRuntime.tr_ui("yes"), Rect2(35, 103, 120, 30), _new_game)
-	_button(StoryRuntime.tr_ui("no"), Rect2(165, 103, 120, 30), menu)
+	UI.panel(layer, Rect2(48, 96, _width() - 96, _height() - 192))
+	_label(StoryRuntime.tr_ui("confirm_new"), Rect2(80, 132, _width() - 160, 100), 30)
+	var half: float = (_width() - 176) / 2
+	_button("Начать заново", Rect2(80, _height() - 184, half, _touch()), _new_game)
+	_button("Отмена", Rect2(96 + half, _height() - 184, half, _touch()), menu)
 
 
 func _new_game(chapter: int = 1) -> void:
@@ -144,29 +168,36 @@ func _continue() -> void:
 func _chapters() -> void:
 	_clear("chapters")
 	_set_background("res://assets/ui/campaign_map.png")
-	_label("Карта кампании", Rect2(86, 3, 230, 24), 13, OCHRE)
+	_heading("Карта кампании", menu, "Меню")
 	var progress: Dictionary = StoryRuntime.state.get("progress", {})
 	if progress.is_empty():
-		var saved: Dictionary = StoryRuntime.read_json(StoryRuntime.save_path)
-		if saved.get("progress") is Dictionary:
-			progress = saved.progress
+		progress = StoryRuntime.read_json(StoryRuntime.save_path).get("progress", {})
 	var unlocked: int = clampi(int(progress.get("chapter", 1)), 1, 8)
+	var cell: Vector2 = Vector2(
+		(_width() - 56) / 4, (_height() - _content_top() - _touch() - 52) / 2
+	)
 	for index in range(8):
 		var caption: String = "%d. %s" % [index + 1, StoryRuntime.chapters[index].title.ru]
-		if index + 1 < unlocked:
-			caption += " · пройдено"
-		elif index + 1 == unlocked:
-			caption += " · здесь"
-		else:
-			caption += " · закрыто"
+		caption += (
+			"\n"
+			+ (
+				"Пройдено"
+				if index + 1 < unlocked
+				else ("Текущее событие" if index + 1 == unlocked else "Закрыто")
+			)
+		)
 		_button(
 			caption,
-			Rect2(6 + (index % 4) * 78, 35 + (index / 4) * 45, 74, 41),
+			Rect2(
+				Vector2(
+					16 + (index % 4) * (cell.x + 8), _content_top() + (index / 4) * (cell.y + 8)
+				),
+				cell
+			),
 			_campaign_resume,
 			index + 1 <= unlocked
 		)
-	_button("Меню", Rect2(6, 148, 74, 28), menu)
-	_button("К текущему событию", Rect2(88, 148, 226, 28), _campaign_resume)
+	_button("К текущему событию", Rect2(16, _footer_y(), _width() - 32, _touch()), _campaign_resume)
 
 
 func _campaign_resume() -> void:
@@ -196,24 +227,22 @@ func refresh() -> void:
 		_show_beat(node)
 		return
 	GameServices.play_layer("city")
-	_button(StoryRuntime.tr_ui("menu"), Rect2(2, 1, 42, 16), _pause)
-	_label(scene.get("title", {}).get("ru", ""), Rect2(49, 1, 120, 14), 8, OCHRE)
-	_label(
-		StoryRuntime.tr_ui("bond").format({"bond": int(StoryRuntime.state.bond)}),
-		Rect2(174, 1, 80, 14),
-		8
-	)
-	_button(StoryRuntime.tr_ui("log"), Rect2(258, 1, 60, 16), _log)
+	UI.panel(layer, Rect2(8, 8, _width() - 16, maxf(76, _touch() + 16)))
+	_button("Пауза", Rect2(16, 16, 120, _touch()), _pause)
+	_label(scene.get("title", {}).get("ru", ""), Rect2(152, 14, _width() - 422, 64), 26, OCHRE)
+	_label("Связь\n%d / 100" % int(StoryRuntime.state.bond), Rect2(_width() - 254, 16, 108, 60), 24)
+	_button("Журнал", Rect2(_width() - 136, 16, 120, _touch()), _log)
 	if node.get("kind") == "ending":
-		_label(StoryRuntime.tr_ui("ending"), Rect2(8, 112, 305, 17), 10, OCHRE)
-		_label(scene.title.ru, Rect2(8, 130, 305, 22), 14)
-		_button(StoryRuntime.tr_ui("restart"), Rect2(80, 158, 160, 20), menu)
+		UI.panel(layer, Rect2(24, _height() - _touch() - 154, _width() - 48, _touch() + 138))
+		_label("КОНЕЦ ИСТОРИИ", Rect2(48, _height() - _touch() - 140, _width() - 96, 34), 26, OCHRE)
+		_label(scene.title.ru, Rect2(48, _height() - _touch() - 98, _width() - 96, 60), 32)
+		_button("В главное меню", Rect2(48, _footer_y(), _width() - 96, _touch()), menu)
 		return
 	if node.has("choices"):
 		var count: int = node.choices.size()
-		var height_value: int = mini(39, 148 / maxi(1, count))
-		for i in range(count):
-			var option = node.choices[i]
+		var row: float = (_height() - _content_top() - 16) / maxi(1, count)
+		for index in range(count):
+			var option = node.choices[index]
 			var available: bool = StoryRuntime.condition(option.get("condition", ""))
 			var caption: String = option.text.ru
 			if not available:
@@ -225,44 +254,50 @@ func refresh() -> void:
 				)
 			_button(
 				caption,
-				Rect2(12, 25 + i * height_value, 296, height_value - 2),
-				_choose.bind(i),
+				Rect2(24, _content_top() + index * row, _width() - 48, row - 4),
+				_choose.bind(index),
 				available
 			)
 		return
-	if node.get("kind") == "beat":
-		_show_beat(node)
-		return
 	var who: String = node.get("speaker", "narrator")
-	var name_value: String = StoryRuntime.characters.get(who, {}).get("name", {}).get("ru", who)
-	_label(name_value, Rect2(57, 85, 250, 14), 9, OCHRE)
+	var actor: Dictionary = StoryRuntime.characters.get(who, {})
 	var portrait: String = node.get("portrait", "")
+	if portrait.is_empty():
+		portrait = actor.get("default_portrait", "")
+	assert(StoryRuntime.portraits.has(portrait), "Missing portrait for " + who)
 	if StoryRuntime.portraits.has(portrait):
-		var path: String = "res://" + StoryRuntime.portraits[portrait].file
-		if ResourceLoader.exists(path):
-			face = load(path)
-		_label(
-			StoryRuntime.tr_ui(StoryRuntime.portraits[portrait].emotion),
-			Rect2(3, 151, 52, 10),
-			7,
-			BRONZE
-		)
+		face = load("res://" + StoryRuntime.portraits[portrait].file)
+	var panel_top: float = _height() - 282 - maxf(0, _touch() - 58)
+	UI.panel(layer, Rect2(16, panel_top, _width() - 32, 194), "parchment")
+	portrait_rect = Rect2(32, panel_top + 24, 128, 128)
+	var portrait_view = TextureRect.new()
+	portrait_view.texture = face
+	portrait_view.position = portrait_rect.position
+	portrait_view.size = portrait_rect.size
+	portrait_view.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	portrait_view.mouse_filter = MOUSE_FILTER_IGNORE
+	layer.add_child(portrait_view)
+	_label(
+		actor.get("name", {}).get("ru", who),
+		Rect2(184, panel_top + 12, _width() - 224, 36),
+		28,
+		OCHRE
+	)
 	body = RichTextLabel.new()
-	body.position = Vector2(57, 100)
-	body.size = Vector2(258, 54)
+	body.position = Vector2(184, panel_top + 54)
+	body.size = Vector2(_width() - 224, 128)
 	body.scroll_active = false
+	body.autowrap_mode = TextServer.AUTOWRAP_OFF
 	body.bbcode_enabled = false
-	body.add_theme_font_override("normal_font", font)
-	body.add_theme_font_size_override("normal_font_size", 9)
-	body.add_theme_color_override("default_color", IVORY)
+	body.add_theme_font_size_override("normal_font_size", text_size)
 	body.mouse_filter = MOUSE_FILTER_IGNORE
 	layer.add_child(body)
 	pages = _paginate(node.get("text", {}).get("ru", ""))
 	page_index = 0
 	_show_page()
-	_button(StoryRuntime.tr_ui("back"), Rect2(3, 164, 50, 15), _previous_page)
-	_button(StoryRuntime.tr_ui("reveal"), Rect2(57, 164, 149, 15), _reveal)
-	_button(StoryRuntime.tr_ui("next"), Rect2(211, 164, 106, 15), _next)
+	_button("Назад", Rect2(16, _footer_y(), 144, _touch()), _previous_page)
+	_button("Показать текст", Rect2(172, _footer_y(), _width() - 392, _touch()), _reveal)
+	_button("Дальше", Rect2(_width() - 208, _footer_y(), 192, _touch()), _next)
 
 
 func _paginate(text: String) -> Array[String]:
@@ -270,11 +305,17 @@ func _paginate(text: String) -> Array[String]:
 	var line: String = ""
 	var page: String = ""
 	var rows: int = 0
+	var available_width: float = (
+		body.size.x - 8 if is_instance_valid(body) else maxf(400, _width() - 232)
+	)
 	for word in text.replace("\n", " \n ").split(" ", false):
 		var candidate: String = word if line.is_empty() else line + " " + word
 		if (
 			word == "\n"
-			or font.get_string_size(candidate, HORIZONTAL_ALIGNMENT_LEFT, -1, 9).x > 254
+			or (
+				font.get_string_size(candidate, HORIZONTAL_ALIGNMENT_LEFT, -1, text_size).x
+				> available_width
+			)
 		):
 			page += ("" if page.is_empty() else "\n") + line
 			rows += 1
@@ -301,6 +342,8 @@ func _show_page() -> void:
 
 
 func _process(delta: float) -> void:
+	ambience_clock += delta
+	queue_redraw()
 	if mode == "play" and is_instance_valid(body):
 		letters += delta * float(GameServices.settings.text_speed)
 		body.visible_characters = mini(int(letters), body.text.length())
@@ -346,13 +389,10 @@ func _enter_current() -> void:
 	var art: String = {
 		"tactical": "loading_battle", "platformer": "loading_march", "rpg": "loading_city"
 	}[beat.type]
-	if int(StoryRuntime.state.progress.chapter) == 8:
-		art = "loading_memory"
-	elif beat.id == "beat_ch01_s03":
-		art = "loading_oath"
 	_clear("loading")
 	_set_background("res://assets/final/" + art + ".png")
-	_label(beat.title.ru, Rect2(12, 145, 296, 26), 16, OCHRE)
+	UI.panel(layer, Rect2(24, _height() - 112, _width() - 48, 88))
+	_label(beat.title.ru, Rect2(44, _height() - 100, _width() - 88, 64), 32, OCHRE)
 	var serial: int = transition_serial
 	await get_tree().create_timer(0.3).timeout
 	if is_inside_tree() and mode == "loading" and serial == transition_serial:
@@ -361,6 +401,7 @@ func _enter_current() -> void:
 
 func _show_beat(node: Dictionary) -> void:
 	encounter = EncounterView.new()
+	encounter.size = layer.size
 	encounter.setup(StoryRuntime.beats[node.beat])
 	encounter.pause_requested.connect(_pause)
 	encounter.completed.connect(_after_encounter)
@@ -381,35 +422,35 @@ func _complete_beat() -> void:
 func _pause() -> void:
 	var had_encounter: bool = is_instance_valid(encounter)
 	_clear("pause")
-	_label(StoryRuntime.tr_ui("pause"), Rect2(130, 8, 120, 20), 13, OCHRE)
+	_heading("Пауза", refresh, "В игру")
 	if not had_encounter:
 		StoryRuntime.save_game()
 	GameServices.music.stream_paused = true
+	var progress: Dictionary = StoryRuntime.state.gameplay
 	_label(
-		(
-			"Ур. %d · %d монет"
-			% [int(StoryRuntime.state.gameplay.level), int(StoryRuntime.state.gameplay.coins)]
-		),
-		Rect2(4, 4, 120, 22),
-		8,
-		BRONZE
+		"Уровень %d · %d монет" % [int(progress.level), int(progress.coins)],
+		Rect2(_width() - 344, 24, 320, 40),
+		24,
+		OCHRE
 	)
-	var episode: Dictionary = StoryRuntime.state.gameplay.encounter.get("state", {})
-	_button(
-		"Припас · %d" % int(StoryRuntime.state.gameplay.supplies),
-		Rect2(234, 1, 82, 26),
-		_use_supply,
-		(
-			episode.has("max_hp")
-			and episode.get("hp", 0) < episode.max_hp
-			and StoryRuntime.state.gameplay.supplies > 0
+	var episode: Dictionary = progress.encounter.get("state", {})
+	var captions: Array = ["Продолжить", "Сохранения", "Настройки", "Журнал", "Главное меню"]
+	var actions: Array[Callable] = [refresh, _slots, _open_settings.bind(_pause), _log, menu]
+	var top: float = _content_top()
+	var row: float = (_height() - top - 24) / 3
+	var width: float = (_width() - 64) / 2
+	for index in range(5):
+		_button(
+			captions[index],
+			Rect2(24 + (index % 2) * (width + 16), top + (index / 2) * row, width, _touch()),
+			actions[index]
 		)
+	_button(
+		"Припас · %d" % int(progress.supplies),
+		Rect2(40 + width, top + 2 * row, width, _touch()),
+		_use_supply,
+		episode.has("max_hp") and episode.get("hp", 0) < episode.max_hp and progress.supplies > 0
 	)
-	_button(StoryRuntime.tr_ui("resume"), Rect2(75, 30, 170, 24), refresh)
-	_button("Сохранения", Rect2(75, 58, 170, 24), _slots)
-	_button("Настройки", Rect2(75, 86, 170, 24), _open_settings.bind(_pause))
-	_button(StoryRuntime.tr_ui("log"), Rect2(75, 114, 170, 24), _log)
-	_button(StoryRuntime.tr_ui("menu"), Rect2(75, 142, 170, 24), menu)
 
 
 func _use_supply() -> void:
@@ -419,7 +460,8 @@ func _use_supply() -> void:
 
 func _slots(message: String = "") -> void:
 	_clear("slots")
-	_label("Сохранения", Rect2(95, 4, 220, 22), 14, OCHRE)
+	_heading("Сохранения", _pause)
+	var row: float = (_height() - 174) / 3
 	for index in range(1, 4):
 		var path: String = StoryRuntime.slot_prefix + str(index) + ".json"
 		var data: Dictionary = StoryRuntime.read_json(path)
@@ -427,17 +469,21 @@ func _slots(message: String = "") -> void:
 		var chapter_text: String = (
 			str(summary.get("chapter", "—")) if summary is Dictionary else "—"
 		)
-		var caption: String = "Слот %d · глава %s" % [index, chapter_text]
-		_label(caption, Rect2(8, 32 + (index - 1) * 36, 150, 24))
-		_button("Записать", Rect2(154, 30 + (index - 1) * 36, 76, 28), _save_slot.bind(index))
+		var top: float = _content_top() + 8 + (index - 1) * row
+		UI.panel(layer, Rect2(16, top - 8, _width() - 32, row - 12))
+		_label(
+			"Слот %d · глава %s" % [index, chapter_text],
+			Rect2(36, top, _width() - 508, _touch()),
+			28
+		)
+		_button("Записать", Rect2(_width() - 444, top, 204, _touch()), _save_slot.bind(index))
 		_button(
 			"Загрузить",
-			Rect2(234, 30 + (index - 1) * 36, 78, 28),
+			Rect2(_width() - 224, top, 192, _touch()),
 			_load_slot.bind(index),
 			not data.is_empty() or FileAccess.file_exists(path + ".bak")
 		)
-	_button("Назад", Rect2(8, 150, 80, 26), _pause)
-	_label(message, Rect2(96, 148, 220, 28), 8, OCHRE)
+	_label(message, Rect2(24, _height() - 60, _width() - 48, 40), 24, OCHRE)
 
 
 func _save_slot(index: int) -> void:
@@ -458,9 +504,8 @@ func _open_settings(back: Callable) -> void:
 
 func _settings() -> void:
 	_clear("settings")
-	_button("Назад", Rect2(4, 2, 72, 24), settings_return)
-	_label("Настройки · Русский", Rect2(82, 2, 150, 24), 10, OCHRE)
-	_button("Об игре", Rect2(238, 2, 76, 26), _credits)
+	_heading("Настройки", settings_return)
+	_button("Об игре", Rect2(_width() - 196, 14, 180, _touch()), _credits)
 	var rows: Array = [
 		["music", "Музыка", 0.1],
 		["effects", "Эффекты", 0.1],
@@ -468,37 +513,61 @@ func _settings() -> void:
 		["button_offset", "Сдвиг кнопок", 2.0],
 		["text_speed", "Скорость текста", 6.0]
 	]
+	var dense: bool = _touch() > 74
+	var top: float = _content_top()
+	var row_height: float = (_height() - top - 16) / (3.0 if dense else 5.0)
+	var cell: float = (_width() - 64) / 2
+	var button_width: float = maxf(88, _touch())
 	for index in range(rows.size()):
 		var row: Array = rows[index]
-		var value: float = GameServices.settings[row[0]]
-		_label(row[1], Rect2(8, 30 + index * 28, 134, 24))
-		_button("−", Rect2(146, 29 + index * 28, 44, 26), _adjust.bind(row[0], -row[2]))
-		_label("%.1f" % value, Rect2(198, 31 + index * 28, 58, 24), 10, OCHRE)
-		_button("+", Rect2(266, 29 + index * 28, 44, 26), _adjust.bind(row[0], row[2]))
+		var y: float = top + (index / 2 if dense else index) * row_height
+		var x: float = 24 + (index % 2) * (cell + 16) if dense else 32
+		var right: float = x + cell if dense else _width() - 24
+		_label(
+			row[1], Rect2(x, y, cell if dense else _width() - 428, 32 if dense else _touch()), 28
+		)
+		if dense:
+			y += 34
+		_button(
+			"−",
+			Rect2(right - 2 * button_width - 148, y, button_width, _touch()),
+			_adjust.bind(row[0], -row[2])
+		)
+		_label(
+			"%.1f" % float(GameServices.settings[row[0]]),
+			Rect2(right - button_width - 128, y + 8, 112, 40),
+			28,
+			OCHRE
+		)
+		_button(
+			"+",
+			Rect2(right - button_width, y, button_width, _touch()),
+			_adjust.bind(row[0], row[2])
+		)
 
 
 func _credits() -> void:
 	_clear("credits")
 	_set_background("res://assets/final/banner.png")
-	_label("CINIS LAURI · Пепел лавра", Rect2(9, 9, 302, 26), 15, OCHRE)
-	var note = _label(
+	_heading("CINIS LAURI · Пепел лавра", _settings)
+	_reading_panel(
 		(
-			"Оригинальная история и 75 художественных композиций. "
-			+ "Изображения созданы генератором для проекта; музыка и эффекты — оригинальный синтез. "
-			+ "Источники: Цезарь, Плутарх, Аппиан, Светоний, Кассий Дион."
+			"Оригинальная историческая игра о гражданских войнах Рима.\n\n"
+			+ "История, персонажи и иллюстрации созданы для этого проекта. "
+			+ "Дизайн не основан на кино и телесериалах. Музыка и эффекты — оригинальный синтез.\n\n"
+			+ "Исторические источники: Цезарь, Плутарх, Аппиан, Светоний, Кассий Дион.\n\n"
+			+ "Пиксельный шрифт Tiny5 — Stefan Schmidt / Tiny5 Project Authors, "
+			+ "SIL Open Font License 1.1.\nПолный реестр материалов и лицензий: docs/CREDITS.md."
 		),
-		Rect2(12, 50, 296, 72),
-		10
+		_content_top(),
+		_touch() + 40
 	)
-	note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	_button("Лицензии движка", Rect2(82, 122, 156, 26), _licenses)
-	_button("Назад", Rect2(102, 152, 116, 26), _settings)
+	_button("Лицензии и компоненты", Rect2(24, _footer_y(), _width() - 48, _touch()), _licenses)
 
 
 func _licenses() -> void:
 	_clear("legal")
-	_button("Назад", Rect2(4, 2, 74, 26), _credits)
-	_label("Godot 4.6.3 и компоненты", Rect2(86, 4, 226, 23), 11, OCHRE)
+	_heading("Лицензии и компоненты", _credits)
 	var notice: String = Engine.get_license_text() + "\n\n"
 	for item in Engine.get_copyright_info():
 		notice += str(item.get("name", "")) + "\n"
@@ -509,13 +578,7 @@ func _licenses() -> void:
 	var licenses: Dictionary = Engine.get_license_info()
 	for key in licenses:
 		notice += "\n" + str(key) + "\n" + str(licenses[key]) + "\n"
-	var text = RichTextLabel.new()
-	text.position = Vector2(8, 33)
-	text.size = Vector2(304, 141)
-	text.bbcode_enabled = false
-	text.text = notice
-	text.add_theme_font_size_override("normal_font_size", 8)
-	layer.add_child(text)
+	_reading_panel(notice, _content_top(), 20, 20)
 
 
 func _adjust(key: String, amount: float) -> void:
@@ -524,17 +587,41 @@ func _adjust(key: String, amount: float) -> void:
 
 
 func _apply_safe_area() -> void:
-	if not OS.has_feature("android"):
-		return
-	var screen_to_view: Transform2D = get_viewport().get_screen_transform().affine_inverse()
-	var safe: Rect2 = (screen_to_view * Rect2(DisplayServer.get_display_safe_area())).intersection(
-		Rect2(0, 0, 320, 180)
-	)
-	if safe.size.x < 1 or safe.size.y < 1:
-		return
-	var factor: float = minf(safe.size.x / 320.0, safe.size.y / 180.0)
-	scale = Vector2.ONE * factor
-	position = safe.position + (safe.size - Vector2(320, 180) * factor) * 0.5
+	if not resizing and is_instance_valid(layer):
+		resizing = true
+		call_deferred("_reflow")
+
+
+func _reflow() -> void:
+	var old_page: int = page_index
+	var revealed: bool = is_instance_valid(body) and body.visible_characters == -1
+	match mode:
+		"play":
+			refresh()
+		"menu":
+			menu()
+		"chapters":
+			_chapters()
+		"pause":
+			_pause()
+		"slots":
+			_slots()
+		"settings":
+			_settings()
+		"credits":
+			_credits()
+		"legal":
+			_licenses()
+		"log":
+			_log()
+		"confirm":
+			_new_request()
+	if is_instance_valid(body):
+		page_index = mini(old_page, pages.size() - 1)
+		_show_page()
+		if revealed:
+			_reveal()
+	resizing = false
 
 
 func _notification(what: int) -> void:
@@ -560,7 +647,7 @@ func _skip() -> void:
 
 func _log() -> void:
 	_clear("log")
-	_button(StoryRuntime.tr_ui("back"), Rect2(2, 1, 60, 20), refresh)
+	_heading("Журнал диалогов и поручений", refresh)
 	var log_text: String = ""
 	var active: String = StoryRuntime.current().get("beat", "")
 	if StoryRuntime.beats.has(active):
@@ -568,23 +655,16 @@ func _log() -> void:
 	for ident in StoryRuntime.state.get("gameplay", {}).get("quests", {}):
 		if StoryRuntime.beats.has(ident):
 			log_text += "Выполнено: " + StoryRuntime.beats[ident].title.ru + "\n"
-	log_text += "\n"
 	for item in StoryRuntime.state.get("history", []):
 		log_text += (
-			StoryRuntime.characters.get(item.speaker, {}).get("name", {}).get("ru", item.speaker)
+			"\n"
+			+ StoryRuntime.characters.get(item.speaker, {}).get("name", {}).get("ru", item.speaker)
 			+ ": "
 			+ item.text
-			+ "\n\n"
+			+ "\n"
 		)
-	var log_view = RichTextLabel.new()
-	log_view.position = Vector2(5, 26)
-	log_view.size = Vector2(310, 150)
-	log_view.bbcode_enabled = false
-	log_view.text = log_text
-	log_view.add_theme_font_size_override("normal_font_size", 9)
-	log_view.add_theme_color_override("default_color", IVORY)
-	layer.add_child(log_view)
-	log_view.scroll_to_line(maxi(0, log_view.get_line_count() - 5))
+	var log_view: RichTextLabel = _reading_panel(log_text, _content_top(), 20)
+	log_view.scroll_to_line(maxi(0, log_view.get_line_count() - 8))
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -605,20 +685,26 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _draw() -> void:
-	draw_rect(Rect2(0, 0, 320, 180), INK)
+	var bounds: Rect2 = get_viewport_rect()
+	draw_rect(bounds, INK)
 	if background:
-		draw_texture_rect(background, Rect2(0, 0, 320, 180), false)
-	if mode == "play":
-		draw_rect(Rect2(0, 0, 320, 18), INK)
-		if StoryRuntime.current().get("kind") not in ["choice", "beat", "ending"]:
-			draw_rect(Rect2(0, 82, 320, 98), INK)
-			draw_line(Vector2(0, 82), Vector2(320, 82), BRONZE)
-			if face:
-				draw_texture_rect(face, Rect2(4, 100, 48, 48), false)
-		elif StoryRuntime.current().get("kind") == "ending":
-			draw_rect(Rect2(0, 108, 320, 72), INK)
-		else:
-			draw_rect(Rect2(5, 22, 310, 156), Color(0.078, 0.082, 0.121, .86))
-	else:
-		var shade: float = 0.4 if mode in ["menu", "chapters", "loading", "credits"] else 0.9
-		draw_rect(Rect2(0, 0, 320, 180), Color(0.078, 0.082, 0.121, shade))
+		# Cover the complete display, including the extra width of 20:9 phones.
+		var physical: float = get_viewport().get_screen_transform().get_scale().y
+		var ratio: float = maxf(
+			bounds.size.x / background.get_width(), bounds.size.y / background.get_height()
+		)
+		ratio = ceilf(ratio * physical) / physical
+		var dimensions: Vector2 = background.get_size() * ratio
+		var drift: float = (
+			roundf(sin(ambience_clock * 0.12) * 2) if dimensions.x > bounds.size.x + 4 else 0
+		)
+		draw_texture_rect(
+			background, Rect2((bounds.size - dimensions) / 2 + Vector2(drift, 0), dimensions), false
+		)
+	var shade: float = 0.16 if mode in ["menu", "play", "loading"] else 0.82
+	draw_rect(bounds, Color(0.078, 0.082, 0.121, shade))
+	for step in range(3):
+		var margin: float = 8 + step * 10
+		var shadow = Color(0.03, 0.04, 0.06, 0.08)
+		draw_rect(Rect2(0, 0, bounds.size.x, margin), shadow)
+		draw_rect(Rect2(0, bounds.size.y - margin, bounds.size.x, margin), shadow)

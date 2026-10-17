@@ -1,0 +1,1160 @@
+{
+  "version": 1,
+  "new_compositions": 58,
+  "assets": [
+    {
+      "id": "ditch_survey",
+      "title": "Двое у незаконченного рва",
+      "file": "assets/illustrations/ditch_survey.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch01_s01",
+      "source": "art_src/refresh/story_a.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "forest_ambush",
+      "title": "Засада среди дубов",
+      "file": "assets/illustrations/forest_ambush.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch01_s04",
+      "source": "art_src/refresh/story_a.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "camp_lanterns",
+      "title": "Лагерные огни",
+      "file": "assets/illustrations/camp_lanterns.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch01_s03",
+      "source": "art_src/refresh/story_a.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "rubicon_watch",
+      "title": "Дозор на Рубиконе",
+      "file": "assets/illustrations/rubicon_watch.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch02_s04",
+      "source": "art_src/refresh/story_a.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "council_map",
+      "title": "Карта без приказа",
+      "file": "assets/illustrations/council_map.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch02_s03",
+      "source": "art_src/refresh/story_a.png",
+      "cell": [
+        0,
+        2
+      ],
+      "grid": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "rome_shutters",
+      "title": "Закрытые ставни Рима",
+      "file": "assets/illustrations/rome_shutters.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch02_s05",
+      "source": "art_src/refresh/story_a.png",
+      "cell": [
+        1,
+        2
+      ],
+      "grid": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "brundisium_sails",
+      "title": "Паруса Брундизия",
+      "file": "assets/illustrations/brundisium_sails.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch03_s01",
+      "source": "art_src/refresh/story_b.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "pharos_dawn",
+      "title": "Маяк на рассвете",
+      "file": "assets/illustrations/pharos_dawn.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch03_s04",
+      "source": "art_src/refresh/story_b.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "palace_audience",
+      "title": "Александрийская аудиенция",
+      "file": "assets/illustrations/palace_audience.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": null,
+      "source": "art_src/refresh/story_b.png",
+      "cell": [
+        2,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "pompey_shore",
+      "title": "Последняя пристань Помпея",
+      "file": "assets/illustrations/pompey_shore.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch03_s03",
+      "source": "art_src/refresh/story_b.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "senate_walk",
+      "title": "Дорога в сенат",
+      "file": "assets/illustrations/senate_walk.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch04_s02",
+      "source": "art_src/refresh/story_b.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "forum_eulogy",
+      "title": "Речь над Форумом",
+      "file": "assets/illustrations/forum_eulogy.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch04_s04",
+      "source": "art_src/refresh/story_b.png",
+      "cell": [
+        2,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "names_at_dawn",
+      "title": "Имена на рассвете",
+      "file": "assets/illustrations/names_at_dawn.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch05_s02",
+      "source": "art_src/refresh/story_c.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "attic_refuge",
+      "title": "Убежище под крышей",
+      "file": "assets/illustrations/attic_refuge.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch05_s05",
+      "source": "art_src/refresh/story_c.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "cicero_letter",
+      "title": "Письмо Цицерона",
+      "file": "assets/illustrations/cicero_letter.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch05_s03",
+      "source": "art_src/refresh/story_c.png",
+      "cell": [
+        2,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "philippi_mist",
+      "title": "Туман Филипп",
+      "file": "assets/illustrations/philippi_mist.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch06_s01",
+      "source": "art_src/refresh/story_c.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "perusia_gates",
+      "title": "Ворота Перузии",
+      "file": "assets/illustrations/perusia_gates.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch06_s05",
+      "source": "art_src/refresh/story_c.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "grain_queue",
+      "title": "Мера зимнего хлеба",
+      "file": "assets/illustrations/grain_queue.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch06_s04",
+      "source": "art_src/refresh/story_c.png",
+      "cell": [
+        2,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "actium_oars",
+      "title": "Вёсла Акция",
+      "file": "assets/illustrations/actium_oars.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch07_s02",
+      "source": "art_src/refresh/story_d.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "silent_quay",
+      "title": "Безмолвная набережная",
+      "file": "assets/illustrations/silent_quay.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch07_s05",
+      "source": "art_src/refresh/story_d.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "archive_rescue",
+      "title": "Сухие листы",
+      "file": "assets/illustrations/archive_rescue.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch07_s07",
+      "source": "art_src/refresh/story_d.png",
+      "cell": [
+        2,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "forum_oath",
+      "title": "Новый Форум",
+      "file": "assets/illustrations/forum_oath.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch08_s02",
+      "source": "art_src/refresh/story_d.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "old_workshop",
+      "title": "Старые друзья в мастерской",
+      "file": "assets/illustrations/old_workshop.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch08_s03",
+      "source": "art_src/refresh/story_d.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "laurel_ash",
+      "title": "Лавр и пепел",
+      "file": "assets/illustrations/laurel_ash.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "story",
+      "scene": "ch08_s04",
+      "source": "art_src/refresh/story_d.png",
+      "cell": [
+        2,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "command_tent",
+      "title": "Палатка командира",
+      "file": "assets/interiors/command_tent.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_a.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "atrium_house",
+      "title": "Римский атрий",
+      "file": "assets/interiors/atrium_house.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_a.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "senate_curia",
+      "title": "Курия",
+      "file": "assets/interiors/senate_curia.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_a.png",
+      "cell": [
+        2,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "tavern",
+      "title": "Таверна",
+      "file": "assets/interiors/tavern.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_a.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "ship_deck",
+      "title": "Палуба",
+      "file": "assets/interiors/ship_deck.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_a.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "prison",
+      "title": "Тюрьма",
+      "file": "assets/interiors/prison.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_a.png",
+      "cell": [
+        2,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "villa_garden",
+      "title": "Сад виллы",
+      "file": "assets/interiors/villa_garden.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_b.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "temple",
+      "title": "Храм",
+      "file": "assets/interiors/temple.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_b.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "market",
+      "title": "Рынок",
+      "file": "assets/interiors/market.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_b.png",
+      "cell": [
+        2,
+        0
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "olive_road",
+      "title": "Оливковая дорога",
+      "file": "assets/interiors/olive_road.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_b.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "stone_bridge",
+      "title": "Каменный мост",
+      "file": "assets/interiors/stone_bridge.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_b.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "field_hospital",
+      "title": "Лазарет",
+      "file": "assets/interiors/field_hospital.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_b.png",
+      "cell": [
+        2,
+        1
+      ],
+      "grid": [
+        3,
+        2
+      ]
+    },
+    {
+      "id": "camp_day",
+      "title": "Дневной лагерь",
+      "file": "assets/interiors/camp_day.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_c.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "camp_rain",
+      "title": "Лагерь в дождь",
+      "file": "assets/interiors/camp_rain.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_c.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "forest_night",
+      "title": "Ночной лес",
+      "file": "assets/interiors/forest_night.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_c.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "road_rain",
+      "title": "Дорога в дождь",
+      "file": "assets/interiors/road_rain.png",
+      "size": [
+        640,
+        360
+      ],
+      "category": "illustrations",
+      "kind": "location",
+      "source": "art_src/refresh/locations_c.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        2,
+        2
+      ]
+    },
+    {
+      "id": "scribe",
+      "title": "Писец",
+      "file": "assets/npcs/scribe.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_a.png",
+      "row": 0
+    },
+    {
+      "id": "merchant",
+      "title": "Торговец",
+      "file": "assets/npcs/merchant.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_a.png",
+      "row": 1
+    },
+    {
+      "id": "healer",
+      "title": "Лекарь",
+      "file": "assets/npcs/healer.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_a.png",
+      "row": 2
+    },
+    {
+      "id": "centurion",
+      "title": "Центурион",
+      "file": "assets/npcs/centurion.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_a.png",
+      "row": 3
+    },
+    {
+      "id": "sailor",
+      "title": "Моряк",
+      "file": "assets/npcs/sailor.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_a.png",
+      "row": 4
+    },
+    {
+      "id": "priest",
+      "title": "Жрец",
+      "file": "assets/npcs/priest.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_b.png",
+      "row": 0
+    },
+    {
+      "id": "druid",
+      "title": "Друид",
+      "file": "assets/npcs/druid.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_b.png",
+      "row": 1
+    },
+    {
+      "id": "servant",
+      "title": "Слуга",
+      "file": "assets/npcs/servant.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_b.png",
+      "row": 2
+    },
+    {
+      "id": "child",
+      "title": "Ребёнок",
+      "file": "assets/npcs/child.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_b.png",
+      "row": 3
+    },
+    {
+      "id": "messenger",
+      "title": "Посыльная",
+      "file": "assets/npcs/messenger.png",
+      "size": [
+        192,
+        288
+      ],
+      "frame_size": [
+        64,
+        96
+      ],
+      "category": "illustrations",
+      "kind": "npc_sheet",
+      "source": "art_src/refresh/npc_b.png",
+      "row": 4
+    },
+    {
+      "id": "chapter_01",
+      "title": "Карточка главы 1",
+      "file": "assets/chapter_cards/ch01.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        0,
+        0
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "chapter_02",
+      "title": "Карточка главы 2",
+      "file": "assets/chapter_cards/ch02.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        1,
+        0
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "chapter_03",
+      "title": "Карточка главы 3",
+      "file": "assets/chapter_cards/ch03.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        2,
+        0
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "chapter_04",
+      "title": "Карточка главы 4",
+      "file": "assets/chapter_cards/ch04.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        3,
+        0
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "chapter_05",
+      "title": "Карточка главы 5",
+      "file": "assets/chapter_cards/ch05.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        0,
+        1
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "chapter_06",
+      "title": "Карточка главы 6",
+      "file": "assets/chapter_cards/ch06.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        1,
+        1
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "chapter_07",
+      "title": "Карточка главы 7",
+      "file": "assets/chapter_cards/ch07.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        2,
+        1
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    },
+    {
+      "id": "chapter_08",
+      "title": "Карточка главы 8",
+      "file": "assets/chapter_cards/ch08.png",
+      "size": [
+        128,
+        160
+      ],
+      "category": "illustrations",
+      "kind": "chapter_card",
+      "source": "art_src/refresh/chapter_cards.png",
+      "cell": [
+        3,
+        1
+      ],
+      "grid": [
+        4,
+        2
+      ]
+    }
+  ]
+}

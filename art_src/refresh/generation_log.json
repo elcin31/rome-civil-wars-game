@@ -1,0 +1,165 @@
+{
+  "style": "clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouette, clear light source, rich limited palette, 16-bit JRPG style",
+  "policy": "Original Roman Republic designs; no actor/TV likeness, no borrowed game art. First clean story sheet served as category style reference.",
+  "sources": [
+    {
+      "file": "art_src/refresh/story_a.png",
+      "compositions": [
+        "Двое у незаконченного рва",
+        "Засада среди дубов",
+        "Лагерные огни",
+        "Дозор на Рубиконе",
+        "Карта без приказа",
+        "Закрытые ставни Рима"
+      ]
+    },
+    {
+      "file": "art_src/refresh/story_b.png",
+      "compositions": [
+        "Паруса Брундизия",
+        "Маяк на рассвете",
+        "Александрийская аудиенция",
+        "Последняя пристань Помпея",
+        "Дорога в сенат",
+        "Речь над Форумом"
+      ]
+    },
+    {
+      "file": "art_src/refresh/story_c.png",
+      "compositions": [
+        "Имена на рассвете",
+        "Убежище под крышей",
+        "Письмо Цицерона",
+        "Туман Филипп",
+        "Ворота Перузии",
+        "Мера зимнего хлеба"
+      ]
+    },
+    {
+      "file": "art_src/refresh/story_d.png",
+      "compositions": [
+        "Вёсла Акция",
+        "Безмолвная набережная",
+        "Сухие листы",
+        "Новый Форум",
+        "Старые друзья в мастерской",
+        "Лавр и пепел"
+      ]
+    },
+    {
+      "file": "art_src/refresh/locations_a.png",
+      "compositions": [
+        "Палатка командира",
+        "Римский атрий",
+        "Курия",
+        "Таверна",
+        "Палуба",
+        "Тюрьма"
+      ]
+    },
+    {
+      "file": "art_src/refresh/locations_b.png",
+      "compositions": [
+        "Сад виллы",
+        "Храм",
+        "Рынок",
+        "Оливковая дорога",
+        "Каменный мост",
+        "Лазарет"
+      ]
+    },
+    {
+      "file": "art_src/refresh/locations_c.png",
+      "compositions": [
+        "Дневной лагерь",
+        "Лагерь в дождь",
+        "Ночной лес",
+        "Дорога в дождь"
+      ]
+    },
+    {
+      "file": "art_src/refresh/npc_a.png",
+      "compositions": [
+        "Писец",
+        "Торговец",
+        "Лекарь",
+        "Центурион",
+        "Моряк"
+      ]
+    },
+    {
+      "file": "art_src/refresh/npc_b.png",
+      "compositions": [
+        "Жрец",
+        "Друид",
+        "Слуга",
+        "Ребёнок",
+        "Посыльная"
+      ]
+    },
+    {
+      "file": "art_src/refresh/chapter_cards.png",
+      "compositions": [
+        "Карточка главы 1",
+        "Карточка главы 2",
+        "Карточка главы 3",
+        "Карточка главы 4",
+        "Карточка главы 5",
+        "Карточка главы 6",
+        "Карточка главы 7",
+        "Карточка главы 8"
+      ]
+    }
+  ],
+  "additional_sources": {
+    "portraits_a.png": [
+      "narrator",
+      "history",
+      "lucilla",
+      "serranus"
+    ],
+    "portraits_b.png": [
+      "aulus",
+      "vettius",
+      "neria",
+      "aglaia"
+    ],
+    "menu_new.png": "Calm dark left half, original helmet/laurel/Forum at dusk on the right",
+    "cast_a.png": [
+      "titus_pullo",
+      "lucius_vorenus",
+      "julius_caesar",
+      "octavian_young",
+      "augustus_old"
+    ],
+    "cast_b.png": [
+      "mark_antony",
+      "cleopatra",
+      "pompey",
+      "brutus",
+      "caesar_legionary"
+    ],
+    "cast_c.png": [
+      "gallic_warrior",
+      "pompeian_soldier",
+      "roman_citizen",
+      "senator",
+      "craftsman"
+    ]
+  },
+  "sprite_columns": [
+    "idle",
+    "walk",
+    "attack",
+    "block",
+    "hurt"
+  ],
+  "portrait_columns": [
+    "neutral",
+    "angry",
+    "worried",
+    "smile"
+  ],
+  "final_batch_exact_prompts": "batch_final_prompts.json",
+  "descriptions_are_not_claimed_as_full_transcripts": true
+}

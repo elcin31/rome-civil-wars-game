@@ -10,17 +10,19 @@
       "source": "art_src/characters_titus_pullo.png",
       "file": "assets/characters/titus_pullo.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/titus_pullo_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_a.png",
+      "refresh_row": 0
     },
     {
       "id": "lucius_vorenus",
@@ -30,17 +32,19 @@
       "source": "art_src/characters_lucius_vorenus.png",
       "file": "assets/characters/lucius_vorenus.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/lucius_vorenus_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_a.png",
+      "refresh_row": 1
     },
     {
       "id": "julius_caesar",
@@ -50,17 +54,19 @@
       "source": "art_src/characters_julius_caesar.png",
       "file": "assets/characters/julius_caesar.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/julius_caesar_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_a.png",
+      "refresh_row": 2
     },
     {
       "id": "octavian_young",
@@ -70,17 +76,19 @@
       "source": "art_src/characters_octavian_young.png",
       "file": "assets/characters/octavian_young.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/octavian_young_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_a.png",
+      "refresh_row": 3
     },
     {
       "id": "augustus_old",
@@ -90,17 +98,19 @@
       "source": "art_src/characters_augustus_old.png",
       "file": "assets/characters/augustus_old.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/augustus_old_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_a.png",
+      "refresh_row": 4
     },
     {
       "id": "mark_antony",
@@ -110,17 +120,19 @@
       "source": "art_src/characters_mark_antony.png",
       "file": "assets/characters/mark_antony.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/mark_antony_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_b.png",
+      "refresh_row": 0
     },
     {
       "id": "cleopatra",
@@ -130,17 +142,19 @@
       "source": "art_src/characters_cleopatra.png",
       "file": "assets/characters/cleopatra.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/cleopatra_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_b.png",
+      "refresh_row": 1
     },
     {
       "id": "pompey",
@@ -150,17 +164,19 @@
       "source": "art_src/characters_pompey.png",
       "file": "assets/characters/pompey.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/pompey_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_b.png",
+      "refresh_row": 2
     },
     {
       "id": "brutus",
@@ -170,17 +186,19 @@
       "source": "art_src/characters_brutus.png",
       "file": "assets/characters/brutus.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/brutus_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_b.png",
+      "refresh_row": 3
     },
     {
       "id": "caesar_legionary",
@@ -190,17 +208,19 @@
       "source": "art_src/characters_caesar_legionary.png",
       "file": "assets/characters/caesar_legionary.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/caesar_legionary_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_b.png",
+      "refresh_row": 4
     },
     {
       "id": "gallic_warrior",
@@ -210,17 +230,19 @@
       "source": "art_src/characters_gallic_warrior.png",
       "file": "assets/characters/gallic_warrior.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/gallic_warrior_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_c.png",
+      "refresh_row": 0
     },
     {
       "id": "pompeian_soldier",
@@ -230,17 +252,19 @@
       "source": "art_src/characters_pompeian_soldier.png",
       "file": "assets/characters/pompeian_soldier.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/pompeian_soldier_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_c.png",
+      "refresh_row": 1
     },
     {
       "id": "roman_citizen",
@@ -250,17 +274,19 @@
       "source": "art_src/characters_roman_citizen.png",
       "file": "assets/characters/roman_citizen.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/roman_citizen_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_c.png",
+      "refresh_row": 2
     },
     {
       "id": "senator",
@@ -270,17 +296,19 @@
       "source": "art_src/characters_senator.png",
       "file": "assets/characters/senator.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/senator_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_c.png",
+      "refresh_row": 3
     },
     {
       "id": "craftsman",
@@ -290,17 +318,19 @@
       "source": "art_src/characters_craftsman.png",
       "file": "assets/characters/craftsman.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
       "frame_size": [
-        48,
-        64
+        64,
+        96
       ],
       "portrait": "assets/characters/craftsman_portrait.png",
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия."
+      "manual_polish": "Плавные циклы, удержание пропорций и опорной ноги; чистка мелких пикселей лица и оружия.",
+      "refresh_source": "art_src/refresh/cast_c.png",
+      "refresh_row": 4
     },
     {
       "id": "gaul_forest",
@@ -310,8 +340,8 @@
       "source": "art_src/locations_gaul_forest.png",
       "file": "assets/locations/gaul_forest.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/gaul_forest_far.png",
@@ -319,7 +349,11 @@
         "assets/locations/gaul_forest_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "gallic_fort",
@@ -329,8 +363,8 @@
       "source": "art_src/locations_gallic_fort.png",
       "file": "assets/locations/gallic_fort.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/gallic_fort_far.png",
@@ -338,7 +372,11 @@
         "assets/locations/gallic_fort_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "alesia",
@@ -348,8 +386,8 @@
       "source": "art_src/locations_alesia.png",
       "file": "assets/locations/alesia.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/alesia_far.png",
@@ -357,7 +395,11 @@
         "assets/locations/alesia_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "roman_camp",
@@ -367,8 +409,8 @@
       "source": "art_src/locations_roman_camp.png",
       "file": "assets/locations/roman_camp.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/roman_camp_far.png",
@@ -376,7 +418,11 @@
         "assets/locations/roman_camp_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "roman_forum",
@@ -386,8 +432,8 @@
       "source": "art_src/locations_roman_forum.png",
       "file": "assets/locations/roman_forum.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/roman_forum_far.png",
@@ -396,7 +442,11 @@
       ],
       "status": "ready_part_1",
       "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
-      "manual_polish": "Уточнение архитектуры выбранного года; сейчас художественная композиция поздней Республики."
+      "manual_polish": "Уточнение архитектуры выбранного года; сейчас художественная композиция поздней Республики.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "rome_night",
@@ -406,8 +456,8 @@
       "source": "art_src/locations_rome_night.png",
       "file": "assets/locations/rome_night.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/rome_night_far.png",
@@ -415,7 +465,11 @@
         "assets/locations/rome_night_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "rubicon",
@@ -425,8 +479,8 @@
       "source": "art_src/locations_rubicon.png",
       "file": "assets/locations/rubicon.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/rubicon_far.png",
@@ -439,7 +493,11 @@
         40,
         0
       ],
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "pharsalus",
@@ -449,8 +507,8 @@
       "source": "art_src/locations_pharsalus.png",
       "file": "assets/locations/pharsalus.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/pharsalus_far.png",
@@ -463,7 +521,11 @@
         40,
         0
       ],
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "alexandria",
@@ -473,8 +535,8 @@
       "source": "art_src/locations_alexandria.png",
       "file": "assets/locations/alexandria.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/alexandria_far.png",
@@ -487,7 +549,11 @@
         24,
         0
       ],
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "cleopatra_palace",
@@ -497,8 +563,8 @@
       "source": "art_src/locations_cleopatra_palace.png",
       "file": "assets/locations/cleopatra_palace.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/cleopatra_palace_far.png",
@@ -506,7 +572,11 @@
         "assets/locations/cleopatra_palace_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "philippi",
@@ -516,8 +586,8 @@
       "source": "art_src/locations_philippi.png",
       "file": "assets/locations/philippi.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/philippi_far.png",
@@ -525,7 +595,11 @@
         "assets/locations/philippi_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "actium",
@@ -535,8 +609,8 @@
       "source": "art_src/locations_actium.png",
       "file": "assets/locations/actium.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
       "layers": [
         "assets/locations/actium_far.png",
@@ -544,7 +618,11 @@
         "assets/locations/actium_near.png"
       ],
       "status": "ready_part_1",
-      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py."
+      "review": "Визуально проверено в контактном листе; размеры, палитра и alpha проверяются validate_assets.py.",
+      "layer_size": [
+        640,
+        360
+      ]
     },
     {
       "id": "city",

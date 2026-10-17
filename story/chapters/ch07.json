@@ -32,12 +32,15 @@
       },
       "year": "2 сентября 31 до н. э.",
       "entry": "ch07_s02_n01",
-      "illustration": "assets/story/actium_battle.png",
+      "illustration": "assets/illustrations/actium_oars.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "actium"
+      ],
+      "illustration_archive": [
+        "assets/story/actium_battle.png"
       ]
     },
     {
@@ -76,12 +79,15 @@
       },
       "year": "30 до н. э.",
       "entry": "ch07_s05_n01",
-      "illustration": "assets/story/alexandria_defeat.png",
+      "illustration": "assets/illustrations/silent_quay.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "alexandria_falls"
+      ],
+      "illustration_archive": [
+        "assets/story/alexandria_defeat.png"
       ]
     },
     {
@@ -108,11 +114,14 @@
       },
       "year": "30 до н. э.",
       "entry": "ch07_s07_n01",
-      "illustration": "assets/locations/cleopatra_palace.png",
+      "illustration": "assets/illustrations/archive_rescue.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/cleopatra_palace.png"
+      ]
     },
     {
       "id": "ch07_s08",

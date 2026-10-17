@@ -73,12 +73,31 @@ jobs:
           python tools/validate_assets.py
           python tools/validate_story.py
           python tools/validate_gameplay.py
+          python tools/validate_portraits.py
+          python tools/validate_refresh_art.py
           gdformat --check scripts tools/*.gd tests
           gdlint scripts tools/*.gd tests
           timeout 120 godot --headless --path . --script tools/verify_gallery.gd
           timeout 120 godot --headless --path . --script tools/verify_story.gd
           timeout 120 godot --headless --path . -s addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
           timeout 120 godot --headless --path . --script tools/walk_game.gd
+      - name: Seven-resolution screenshots, safe areas and real touch dispatch
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y xvfb
+          python tools/run_display.py python tools/ui_matrix.py
+          python tools/run_display.py python tools/ui_matrix.py --quick --size=1280x720 --density=2.625
+      - uses: actions/upload-artifact@v4.6.2
+        if: always()
+        with:
+          name: presentation-matrix
+          path: |
+            build/ui
+            docs/ui_validation.json
+            docs/ui_density_validation.json
+            docs/portrait_validation.json
+            docs/refresh_art_validation.json
+          if-no-files-found: warn
       - name: Export and inspect ARM64 APK
         run: |
           mkdir -p build

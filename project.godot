@@ -1,4 +1,4 @@
-; CINIS LAURI — Godot 4, Android landscape, 320 x 180 pixel viewport.
+; CINIS LAURI — Godot 4, Android landscape, 640 x 360 world, adaptive mobile UI.
 config_version=5
 
 [application]
@@ -18,13 +18,13 @@ StoryRuntime="*res://scripts/story_runtime.gd"
 GameServices="*res://scripts/game_services.gd"
 
 [display]
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/size/window_width_override=1280
 window/size/window_height_override=720
-window/stretch/mode="viewport"
-window/stretch/aspect="keep"
-window/stretch/scale_mode="integer"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="fractional"
 window/handheld/orientation=0
 
 [rendering]

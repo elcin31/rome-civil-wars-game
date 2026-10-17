@@ -1,14 +1,14 @@
 {
   "logical_assets": 36,
-  "palette_colors": 24,
+  "palette_colors": 48,
   "pngs": [
     {
       "file": "assets/characters/titus_pullo.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 24,
+      "visible_colors": 38,
       "alpha": [
         0,
         255
@@ -29,10 +29,10 @@
     {
       "file": "assets/characters/lucius_vorenus.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 24,
+      "visible_colors": 41,
       "alpha": [
         0,
         255
@@ -53,10 +53,10 @@
     {
       "file": "assets/characters/julius_caesar.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 22,
+      "visible_colors": 38,
       "alpha": [
         0,
         255
@@ -77,10 +77,10 @@
     {
       "file": "assets/characters/octavian_young.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 22,
+      "visible_colors": 39,
       "alpha": [
         0,
         255
@@ -101,10 +101,10 @@
     {
       "file": "assets/characters/augustus_old.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 22,
+      "visible_colors": 37,
       "alpha": [
         0,
         255
@@ -125,10 +125,10 @@
     {
       "file": "assets/characters/mark_antony.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 23,
+      "visible_colors": 39,
       "alpha": [
         0,
         255
@@ -149,10 +149,10 @@
     {
       "file": "assets/characters/cleopatra.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 24,
+      "visible_colors": 41,
       "alpha": [
         0,
         255
@@ -173,10 +173,10 @@
     {
       "file": "assets/characters/pompey.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 24,
+      "visible_colors": 44,
       "alpha": [
         0,
         255
@@ -197,10 +197,10 @@
     {
       "file": "assets/characters/brutus.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 21,
+      "visible_colors": 37,
       "alpha": [
         0,
         255
@@ -221,10 +221,10 @@
     {
       "file": "assets/characters/caesar_legionary.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 23,
+      "visible_colors": 41,
       "alpha": [
         0,
         255
@@ -245,10 +245,10 @@
     {
       "file": "assets/characters/gallic_warrior.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 24,
+      "visible_colors": 43,
       "alpha": [
         0,
         255
@@ -269,10 +269,10 @@
     {
       "file": "assets/characters/pompeian_soldier.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 24,
+      "visible_colors": 45,
       "alpha": [
         0,
         255
@@ -293,10 +293,10 @@
     {
       "file": "assets/characters/roman_citizen.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 16,
+      "visible_colors": 30,
       "alpha": [
         0,
         255
@@ -317,10 +317,10 @@
     {
       "file": "assets/characters/senator.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 22,
+      "visible_colors": 40,
       "alpha": [
         0,
         255
@@ -341,10 +341,10 @@
     {
       "file": "assets/characters/craftsman.png",
       "size": [
-        144,
-        192
+        192,
+        288
       ],
-      "visible_colors": 24,
+      "visible_colors": 28,
       "alpha": [
         0,
         255
@@ -365,10 +365,10 @@
     {
       "file": "assets/locations/gaul_forest.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 43,
       "alpha": [
         255
       ]
@@ -376,10 +376,10 @@
     {
       "file": "assets/locations/gaul_forest_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 17,
+      "visible_colors": 35,
       "alpha": [
         255
       ]
@@ -387,10 +387,10 @@
     {
       "file": "assets/locations/gaul_forest_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 22,
+      "visible_colors": 40,
       "alpha": [
         0,
         255
@@ -399,10 +399,10 @@
     {
       "file": "assets/locations/gaul_forest_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 20,
+      "visible_colors": 32,
       "alpha": [
         0,
         255
@@ -411,10 +411,10 @@
     {
       "file": "assets/locations/gallic_fort.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 22,
+      "visible_colors": 45,
       "alpha": [
         255
       ]
@@ -422,10 +422,10 @@
     {
       "file": "assets/locations/gallic_fort_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 23,
+      "visible_colors": 46,
       "alpha": [
         255
       ]
@@ -433,10 +433,10 @@
     {
       "file": "assets/locations/gallic_fort_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 21,
+      "visible_colors": 42,
       "alpha": [
         0,
         255
@@ -445,10 +445,10 @@
     {
       "file": "assets/locations/gallic_fort_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 21,
+      "visible_colors": 41,
       "alpha": [
         0,
         255
@@ -457,10 +457,10 @@
     {
       "file": "assets/locations/alesia.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 47,
       "alpha": [
         255
       ]
@@ -468,10 +468,10 @@
     {
       "file": "assets/locations/alesia_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 22,
+      "visible_colors": 46,
       "alpha": [
         255
       ]
@@ -479,10 +479,10 @@
     {
       "file": "assets/locations/alesia_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 23,
+      "visible_colors": 47,
       "alpha": [
         0,
         255
@@ -491,10 +491,10 @@
     {
       "file": "assets/locations/alesia_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 21,
+      "visible_colors": 39,
       "alpha": [
         0,
         255
@@ -503,10 +503,10 @@
     {
       "file": "assets/locations/roman_camp.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 22,
+      "visible_colors": 41,
       "alpha": [
         255
       ]
@@ -514,10 +514,10 @@
     {
       "file": "assets/locations/roman_camp_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 18,
+      "visible_colors": 34,
       "alpha": [
         255
       ]
@@ -525,10 +525,10 @@
     {
       "file": "assets/locations/roman_camp_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 22,
+      "visible_colors": 39,
       "alpha": [
         0,
         255
@@ -537,10 +537,10 @@
     {
       "file": "assets/locations/roman_camp_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 18,
+      "visible_colors": 32,
       "alpha": [
         0,
         255
@@ -549,10 +549,10 @@
     {
       "file": "assets/locations/roman_forum.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -560,10 +560,10 @@
     {
       "file": "assets/locations/roman_forum_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 23,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -571,10 +571,10 @@
     {
       "file": "assets/locations/roman_forum_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 44,
       "alpha": [
         0,
         255
@@ -583,10 +583,10 @@
     {
       "file": "assets/locations/roman_forum_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 42,
       "alpha": [
         0,
         255
@@ -595,10 +595,10 @@
     {
       "file": "assets/locations/rome_night.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 20,
+      "visible_colors": 37,
       "alpha": [
         255
       ]
@@ -606,10 +606,10 @@
     {
       "file": "assets/locations/rome_night_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 18,
+      "visible_colors": 34,
       "alpha": [
         255
       ]
@@ -617,10 +617,10 @@
     {
       "file": "assets/locations/rome_night_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 21,
+      "visible_colors": 36,
       "alpha": [
         0,
         255
@@ -629,10 +629,10 @@
     {
       "file": "assets/locations/rome_night_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 20,
+      "visible_colors": 32,
       "alpha": [
         0,
         255
@@ -641,10 +641,10 @@
     {
       "file": "assets/locations/rubicon.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -652,10 +652,10 @@
     {
       "file": "assets/locations/rubicon_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -663,10 +663,10 @@
     {
       "file": "assets/locations/rubicon_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         0,
         255
@@ -675,10 +675,10 @@
     {
       "file": "assets/locations/rubicon_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         0,
         255
@@ -687,10 +687,10 @@
     {
       "file": "assets/locations/pharsalus.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 46,
       "alpha": [
         255
       ]
@@ -698,10 +698,10 @@
     {
       "file": "assets/locations/pharsalus_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -709,10 +709,10 @@
     {
       "file": "assets/locations/pharsalus_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 22,
+      "visible_colors": 39,
       "alpha": [
         0,
         255
@@ -721,10 +721,10 @@
     {
       "file": "assets/locations/pharsalus_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 22,
+      "visible_colors": 41,
       "alpha": [
         0,
         255
@@ -733,10 +733,10 @@
     {
       "file": "assets/locations/alexandria.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -744,10 +744,10 @@
     {
       "file": "assets/locations/alexandria_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 23,
+      "visible_colors": 46,
       "alpha": [
         255
       ]
@@ -755,10 +755,10 @@
     {
       "file": "assets/locations/alexandria_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         0,
         255
@@ -767,10 +767,10 @@
     {
       "file": "assets/locations/alexandria_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 23,
+      "visible_colors": 41,
       "alpha": [
         0,
         255
@@ -779,10 +779,10 @@
     {
       "file": "assets/locations/cleopatra_palace.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -790,10 +790,10 @@
     {
       "file": "assets/locations/cleopatra_palace_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -801,10 +801,10 @@
     {
       "file": "assets/locations/cleopatra_palace_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 47,
       "alpha": [
         0,
         255
@@ -813,10 +813,10 @@
     {
       "file": "assets/locations/cleopatra_palace_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 39,
       "alpha": [
         0,
         255
@@ -825,10 +825,10 @@
     {
       "file": "assets/locations/philippi.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         255
       ]
@@ -836,10 +836,10 @@
     {
       "file": "assets/locations/philippi_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 20,
+      "visible_colors": 43,
       "alpha": [
         255
       ]
@@ -847,10 +847,10 @@
     {
       "file": "assets/locations/philippi_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 48,
       "alpha": [
         0,
         255
@@ -859,10 +859,10 @@
     {
       "file": "assets/locations/philippi_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 46,
       "alpha": [
         0,
         255
@@ -871,10 +871,10 @@
     {
       "file": "assets/locations/actium.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 43,
       "alpha": [
         255
       ]
@@ -882,10 +882,10 @@
     {
       "file": "assets/locations/actium_far.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 15,
+      "visible_colors": 31,
       "alpha": [
         255
       ]
@@ -893,10 +893,10 @@
     {
       "file": "assets/locations/actium_mid.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 43,
       "alpha": [
         0,
         255
@@ -905,10 +905,10 @@
     {
       "file": "assets/locations/actium_near.png",
       "size": [
-        320,
-        180
+        640,
+        360
       ],
-      "visible_colors": 24,
+      "visible_colors": 43,
       "alpha": [
         0,
         255

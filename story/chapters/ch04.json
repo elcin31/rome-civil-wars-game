@@ -32,12 +32,15 @@
       },
       "year": "15 марта 44 до н. э.",
       "entry": "ch04_s02_n01",
-      "illustration": "assets/story/ides.png",
+      "illustration": "assets/illustrations/senate_walk.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "ides"
+      ],
+      "illustration_archive": [
+        "assets/story/ides.png"
       ]
     },
     {
@@ -62,12 +65,15 @@
       },
       "year": "март 44 до н. э.",
       "entry": "ch04_s04_n01",
-      "illustration": "assets/story/caesar_funeral.png",
+      "illustration": "assets/illustrations/forum_eulogy.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "caesar_funeral"
+      ],
+      "illustration_archive": [
+        "assets/story/caesar_funeral.png"
       ]
     },
     {

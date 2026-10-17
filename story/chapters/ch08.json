@@ -32,12 +32,15 @@
       },
       "year": "27 до н. э.",
       "entry": "ch08_s02_n01",
-      "illustration": "assets/story/augustan_marble.png",
+      "illustration": "assets/illustrations/forum_oath.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "principate"
+      ],
+      "illustration_archive": [
+        "assets/story/augustan_marble.png"
       ]
     },
     {
@@ -72,12 +75,15 @@
       },
       "year": "14 н. э.",
       "entry": "ch08_s04_n01",
-      "illustration": "assets/story/augustan_marble.png",
+      "illustration": "assets/illustrations/laurel_ash.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "augustus_death"
+      ],
+      "illustration_archive": [
+        "assets/story/augustan_marble.png"
       ]
     },
     {

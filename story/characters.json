@@ -6,7 +6,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "narrator_neutral",
       "arc": ""
     },
     "history": {
@@ -15,7 +15,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "history_neutral",
       "arc": ""
     },
     "pullo": {
@@ -114,7 +114,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "neria_neutral",
       "arc": "Вольноотпущенница и целительница: от выпрошенного полотна к собственной сети помощи; её доверие открывает двойную эвакуацию."
     },
     "lucilla": {
@@ -123,7 +123,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "lucilla_neutral",
       "arc": "Италийская гончарка: от неоплаченного заказа к борьбе за дом и праву отказаться от чужого покровительства."
     },
     "serranus": {
@@ -132,7 +132,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "serranus_neutral",
       "arc": "Молодой писец: учится отделять свидетельство от удобного итога; частная копия делает его уязвимым и необходимым."
     },
     "aglaia": {
@@ -141,7 +141,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "aglaia_neutral",
       "arc": "Александрийская мастерица папируса и лодочница: помощь в 47 году определяет её участие в спасении при Акции."
     },
     "vettius": {
@@ -150,7 +150,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "vettius_neutral",
       "arc": "Центурион-соперник: ищет безопасность у сменяющихся покровителей; может получить помощь без оправдания своих поступков."
     },
     "aulus": {
@@ -159,7 +159,7 @@
         "en": ""
       },
       "historical": false,
-      "default_portrait": "",
+      "default_portrait": "aulus_neutral",
       "arc": "Сын Луциллы: от ребёнка с чужой печатью к гребцу и хранителю памяти; в 14 году н. э. ему около 66 лет."
     }
   },

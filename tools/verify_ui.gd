@@ -1,6 +1,8 @@
 extends SceneTree
 ## Real-renderer layout and touch regression matrix. Uses an isolated save.
 
+const UI = preload("res://scripts/roman_ui.gd")
+
 var game: Node
 var view: Control
 var failures: Array[String] = []
@@ -11,6 +13,7 @@ var touches: int = 0
 var capture: bool = true
 var quick: bool = false
 var last_shot: String
+var density: float = 1.0
 
 
 func _initialize() -> void:
@@ -32,7 +35,7 @@ func _controls(node: Node) -> Array[Control]:
 
 func _check_layout() -> Array[Button]:
 	var buttons: Array[Button] = []
-	var safe: Rect2 = load("res://scripts/roman_ui.gd").safe_rect(view)
+	var safe: Rect2 = UI.safe_rect(view)
 	for control in _controls(view):
 		var bounds: Rect2 = control.get_global_rect()
 		if control is ScrollBar or control.get_parent() is ScrollBar:
@@ -55,7 +58,7 @@ func _check_layout() -> Array[Button]:
 		if control is Button:
 			buttons.append(control)
 			var pixels: Vector2 = get_root().get_screen_transform().get_scale() * bounds.size
-			if minf(pixels.x, pixels.y) < 47.9:
+			if minf(pixels.x, pixels.y) < 48.0 * density - 0.1:
 				_fail("touch area below 48 pixels at density 1: " + str(pixels))
 			if control.pressed.get_connections().is_empty():
 				_fail("unwired button")
@@ -145,6 +148,9 @@ func _run() -> void:
 			capture = false
 		elif arg == "--quick":
 			quick = true
+		elif arg.begins_with("--density="):
+			density = float(arg.trim_prefix("--density="))
+			UI.density_override = density
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output))
 	game = root.get_node("StoryRuntime")
 	game.save_path = "user://ui_matrix_%s.json" % OS.get_process_id()
@@ -186,6 +192,23 @@ func _run() -> void:
 	view.encounter.model.state.y = merchant.y
 	view.encounter._shop()
 	await _shot("shop", true)
+	view.encounter._close_panel()
+	for index in range(4):
+		var station: Dictionary = view.encounter.model.stations[[0, 1, 3, 4][index]]
+		view.encounter.model.state.x = station.x
+		view.encounter.model.state.y = station.y
+		view.encounter.model.state.quest = index
+		view.encounter._update_status()
+		await _shot("hub_step_%d" % index, true)
+	var services: Node = root.get_node("GameServices")
+	services.settings.button_scale = 1.3
+	services.settings.button_offset = 8.0
+	game.start_new()
+	game.go("ch01_s06_n80")
+	view.refresh()
+	await _shot("large_controls", true)
+	services.settings.button_scale = 1.0
+	services.settings.button_offset = 0.0
 	view.set_meta("safe_insets", Vector4(32, 16, 48, 28))
 	view.menu()
 	await _shot("notch_menu", true)

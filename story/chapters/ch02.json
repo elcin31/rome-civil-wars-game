@@ -46,11 +46,14 @@
       },
       "year": "49 до н. э.",
       "entry": "ch02_s03_n01",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/illustrations/council_map.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
+      ]
     },
     {
       "id": "ch02_s04",
@@ -60,12 +63,15 @@
       },
       "year": "январь 49 до н. э.",
       "entry": "ch02_s04_n01",
-      "illustration": "assets/story/rubicon_dawn.png",
+      "illustration": "assets/illustrations/rubicon_watch.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "rubicon"
+      ],
+      "illustration_archive": [
+        "assets/story/rubicon_dawn.png"
       ]
     },
     {
@@ -76,12 +82,15 @@
       },
       "year": "49 до н. э.",
       "entry": "ch02_s05_n01",
-      "illustration": "assets/story/empty_rome.png",
+      "illustration": "assets/illustrations/rome_shutters.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "pompey_leaves_rome"
+      ],
+      "illustration_archive": [
+        "assets/story/empty_rome.png"
       ]
     },
     {

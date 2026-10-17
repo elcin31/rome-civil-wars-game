@@ -1,29 +1,197 @@
 {
-  "name": "Cinis Lauri 24",
+  "name": "Cinis Lauri 48",
   "colors": [
-    {"name": "terracotta", "hex": "#B5523B"},
-    {"name": "ochre", "hex": "#D9A441"},
-    {"name": "olive", "hex": "#6B7A3A"},
-    {"name": "dark_red", "hex": "#7A1F1F"},
-    {"name": "ivory", "hex": "#EDE3CC"},
-    {"name": "dark_brown", "hex": "#2B1B14"},
-    {"name": "night_blue", "hex": "#1E2A44"},
-    {"name": "bronze", "hex": "#A87B3D"},
-    {"name": "stone", "hex": "#8A8577"},
-    {"name": "ink", "hex": "#14151F"},
-    {"name": "umber", "hex": "#4A3026"},
-    {"name": "leather", "hex": "#76503B"},
-    {"name": "sand", "hex": "#BFA87A"},
-    {"name": "skin", "hex": "#D4A077"},
-    {"name": "skin_shadow", "hex": "#A66A50"},
-    {"name": "steel", "hex": "#B6B6A6"},
-    {"name": "sky", "hex": "#8BA7B1"},
-    {"name": "mist", "hex": "#C1C9BB"},
-    {"name": "water", "hex": "#496E7A"},
-    {"name": "deep_water", "hex": "#2D4855"},
-    {"name": "forest", "hex": "#344B37"},
-    {"name": "moss", "hex": "#89945A"},
-    {"name": "flame", "hex": "#ED803E"},
-    {"name": "firelight", "hex": "#F3C76A"}
+    {
+      "name": "terracotta",
+      "hex": "#B5523B"
+    },
+    {
+      "name": "ochre",
+      "hex": "#D9A441"
+    },
+    {
+      "name": "olive",
+      "hex": "#6B7A3A"
+    },
+    {
+      "name": "dark_red",
+      "hex": "#7A1F1F"
+    },
+    {
+      "name": "ivory",
+      "hex": "#EDE3CC"
+    },
+    {
+      "name": "dark_brown",
+      "hex": "#2B1B14"
+    },
+    {
+      "name": "night_blue",
+      "hex": "#1E2A44"
+    },
+    {
+      "name": "bronze",
+      "hex": "#A87B3D"
+    },
+    {
+      "name": "stone",
+      "hex": "#8A8577"
+    },
+    {
+      "name": "ink",
+      "hex": "#14151F"
+    },
+    {
+      "name": "umber",
+      "hex": "#4A3026"
+    },
+    {
+      "name": "leather",
+      "hex": "#76503B"
+    },
+    {
+      "name": "sand",
+      "hex": "#BFA87A"
+    },
+    {
+      "name": "skin",
+      "hex": "#D4A077"
+    },
+    {
+      "name": "skin_shadow",
+      "hex": "#A66A50"
+    },
+    {
+      "name": "steel",
+      "hex": "#B6B6A6"
+    },
+    {
+      "name": "sky",
+      "hex": "#8BA7B1"
+    },
+    {
+      "name": "mist",
+      "hex": "#C1C9BB"
+    },
+    {
+      "name": "water",
+      "hex": "#496E7A"
+    },
+    {
+      "name": "deep_water",
+      "hex": "#2D4855"
+    },
+    {
+      "name": "forest",
+      "hex": "#344B37"
+    },
+    {
+      "name": "moss",
+      "hex": "#89945A"
+    },
+    {
+      "name": "flame",
+      "hex": "#ED803E"
+    },
+    {
+      "name": "firelight",
+      "hex": "#F3C76A"
+    },
+    {
+      "name": "night_mid",
+      "hex": "#202431"
+    },
+    {
+      "name": "slate",
+      "hex": "#22232B"
+    },
+    {
+      "name": "worn_bronze",
+      "hex": "#605C55"
+    },
+    {
+      "name": "parchment_shadow",
+      "hex": "#302A29"
+    },
+    {
+      "name": "skin_light",
+      "hex": "#E8BD96"
+    },
+    {
+      "name": "skin_deep",
+      "hex": "#764936"
+    },
+    {
+      "name": "ivory_light",
+      "hex": "#FFF0D3"
+    },
+    {
+      "name": "linen",
+      "hex": "#D6C8AA"
+    },
+    {
+      "name": "stone_light",
+      "hex": "#A8A393"
+    },
+    {
+      "name": "stone_shadow",
+      "hex": "#64665F"
+    },
+    {
+      "name": "earth_light",
+      "hex": "#97704D"
+    },
+    {
+      "name": "earth_deep",
+      "hex": "#36291F"
+    },
+    {
+      "name": "red_light",
+      "hex": "#D27851"
+    },
+    {
+      "name": "red_shadow",
+      "hex": "#54242A"
+    },
+    {
+      "name": "steel_light",
+      "hex": "#DCE1D2"
+    },
+    {
+      "name": "steel_shadow",
+      "hex": "#737E82"
+    },
+    {
+      "name": "sky_light",
+      "hex": "#B7C7C5"
+    },
+    {
+      "name": "sky_shadow",
+      "hex": "#637E91"
+    },
+    {
+      "name": "olive_light",
+      "hex": "#A4AB66"
+    },
+    {
+      "name": "olive_shadow",
+      "hex": "#4B5938"
+    },
+    {
+      "name": "wood_light",
+      "hex": "#B48C5C"
+    },
+    {
+      "name": "wood_shadow",
+      "hex": "#58432E"
+    },
+    {
+      "name": "fire_gold",
+      "hex": "#FFE1A1"
+    },
+    {
+      "name": "night_light",
+      "hex": "#35455C"
+    }
   ]
 }

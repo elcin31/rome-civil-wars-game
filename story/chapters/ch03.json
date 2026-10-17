@@ -18,12 +18,15 @@
       },
       "year": "49 до н. э.",
       "entry": "ch03_s01_n01",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/illustrations/brundisium_sails.png",
       "optional": false,
       "route": "legion",
       "prose_status": "complete",
       "historical_anchors": [
         "brundisium"
+      ],
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
       ]
     },
     {
@@ -50,12 +53,15 @@
       },
       "year": "48 до н. э.",
       "entry": "ch03_s03_n01",
-      "illustration": "assets/locations/alexandria.png",
+      "illustration": "assets/illustrations/pompey_shore.png",
       "optional": false,
       "route": "legion",
       "prose_status": "complete",
       "historical_anchors": [
         "pompey_death"
+      ],
+      "illustration_archive": [
+        "assets/locations/alexandria.png"
       ]
     },
     {
@@ -66,13 +72,16 @@
       },
       "year": "48–47 до н. э.",
       "entry": "ch03_s04_n01",
-      "illustration": "assets/locations/cleopatra_palace.png",
+      "illustration": "assets/illustrations/pharos_dawn.png",
       "optional": false,
       "route": "legion",
       "prose_status": "complete",
       "historical_anchors": [
         "alexandrian_war",
         "cleopatra"
+      ],
+      "illustration_archive": [
+        "assets/locations/cleopatra_palace.png"
       ]
     },
     {

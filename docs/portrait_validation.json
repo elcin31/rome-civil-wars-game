@@ -1,0 +1,21 @@
+{
+  "speakers": [
+    "aglaia",
+    "aulus",
+    "history",
+    "lucilla",
+    "narrator",
+    "neria",
+    "pullo",
+    "serranus",
+    "vettius",
+    "vorenus"
+  ],
+  "checked_nodes": 1059,
+  "errors": [],
+  "portrait_size": [
+    128,
+    128
+  ],
+  "font_cyrillic_complete": true
+}

@@ -34,12 +34,15 @@
       },
       "year": "43 до н. э.",
       "entry": "ch05_s02_n01",
-      "illustration": "assets/story/proscription_wall.png",
+      "illustration": "assets/illustrations/names_at_dawn.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "proscriptions"
+      ],
+      "illustration_archive": [
+        "assets/story/proscription_wall.png"
       ]
     },
     {
@@ -50,12 +53,15 @@
       },
       "year": "43 до н. э.",
       "entry": "ch05_s03_n01",
-      "illustration": "assets/locations/rome_night.png",
+      "illustration": "assets/illustrations/cicero_letter.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "cicero_death"
+      ],
+      "illustration_archive": [
+        "assets/locations/rome_night.png"
       ]
     },
     {
@@ -80,11 +86,14 @@
       },
       "year": "43 до н. э.",
       "entry": "ch05_s05_n01",
-      "illustration": "assets/story/night_escape.png",
+      "illustration": "assets/illustrations/attic_refuge.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/story/night_escape.png"
+      ]
     },
     {
       "id": "ch05_s06",

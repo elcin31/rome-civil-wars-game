@@ -18,12 +18,15 @@
       },
       "year": "58 до н. э.",
       "entry": "ch01_s01_n01",
-      "illustration": "assets/locations/gaul_forest.png",
+      "illustration": "assets/illustrations/ditch_survey.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "gallic_war"
+      ],
+      "illustration_archive": [
+        "assets/locations/gaul_forest.png"
       ]
     },
     {
@@ -48,12 +51,15 @@
       },
       "year": "54 до н. э.",
       "entry": "ch01_s03_n01",
-      "illustration": "assets/story/camp_defense.png",
+      "illustration": "assets/illustrations/camp_lanterns.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "quintus_cicero_camp"
+      ],
+      "illustration_archive": [
+        "assets/story/camp_defense.png"
       ]
     },
     {
@@ -64,12 +70,15 @@
       },
       "year": "54 до н. э.",
       "entry": "ch01_s04_n01",
-      "illustration": "assets/story/mutual_rescue.png",
+      "illustration": "assets/illustrations/forest_ambush.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [
         "mutual_rescue"
+      ],
+      "illustration_archive": [
+        "assets/story/mutual_rescue.png"
       ]
     },
     {

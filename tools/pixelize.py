@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 NEAREST = Image.Resampling.NEAREST
@@ -31,6 +32,66 @@ def quantize(image):
     result = image.convert("RGB").quantize(palette=pal, dither=Image.Dither.NONE).convert("RGBA")
     result.putalpha(image.getchannel("A").point(lambda a: 255 if a >= 128 else 0))
     return result
+
+
+def clean_clusters(image, passes=2, outline=False):
+    """Replace isolated specks only when a surrounding cluster has a clear majority.
+
+    Unlike an unconditional blur this retains edges, thin lines and palette colors.
+    Transparent components below three pixels are discarded for character cutouts.
+    """
+    data = np.array(image.convert('RGBA'))
+    for _ in range(passes):
+        padded = np.pad(data, ((1, 1), (1, 1), (0, 0)), mode='edge')
+        neighbors = np.stack([padded[y:y + data.shape[0], x:x + data.shape[1]]
+                              for y in range(3) for x in range(3) if (x, y) != (1, 1)])
+        same = (neighbors == data).all(axis=3).sum(axis=0)
+        best = np.zeros(data.shape[:2], dtype=np.uint8)
+        selected = data.copy()
+        for neighbor in neighbors:
+            count = (neighbors == neighbor).all(axis=3).sum(axis=0)
+            use = count > best
+            selected[use] = neighbor[use]
+            best[use] = count[use]
+        replace = (same <= 1) & (best >= 5)
+        data[replace] = selected[replace]
+    result = Image.fromarray(data)
+    if outline:
+        items, labels = components(result)
+        keep = {item['id'] for item in items if item['area'] >= 3}
+        alpha = np.array(result.getchannel('A'))
+        label_array = np.array(labels).reshape(alpha.shape)
+        alpha[~np.isin(label_array, list(keep))] = 0
+        solid = alpha > 0
+        padded = np.pad(solid, 1)
+        expanded = np.zeros_like(solid)
+        for y, x in [(0, 1), (1, 0), (1, 2), (2, 1)]:
+            expanded |= padded[y:y + solid.shape[0], x:x + solid.shape[1]]
+        data = np.array(result)
+        data[expanded & ~solid] = (20, 21, 31, 255)
+        data[solid, 3] = 255
+        result = Image.fromarray(data)
+    return result
+
+
+def dominant_resize(image, size, outline=False):
+    """Choose the dominant indexed color in each source block; no averaged colors."""
+    width, height = size
+    rgba = image.convert('RGBA')
+    colors = palette_colors()
+    palette = Image.new('P', (1, 1))
+    palette.putpalette([v for color in colors for v in color] + list(colors[0]) * (256 - len(colors)))
+    block_x, block_y = max(1, round(rgba.width / width)), max(1, round(rgba.height / height))
+    source = rgba.resize((width * block_x, height * block_y), NEAREST)
+    indexed = np.array(source.convert('RGB').quantize(palette=palette, dither=Image.Dither.NONE))
+    blocks = indexed.reshape(height, block_y, width, block_x).transpose(0, 2, 1, 3).reshape(height * width, -1)
+    counts = np.stack([(blocks == index).sum(axis=1) for index in range(len(colors))])
+    chosen = counts.argmax(axis=0).astype('uint8').reshape(height, width)
+    result = Image.fromarray(chosen, 'P')
+    result.putpalette(palette.getpalette())
+    result = result.convert('RGBA')
+    result.putalpha(rgba.getchannel('A').resize(size, NEAREST).point(lambda a: 255 if a >= 128 else 0))
+    return clean_clusters(result, outline=outline)
 
 
 def remove_background(image):
@@ -138,7 +199,7 @@ def character(source, output):
 
 
 def resize_full(image, size):
-    return quantize(image.resize(tuple(size), NEAREST))
+    return dominant_resize(image, tuple(size))
 
 
 def icon_atlas(source, output):
@@ -191,7 +252,7 @@ def wordmark(source, output):
     return {"wordmark": "CINIS LAURI", "lettering": "original 5x7 bitmap glyphs"}
 
 
-def parallax(source, output, layout, offsets_y):
+def parallax(source, output, layout, offsets_y, size=(320, 180)):
     """Three authored horizontal panels, top=far, middle=mid, bottom=near."""
     w, h = source.size
     for n, name in enumerate(["far", "mid", "near"]):
@@ -199,13 +260,13 @@ def parallax(source, output, layout, offsets_y):
         layer = source.crop(tuple(box))
         if n:
             layer = remove_background(layer)
-        layer = resize_full(layer, (320, 180))
+        layer = resize_full(layer, size)
         if offsets_y[n]:
-            shifted = Image.new("RGBA", (320, 180))
-            shifted.alpha_composite(layer, (0, offsets_y[n]))
+            shifted = Image.new("RGBA", size)
+            shifted.alpha_composite(layer, (0, round(offsets_y[n] * size[1] / 180)))
             layer = shifted
         layer.save(output.with_name(output.stem + "_" + name + ".png"))
-    comp = Image.new("RGBA", (320, 180))
+    comp = Image.new("RGBA", size)
     for name in ["far", "mid", "near"]:
         comp.alpha_composite(Image.open(output.with_name(output.stem + "_" + name + ".png")))
     comp.save(output)
@@ -237,7 +298,7 @@ def process(entry):
         if kind == "character":
             return character(source, output)
         if kind == "parallax":
-            return parallax(source, output, entry.get("layer_boxes"), entry.get("layer_offsets_y", [0, 0, 0]))
+            return parallax(source, output, entry.get("layer_boxes"), entry.get("layer_offsets_y", [0, 0, 0]), tuple(entry['size']))
         if entry.get("crop"):
             source = source.crop(tuple(entry["crop"]))
         if entry.get("key_background", False):

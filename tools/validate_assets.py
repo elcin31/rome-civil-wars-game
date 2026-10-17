@@ -12,8 +12,8 @@ errors = []
 report = {'logical_assets': len(manifest['assets']), 'palette_colors': len(palette), 'pngs': [], 'errors': errors}
 if len(manifest['assets']) < 36:
     errors.append('Fewer than 36 logical assets')
-if len(palette) > 24:
-    errors.append('More than 24 colors')
+if not 32 <= len(palette) <= 48:
+    errors.append('Palette must contain 32–48 colors')
 
 
 def check(path, size, transparency=False, opaque=False):
@@ -52,15 +52,16 @@ for asset in manifest['assets']:
         path = ROOT / asset['file']
         if path.exists():
             image = Image.open(path).convert('RGBA')
+            fw, fh = asset.get('frame_size', [48, 64])
             for n in range(9):
-                cell = image.crop((n % 3 * 48, n // 3 * 64, n % 3 * 48 + 48, n // 3 * 64 + 64))
+                cell = image.crop((n % 3 * fw, n // 3 * fh, n % 3 * fw + fw, n // 3 * fh + fh))
                 box = cell.getbbox()
-                if not box or box[0] < 1 or box[1] < 1 or box[2] > 47 or box[3] > 63:
+                if not box or box[0] < 1 or box[1] < 1 or box[2] > fw - 1 or box[3] > fh - 1:
                     errors.append(f'{asset["id"]} pose {n}: blank or touches frame boundary')
         if not path.with_suffix('.tres').exists():
             errors.append(f'{asset["id"]}: missing SpriteFrames')
     for n, layer in enumerate(asset.get('layers', [])):
-        check(layer, (320, 180), transparency=n > 0, opaque=n == 0)
+        check(layer, asset.get('layer_size', (320, 180)), transparency=n > 0, opaque=n == 0)
     if asset['category'] == 'tiles' and not (ROOT / asset['file']).with_suffix('.tres').exists():
         errors.append(f'{asset["id"]}: missing TileSet')
 for extra, size in [('assets/ui/buttons.png', (64, 80)), ('assets/ui/arrows.png', (32, 16))]:

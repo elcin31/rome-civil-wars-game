@@ -6,16 +6,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 POSES = ["front", "side", "back", "idle", "walk", "run", "attack", "block", "hurt"]
 
-for asset in json.loads((ROOT / "tools/manifest.json").read_text())["assets"]:
+assets = json.loads((ROOT / "tools/manifest.json").read_text())["assets"]
+refresh = ROOT / 'tools/refresh_art_manifest.json'
+if refresh.exists():
+    assets += [dict(a, category='characters') for a in json.loads(refresh.read_text())['assets'] if a['kind'] == 'npc_sheet']
+for asset in assets:
     path = ROOT / asset["file"]
     if not path.exists():
         continue
     if asset["category"] == "characters":
+        fw, fh = asset.get('frame_size', [48, 64])
         text = '[gd_resource type="SpriteFrames" load_steps=11 format=3]\n\n'
         text += f'[ext_resource type="Texture2D" path="res://{asset["file"]}" id="1"]\n\n'
         for i, pose in enumerate(POSES):
             text += f'[sub_resource type="AtlasTexture" id="Pose_{pose}"]\natlas = ExtResource("1")\n'
-            text += f'region = Rect2({i % 3 * 48}, {i // 3 * 64}, 48, 64)\n\n'
+            text += f'region = Rect2({i % 3 * fw}, {i // 3 * fh}, {fw}, {fh})\n\n'
         text += '[resource]\nanimations = ['
         text += ',\n'.join('{"frames": [{"duration": 1.0, "texture": SubResource("Pose_' + pose + '")}], "loop": true, "name": &"' + pose + '", "speed": 4.0}' for pose in POSES)
         text += ']\n'
