@@ -52,6 +52,11 @@ func _check_layout() -> Array[Button]:
 						% [control.text.left(70), minimum, control.size]
 					)
 				)
+			if (
+				control.get_parent() is Button
+				and not control.get_parent().get_global_rect().grow(-1).encloses(bounds)
+			):
+				_fail("caption crosses its button frame: " + control.text.left(70))
 		if control is RichTextLabel and not control.scroll_active:
 			if control.get_content_height() > control.size.y + 1:
 				_fail("clipped dialogue page")

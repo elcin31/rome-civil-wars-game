@@ -49,7 +49,7 @@ def main():
         results.append(data)
         print(f'{width}x{height}: {len(data.get("frames", []))} frames, '
               f'{len(data["errors"])} errors, exit {result.returncode}', flush=True)
-    filename = 'ui_validation.json' if args.density == 1 else 'ui_density_validation.json'
+    filename = 'ui_density_validation.json' if args.density != 1 else ('ui_quick_validation.json' if args.quick else 'ui_validation.json')
     (ROOT / 'docs' / filename).write_text(json.dumps(results, ensure_ascii=False, indent=2) + '\n')
     return int(any(item['errors'] or item['exit_code'] for item in results))
 

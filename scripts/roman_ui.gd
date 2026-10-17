@@ -95,6 +95,11 @@ static func button(
 	)
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	var font_size: int = 24
+	while caption.get_minimum_size().y > rect.size.y - 12 and font_size > 18:
+		font_size -= 2
+		caption.add_theme_font_size_override("font_size", font_size)
+		caption.size = rect.size - Vector2(24, 12)
 	return control
 
 

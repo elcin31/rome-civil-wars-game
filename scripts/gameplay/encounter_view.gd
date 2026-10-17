@@ -11,7 +11,7 @@ const IVORY = Color("ede3cc")
 const OCHRE = Color("d9a441")
 const BRONZE = Color("a87b3d")
 const GRID_ORIGIN = Vector2(7, 44)
-const CELL = Vector2(26, 18)
+const CELL = Vector2(26, 24)
 var beat: Dictionary = {}
 var model: RefCounted
 var sprites: Dictionary = {}
@@ -103,14 +103,60 @@ func _ready() -> void:
 		0,
 		Vector2((size.x - 320 * factor) / 2, (size.y - 180 * factor) / 2 - 30)
 	)
-	UI.panel(self, Rect2(8, 8, size.x - 16, 112))
-	_button("Пауза", Rect2(16, 16, 120, UI.touch_height(self)), _pause)
-	_label(beat.title.ru, Rect2(156, 14, size.x - 180, 38), 30, OCHRE)
-	objective = _label(beat.objective.ru, Rect2(156, 54, size.x - 184, 60), 22)
-	UI.panel(self, Rect2(148, size.y - _action_rect(0).size.y - 108, size.x - 164, 76))
-	status = _label(
-		"", Rect2(164, size.y - _action_rect(0).size.y - 100, size.x - 196, 60), 22, OCHRE
+	if beat.type == "tactical":
+		var board_top: float = maxf(90, UI.touch_height(self) + 32)
+		var fit: float = minf(
+			(size.x - 196) / (CELL.x * 9), (size.y - 90 - board_top) / (CELL.y * 5)
+		)
+		var board_scale: float = maxf(2, floorf(fit * physical_scale / 2) * 2) / physical_scale
+		world_transform = Transform2D(
+			0,
+			Vector2.ONE * board_scale,
+			0,
+			Vector2(
+				(size.x - 196 - CELL.x * 9 * board_scale) / 2 - GRID_ORIGIN.x * board_scale,
+				board_top - GRID_ORIGIN.y * board_scale
+			)
+		)
+	UI.panel(
+		self,
+		Rect2(
+			8,
+			8,
+			size.x - 16,
+			maxf(76, UI.touch_height(self) + 16) if beat.type == "tactical" else 112
+		)
 	)
+	_button("Пауза", Rect2(16, 16, 120, UI.touch_height(self)), _pause)
+	_label(
+		beat.title.ru,
+		Rect2(
+			156,
+			10 if beat.type == "tactical" else 14,
+			size.x - 180,
+			28 if beat.type == "tactical" else 38
+		),
+		24 if beat.type == "tactical" else 30,
+		OCHRE
+	)
+	objective = _label(
+		beat.objective.ru,
+		Rect2(
+			156,
+			40 if beat.type == "tactical" else 54,
+			size.x - 184,
+			42 if beat.type == "tactical" else 60
+		),
+		18 if beat.type == "tactical" else 22
+	)
+	if beat.type == "tactical":
+		UI.panel(self, Rect2(16, size.y - 84, size.x - 32, 68))
+		status = _label("", Rect2(32, size.y - 76, size.x - 64, 52), 22, OCHRE)
+	else:
+		UI.panel(self, Rect2(148, size.y - _action_rect(0).size.y - 108, size.x - 164, 76))
+		status = _label(
+			"", Rect2(164, size.y - _action_rect(0).size.y - 100, size.x - 196, 60), 22, OCHRE
+		)
 	match beat.type:
 		"tactical":
 			_button("Щит", _action_rect(0), _guard)
@@ -458,6 +504,9 @@ func _joy_radius() -> float:
 
 
 func _action_rect(index: int) -> Rect2:
+	if beat.type == "tactical":
+		var height: float = UI.touch_height(self)
+		return Rect2(size.x - 180, maxf(104, height + 46) + index * (height + 16), 164, height)
 	var factor: float = float(GameServices.settings.button_scale)
 	var dimensions: Vector2 = Vector2(
 		clampf(132 * factor, 120, 180), maxf(UI.touch_height(self), 58 * factor)
@@ -672,7 +721,7 @@ func _draw_tactics() -> void:
 			point - Vector2(0, 4), 8, Color("2d4855") if unit.team == 0 else Color("7a1f1f")
 		)
 		var ident: String = "caesar_legionary" if unit.team == 0 else "pompeian_soldier"
-		_sprite(ident, point, 7 if unit.guard else 3, 1 if unit.team == 0 else -1, Vector2(17, 23))
+		_sprite(ident, point, 7 if unit.guard else 3, 1 if unit.team == 0 else -1, Vector2(14, 21))
 		draw_rect(Rect2(point + Vector2(-9, 0), Vector2(18, 2)), INK)
 		draw_rect(Rect2(point + Vector2(-9, 0), Vector2(18.0 * unit.hp / unit.max_hp, 2)), OCHRE)
 		draw_string(
