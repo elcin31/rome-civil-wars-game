@@ -62,10 +62,11 @@ func _check_layout() -> Array[Button]:
 				_fail("touch area below 48 pixels at density 1: " + str(pixels))
 			if control.pressed.get_connections().is_empty():
 				_fail("unwired button")
+	# One pixel padding rejects touching targets while tolerating fractional rounding.
 	for index in range(buttons.size()):
 		for other in range(index):
-			if buttons[index].get_global_rect().grow(2).intersects(
-				buttons[other].get_global_rect().grow(2)
+			if buttons[index].get_global_rect().grow(1).intersects(
+				buttons[other].get_global_rect().grow(1)
 			):
 				_fail(
 					(

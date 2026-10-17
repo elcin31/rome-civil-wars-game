@@ -5,7 +5,7 @@ on:
       run_id:
         description: Successful Android APK run to publish
         required: true
-        default: '39003213216'
+        default: ''
 permissions:
   contents: write
   actions: read
@@ -46,7 +46,7 @@ jobs:
           assert info['commit'] == run['head_sha']
           assert re.fullmatch(r'[0-9a-f]{40}', info['commit'])
           assert info['package'] == 'org.cinislauri.game'
-          assert info['version'] == '0.3.0' and info['abi'] == 'arm64-v8a'
+          assert info['version'] == '0.4.0' and info['abi'] == 'arm64-v8a'
           assert info['min_sdk'] == 24 and info['target_sdk'] == 36
           apk = Path('delivery/cinis-lauri.apk')
           assert hashlib.sha256(apk.read_bytes()).hexdigest() == info['sha256']
@@ -64,4 +64,4 @@ jobs:
           PY
       - name: Publish in this repository
         run: |
-          gh release create v0.3.0 --repo "$GITHUB_REPOSITORY" --target "$RELEASE_COMMIT" --title 'CINIS LAURI 0.3.0 — Android' --notes-file docs/RELEASE_NOTES_v0.3.0.md delivery/rome-civil-wars-*.zip delivery/rome-civil-wars-*.zip.sha256
+          gh release create v0.4.0 --repo "$GITHUB_REPOSITORY" --target "$RELEASE_COMMIT" --title 'CINIS LAURI 0.4.0 — Android' --notes-file docs/RELEASE_NOTES_v0.4.0.md delivery/rome-civil-wars-*.zip delivery/rome-civil-wars-*.zip.sha256
