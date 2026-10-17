@@ -1,0 +1,16 @@
+{
+  "commit": "096734f4f951e55731e5ce17467d9048b19dabdc",
+  "package": "org.cinislauri.game",
+  "version": "0.3.0",
+  "version_code": 3,
+  "abi": "arm64-v8a",
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "bytes": 30440110,
+  "sha256": "5f40cea275ccc5941ac7e28278fc33b8dcb61fd87ef30578fe581f331ef3ba84",
+  "mib": 29.03,
+  "manifest_independently_parsed": true,
+  "zip_verified": true,
+  "activity": "com.godot.game.GodotAppLauncher",
+  "ci_run": 39002087914
+}

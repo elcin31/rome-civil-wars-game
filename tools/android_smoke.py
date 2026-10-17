@@ -14,7 +14,10 @@ OUTPUT.mkdir(parents=True, exist_ok=True)
 
 
 def adb(*args, binary=False, check=True):
-    result = subprocess.run(["adb", *args], check=check, capture_output=True)
+    result = subprocess.run(["adb", *args], capture_output=True)
+    if check and result.returncode:
+        raise RuntimeError(f"adb {' '.join(args)} failed: " +
+                           result.stdout.decode(errors="replace") + result.stderr.decode(errors="replace"))
     return result.stdout if binary else result.stdout.decode(errors="replace").strip()
 
 
@@ -27,7 +30,7 @@ def screenshot(name):
 def state():
     try:
         return json.loads(adb("exec-out", "run-as", PACKAGE, "cat", "files/cinis_story_v2.json"))
-    except (ValueError, subprocess.CalledProcessError):
+    except (ValueError, RuntimeError):
         return {}
 
 
@@ -39,18 +42,37 @@ def tap(x, y):
     adb("shell", "input", "tap", *point(x, y))
 
 
+def record_failure(kind, value, traceback):
+    try:
+        (OUTPUT / "logcat.txt").write_text(adb("logcat", "-d", "-v", "brief", check=False))
+        screenshot("failure")
+    finally:
+        sys.__excepthook__(kind, value, traceback)
+
+
+sys.excepthook = record_failure
+
+
 adb("install", "-r", sys.argv[1])
 adb("shell", "wm", "size", "720x1280")
 adb("shell", "settings", "put", "system", "accelerometer_rotation", "0")
 adb("shell", "settings", "put", "system", "user_rotation", "1")
 adb("logcat", "-c")
-launch = adb("shell", "am", "start", "-W", "-n", PACKAGE + "/com.godot.game.GodotApp")
+resolved = adb("shell", "cmd", "package", "resolve-activity", "--brief", "-a", "android.intent.action.MAIN",
+               "-c", "android.intent.category.LAUNCHER", "-p", PACKAGE)
+activity = resolved.splitlines()[-1].strip()
+assert activity.startswith(PACKAGE + "/"), resolved
+launch = adb("shell", "am", "start", "-W", "-n", activity)
 time.sleep(2)
 width, height = screenshot("menu")
 assert width > height, f"Landscape was not applied: {width}x{height}"
 factor = max(1, math.floor(min(width / 320, height / 180)))
 offset_x, offset_y = (width - 320 * factor) / 2, (height - 180 * factor) / 2
-tap(160, 72)
+for attempt in range(20):
+    tap(160, 72)
+    if state().get("node"):
+        break
+    time.sleep(0.2)
 for attempt in range(160):
     saved = state()
     episode = saved.get("gameplay", {}).get("encounter", {})
@@ -64,7 +86,7 @@ screenshot("hub_before")
 # Hold the joystick northeast, then interact with the actual scribe.
 position = point(56, 140)
 adb("shell", "input", "swipe", *position, *position, "800")
-tap(201, 162)
+tap(199, 152)
 time.sleep(0.3)
 saved = state()
 assert saved["gameplay"]["encounter"]["state"]["quest"] == 1, "Touch interaction did not accept the hub quest"
@@ -72,7 +94,7 @@ node = saved["node"]
 adb("shell", "input", "keyevent", "KEYCODE_HOME")
 time.sleep(0.2)
 adb("shell", "am", "force-stop", PACKAGE)
-adb("shell", "am", "start", "-W", "-n", PACKAGE + "/com.godot.game.GodotApp")
+adb("shell", "am", "start", "-W", "-n", activity)
 time.sleep(1)
 tap(160, 100)
 time.sleep(0.5)
