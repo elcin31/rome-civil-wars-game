@@ -70,7 +70,8 @@ CI выполняет валидаторы, gdlint/gdformat, GUT, сюжетны
 
 [Кадр тактики](docs/gameplay_tactical.png) ·
 [Платформер](docs/gameplay_platformer.png) · [Хаб](docs/gameplay_hub.png) ·
-[Меню](docs/gameplay_menu.png) · [Карта](docs/gameplay_campaign.png).
+[Меню](docs/gameplay_menu.png) · [Карта](docs/gameplay_campaign.png) ·
+[Android: меню](docs/android_menu.png) · [Android: восстановленный хаб](docs/android_hub.png).
 
 В программном OpenGL ПК после прогрева зафиксировано 60 FPS во всех слоях,
 31,6 МиБ отслеживаемой Godot статической памяти и отсутствие роста числа

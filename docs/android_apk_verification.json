@@ -1,5 +1,5 @@
 {
-  "commit": "096734f4f951e55731e5ce17467d9048b19dabdc",
+  "commit": "046d1d0a068de4ea7a2a32c34695a939e38f870e",
   "package": "org.cinislauri.game",
   "version": "0.3.0",
   "version_code": 3,
@@ -7,10 +7,14 @@
   "min_sdk": 24,
   "target_sdk": 36,
   "bytes": 30440110,
-  "sha256": "5f40cea275ccc5941ac7e28278fc33b8dcb61fd87ef30578fe581f331ef3ba84",
+  "sha256": "2a6860b9f88f32f9bd98a575ad7c08f042085ab6f85b02d702839859efc24709",
   "mib": 29.03,
   "manifest_independently_parsed": true,
   "zip_verified": true,
+  "zip_sha256": "283c0ee3ff67dba396806bf3485468bb25656086d3f40d95bfcfbdc73b75afa6",
   "activity": "com.godot.game.GodotAppLauncher",
-  "ci_run": 39002087914
+  "permissions": [],
+  "ci_run": 39003213216,
+  "ci_url": "https://github.com/elcin31/rome-civil-wars-game/actions/runs/39003213216",
+  "signature_verified_in_ci": "v2/v3"
 }

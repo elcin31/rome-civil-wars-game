@@ -1,0 +1,15 @@
+{
+  "platform": "Android API 35 emulator, x86_64 smoke export",
+  "commit_content": "same game as ARM64 release",
+  "screen": [
+    1280,
+    720
+  ],
+  "story_to_hub": true,
+  "joystick_and_interaction": true,
+  "cold_restart_restore": true,
+  "post_restart_movement": true,
+  "rendered_frames_verified": true,
+  "launch_output": "Starting: Intent { cmp=org.cinislauri.game/com.godot.game.GodotAppLauncher }\nStatus: ok\nLaunchState: COLD\nActivity: org.cinislauri.game/com.godot.game.GodotApp\nTotalTime: 2635\nWaitTime: 2672\nComplete",
+  "physical_arm64_test": false
+}
