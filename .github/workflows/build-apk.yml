@@ -45,9 +45,9 @@ jobs:
             rm godot.zip
           fi
           echo "$HOME/.cache/cinis-godot" >> "$GITHUB_PATH"
-          if [ ! -f "$HOME/.local/share/godot/export_templates/4.6.3.stable/android_debug.apk" ]; then
+          if [ ! -f "$HOME/.local/share/godot/export_templates/4.6.3.stable/android_source.zip" ]; then
             curl -fL --retry 2 -o templates.tpz "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz"
-            unzip -jo templates.tpz 'templates/android_debug.apk' 'templates/android_release.apk' -d "$HOME/.local/share/godot/export_templates/4.6.3.stable"
+            unzip -jo templates.tpz 'templates/android_debug.apk' 'templates/android_release.apk' 'templates/android_source.zip' -d "$HOME/.local/share/godot/export_templates/4.6.3.stable"
             rm templates.tpz
           fi
       - name: Configure Android SDK and debug signing
@@ -74,10 +74,11 @@ jobs:
           python tools/validate_story.py
           timeout 120 godot --headless --path . --script tools/verify_gallery.gd
           timeout 120 godot --headless --path . --script tools/verify_story.gd
+          timeout 120 godot --headless --path . -s addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
       - name: Export and inspect ARM64 APK
         run: |
           mkdir -p build
-          godot --headless --path . --export-debug Android build/cinis-lauri.apk
+          godot --headless --path . --install-android-build-template --export-debug Android build/cinis-lauri.apk
           aapt dump badging build/cinis-lauri.apk | tee build/apk-metadata.txt
           python tools/inspect_apk.py build/cinis-lauri.apk build/apk-metadata.txt
           python tools/package_android.py

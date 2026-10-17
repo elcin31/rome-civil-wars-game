@@ -14,3 +14,7 @@ __pycache__/
 .venv/
 .env
 .DS_Store
+android/
+.gut_editor_config.json
+.gut_editor_shortcuts.cfg
+addons/gut/.gutconfig.json

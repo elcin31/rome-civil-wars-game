@@ -9,6 +9,7 @@ config/description="Original historical pixel-art game — branching Russian nar
 
 [autoload]
 StoryRuntime="*res://scripts/story_runtime.gd"
+GameServices="*res://scripts/game_services.gd"
 
 [display]
 window/size/viewport_width=320

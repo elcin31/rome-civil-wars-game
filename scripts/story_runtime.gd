@@ -2,7 +2,9 @@ extends Node
 ## Data-only narrative graph. Conditions are a small DNF language, never eval().
 
 const SAVE_PATH = "user://cinis_story_v2.json"
+const Progression = preload("res://scripts/gameplay/progression.gd")
 var save_path: String = SAVE_PATH
+var slot_prefix: String = "user://cinis_slot_"
 var chapters: Array = []
 var nodes: Dictionary = {}
 var scenes: Dictionary = {}
@@ -17,9 +19,11 @@ var suppress_save: bool = false
 
 
 func read_json(path: String) -> Dictionary:
-	if not FileAccess.file_exists(path): return {}
+	if not FileAccess.file_exists(path):
+		return {}
 	var parser = JSON.new()
-	if parser.parse(FileAccess.get_file_as_string(path)) != OK: return {}
+	if parser.parse(FileAccess.get_file_as_string(path)) != OK:
+		return {}
 	return parser.data if parser.data is Dictionary else {}
 
 
@@ -55,10 +59,19 @@ func start_new(chapter: int = 1, route: String = "legion") -> void:
 	var flags: Dictionary = {}
 	for flag in definitions.get("flags", {}):
 		flags[flag] = definitions.flags[flag].default
-	state = {"schema_version": 2, "node": "ch01_s01_n01", "bond": definitions.get("initial_bond", 35),
-		"flags": flags, "rep": definitions.get("reputation", {}).duplicate(true),
-		"progress": {"chapter": 1, "visited": []}, "history": [], "applied": [],
-		"decisions": [], "beats_completed": []}
+	state = {
+		"schema_version": 2,
+		"node": "ch01_s01_n01",
+		"bond": definitions.get("initial_bond", 35),
+		"flags": flags,
+		"rep": definitions.get("reputation", {}).duplicate(true),
+		"progress": {"chapter": 1, "visited": []},
+		"history": [],
+		"applied": [],
+		"decisions": [],
+		"beats_completed": [],
+		"gameplay": Progression.fresh()
+	}
 	suppress_save = true
 	_settle()
 	# Chapter testing uses an actual canonical traversal, never invented state snapshots.
@@ -68,7 +81,10 @@ func start_new(chapter: int = 1, route: String = "legion") -> void:
 		if current().has("choices"):
 			var selected: int = first_choice()
 			for i in range(current().choices.size()):
-				if current().choices[i].id == "ch02_s08_" + ("citizen" if route == "citizen" else "legion"):
+				if (
+					current().choices[i].id
+					== "ch02_s08_" + ("citizen" if route == "citizen" else "legion")
+				):
 					selected = i
 			choose(selected)
 		elif current().get("kind") == "beat":
@@ -103,12 +119,18 @@ func _atom(atom: String) -> bool:
 		var lhs: int = int(state.bond) if key == "bond" else int(state.rep.get(key.substr(4), 0))
 		var rhs: int = int(match_value.get_string(3))
 		match match_value.get_string(2):
-			">=": return lhs >= rhs
-			"<=": return lhs <= rhs
-			"==": return lhs == rhs
-			"!=": return lhs != rhs
-			">": return lhs > rhs
-			"<": return lhs < rhs
+			">=":
+				return lhs >= rhs
+			"<=":
+				return lhs <= rhs
+			"==":
+				return lhs == rhs
+			"!=":
+				return lhs != rhs
+			">":
+				return lhs > rhs
+			"<":
+				return lhs < rhs
 	return bool(state.flags.get(atom, false))
 
 
@@ -119,7 +141,9 @@ func apply_effects(effect: Dictionary) -> void:
 		state.flags[flag] = false
 	state.bond = clampi(int(state.bond) + int(effect.get("bond", 0)), 0, 100)
 	for faction in effect.get("rep", {}):
-		state.rep[faction] = clampi(int(state.rep.get(faction, 0)) + int(effect.rep[faction]), -100, 100)
+		state.rep[faction] = clampi(
+			int(state.rep.get(faction, 0)) + int(effect.rep[faction]), -100, 100
+		)
 
 
 func go(target: String) -> bool:
@@ -155,13 +179,19 @@ func _settle() -> void:
 			state.applied.append(node.id)
 			var text: String = node.get("text", {}).get("ru", "")
 			if not text.is_empty():
-				state.history.append({"node": node.id, "speaker": node.get("speaker", "narrator"), "text": text})
+				state.history.append(
+					{"node": node.id, "speaker": node.get("speaker", "narrator"), "text": text}
+				)
 		var scene = current_scene()
 		state.progress.chapter = int(str(scene.get("id", "ch01")).substr(2, 2))
 		if scene.get("id", "") not in state.progress.visited:
 			state.progress.visited.append(scene.get("id", ""))
 		# Empty dialogue connectors carry effects but should not ask for a blank tap.
-		if node.get("kind") == "dialogue" and node.get("text", {}).get("ru", "").is_empty() and node.has("next"):
+		if (
+			node.get("kind") == "dialogue"
+			and node.get("text", {}).get("ru", "").is_empty()
+			and node.has("next")
+		):
 			state.node = node.next
 			continue
 		return
@@ -183,7 +213,9 @@ func choose(index: int) -> bool:
 	var option: Dictionary = options[index]
 	apply_effects(option)
 	state.decisions.append({"node": state.node, "choice": option.id})
-	state.history.append({"node": state.node, "speaker": "narrator", "text": tr_ui("choice_log") + option.text.ru})
+	state.history.append(
+		{"node": state.node, "speaker": "narrator", "text": tr_ui("choice_log") + option.text.ru}
+	)
 	return go(option.goto)
 
 
@@ -199,6 +231,8 @@ func complete_beat() -> bool:
 		return false
 	if current().beat not in state.beats_completed:
 		state.beats_completed.append(current().beat)
+		Progression.reward(state.gameplay, current().beat)
+	state.gameplay.encounter = {}
 	return go(current().get("next", ""))
 
 
@@ -208,7 +242,8 @@ func skip_scene() -> void:
 		if current().get("scene") != original or current().get("kind") == "ending":
 			break
 		if current().has("choices"):
-			if not choose(first_choice()): break
+			if not choose(first_choice()):
+				break
 		elif current().get("kind") == "beat":
 			complete_beat()
 		elif not advance():
@@ -224,15 +259,35 @@ func save_game() -> bool:
 	file.store_string(JSON.stringify(state))
 	file.flush()
 	file.close()
-	var error = DirAccess.rename_absolute(ProjectSettings.globalize_path(temp_path), ProjectSettings.globalize_path(save_path))
+	# Keep the last parseable version; a damaged main file must not replace it.
+	var previous = read_json(save_path)
+	if previous.get("schema_version") == 2 and nodes.has(previous.get("node", "")):
+		DirAccess.copy_absolute(
+			ProjectSettings.globalize_path(save_path),
+			ProjectSettings.globalize_path(save_path + ".bak")
+		)
+	var error = DirAccess.rename_absolute(
+		ProjectSettings.globalize_path(temp_path), ProjectSettings.globalize_path(save_path)
+	)
 	last_error = "" if error == OK else tr_ui("save_error")
 	return error == OK
 
 
-func load_game() -> bool:
-	if not FileAccess.file_exists(save_path):
+func load_game(use_backup: bool = false) -> bool:
+	if _load_path(save_path):
+		last_error = ""
+		return true
+	if use_backup and _load_path(save_path + ".bak"):
+		last_error = "Восстановлена резервная копия сохранения."
+		return true
+	last_error = tr_ui("bad_save")
+	return false
+
+
+func _load_path(path: String) -> bool:
+	if not FileAccess.file_exists(path):
 		return false
-	var data = read_json(save_path)
+	var data = read_json(path)
 	if data.get("schema_version") != 2 or not nodes.has(data.get("node", "")):
 		return false
 	if not data.get("flags") is Dictionary or not data.get("rep") is Dictionary:
@@ -264,6 +319,30 @@ func load_game() -> bool:
 			return false
 	if not data.get("progress") is Dictionary or not data.progress.get("visited") is Array:
 		return false
+	if not data.has("gameplay"):
+		data.gameplay = Progression.fresh()
+	if not Progression.valid(data.gameplay):
+		return false
 	state = data
 	_settle()
 	return true
+
+
+func save_slot(slot: int) -> bool:
+	if slot < 1 or slot > 3:
+		return false
+	var original: String = save_path
+	save_path = slot_prefix + str(slot) + ".json"
+	var result: bool = save_game()
+	save_path = original
+	return result
+
+
+func load_slot(slot: int) -> bool:
+	if slot < 1 or slot > 3:
+		return false
+	var original: String = save_path
+	save_path = slot_prefix + str(slot) + ".json"
+	var result: bool = load_game(true)
+	save_path = original
+	return result
