@@ -1,0 +1,100 @@
+{
+  "chapters": [
+    {
+      "schema_version": 1,
+      "id": "ch01",
+      "number": 1,
+      "title": {
+        "ru": "Галлия",
+        "en": ""
+      },
+      "years": "58–52 до н. э.",
+      "entry": "ch01_s01_n01",
+      "prose_status": "complete"
+    },
+    {
+      "schema_version": 1,
+      "id": "ch02",
+      "number": 2,
+      "title": {
+        "ru": "Рубикон",
+        "en": ""
+      },
+      "years": "50–49 до н. э.",
+      "entry": "ch02_s01_n01",
+      "prose_status": "complete"
+    },
+    {
+      "schema_version": 1,
+      "id": "ch03",
+      "number": 3,
+      "title": {
+        "ru": "Гражданская война",
+        "en": ""
+      },
+      "years": "49–45 до н. э.",
+      "entry": "ch03_entry",
+      "prose_status": "complete"
+    },
+    {
+      "schema_version": 1,
+      "id": "ch04",
+      "number": 4,
+      "title": {
+        "ru": "Мартовские иды",
+        "en": ""
+      },
+      "years": "44 до н. э.",
+      "entry": "ch04_s01_n01",
+      "prose_status": "complete"
+    },
+    {
+      "schema_version": 1,
+      "id": "ch05",
+      "number": 5,
+      "title": {
+        "ru": "Проскрипции",
+        "en": ""
+      },
+      "years": "43 до н. э.",
+      "entry": "ch05_s01_n01",
+      "prose_status": "complete"
+    },
+    {
+      "schema_version": 1,
+      "id": "ch06",
+      "number": 6,
+      "title": {
+        "ru": "Война за наследие",
+        "en": ""
+      },
+      "years": "42–36 до н. э.",
+      "entry": "ch06_s01_n01",
+      "prose_status": "complete"
+    },
+    {
+      "schema_version": 1,
+      "id": "ch07",
+      "number": 7,
+      "title": {
+        "ru": "Акций",
+        "en": ""
+      },
+      "years": "31–30 до н. э.",
+      "entry": "ch07_s01_n01",
+      "prose_status": "complete"
+    },
+    {
+      "schema_version": 1,
+      "id": "ch08",
+      "number": 8,
+      "title": {
+        "ru": "Эпилог",
+        "en": ""
+      },
+      "years": "29 до н. э. — 14 н. э.",
+      "entry": "ch08_s01_n01",
+      "prose_status": "complete"
+    }
+  ]
+}
