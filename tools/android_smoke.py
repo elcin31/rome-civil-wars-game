@@ -6,6 +6,8 @@ from pathlib import Path
 import subprocess
 import sys
 import time
+import re
+import xml.etree.ElementTree as ET
 from PIL import Image
 
 PACKAGE = "org.cinislauri.game"
@@ -42,6 +44,18 @@ def tap(x, y):
     adb("shell", "input", "tap", *point(x, y))
 
 
+def dismiss_fullscreen_hint():
+    adb("shell", "uiautomator", "dump", "/data/local/tmp/cinis-window.xml", check=False)
+    xml = adb("exec-out", "cat", "/data/local/tmp/cinis-window.xml", check=False)
+    if "Viewing full screen" not in xml and "immersive_mode" not in xml:
+        return
+    for node in ET.fromstring(xml).iter("node"):
+        if node.get("text", "").lower() == "got it":
+            left, top, right, bottom = map(int, re.findall(r"\d+", node.get("bounds", "")))
+            adb("shell", "input", "tap", str((left + right) // 2), str((top + bottom) // 2))
+            time.sleep(0.3)
+
+
 def record_failure(kind, value, traceback):
     try:
         (OUTPUT / "logcat.txt").write_text(adb("logcat", "-d", "-v", "brief", check=False))
@@ -57,6 +71,7 @@ adb("install", "-r", sys.argv[1])
 adb("shell", "wm", "size", "720x1280")
 adb("shell", "settings", "put", "system", "accelerometer_rotation", "0")
 adb("shell", "settings", "put", "system", "user_rotation", "1")
+adb("shell", "settings", "put", "secure", "immersive_mode_confirmations", "confirmed")
 adb("logcat", "-c")
 resolved = adb("shell", "cmd", "package", "resolve-activity", "--brief", "-a", "android.intent.action.MAIN",
                "-c", "android.intent.category.LAUNCHER", "-p", PACKAGE)
@@ -64,6 +79,7 @@ activity = resolved.splitlines()[-1].strip()
 assert activity.startswith(PACKAGE + "/"), resolved
 launch = adb("shell", "am", "start", "-W", "-n", activity)
 time.sleep(2)
+dismiss_fullscreen_hint()
 width, height = screenshot("menu")
 assert width > height, f"Landscape was not applied: {width}x{height}"
 factor = max(1, math.floor(min(width / 320, height / 180)))
@@ -95,10 +111,21 @@ adb("shell", "input", "keyevent", "KEYCODE_HOME")
 time.sleep(0.2)
 adb("shell", "am", "force-stop", PACKAGE)
 adb("shell", "am", "start", "-W", "-n", activity)
-time.sleep(1)
-tap(160, 100)
-time.sleep(0.5)
-restored = state()
+time.sleep(2)
+dismiss_fullscreen_hint()
+before_x = saved["gameplay"]["encounter"]["state"]["x"]
+for attempt in range(4):
+    tap(160, 100)
+    time.sleep(0.4)
+    position = point(12, 152)
+    adb("shell", "input", "swipe", *position, *position, "350")
+    tap(199, 152)
+    time.sleep(0.3)
+    restored = state()
+    if restored["gameplay"]["encounter"]["state"]["x"] < before_x - 3:
+        break
+else:
+    raise AssertionError("The restored hub did not respond to joystick movement")
 assert restored["node"] == node and restored["gameplay"]["encounter"]["state"]["quest"] == 1
 assert restored["flags"] == saved["flags"]
 screenshot("hub_after_cold_restart")
@@ -108,6 +135,7 @@ for failure in ["SCRIPT ERROR:", "Parse Error:", "FATAL EXCEPTION: main", "Fatal
     assert failure not in logs, failure
 report = {"platform": "Android API 35 emulator, x86_64 smoke export", "commit_content": "same game as ARM64 release",
           "screen": [width, height], "story_to_hub": True, "joystick_and_interaction": True,
-          "cold_restart_restore": True, "launch_output": launch, "physical_arm64_test": False}
+          "cold_restart_restore": True, "post_restart_movement": True,
+          "launch_output": launch, "physical_arm64_test": False}
 (OUTPUT / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print("ANDROID SMOKE PASS:", report)
