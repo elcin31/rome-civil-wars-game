@@ -17,5 +17,10 @@
     128,
     128
   ],
-  "font_cyrillic_complete": true
+  "font_cyrillic_complete": true,
+  "checked_fonts": [
+    "GolosText-Reading.ttf",
+    "GolosText-Semibold.ttf",
+    "PTSerif-Bold.ttf"
+  ]
 }

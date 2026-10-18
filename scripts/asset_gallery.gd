@@ -93,9 +93,13 @@ func _build_ui() -> void:
 	var width: float = chrome.size.x
 	var height: float = chrome.size.y
 	UI.panel(chrome, Rect2(8, 8, width - 16, 66))
-	_label("CINIS LAURI", Vector2(24, 20), OCHRE).size.x = 212
+	var title: Label = _label("CINIS LAURI", Vector2(24, 20), OCHRE)
+	title.size.x = 212
+	title.set_meta("text_budget", title.size)
 	name_label = _label("", Vector2(252, 20))
-	name_label.size.x = width - 420
+	name_label.position.y = 12
+	name_label.size = Vector2(width - 420, 52)
+	name_label.set_meta("text_budget", name_label.size)
 	_button(
 		"Меню",
 		Rect2(width - 148, 12, 132, UI.touch_height(self)),
@@ -186,17 +190,19 @@ func _select_asset(index: int) -> void:
 		if ResourceLoader.exists("res://" + layer_path):
 			layers.append(load("res://" + layer_path))
 	name_label.text = "%02d/%02d  %s" % [asset_index + 1, filtered.size(), current.get("title", "")]
+	UI.fit_label(name_label, 22)
 	var dimensions = current.get("size", [0, 0])
 	detail_label.text = "%s x %s px  /  48 цветов" % [dimensions[0], dimensions[1]]
+	UI.fit_label(detail_label, 24)
 	_update_action()
 	queue_redraw()
 
 
 func _update_action() -> void:
 	if group_index == 0:
-		action_button.text = "Поза: " + POSES[pose_index]
+		UI.set_button_text(action_button, "Поза: " + POSES[pose_index])
 	else:
-		action_button.text = "Движение: " + ("вкл" if moving else "выкл")
+		UI.set_button_text(action_button, "Движение: " + ("вкл" if moving else "выкл"))
 
 
 func _action() -> void:

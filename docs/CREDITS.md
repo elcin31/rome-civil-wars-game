@@ -41,12 +41,20 @@ tools/pixelize_story.py, общая палитра из 24 цветов. Гот�
   не включается в APK).
 - gdtoolkit 4.5.0 — MIT, инструмент проверки GDScript, в APK не включается.
 
-В интерфейсе используется Tiny5, Stefan Schmidt / The Tiny5 Project Authors,
-SIL Open Font License 1.1: assets/fonts/OFL.txt. Полный русский алфавит проверяет
+В интерфейсе используются Golos Text, Copyright 2019 The Golos Text Project Authors,
+и PT Serif Bold, Copyright 2010 ParaType Ltd. Лицензия обоих — SIL OFL 1.1:
+assets/fonts/GolosText-OFL.txt и assets/fonts/PTSerif-OFL.txt.
+Golos Text: статические экземпляры веса 450 и 600, полученные fontTools из
+неизменённого переменного источника art_src/fonts/GolosText-Variable.ttf;
+воспроизводимая сборка — tools/build_fonts.py. PT Serif распространяется
+без изменений. URL и SHA-256 источников — art_src/fonts/font_sources.json.
+Прежний Tiny5 (Stefan Schmidt / Tiny5 Project Authors, OFL) сохранён в исходниках;
+в текущем игровом интерфейсе он не используется. Полный русский алфавит проверяет
 tools/validate_portraits.py. Шрифт получен из Google Fonts; внешний код в APK не добавлен. Лицензии встроенных шрифтов Godot
 входят в указанный COPYRIGHT.txt. Сетевые разрешения и сторонняя аналитика отсутствуют.
-В самой игре: Настройки → Об игре → Лицензии движка; тексты лицензий и
-copyright-компоненты берутся из встроенного реестра Godot.
+В самой игре: Настройки → Об игре → Лицензии и компоненты; полные OFL-тексты
+шрифтов включены в APK и показаны вместе с лицензиями и copyright-компонентами
+встроенного реестра Godot.
 
 ## Дополнение 0.4.0
 
@@ -62,4 +70,6 @@ art_src/refresh/generation_log.json и batch_final_prompts.json. Лица и к�
 48 цветов, доминирующий цвет блока и чистка кластеров. Прежние исходники сохранены.
 Римские 9-slice рамки — оригинальная процедурная графика tools/build_ui_art.py.
 NumPy (BSD-3-Clause) и fontTools (MIT) используются только как инструменты сборки,
-в APK не входят. Шрифт Tiny5: https://fonts.google.com/specimen/Tiny5.
+в APK не входят. Текущие шрифты: https://fonts.google.com/specimen/Golos+Text
+и https://fonts.google.com/specimen/PT+Serif. Прежний Tiny5:
+https://fonts.google.com/specimen/Tiny5.

@@ -50,7 +50,7 @@ func setup(value: Dictionary) -> void:
 func _ready() -> void:
 	mouse_filter = MOUSE_FILTER_IGNORE
 	theme = UI.theme_resource()
-	font = theme.default_font
+	font = UI.strong_face
 	for ident in [
 		"titus_pullo",
 		"lucius_vorenus",
@@ -158,10 +158,10 @@ func _ready() -> void:
 		UI.panel(self, Rect2(16, size.y - 76, size.x - 32, 60))
 		status = _label("", Rect2(32, size.y - 72, size.x - 64, 52), 22, OCHRE)
 	else:
-		UI.panel(self, Rect2(148, size.y - _action_rect(0).size.y - 108, size.x - 164, 76))
-		status = _label(
-			"", Rect2(164, size.y - _action_rect(0).size.y - 100, size.x - 196, 60), 22, OCHRE
-		)
+		var status_height: float = 104 if beat.type == "rpg" else 76
+		var status_top: float = size.y - _action_rect(0).size.y - status_height - 32
+		UI.panel(self, Rect2(148, status_top, size.x - 164, status_height))
+		status = _label("", Rect2(164, status_top + 8, size.x - 196, status_height - 16), 22, OCHRE)
 	status.set_meta("text_budget", status.size)
 	match beat.type:
 		"tactical":
@@ -268,7 +268,8 @@ func _update_status() -> void:
 				nearby_button.visible = not station.is_empty()
 				var point: Vector2 = world_transform * Vector2(model.state.x, model.state.y)
 				nearby_button.position = Vector2(
-					clampf(point.x + 32, 16, size.x - 180), clampf(point.y - 70, 132, size.y - 248)
+					clampf(point.x + 32, 16, size.x - 180),
+					clampf(point.y - 70, 132, status.position.y - nearby_button.size.y - 20)
 				)
 				for nearby in model.stations:
 					if nearby.id != station:
@@ -282,14 +283,7 @@ func _update_status() -> void:
 							size.x - nearby_button.size.x - 16
 						)
 	if status.get_meta("fitted_text", "") != status.text:
-		var budget: Vector2 = status.get_meta("text_budget")
-		var font_size: int = 22
-		status.add_theme_font_size_override("font_size", font_size)
-		status.size = budget
-		while status.get_minimum_size().y > budget.y and font_size > 18:
-			font_size -= 2
-			status.add_theme_font_size_override("font_size", font_size)
-			status.size = budget
+		UI.fit_label(status, 22)
 		status.set_meta("fitted_text", status.text)
 
 
@@ -855,8 +849,13 @@ func _draw_platformer() -> void:
 
 
 func _npc_caption_rect(station: Dictionary) -> Rect2:
-	var width: float = font.get_string_size(station.name, HORIZONTAL_ALIGNMENT_LEFT, -1, 9).x
-	return Rect2(clampf(station.x + 18, 4, 316 - width) - 3, station.y - 30, width + 6, 13)
+	var width: float = font.get_string_size(station.name, HORIZONTAL_ALIGNMENT_LEFT, -1, 11).x
+	return Rect2(
+		clampf(station.x + 18, 4, 316 - width) - 3,
+		station.y - 34,
+		width + 6,
+		font.get_height(11) + 6
+	)
 
 
 func _draw_hub() -> void:
@@ -951,10 +950,10 @@ func _draw_hub() -> void:
 			draw_rect(caption, INK)
 			draw_string(
 				font,
-				caption.position + Vector2(3, 10),
+				caption.position + Vector2(3, 3 + font.get_ascent(11)),
 				station.name,
 				HORIZONTAL_ALIGNMENT_LEFT,
 				-1,
-				9,
+				11,
 				OCHRE
 			)

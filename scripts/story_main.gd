@@ -83,7 +83,7 @@ func _content_top() -> float:
 
 func _heading(title: String, back: Callable, back_text: String = "Назад") -> void:
 	_button(back_text, Rect2(16, 14, 132, _touch()), back)
-	_label(title, Rect2(168, 14, _width() - 188, _touch()), 30, OCHRE)
+	UI.heading(layer, title, Rect2(168, 14, _width() - 188, _touch()), 30, OCHRE)
 
 
 func _reading_panel(value: String, top: float, bottom: float, font_size: int = 24) -> RichTextLabel:
@@ -93,6 +93,7 @@ func _reading_panel(value: String, top: float, bottom: float, font_size: int = 2
 	text.size = Vector2(_width() - 72, _height() - top - bottom - 32)
 	text.text = value
 	text.bbcode_enabled = false
+	text.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	text.add_theme_font_size_override("normal_font_size", font_size)
 	text.set_meta("scroll_document", true)
 	layer.add_child(text)
@@ -124,7 +125,7 @@ func menu(message: String = "") -> void:
 	GameServices.play_layer("city")
 	var panel_width: float = minf(456, _width() * 0.49)
 	UI.panel(layer, Rect2(24, 18, panel_width, _height() - 36))
-	_label("CINIS LAURI", Rect2(48, 34, panel_width - 48, 50), 42, OCHRE)
+	UI.heading(layer, "CINIS LAURI", Rect2(48, 34, panel_width - 48, 50), 42, OCHRE)
 	_label("ПЕПЕЛ ЛАВРА", Rect2(48, 86, panel_width - 48, 34), 26)
 	var captions: Array = ["Новая игра", "Продолжить", "Карта кампании", "Галерея", "Настройки"]
 	var actions: Array[Callable] = [
@@ -237,6 +238,7 @@ func _gallery() -> void:
 
 func refresh() -> void:
 	_clear("play")
+	text_size = UI.accessible_font_size(self, 24)
 	var node = StoryRuntime.current()
 	var scene = StoryRuntime.current_scene()
 	var picture: String = scene.get("illustration", "assets/locations/roman_camp.png")
@@ -289,8 +291,8 @@ func refresh() -> void:
 	assert(StoryRuntime.portraits.has(portrait), "Missing portrait for " + who)
 	if StoryRuntime.portraits.has(portrait):
 		face = load("res://" + StoryRuntime.portraits[portrait].file)
-	var panel_top: float = _height() - 282 - maxf(0, _touch() - 58)
-	UI.panel(layer, Rect2(16, panel_top, _width() - 32, 194), "parchment")
+	var panel_top: float = _height() - 312 - maxf(0, _touch() - 58)
+	UI.panel(layer, Rect2(16, panel_top, _width() - 32, 224), "parchment")
 	portrait_rect = Rect2(32, panel_top + 24, 128, 128)
 	var portrait_view = TextureRect.new()
 	portrait_view.texture = face
@@ -312,10 +314,11 @@ func refresh() -> void:
 	)
 	body = RichTextLabel.new()
 	body.position = Vector2(184, panel_top + 54)
-	body.size = Vector2(_width() - 224, 128)
+	body.size = Vector2(_width() - 224, 152)
 	body.scroll_active = false
 	body.autowrap_mode = TextServer.AUTOWRAP_OFF
 	body.bbcode_enabled = false
+	body.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	body.add_theme_font_size_override("normal_font_size", text_size)
 	body.mouse_filter = MOUSE_FILTER_IGNORE
 	layer.add_child(body)
@@ -337,6 +340,9 @@ func _paginate(text: String) -> Array[String]:
 	var available_width: float = (
 		body.size.x - 8 if is_instance_valid(body) else maxf(400, _width() - 232)
 	)
+	var available_height: float = body.size.y if is_instance_valid(body) else 152.0
+	var line_height: float = ceilf(font.get_height(text_size)) + 6.0
+	var line_limit: int = clampi(int((available_height + 6.0) / line_height), 1, 4)
 	for word in text.replace("\n", " \n ").split(" ", false):
 		var candidate: String = word if line.is_empty() else line + " " + word
 		if (
@@ -349,7 +355,7 @@ func _paginate(text: String) -> Array[String]:
 			page += ("" if page.is_empty() else "\n") + line
 			rows += 1
 			line = "" if word == "\n" else word
-			if rows >= 4:
+			if rows >= line_limit:
 				output.append(page)
 				page = ""
 				rows = 0
@@ -595,7 +601,7 @@ func _credits() -> void:
 			+ "История, персонажи и иллюстрации созданы для этого проекта. "
 			+ "Дизайн не основан на кино и телесериалах. Музыка и эффекты — оригинальный синтез.\n\n"
 			+ "Исторические источники: Цезарь, Плутарх, Аппиан, Светоний, Кассий Дион.\n\n"
-			+ "Пиксельный шрифт Tiny5 — Stefan Schmidt / Tiny5 Project Authors, "
+			+ "Шрифты Golos Text и PT Serif — их авторы и ParaType, "
 			+ "SIL Open Font License 1.1.\nПолный реестр материалов и лицензий: docs/CREDITS.md."
 		),
 		_content_top(),
@@ -607,7 +613,10 @@ func _credits() -> void:
 func _licenses() -> void:
 	_clear("legal")
 	_heading("Лицензии и компоненты", _credits)
-	var notice: String = Engine.get_license_text() + "\n\n"
+	var notice: String = "Golos Text / PT Serif — SIL Open Font License 1.1\n\n"
+	for path in ["GolosText-OFL.txt", "PTSerif-OFL.txt"]:
+		notice += FileAccess.get_file_as_string("res://assets/fonts/" + path) + "\n\n"
+	notice += Engine.get_license_text() + "\n\n"
 	for item in Engine.get_copyright_info():
 		notice += str(item.get("name", "")) + "\n"
 		for part in item.get("parts", []):

@@ -1,0 +1,28 @@
+{
+  "reading": {
+    "family": "Golos Text",
+    "weight": 450,
+    "file": "assets/fonts/GolosText-Reading.ttf"
+  },
+  "interface": {
+    "family": "Golos Text",
+    "weight": 600,
+    "file": "assets/fonts/GolosText-Semibold.ttf"
+  },
+  "headings": {
+    "family": "PT Serif",
+    "weight": 700,
+    "file": "assets/fonts/PTSerif-Bold.ttf"
+  },
+  "sources": [
+    "https://github.com/google/fonts/tree/main/ofl/golostext",
+    "https://github.com/google/fonts/tree/main/ofl/ptserif"
+  ],
+  "license": "SIL OFL 1.1",
+  "sha256": {
+    "assets/fonts/GolosText-Reading.ttf": "3ab50fe4cf8c95382a9d7ba1a48e222b7fc04f26665c64e8243afae87c09b304",
+    "assets/fonts/GolosText-Semibold.ttf": "975edbb8d27ecbac6b354d3aa36ceb6618c527258790d7c5e55e1c0d43d6b6a3",
+    "assets/fonts/PTSerif-Bold.ttf": "038ba7336bd7ea14f12ad155bed51a4345cac5153275d521dec3ba04021c526e",
+    "art_src/fonts/GolosText-Variable.ttf": "17bb58fb69aec2dfb047a2ebf52534023e9b688c97a6b7ac795b0a72912c2063"
+  }
+}

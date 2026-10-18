@@ -45,6 +45,15 @@ func _check_layout() -> Array[Button]:
 			_fail("outside safe area: %s %s / %s" % [control.get_class(), bounds, safe])
 		if control is Label and not control.text.is_empty():
 			var minimum: Vector2 = control.get_minimum_size()
+			if control.autowrap_mode == TextServer.AUTOWRAP_WORD:
+				var face: Font = control.get_theme_font("font")
+				var font_size: int = control.get_theme_font_size("font_size")
+				for word in control.text.replace("\n", " ").split(" ", false):
+					if (
+						face.get_string_size(word, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x
+						> control.size.x + 1
+					):
+						_fail("button word crosses its text area: " + word)
 			if control.has_meta("text_budget"):
 				var budget: Vector2 = control.get_meta("text_budget")
 				if minimum.y > budget.y + 1:
@@ -139,6 +148,12 @@ func _shot(caption: String, tap: bool = false) -> void:
 	await process_frame
 	var buttons: Array[Button] = _check_layout()
 	if is_instance_valid(view.get("body")):
+		var text_pixels: float = (
+			view.body.get_theme_font_size("normal_font_size")
+			* root.get_screen_transform().get_scale().y
+		)
+		if text_pixels < 16.0 * density - 0.1:
+			_fail("reading text below 16 sp")
 		for page in view.pages:
 			view.body.text = page
 			if view.body.get_content_height() > view.body.size.y + 1:

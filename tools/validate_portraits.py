@@ -51,13 +51,18 @@ def main():
         sheet = ROOT / f'assets/portraits/{speaker}_emotions.png'
         if not sheet.exists() or Image.open(sheet).size != (256, 256):
             errors.append(f'{speaker}: missing four-emotion sheet')
-    font = TTFont(ROOT / 'assets/fonts/Tiny5.ttf')
-    cmap = font.getBestCmap()
-    missing = [c for c in 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя' if ord(c) not in cmap]
-    if missing:
-        errors.append('Font missing Cyrillic: ' + ''.join(missing))
+    checked_fonts = ['GolosText-Reading.ttf', 'GolosText-Semibold.ttf', 'PTSerif-Bold.ttf']
+    missing = []
+    alphabet = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789−+…—«»'
+    for name in checked_fonts:
+        with TTFont(ROOT / 'assets/fonts' / name) as font:
+            missing_here = [c for c in alphabet if ord(c) not in font.getBestCmap()]
+        missing.extend(missing_here)
+        if missing_here:
+            errors.append(name + ' missing glyphs: ' + ''.join(missing_here))
     report = {'speakers': sorted(speakers), 'checked_nodes': len(nodes), 'errors': errors,
-              'portrait_size': [128, 128], 'font_cyrillic_complete': not missing}
+              'portrait_size': [128, 128], 'font_cyrillic_complete': not missing,
+              'checked_fonts': checked_fonts}
     (ROOT / 'docs/portrait_validation.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(f'PORTRAITS: {len(speakers)} speakers, {len(nodes)} nodes, {len(errors)} errors')
     for error in errors:

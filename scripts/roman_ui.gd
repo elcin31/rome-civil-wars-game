@@ -1,10 +1,12 @@
 extends RefCounted
-## Shared pixel font, Roman nine-slice chrome and safe-area geometry.
+## Readable Cyrillic typography, Roman nine-slice chrome and safe-area geometry.
 
 const INK = Color("14151f")
 const IVORY = Color("ede3cc")
 const GOLD = Color("d9a441")
 static var shared_theme: Theme
+static var strong_face: FontFile
+static var title_face: FontFile
 static var density_override: float = 0.0
 
 
@@ -12,10 +14,15 @@ static func theme_resource() -> Theme:
 	if shared_theme:
 		return shared_theme
 	shared_theme = Theme.new()
-	var pixel_font: FontFile = load("res://assets/fonts/Tiny5.ttf")
-	pixel_font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
-	pixel_font.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_DISABLED
-	shared_theme.default_font = pixel_font
+	var reading_face: FontFile = load("res://assets/fonts/GolosText-Reading.ttf")
+	strong_face = load("res://assets/fonts/GolosText-Semibold.ttf")
+	title_face = load("res://assets/fonts/PTSerif-Bold.ttf")
+	for face in [reading_face, strong_face, title_face]:
+		face.antialiasing = TextServer.FONT_ANTIALIASING_GRAY
+		face.hinting = TextServer.HINTING_LIGHT
+		face.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_AUTO
+		face.oversampling = 2.0
+	shared_theme.default_font = reading_face
 	shared_theme.default_font_size = 24
 	for state in ["normal", "hover", "pressed", "focus", "disabled", "hover_pressed"]:
 		var style = StyleBoxTexture.new()
@@ -26,8 +33,8 @@ static func theme_resource() -> Theme:
 		shared_theme.set_stylebox(state, "Button", style)
 	shared_theme.set_color("font_color", "Label", IVORY)
 	shared_theme.set_color("default_color", "RichTextLabel", IVORY)
-	shared_theme.set_constant("line_separation", "Label", 2)
-	shared_theme.set_constant("line_separation", "RichTextLabel", 3)
+	shared_theme.set_constant("line_separation", "Label", 4)
+	shared_theme.set_constant("line_separation", "RichTextLabel", 6)
 	return shared_theme
 
 
@@ -48,27 +55,85 @@ static func safe_rect(view: Control) -> Rect2:
 
 static func touch_height(view: Control) -> float:
 	var physical_scale: float = view.get_viewport().get_screen_transform().get_scale().y
-	var density: float = (
-		maxf(1.0, DisplayServer.screen_get_dpi() / 160.0) if OS.has_feature("android") else 1.0
+	return maxf(58.0, ceilf(48.0 * _density() / maxf(physical_scale, 0.1)))
+
+
+static func _density() -> float:
+	return (
+		density_override
+		if density_override > 0
+		else (
+			maxf(1.0, DisplayServer.screen_get_dpi() / 160.0) if OS.has_feature("android") else 1.0
+		)
 	)
-	if density_override > 0:
-		density = density_override
-	return maxf(58.0, ceilf(48.0 * density / maxf(physical_scale, 0.1)))
+
+
+static func accessible_font_size(view: Control, baseline: int, sp: float = 16.0) -> int:
+	var physical_scale: float = view.get_viewport().get_screen_transform().get_scale().y
+	return maxi(baseline, ceili(sp * _density() / maxf(physical_scale, 0.1)))
 
 
 static func label(
-	parent: Node, value: String, rect: Rect2, font_size: int = 24, color: Color = IVORY
+	parent: Node,
+	value: String,
+	rect: Rect2,
+	font_size: int = 24,
+	color: Color = IVORY,
+	custom_font: Font = null
 ) -> Label:
+	theme_resource()
 	var control = Label.new()
 	control.text = value
 	control.position = rect.position
 	control.size = rect.size
 	control.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	control.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	if custom_font != null or font_size >= 26:
+		control.add_theme_font_override("font", custom_font if custom_font != null else strong_face)
 	control.add_theme_font_size_override("font_size", font_size)
 	control.add_theme_color_override("font_color", color)
 	control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	control.set_meta("text_budget", rect.size)
 	parent.add_child(control)
+	fit_label(control, font_size)
 	return control
+
+
+static func fit_label(control: Label, font_size: int, minimum: int = 18) -> void:
+	var budget: Vector2 = control.get_meta("text_budget", control.size)
+	control.add_theme_font_size_override("font_size", font_size)
+	control.size = budget
+	while (
+		(
+			control.get_minimum_size().y > budget.y
+			or control.get_minimum_size().x > budget.x
+			or (
+				control.autowrap_mode == TextServer.AUTOWRAP_WORD
+				and _word_width(control, font_size) > budget.x
+			)
+		)
+		and font_size > minimum
+	):
+		font_size -= 1
+		control.add_theme_font_size_override("font_size", font_size)
+		control.size = budget
+	# Reapply after the final minimum-size calculation; wrapping can enlarge a Label.
+	control.size = budget
+
+
+static func _word_width(control: Label, font_size: int) -> float:
+	var width: float = 0.0
+	var face: Font = control.get_theme_font("font")
+	for word in control.text.replace("\n", " ").split(" ", false):
+		width = maxf(width, face.get_string_size(word, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x)
+	return width
+
+
+static func heading(
+	parent: Node, value: String, rect: Rect2, font_size: int = 30, color: Color = GOLD
+) -> Label:
+	theme_resource()
+	return label(parent, value, rect, font_size, color, title_face)
 
 
 static func button(
@@ -89,17 +154,15 @@ static func button(
 	var caption = label(
 		control,
 		value,
-		Rect2(Vector2(12, 6), rect.size - Vector2(24, 12)),
-		24,
-		IVORY if enabled else Color("8a8577")
+		Rect2(Vector2(12, 4), rect.size - Vector2(24, 8)),
+		accessible_font_size(control, 24, 14.0),
+		IVORY if enabled else Color("a39b8c"),
+		strong_face
 	)
+	caption.autowrap_mode = TextServer.AUTOWRAP_WORD
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	var font_size: int = 24
-	while caption.get_minimum_size().y > rect.size.y - 12 and font_size > 18:
-		font_size -= 2
-		caption.add_theme_font_size_override("font_size", font_size)
-		caption.size = rect.size - Vector2(24, 12)
+	fit_label(caption, accessible_font_size(control, 24, 14.0))
 	return control
 
 
@@ -123,4 +186,13 @@ static func enable_button(button: Button, enabled: bool) -> void:
 	button.disabled = not enabled
 	for child in button.get_children():
 		if child is Label:
-			child.add_theme_color_override("font_color", IVORY if enabled else Color("8a8577"))
+			child.add_theme_color_override("font_color", IVORY if enabled else Color("a39b8c"))
+
+
+static func set_button_text(button: Button, value: String) -> void:
+	button.text = ""
+	button.set_meta("caption", value)
+	for child in button.get_children():
+		if child is Label:
+			child.text = value
+			fit_label(child, accessible_font_size(button, 24, 14.0))
