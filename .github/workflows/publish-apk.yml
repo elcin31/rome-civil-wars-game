@@ -84,4 +84,16 @@ jobs:
             release_flags+=(--prerelease --latest=false)
             release_title='CINIS LAURI 0.4.2 — кандидат волны 1'
           fi
-          gh release create v0.4.2 --repo "$GITHUB_REPOSITORY" --target "$RELEASE_COMMIT" --title "$release_title" --notes-file docs/RELEASE_NOTES_v0.4.2.md "${release_flags[@]}" delivery/rome-civil-wars-*.zip delivery/rome-civil-wars-*.zip.sha256
+          if gh release view v0.4.2 --repo "$GITHUB_REPOSITORY" --json tagName,isPrerelease > existing-release.json; then
+            python - <<'PY'
+          import json, os
+          release = json.load(open('existing-release.json'))
+          assert release['tagName'] == 'v0.4.2'
+          assert release['isPrerelease'] == (os.environ['PUBLISH_CANDIDATE'] == 'true')
+          PY
+            git fetch --no-tags --depth=1 origin refs/tags/v0.4.2:refs/tags/v0.4.2
+            [[ "$(git rev-parse 'v0.4.2^{commit}')" == "$RELEASE_COMMIT" ]]
+            gh release upload v0.4.2 --repo "$GITHUB_REPOSITORY" delivery/rome-civil-wars-*.zip delivery/rome-civil-wars-*.zip.sha256
+          else
+            gh release create v0.4.2 --repo "$GITHUB_REPOSITORY" --target "$RELEASE_COMMIT" --title "$release_title" --notes-file docs/RELEASE_NOTES_v0.4.2.md "${release_flags[@]}" delivery/rome-civil-wars-*.zip delivery/rome-civil-wars-*.zip.sha256
+          fi
