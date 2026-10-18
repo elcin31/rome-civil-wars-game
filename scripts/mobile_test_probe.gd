@@ -30,10 +30,30 @@ static func write(view: Control) -> void:
 	var encounter: Control = view.encounter
 	if is_instance_valid(encounter):
 		data.encounter_type = encounter.beat.type
+	if is_instance_valid(encounter) and encounter.has_method("_joy_center"):
+		data.encounter_type = encounter.beat.type
 		var center: Vector2 = (
 			screen * (encounter.get_global_transform_with_canvas() * encounter._joy_center())
 		)
 		data.joystick = [center.x, center.y, encounter._joy_radius() * screen.get_scale().y]
+	if is_instance_valid(encounter) and encounter.beat.type == "rpg":
+		data.hub = {
+			"hero": [encounter.model.state.x, encounter.model.state.y],
+			"stations": encounter.model.stations,
+			"quest": encounter.model.state.quest
+		}
+	if is_instance_valid(encounter) and encounter.beat.type == "cutscene":
+		data.cinematic = {
+			"won": encounter.model.state.won,
+			"choice": encounter.model.data.choice.options,
+			"waiting_choice": encounter.model.waiting_choice()
+		}
+	var choices: Array = []
+	var runtime: Node = view.get_node("/root/StoryRuntime")
+	for option in runtime.current().get("choices", []):
+		if runtime.condition(option.get("condition", "")):
+			choices.append(option.text.ru)
+	data.story_choices = choices
 	var path: String = "user://cinis_ui_layout.json"
 	var file = FileAccess.open(path + ".tmp", FileAccess.WRITE)
 	if file:

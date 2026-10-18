@@ -6,12 +6,13 @@ config/name="CINIS LAURI — Пепел лавра"
 config/icon="res://assets/final/app_icon.png"
 run/main_scene="res://scenes/StoryMain.tscn"
 run/max_fps=60
+config/quit_on_go_back=false
 boot_splash/image="res://assets/final/splash.png"
 boot_splash/bg_color=Color(0.078431, 0.082353, 0.121569, 1)
 boot_splash/fullsize=true
 boot_splash/use_filter=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/description="Original Roman pixel-art RPG, turn-based tactics and platformer."
+config/description="Original Roman pixel-art narrative RPG with cinematic choices."
 
 [autoload]
 StoryRuntime="*res://scripts/story_runtime.gd"

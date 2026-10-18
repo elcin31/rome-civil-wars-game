@@ -36,7 +36,7 @@ func test_every_hub_recovers_from_every_initial_visit_order() -> void:
 				hub.bot_step(1.0 / 30.0)
 				steps += 1
 			assert_true(hub.state.won, "%s must complete after visits %s" % [beat.id, order])
-	assert_eq(count, 9)
+	assert_eq(count, 20)
 
 
 func test_overlapping_interaction_regions_use_the_quest_target() -> void:

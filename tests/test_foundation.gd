@@ -71,6 +71,17 @@ func test_corrupt_progression_does_not_replace_live_state() -> void:
 	assert_eq(game.state, saved)
 
 
+func test_corrupt_cinematic_record_does_not_replace_live_state() -> void:
+	var saved: Dictionary = game.state.duplicate(true)
+	var corrupt: Dictionary = saved.duplicate(true)
+	corrupt.cutscenes = {"beat_ch01_s03": {"text": 12, "losses": []}}
+	var file = FileAccess.open(game.save_path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(corrupt))
+	file.close()
+	assert_false(game.load_game())
+	assert_eq(game.state, saved)
+
+
 func test_reward_and_shop_cannot_duplicate_or_overspend() -> void:
 	var data: Dictionary = Progression.fresh()
 	assert_true(Progression.reward(data, "first", 100))
@@ -122,6 +133,8 @@ func test_legacy_story_save_recovers_completed_mission_progression_once() -> voi
 	game.start_new(4)
 	var legacy: Dictionary = game.state.duplicate(true)
 	legacy.erase("gameplay")
+	legacy.erase("seed")
+	legacy.erase("cutscenes")
 	var expected_xp: int = legacy.beats_completed.size() * 45
 	var file = FileAccess.open(game.save_path, FileAccess.WRITE)
 	file.store_string(JSON.stringify(legacy))

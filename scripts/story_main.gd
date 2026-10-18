@@ -5,6 +5,8 @@ const IVORY = Color("ede3cc")
 const BRONZE = Color("a87b3d")
 const OCHRE = Color("d9a441")
 const UI = preload("res://scripts/roman_ui.gd")
+const LibraryView = preload("res://scripts/library_view.gd")
+const Lore = preload("res://scripts/lore_library.gd")
 const SoftView = preload("res://scripts/gameplay/soft_view.gd")
 const CutsceneView = preload("res://scripts/gameplay/cutscene_view.gd")
 const EncounterView = preload("res://scripts/gameplay/encounter_view.gd")
@@ -28,6 +30,9 @@ var text_size: int = 24
 var ambience_clock: float = 0.0
 var probe_clock: float = 0.0
 var previous_button: Button
+var library_tab: String = "gallery"
+var last_shown_chapter: int = 1
+var auto_clock: float = 0
 var reveal_button: Button
 
 
@@ -43,6 +48,7 @@ func _ready() -> void:
 
 func _clear(new_mode: String) -> void:
 	transition_serial += 1
+	GameServices.set_dialogue(false)
 	if is_instance_valid(encounter):
 		encounter.persist()
 		encounter = null
@@ -126,21 +132,23 @@ func _button(value: String, rect: Rect2, callback: Callable, enabled: bool = tru
 
 func menu(message: String = "") -> void:
 	_clear("menu")
-	_set_background("res://assets/final/menu.png")
+	_set_background("res://assets/new_story/menu.png")
 	GameServices.play_layer("city")
 	var panel_width: float = minf(456, _width() * 0.49)
 	UI.panel(layer, Rect2(24, 18, panel_width, _height() - 36))
 	UI.heading(layer, "CINIS LAURI", Rect2(48, 34, panel_width - 48, 50), 42, OCHRE)
 	_label("ПЕПЕЛ ЛАВРА", Rect2(48, 86, panel_width - 48, 34), 26)
-	var captions: Array = ["Новая игра", "Продолжить", "Карта кампании", "Галерея", "Настройки"]
-	var actions: Array[Callable] = [
-		_new_request, _continue, _chapters, _gallery, _open_settings.bind(menu)
+	var captions: Array = [
+		"Новая игра", "Продолжить", "Карта кампании", "Галерея", "Хроника", "Настройки"
 	]
-	var dense: bool = (_height() - 156) / 5.0 < _touch() + 6
-	var row: float = (_height() - 156) / (3.0 if dense else 5.0)
+	var actions: Array[Callable] = [
+		_new_request, _continue, _chapters, _gallery, _chronicle, _open_settings.bind(menu)
+	]
+	var dense: bool = (_height() - 156) / 6.0 < _touch() + 6
+	var row: float = (_height() - 156) / (3.0 if dense else 6.0)
 	var columns: int = 2 if dense else 1
 	var cell: float = (panel_width - 40 - (12 if dense else 0)) / columns
-	for index in range(5):
+	for index in range(6):
 		_button(
 			captions[index],
 			Rect2(
@@ -178,54 +186,13 @@ func _new_game(chapter: int = 1) -> void:
 
 func _continue() -> void:
 	if StoryRuntime.load_game(true):
-		refresh()
+		_recap()
 	else:
 		menu(StoryRuntime.tr_ui("bad_save"))
 
 
 func _chapters() -> void:
-	_clear("chapters")
-	_set_background("res://assets/ui/campaign_map.png")
-	_heading("Карта кампании", menu, "Меню")
-	var progress: Dictionary = StoryRuntime.state.get("progress", {})
-	if progress.is_empty():
-		progress = StoryRuntime.read_json(StoryRuntime.save_path).get("progress", {})
-	var unlocked: int = clampi(int(progress.get("chapter", 1)), 1, 8)
-	var cell: Vector2 = Vector2(
-		(_width() - 56) / 4, (_height() - _content_top() - _touch() - 52) / 2
-	)
-	for index in range(8):
-		var caption: String = "%d. %s" % [index + 1, StoryRuntime.chapters[index].title.ru]
-		caption += (
-			"\n"
-			+ (
-				"Пройдено"
-				if index + 1 < unlocked
-				else ("Текущее событие" if index + 1 == unlocked else "Закрыто")
-			)
-		)
-		var card: Button = _button(
-			caption,
-			Rect2(
-				Vector2(
-					16 + (index % 4) * (cell.x + 8), _content_top() + (index / 4) * (cell.y + 8)
-				),
-				cell
-			),
-			_campaign_resume,
-			index + 1 <= unlocked
-		)
-		var image = TextureRect.new()
-		image.texture = load("res://assets/chapter_cards/ch%02d.png" % (index + 1))
-		image.position = Vector2(8, 8)
-		image.size = cell - Vector2(16, 16)
-		image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		image.modulate.a = 0.24 if index + 1 <= unlocked else 0.12
-		image.mouse_filter = MOUSE_FILTER_IGNORE
-		card.add_child(image)
-		card.move_child(image, 0)
-	_button("К текущему событию", Rect2(16, _footer_y(), _width() - 32, _touch()), _campaign_resume)
+	_library("campaign", "chapters")
 
 
 func _campaign_resume() -> void:
@@ -238,12 +205,41 @@ func _campaign_resume() -> void:
 
 
 func _gallery() -> void:
-	get_tree().change_scene_to_file("res://scenes/AssetGallery.tscn")
+	_library("gallery")
+
+
+func _chronicle() -> void:
+	_library("chronicle")
+
+
+func _library(tab: String, screen_mode: String = "library") -> void:
+	library_tab = tab
+	var back: Callable = _log if mode == "log" else menu
+	var snapshot: Dictionary = StoryRuntime.state
+	if snapshot.is_empty():
+		snapshot = StoryRuntime.read_json(StoryRuntime.save_path)
+	_clear(screen_mode)
+	var library = LibraryView.new()
+	library.size = layer.size
+	library.setup(tab, snapshot)
+	library.closed.connect(back)
+	library.resume_requested.connect(_campaign_resume)
+	layer.add_child(library)
+
+
+func _recap() -> void:
+	last_shown_chapter = int(StoryRuntime.state.progress.chapter)
+	_clear("recap")
+	_heading("Ранее в игре", _pause)
+	_reading_panel(
+		"• " + "\n\n• ".join(Lore.recap(StoryRuntime.state)), _content_top(), _touch() + 40
+	)
+	_button("К истории", Rect2(16, _footer_y(), _width() - 32, _touch()), refresh)
 
 
 func refresh() -> void:
 	_clear("play")
-	text_size = UI.accessible_font_size(self, 24)
+	text_size = UI.accessible_font_size(self, [22, 26, 30][int(GameServices.settings.text_size)])
 	var node = StoryRuntime.current()
 	var scene = StoryRuntime.current_scene()
 	var picture: String = scene.get("illustration", "assets/locations/roman_camp.png")
@@ -255,7 +251,9 @@ func refresh() -> void:
 	if node.get("kind") == "beat":
 		_show_beat(node)
 		return
+	GameServices.set_dialogue(true)
 	GameServices.play_layer("city")
+	GameServices.set_ambience("forum" if int(StoryRuntime.state.progress.chapter) > 1 else "camp")
 	UI.panel(layer, Rect2(8, 8, _width() - 16, maxf(76, _touch() + 16)))
 	_button("Пауза", Rect2(16, 16, 120, _touch()), _pause)
 	_label(scene.get("title", {}).get("ru", ""), Rect2(152, 14, _width() - 422, 64), 26, OCHRE)
@@ -376,6 +374,7 @@ func _paginate(text: String) -> Array[String]:
 
 
 func _show_page() -> void:
+	auto_clock = 0
 	letters = 0
 	body.text = pages[page_index]
 	body.visible_characters = 0
@@ -390,12 +389,25 @@ func _process(delta: float) -> void:
 			probe_clock = 0.0
 			preload("res://scripts/mobile_test_probe.gd").write(self)
 	ambience_clock += delta
-	queue_redraw()
-	if mode == "play" and is_instance_valid(body) and body.visible_characters >= 0:
+	if mode in ["menu", "loading"] or (mode == "play" and not is_instance_valid(encounter)):
+		queue_redraw()
+	if mode != "play" or not is_instance_valid(body):
+		return
+	if body.visible_characters >= 0:
 		letters += delta * float(GameServices.settings.text_speed)
 		body.visible_characters = -1 if letters >= body.text.length() else int(letters)
 		if body.visible_characters == -1:
 			UI.enable_button(reveal_button, false)
+	if GameServices.settings.skip_read and GameServices.read_nodes.has(StoryRuntime.current().id):
+		if body.visible_characters >= 0:
+			_reveal()
+		auto_clock += delta
+		if auto_clock >= 0.45:
+			_next()
+	elif GameServices.settings.auto_advance and body.visible_characters == -1:
+		auto_clock += delta
+		if auto_clock >= maxf(3.0, body.text.length() / 18.0):
+			_next()
 
 
 func _reveal() -> void:
@@ -420,6 +432,7 @@ func _next() -> void:
 		page_index += 1
 		_show_page()
 	else:
+		GameServices.mark_read(StoryRuntime.current().id)
 		StoryRuntime.advance()
 		_enter_current()
 
@@ -431,6 +444,9 @@ func _choose(index: int) -> void:
 
 
 func _enter_current() -> void:
+	if int(StoryRuntime.state.progress.chapter) != last_shown_chapter:
+		_recap()
+		return
 	var node: Dictionary = StoryRuntime.current()
 	if node.get("kind") != "beat":
 		refresh()
@@ -487,6 +503,7 @@ func _pause() -> void:
 	if not had_encounter:
 		StoryRuntime.save_game()
 	GameServices.music.stream_paused = true
+	GameServices.ambient.stream_paused = true
 	var progress: Dictionary = StoryRuntime.state.gameplay
 	_label(
 		"Уровень %d · %d монет" % [int(progress.level), int(progress.coins)],
@@ -565,23 +582,21 @@ func _open_settings(back: Callable) -> void:
 
 func _settings() -> void:
 	_clear("settings")
-	_heading("Настройки", settings_return)
+	_button("Назад", Rect2(16, 14, 132, _touch()), settings_return)
+	_label("Настройки", Rect2(168, 14, _width() - 620, _touch()), 30, OCHRE)
+	_button("Комфорт", Rect2(_width() - 400, 14, 188, _touch()), _comfort)
 	_button("Об игре", Rect2(_width() - 196, 14, 180, _touch()), _credits)
-	_button(
-		"Подсказки: " + ("вкл" if GameServices.settings.hints else "выкл"),
-		Rect2(212, 14, 256, _touch()),
-		_toggle_hints
-	)
 	var rows: Array = [
 		["music", "Музыка", 0.1],
 		["effects", "Эффекты", 0.1],
 		["button_scale", "Размер кнопок", 0.1],
 		["button_offset", "Сдвиг кнопок", 2.0],
-		["text_speed", "Скорость текста", 6.0]
+		["text_speed", "Скорость текста", 6.0],
+		["text_size", "Размер текста: 0–2", 1.0]
 	]
 	var dense: bool = _touch() > 74
 	var top: float = _content_top()
-	var row_height: float = (_height() - top - 16) / (3.0 if dense else 5.0)
+	var row_height: float = (_height() - top - 16) / (3.0 if dense else 6.0)
 	var cell: float = (_width() - 64) / 2
 	var button_width: float = maxf(88, _touch())
 	for index in range(rows.size()):
@@ -610,6 +625,34 @@ func _settings() -> void:
 			Rect2(right - button_width, y, button_width, _touch()),
 			_adjust.bind(row[0], row[2])
 		)
+
+
+func _comfort() -> void:
+	_clear("comfort")
+	_heading("Комфорт", _settings)
+	var options: Array = [
+		["skip_read", "Пропуск прочитанного"],
+		["auto_advance", "Автопродолжение"],
+		["vibration", "Вибрация"],
+		["battery", "Экономия: 30 FPS"],
+		["left_handed", "Левая рука"],
+		["hints", "Подсказки"],
+		["skip_minigames", "Пропуск мягких вставок"]
+	]
+	var row: float = (_height() - _content_top() - 16) / 4
+	var cell: float = (_width() - 48) / 2
+	for i in range(options.size()):
+		var key: String = options[i][0]
+		_button(
+			options[i][1] + (": вкл" if GameServices.settings[key] else ": выкл"),
+			Rect2(16 + (i % 2) * (cell + 16), _content_top() + (i / 2) * row, cell, _touch()),
+			_toggle_comfort.bind(key)
+		)
+
+
+func _toggle_comfort(key: String) -> void:
+	GameServices.set_preference(key, not GameServices.settings[key])
+	_comfort()
 
 
 func _toggle_hints() -> void:
@@ -676,12 +719,18 @@ func _reflow() -> void:
 			menu()
 		"chapters":
 			_chapters()
+		"library":
+			_library(library_tab)
+		"recap":
+			_recap()
 		"pause":
 			_pause()
 		"slots":
 			_slots()
 		"settings":
 			_settings()
+		"comfort":
+			_comfort()
 		"credits":
 			_credits()
 		"legal":
@@ -721,7 +770,8 @@ func _skip() -> void:
 
 func _log() -> void:
 	_clear("log")
-	_heading("Журнал диалогов и поручений", refresh)
+	_heading("Журнал", refresh)
+	_button("Свиток судеб", Rect2(_width() - 240, 14, 224, _touch()), _library.bind("fate"))
 	var log_text: String = ""
 	var active: String = StoryRuntime.current().get("beat", "")
 	if StoryRuntime.beats.has(active):
@@ -767,6 +817,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _draw() -> void:
 	var bounds: Rect2 = get_viewport_rect()
+	if mode in ["library", "chapters"]:
+		draw_rect(bounds, INK)
+		return
 	if mode == "play" and is_instance_valid(encounter):
 		# The encounter covers the safe area; do not render a second world underneath it.
 		return

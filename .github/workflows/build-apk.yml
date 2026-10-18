@@ -15,7 +15,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4.2.2
       - uses: actions/setup-python@v5.6.0
@@ -73,6 +73,7 @@ jobs:
           python tools/validate_assets.py
           python tools/validate_story.py
           python tools/validate_gameplay.py
+          python tools/validate_completion.py
           python tools/validate_portraits.py
           python tools/validate_refresh_art.py
           gdformat --check scripts tools/*.gd tests
@@ -81,6 +82,7 @@ jobs:
           timeout 120 godot --headless --path . --script tools/verify_story.gd
           timeout 120 godot --headless --path . -s addons/gut/gut_cmdln.gd -gdir=res://tests -gexit
           timeout 120 godot --headless --path . --script tools/walk_game.gd
+          timeout 120 godot --headless --path . --script tools/walk_alternatives.gd
       - name: Seven-resolution screenshots, safe areas and real touch dispatch
         run: |
           sudo apt-get update -qq
@@ -88,6 +90,7 @@ jobs:
           python tools/run_display.py python tools/ui_matrix.py
           python tools/run_display.py python tools/ui_matrix.py --quick --size=1280x720 --density=2.625
           python tools/contact_wave1.py --capture
+          python tools/contact_waves.py
       - uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
@@ -96,6 +99,11 @@ jobs:
             build/ui
             build/wave1
             docs/contact_wave1.png
+            docs/contact_wave2.png
+            docs/contact_wave3.png
+            docs/contact_wave4.png
+            docs/contact_new_art.png
+            docs/completion_validation.json
             docs/ui_validation.json
             docs/ui_density_validation.json
             docs/portrait_validation.json

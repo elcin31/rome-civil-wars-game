@@ -25,6 +25,8 @@ func setup(value: Dictionary) -> void:
 
 func _ready() -> void:
 	mouse_filter = MOUSE_FILTER_IGNORE
+	GameServices.play_layer("march")
+	GameServices.set_ambience("sea" if beat.location in ["alexandria", "actium"] else "forest")
 	background = load("res://assets/locations/" + beat.location + ".png")
 	if GameServices.settings.get("skip_minigames", false):
 		model.skip()
@@ -60,7 +62,8 @@ func _build() -> void:
 			layer,
 			"Ставка: 2 монеты",
 			Rect2(24, size.y - touch - 24, size.x * 0.5 - 32, touch),
-			_dice.bind(true)
+			_dice.bind(true),
+			int(StoryRuntime.state.gameplay.coins) >= 2
 		)
 		UI.button(
 			layer,
@@ -119,6 +122,15 @@ func _draw() -> void:
 		if i not in model.state.marks:
 			draw_rect(Rect2(point, Vector2(14, 20)), Color("d9a441"))
 		draw_rect(Rect2(point + Vector2(-30, -28), Vector2(22, 52)), Color("454d4a"))
+	if beat.minigame == "stealth":
+		var guard = Vector2(size.x * (0.5 + sin(model.state.elapsed * 0.6) * 0.28), floor_y - 26)
+		draw_rect(Rect2(guard + Vector2(-8, -44), Vector2(16, 44)), Color("454d4a"))
+		draw_circle(guard + Vector2(0, -54), 9, Color("b69268"))
+		if fmod(model.state.elapsed, 5.0) < 1.8:
+			draw_colored_polygon(
+				PackedVector2Array([guard, guard + Vector2(150, -18), guard + Vector2(150, 26)]),
+				Color(0.9, 0.7, 0.3, 0.12)
+			)
 	var hero = Vector2(model.state.x / 480.0 * size.x, floor_y)
 	draw_ellipse_shadow(hero)
 	draw_rect(
@@ -161,6 +173,8 @@ func persist() -> void:
 
 
 func _finish() -> void:
+	if StoryRuntime.current().get("beat") != beat.id or not model.state.won:
+		return
 	if (
 		beat.minigame == "dice"
 		and not model.state.neutral
@@ -169,5 +183,6 @@ func _finish() -> void:
 		StoryRuntime.state.gameplay.coins = maxi(
 			0, int(StoryRuntime.state.gameplay.coins) + (2 if model.state.roll >= 4 else -2)
 		)
+		StoryRuntime.apply_effects({"rep": {"legion": 1 if model.state.roll >= 4 else -1}})
 	if StoryRuntime.complete_beat():
 		completed.emit()

@@ -130,9 +130,9 @@ def main():
     if choices<40:requirements.append('At least 40 decision nodes required')
     if len(set(majors))<8:requirements.append('At least 8 major branches required')
     side_count=sum(bool(s.get('optional')) for s in scenes.values())
-    if not 10<=side_count<=12:requirements.append('Expected 10..12 side scenes')
+    if side_count<20:requirements.append('At least 20 side scenes required')
     if len(art)<30:requirements.append('At least 30 illustrations required')
-    if not 25000<=words<=35000:requirements.append(f'Authored narrative words {words}: required 25000..35000')
+    if not 45000<=words<=60000:requirements.append(f'Authored narrative words {words}: required 45000..60000')
     unfinished=[s['id'] for s in scenes.values() if s.get('prose_status')!='complete']
     if unfinished:requirements.append(f'{len(unfinished)} scenes still marked draft')
     # Reading time is reported from actual traversals; branch-only prose is not counted twice.
@@ -147,7 +147,7 @@ def main():
         covered_scenes={nodes[n]['scene'] for n in route['nodes']}
         covered={event for scene in covered_scenes for event in scenes[scene].get('historical_anchors',[])}
         if required_events-covered:errors.append(f"{route['route']}: missing historical anchors {sorted(required_events-covered)}")
-    if any(r['minutes']<120 or r['minutes']>180 for r in normal_routes):requirements.append('Normal route reading time must be 120..180 minutes at 200 words/min')
+    if any(r['minutes']<150 for r in normal_routes):requirements.append('Expanded route unexpectedly shorter than 150 minutes at 200 words/min')
     report={'mode':'draft' if args.draft else 'strict','nodes':len(nodes),'scenes':len(scenes),'choices':choices,'major_branches':len(set(majors)),'side_scenes':side_count,'narrative_words':words,'all_text_minutes':round(words/200,1),'finished_scenes':len(scenes)-len(unfinished),'illustrations':len(art),'new_pngs':len(pngs),'verified_scenarios':len(witnesses)+len(scenario_routes),'locked_choices_checked':locked_choices,'normal_routes':[{k:r[k] for k in ['route','faction','side_quests','words','minutes']} for r in normal_routes],'errors':errors,'unmet_requirements':requirements}
     (ROOT/'docs/story_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     (ROOT/'story/test_routes.json').write_text(json.dumps({'routes':witnesses,'scenarios':scenario_routes},ensure_ascii=False,indent=2)+'\n')

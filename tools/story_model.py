@@ -42,7 +42,7 @@ class Model:
         self.definitions=read('story/flags.json')
 
     def initial(self):
-        return {'flags':{k:v['default'] for k,v in self.definitions['flags'].items()},'rep':deepcopy(self.definitions['reputation']),'bond':self.definitions['initial_bond']}
+        return {'flags':{k:v['default'] for k,v in self.definitions['flags'].items()},'rep':deepcopy(self.definitions['reputation']),'bond':self.definitions['initial_bond'],'supplies':2}
 
     def walk(self,policy='together',route='legion',faction=None,visit_side=True,overrides=None):
         state=self.initial();target='ch01_s01_n01';visited=[];decisions=[];words=0
@@ -79,11 +79,13 @@ class Model:
                     beat=next(b for b in read('story/beats.json')['beats'] if b['id']==node['beat'])
                     if beat['type']=='cutscene':
                         data=read('story/cutscenes/'+beat['cutscene']+'.json')
+                        words+=sum(len(WORD.findall(f['caption']['ru'])) for f in data['frames'])
                         salt=0
                         for code in beat['id']:salt=(salt*31+ord(code))%2147483647
                         roll=(48271+salt)%5-2
                         option=data['choice']['options'][0]
-                        score=option['power']+roll+state['bond']//25+sum(bool(state['flags'].get(f)) for f in data['helpful_flags'])
+                        score=option['power']+roll+state['bond']//25+sum(bool(state['flags'].get(f)) for f in data['helpful_flags'])+min(1,state['supplies'])
+                        state['supplies']=max(0,state['supplies']-1)
                         outcome='win' if score>=5 else 'costly' if score>=2 else 'loss'
                         effects(option,state);effects(data['outcome']['cards'][outcome],state)
                 target=node['next']

@@ -26,7 +26,8 @@ func setup(
 		"won": false,
 		"failed": false,
 		"outcome": "",
-		"roll": 0
+		"roll": 0,
+		"rhythm": []
 	}
 
 
@@ -57,8 +58,14 @@ func restore(value: Dictionary) -> bool:
 		or value.failed
 		or value.outcome not in ["", "win", "costly", "loss"]
 		or value.won != (value.outcome != "")
+		or (value.won and (value.selected < 0 or not value.played))
 	):
 		return false
+	if not value.rhythm is Array or value.rhythm.size() > 3:
+		return false
+	for hit in value.rhythm:
+		if hit not in [-1, 1]:
+			return false
 	state = value.duplicate(true)
 	return true
 
@@ -132,6 +139,9 @@ func resolve() -> void:
 	var score: int = int(data.choice.options[int(state.selected)].power) + state.roll
 	for rank in progress.get("skills", {}).values():
 		score += int(rank)
+	for rank in progress.get("equipment", {}).values():
+		score += int(rank)
+	score += mini(1, int(progress.get("supplies", 0)))
 	score += int(bond) / 25 + int(state.challenge)
 	for flag in data.get("helpful_flags", []):
 		if context.get("flags", {}).get(flag, false):
@@ -148,7 +158,10 @@ func result() -> Dictionary:
 	card["set_flags"] = option.get("set_flags", []).duplicate()
 	card["bond"] = int(card.get("bond", 0)) + int(option.get("bond", 0))
 	card["outcome"] = state.outcome
+	card["beat"] = beat.id
+	card["supplies_used"] = mini(1, int(progress.get("supplies", 0)))
 	card["choice"] = option.id
+	card["decision"] = option.text.ru
 	card["title"] = data.title
 	return card
 

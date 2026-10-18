@@ -23,7 +23,12 @@ static func valid(data: Variant) -> bool:
 	for key in ["xp", "level", "coins", "supplies"]:
 		if not (data.get(key) is float or data.get(key) is int):
 			return false
-		if not is_finite(float(data[key])) or data[key] < 0 or data[key] > 1000000:
+		if (
+			not is_finite(float(data[key]))
+			or data[key] != int(data[key])
+			or data[key] < 0
+			or data[key] > 1000000
+		):
 			return false
 	if data.get("hero") not in ["pullo", "vorenus"]:
 		return false
@@ -40,7 +45,7 @@ static func valid(data: Variant) -> bool:
 
 
 static func _rank(value: Variant) -> bool:
-	return (value is float or value is int) and value >= 0 and value <= 3
+	return (value is float or value is int) and value >= 0 and value <= 3 and value == int(value)
 
 
 static func reward(data: Dictionary, ident: String, xp: int = 45) -> bool:

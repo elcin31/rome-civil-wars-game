@@ -5,7 +5,7 @@
   "frames": [
     {
       "image": "assets/cs/cicero_01.png",
-      "duration": 6.0,
+      "duration": 12.6,
       "camera": {
         "from": [
           0,
@@ -30,7 +30,7 @@
     },
     {
       "image": "assets/cs/cicero_02.png",
-      "duration": 5.0,
+      "duration": 10.9,
       "camera": {
         "from": [
           0,
@@ -55,7 +55,7 @@
     },
     {
       "image": "assets/cs/cicero_03.png",
-      "duration": 5.0,
+      "duration": 12.6,
       "camera": {
         "from": [
           0,
@@ -80,7 +80,7 @@
     },
     {
       "image": "assets/cs/cicero_04.png",
-      "duration": 5.0,
+      "duration": 11.7,
       "camera": {
         "from": [
           0,
@@ -107,7 +107,7 @@
     },
     {
       "image": "assets/cs/cicero_05.png",
-      "duration": 5.0,
+      "duration": 10.9,
       "camera": {
         "from": [
           0,
@@ -132,7 +132,7 @@
     },
     {
       "image": "assets/cs/cicero_06.png",
-      "duration": 6.0,
+      "duration": 13.0,
       "camera": {
         "from": [
           0,
@@ -199,7 +199,7 @@
   ],
   "music": "battle",
   "outcome": {
-    "formula": "skills + flags + bond/25 + choice + challenge + seeded_roll(-2..2)",
+    "formula": "skills + equipment + preparation + flags + bond/25 + choice + challenge + seeded_roll(-2..2)",
     "cards": {
       "win": {
         "text": "Люди выполнили общий замысел. Сохранённый проход и взаимная помощь пригодятся в следующей дороге. Исторический исход события от этого частного успеха не меняется.",

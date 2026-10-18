@@ -21,7 +21,8 @@ def main():
     beats = read("story/beats.json")["beats"]
     assert len({beat["id"] for beat in beats}) == len(beats)
     counts = Counter(beat["type"] for beat in beats)
-    assert counts["tactical"] >= 10 and counts["platformer"] >= 10 and counts["rpg"] >= 8
+    assert counts["cutscene"] >= 12 and counts["soft"] >= 5 and counts["rpg"] >= 20
+    assert not counts["tactical"] and not counts["platformer"]
     for beat in beats:
         assert beat["implementation"] == "playable", beat["id"]
         assert nodes[beat["node"]]["beat"] == beat["id"]
@@ -55,7 +56,7 @@ def main():
               "choices_covered": len(choices), "endings": sorted({route["ending"] for route in routes}),
               "logical_art_compositions": 36 + 30 + manifest["composition_count"],
               "game_pngs": len(list((ROOT / "assets").rglob("*.png"))),
-              "music_layers": 3, "effects": 5, "errors": []}
+              "music_layers": 6, "effects": 10, "ambiences": 4, "errors": []}
     (ROOT / "docs/gameplay_validation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print("GAMEPLAY VALIDATION PASS:", report)
 

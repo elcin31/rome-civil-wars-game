@@ -15,6 +15,7 @@ var previous: Texture2D
 var shown: int = -1
 var clock: float = 0.0
 var fade: float = 1.0
+var rhythm_hits: Array[int] = []
 var challenge_clock: float = 0.0
 var caption: RichTextLabel
 
@@ -27,6 +28,8 @@ func setup(value: Dictionary) -> void:
 	var saved: Dictionary = StoryRuntime.state.gameplay.get("encounter", {})
 	if saved.get("beat") == beat.id:
 		model.restore(saved.get("state", {}))
+	for hit in model.state.rhythm:
+		rhythm_hits.append(int(hit))
 
 
 func _ready() -> void:
@@ -61,7 +64,7 @@ func _rebuild() -> void:
 		caption.position = Vector2(34, top + 12)
 		caption.size = Vector2(size.x - 68, 110)
 		caption.text = model.data.frames[int(model.state.frame)].caption.ru
-		caption.add_theme_font_size_override("normal_font_size", 24)
+		caption.add_theme_font_size_override("normal_font_size", UI.accessible_font_size(self, 24))
 		caption.set_meta("scroll_document", true)
 		layer.add_child(caption)
 		UI.button(
@@ -93,13 +96,24 @@ func _challenge(touch: float) -> void:
 	var top: float = size.y - touch * 2 - 138
 	UI.panel(layer, Rect2(16, top, size.x - 32, size.y - top - 16))
 	var game: Dictionary = model.data.minigame
-	UI.label(layer, game.prompt, Rect2(36, top + 12, size.x - 72, 64), 24)
+	UI.label(
+		layer,
+		game.prompt + (" · Удары %d/3" % rhythm_hits.size() if game.type == "rowing" else ""),
+		Rect2(36, top + 12, size.x - 72, 64),
+		24
+	)
 	if game.type == "persuasion":
 		UI.button(
 			layer,
-			game.get("argument", "Назвать свидетеля и показать запись"),
-			Rect2(36, top + 88, size.x - 72, touch),
-			_argument
+			"Показать проверяемую запись",
+			Rect2(36, top + 88, size.x * 0.5 - 44, touch),
+			_argument.bind(1)
+		)
+		UI.button(
+			layer,
+			"Надавить авторитетом",
+			Rect2(size.x * 0.5 + 8, top + 88, size.x * 0.5 - 44, touch),
+			_argument.bind(-1)
 		)
 	else:
 		UI.button(layer, "Действовать", Rect2(36, top + 88, size.x * 0.5 - 44, touch), _timing)
@@ -123,13 +137,19 @@ func _result(touch: float) -> void:
 	description.text = (
 		"ИТОГ · "
 		+ {"win": "УСПЕХ", "costly": "ДОРОГОЙ УСПЕХ", "loss": "ПОТЕРЯ"}[model.state.outcome]
+		+ (
+			"\nМонеты: +%d · 45 опыта · Связь: %+d\n%s"
+			% [int(card.reward) + 8, card.bond, _rep_text(card.rep)]
+		)
+		+ "\nПотери: "
+		+ card.losses
+		+ "\n\nРешение: "
+		+ card.get("decision", "")
 		+ "\n\n"
 		+ card.text
-		+ "\n\nПотери: "
-		+ card.losses
-		+ "\nМонеты: +%d · Связь: %+d\nРепутация: %s" % [card.reward, card.bond, str(card.rep)]
 	)
-	description.add_theme_font_size_override("normal_font_size", 24)
+
+	description.add_theme_font_size_override("normal_font_size", UI.accessible_font_size(self, 24))
 	description.set_meta("scroll_document", true)
 	layer.add_child(description)
 	UI.button(
@@ -146,6 +166,10 @@ func _load_frame() -> void:
 	texture = (
 		load(path) if ResourceLoader.exists(path) else load("res://assets/locations/roman_camp.png")
 	)
+	if not StoryRuntime.state.has("art_seen"):
+		StoryRuntime.state.art_seen = []
+	if model.data.frames[index].image not in StoryRuntime.state.art_seen:
+		StoryRuntime.state.art_seen.append(model.data.frames[index].image)
 	shown = index
 	fade = 0.0
 	challenge_clock = 0.0
@@ -154,6 +178,10 @@ func _load_frame() -> void:
 	var upcoming_path: String = "res://" + model.data.frames[upcoming].image
 	next_texture = load(upcoming_path) if ResourceLoader.exists(upcoming_path) else texture
 	GameServices.play_layer(model.data.get("music", "battle"))
+	GameServices.set_ambience(
+		"sea" if model.data.id == "actium" else "forest" if model.data.id == "forest" else "camp"
+	)
+	GameServices.set_dialogue(true)
 	GameServices.effect(model.data.frames[index].get("sfx", "choice"))
 
 
@@ -188,7 +216,7 @@ func _draw() -> void:
 	)
 	if "shake" in frame.get("fx", []) and progress < 0.2:
 		offset += Vector2(sin(clock * 65), cos(clock * 53)) * 3
-	if previous:
+	if previous and fade < 1.0:
 		draw_texture_rect(previous, Rect2(Vector2.ZERO, size), false)
 	draw_texture_rect(
 		texture, Rect2((size - extent) * 0.5 + offset, extent), false, Color(1, 1, 1, fade)
@@ -208,7 +236,7 @@ func _draw() -> void:
 			draw_line(point, point + Vector2(-3, 12), Color(0.7, 0.8, 0.9, 0.25))
 		elif "embers" in frame.get("fx", []) or "dust" in frame.get("fx", []):
 			draw_rect(Rect2(point, Vector2(3, 3)), Color(0.9, 0.7, 0.35, 0.3))
-	if model.waiting_challenge() and model.data.minigame.type != "persuasion":
+	if model.waiting_challenge():
 		var bar = Rect2(size.x * 0.3, size.y * 0.45, size.x * 0.4, 18)
 		draw_rect(bar, Color("14151f"))
 		draw_rect(
@@ -238,17 +266,27 @@ func _next() -> void:
 
 func _choose(index: int) -> void:
 	model.choose(index)
+	if model.state.frame == model.data.frames.size() - 1 and model.state.played:
+		model.resolve()
 	_rebuild()
 
 
 func _timing() -> void:
 	var phase: float = sin(challenge_clock * 1.7) * 0.5 + 0.5
-	model.challenge(1 if phase >= 0.25 and phase <= 0.75 else -1)
+	var quality: int = 1 if phase >= 0.25 and phase <= 0.75 else -1
+	if model.data.minigame.type == "rowing":
+		rhythm_hits.append(quality)
+		model.state.rhythm = rhythm_hits.duplicate()
+		if rhythm_hits.size() < 3:
+			_rebuild()
+			return
+		quality = 1 if rhythm_hits.reduce(func(total, item): return total + item, 0) > 0 else -1
+	model.challenge(quality)
 	_rebuild()
 
 
-func _argument() -> void:
-	model.challenge(1)
+func _argument(quality: int) -> void:
+	model.challenge(quality)
 	_rebuild()
 
 
@@ -268,5 +306,22 @@ func _replay() -> void:
 
 
 func _finish() -> void:
+	if StoryRuntime.current().get("beat") != beat.id or not model.state.won:
+		return
 	if StoryRuntime.complete_beat(model.result()):
 		completed.emit()
+
+
+func _rep_text(reputation: Dictionary) -> String:
+	var parts: Array[String] = []
+	for faction in reputation:
+		parts.append(
+			(
+				"%s %+d"
+				% [
+					preload("res://scripts/lore_library.gd").FACTIONS.get(faction, faction),
+					reputation[faction]
+				]
+			)
+		)
+	return ", ".join(parts)

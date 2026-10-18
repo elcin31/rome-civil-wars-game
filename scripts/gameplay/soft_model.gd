@@ -58,7 +58,8 @@ func restore(value: Dictionary) -> bool:
 func tick(delta: float, axis: float = 0.0, hiding: bool = false) -> void:
 	if state.won:
 		return
-	state.elapsed = minf(86400, state.elapsed + clampf(delta, 0, 0.1))
+	var step: float = clampf(delta, 0, 0.1)
+	state.elapsed = minf(86400, state.elapsed + step)
 	state.cover = hiding
 	if beat.get("minigame") == "dice":
 		return
@@ -67,7 +68,7 @@ func tick(delta: float, axis: float = 0.0, hiding: bool = false) -> void:
 	if beat.get("minigame") == "stealth" and lit and not hiding and absf(axis) > 0.1:
 		speed = 8  # No death, reset, or lost quest objects.
 		state.alerts = maxi(int(state.alerts), 1)
-	state.x = clampf(state.x + axis * speed * delta, 16, 456)
+	state.x = clampf(state.x + axis * speed * step, 16, 456)
 	for i in range(3):
 		if absf(state.x - (120 + i * 125)) < 20 and i not in state.marks:
 			state.marks.append(i)

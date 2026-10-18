@@ -408,7 +408,7 @@ func _shop() -> void:
 	var half: float = (size.x - 80) / 2
 	for index in range(3):
 		var item: String = ["sword", "shield", "supplies"][index]
-		var name_value: String = ["Гладиус", "Щит", "Припасы"][index]
+		var name_value: String = ["Гладиус", "Щит", "Подготовка"][index]
 		var rank: int = (
 			int(progress.get(item, 0)) if item == "supplies" else int(progress.equipment[item])
 		)
@@ -434,7 +434,7 @@ func _shop() -> void:
 		)
 	if UI.touch_height(self) <= 74:
 		_label(
-			"Одно очко навыка за уровень. Снаряжение общее.",
+			"Навыки и снаряжение влияют на катсцены; один припас даёт +1 подготовки.",
 			Rect2(28, 336, size.x - 56, 36),
 			24,
 			IVORY,
@@ -505,6 +505,8 @@ func _result() -> void:
 
 
 func _finish() -> void:
+	if StoryRuntime.current().get("beat") != beat.id or not model.state.won:
+		return
 	if not model.state.won:
 		return
 	StoryRuntime.complete_beat()
@@ -525,7 +527,10 @@ func _retry() -> void:
 
 func _joy_center() -> Vector2:
 	var radius: float = _joy_radius()
-	return Vector2(24 + radius + float(GameServices.settings.button_offset), size.y - 16 - radius)
+	var x: float = 24 + radius + float(GameServices.settings.button_offset)
+	if GameServices.settings.left_handed:
+		x = size.x - x
+	return Vector2(x, size.y - 16 - radius)
 
 
 func _joy_radius() -> float:
@@ -544,13 +549,16 @@ func _action_rect(index: int) -> Rect2:
 	)
 	var total: float = dimensions.x * 3 + 24
 	var offset: float = clampf(float(GameServices.settings.button_offset), -12, 12)
-	return Rect2(
+	var rect = Rect2(
 		Vector2(
 			size.x - 16 - total + index * (dimensions.x + 12) - maxf(0, offset),
 			size.y - 16 - dimensions.y
 		),
 		dimensions
 	)
+	if GameServices.settings.left_handed:
+		rect.position.x = size.x - rect.end.x
+	return rect
 
 
 func _local(event_position: Vector2) -> Vector2:

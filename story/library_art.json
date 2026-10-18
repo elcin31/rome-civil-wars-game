@@ -1,0 +1,1051 @@
+{
+  "assets": [
+    {
+      "file": "assets/illustrations/ditch_survey.png",
+      "title": "Ров, который ещё не выкопан",
+      "chapter": 1,
+      "scene": "ch01_s01"
+    },
+    {
+      "file": "assets/locations/gaul_forest.png",
+      "title": "Ров, который ещё не выкопан",
+      "chapter": 1,
+      "scene": "ch01_s01"
+    },
+    {
+      "file": "assets/locations/gallic_fort.png",
+      "title": "Чужая мера",
+      "chapter": 1,
+      "scene": "ch01_s02"
+    },
+    {
+      "file": "assets/illustrations/camp_lanterns.png",
+      "title": "Огонь за спиной",
+      "chapter": 1,
+      "scene": "ch01_s03"
+    },
+    {
+      "file": "assets/story/camp_defense.png",
+      "title": "Огонь за спиной",
+      "chapter": 1,
+      "scene": "ch01_s03"
+    },
+    {
+      "file": "assets/illustrations/forest_ambush.png",
+      "title": "Двое за валом",
+      "chapter": 1,
+      "scene": "ch01_s04"
+    },
+    {
+      "file": "assets/story/mutual_rescue.png",
+      "title": "Двое за валом",
+      "chapter": 1,
+      "scene": "ch01_s04"
+    },
+    {
+      "file": "assets/locations/roman_camp.png",
+      "title": "Два имени на воске",
+      "chapter": 1,
+      "scene": "ch01_s05"
+    },
+    {
+      "file": "assets/story/alesia_assault.png",
+      "title": "Две линии",
+      "chapter": 1,
+      "scene": "ch01_s06"
+    },
+    {
+      "file": "assets/locations/alesia.png",
+      "title": "Снятый венец",
+      "chapter": 1,
+      "scene": "ch01_s08"
+    },
+    {
+      "file": "assets/new_story/interlude01.png",
+      "title": "Письмо о железной пряжке",
+      "chapter": 1,
+      "scene": "ch01_interlude"
+    },
+    {
+      "file": "assets/new_story/lucilla_kiln.png",
+      "title": "Глина и хлеб",
+      "chapter": 2,
+      "scene": "ch02_s02"
+    },
+    {
+      "file": "assets/locations/roman_forum.png",
+      "title": "Глина и хлеб",
+      "chapter": 2,
+      "scene": "ch02_s02"
+    },
+    {
+      "file": "assets/illustrations/council_map.png",
+      "title": "Письмо без приказа",
+      "chapter": 2,
+      "scene": "ch02_s03"
+    },
+    {
+      "file": "assets/illustrations/rubicon_watch.png",
+      "title": "Мелкая вода",
+      "chapter": 2,
+      "scene": "ch02_s04"
+    },
+    {
+      "file": "assets/story/rubicon_dawn.png",
+      "title": "Мелкая вода",
+      "chapter": 2,
+      "scene": "ch02_s04"
+    },
+    {
+      "file": "assets/illustrations/rome_shutters.png",
+      "title": "Пустеющие ворота",
+      "chapter": 2,
+      "scene": "ch02_s05"
+    },
+    {
+      "file": "assets/story/empty_rome.png",
+      "title": "Пустеющие ворота",
+      "chapter": 2,
+      "scene": "ch02_s05"
+    },
+    {
+      "file": "assets/locations/rubicon.png",
+      "title": "Последний расчёт",
+      "chapter": 2,
+      "scene": "ch02_s07"
+    },
+    {
+      "file": "assets/new_story/interlude02.png",
+      "title": "Чаша, оставленная у печи",
+      "chapter": 2,
+      "scene": "ch02_interlude"
+    },
+    {
+      "file": "assets/illustrations/brundisium_sails.png",
+      "title": "Камни Брундизия",
+      "chapter": 3,
+      "scene": "ch03_s01"
+    },
+    {
+      "file": "assets/story/pharsalus_battle.png",
+      "title": "Пыль Фарсала",
+      "chapter": 3,
+      "scene": "ch03_s02"
+    },
+    {
+      "file": "assets/illustrations/pompey_shore.png",
+      "title": "Берег, где не встретили",
+      "chapter": 3,
+      "scene": "ch03_s03"
+    },
+    {
+      "file": "assets/locations/alexandria.png",
+      "title": "Берег, где не встретили",
+      "chapter": 3,
+      "scene": "ch03_s03"
+    },
+    {
+      "file": "assets/new_story/aglaia_boat.png",
+      "title": "Незнакомая пристань",
+      "chapter": 3,
+      "scene": "ch03_s04"
+    },
+    {
+      "file": "assets/locations/cleopatra_palace.png",
+      "title": "Незнакомая пристань",
+      "chapter": 3,
+      "scene": "ch03_s04"
+    },
+    {
+      "file": "assets/illustrations/pharos_dawn.png",
+      "title": "Незнакомая пристань",
+      "chapter": 3,
+      "scene": "ch03_s04"
+    },
+    {
+      "file": "assets/locations/pharsalus.png",
+      "title": "Холмы Мунды",
+      "chapter": 3,
+      "scene": "ch03_s07"
+    },
+    {
+      "file": "assets/new_story/serranus_desk.png",
+      "title": "Третья копия",
+      "chapter": 3,
+      "scene": "ch03_s08"
+    },
+    {
+      "file": "assets/locations/rome_night.png",
+      "title": "Испанская новость",
+      "chapter": 3,
+      "scene": "ch03_s15"
+    },
+    {
+      "file": "assets/new_story/citizen_court.png",
+      "title": "Вес расписки",
+      "chapter": 3,
+      "scene": "ch03_s16"
+    },
+    {
+      "file": "assets/new_story/interlude03.png",
+      "title": "Две стороны листа",
+      "chapter": 3,
+      "scene": "ch03_interlude"
+    },
+    {
+      "file": "assets/illustrations/senate_walk.png",
+      "title": "Пятнадцатое марта",
+      "chapter": 4,
+      "scene": "ch04_s02"
+    },
+    {
+      "file": "assets/story/ides.png",
+      "title": "Пятнадцатое марта",
+      "chapter": 4,
+      "scene": "ch04_s02"
+    },
+    {
+      "file": "assets/illustrations/forum_eulogy.png",
+      "title": "Форум и огонь",
+      "chapter": 4,
+      "scene": "ch04_s04"
+    },
+    {
+      "file": "assets/story/caesar_funeral.png",
+      "title": "Форум и огонь",
+      "chapter": 4,
+      "scene": "ch04_s04"
+    },
+    {
+      "file": "assets/new_story/interlude04.png",
+      "title": "Три ряда свидетельств",
+      "chapter": 4,
+      "scene": "ch04_interlude"
+    },
+    {
+      "file": "assets/illustrations/names_at_dawn.png",
+      "title": "Стена имён",
+      "chapter": 5,
+      "scene": "ch05_s02"
+    },
+    {
+      "file": "assets/story/proscription_wall.png",
+      "title": "Стена имён",
+      "chapter": 5,
+      "scene": "ch05_s02"
+    },
+    {
+      "file": "assets/illustrations/cicero_letter.png",
+      "title": "Молчание оратора",
+      "chapter": 5,
+      "scene": "ch05_s03"
+    },
+    {
+      "file": "assets/illustrations/attic_refuge.png",
+      "title": "Чужой ключ",
+      "chapter": 5,
+      "scene": "ch05_s05"
+    },
+    {
+      "file": "assets/story/night_escape.png",
+      "title": "Чужой ключ",
+      "chapter": 5,
+      "scene": "ch05_s05"
+    },
+    {
+      "file": "assets/new_story/neria_clinic.png",
+      "title": "Лечебный мешок",
+      "chapter": 5,
+      "scene": "ch05_s06"
+    },
+    {
+      "file": "assets/new_story/interlude05.png",
+      "title": "Место у выхода",
+      "chapter": 5,
+      "scene": "ch05_interlude"
+    },
+    {
+      "file": "assets/illustrations/philippi_mist.png",
+      "title": "Мокрая равнина",
+      "chapter": 6,
+      "scene": "ch06_s01"
+    },
+    {
+      "file": "assets/story/philippi_start.png",
+      "title": "Мокрая равнина",
+      "chapter": 6,
+      "scene": "ch06_s01"
+    },
+    {
+      "file": "assets/locations/philippi.png",
+      "title": "Два сражения",
+      "chapter": 6,
+      "scene": "ch06_s02"
+    },
+    {
+      "file": "assets/illustrations/grain_queue.png",
+      "title": "Мера муки",
+      "chapter": 6,
+      "scene": "ch06_s04"
+    },
+    {
+      "file": "assets/illustrations/perusia_gates.png",
+      "title": "Зима Перузии",
+      "chapter": 6,
+      "scene": "ch06_s05"
+    },
+    {
+      "file": "assets/story/commanders_council.png",
+      "title": "Мир и море",
+      "chapter": 6,
+      "scene": "ch06_s06"
+    },
+    {
+      "file": "assets/new_story/vettius_road.png",
+      "title": "Обещание старого врага",
+      "chapter": 6,
+      "scene": "ch06_s08"
+    },
+    {
+      "file": "assets/new_story/interlude06.png",
+      "title": "Первый заработок Авла",
+      "chapter": 6,
+      "scene": "ch06_interlude"
+    },
+    {
+      "file": "assets/locations/actium.png",
+      "title": "Долгая стоянка",
+      "chapter": 7,
+      "scene": "ch07_s01"
+    },
+    {
+      "file": "assets/illustrations/actium_oars.png",
+      "title": "Второе сентября",
+      "chapter": 7,
+      "scene": "ch07_s02"
+    },
+    {
+      "file": "assets/story/actium_battle.png",
+      "title": "Второе сентября",
+      "chapter": 7,
+      "scene": "ch07_s02"
+    },
+    {
+      "file": "assets/illustrations/silent_quay.png",
+      "title": "Город после флота",
+      "chapter": 7,
+      "scene": "ch07_s05"
+    },
+    {
+      "file": "assets/story/alexandria_defeat.png",
+      "title": "Город после флота",
+      "chapter": 7,
+      "scene": "ch07_s05"
+    },
+    {
+      "file": "assets/illustrations/archive_rescue.png",
+      "title": "Сухие листы",
+      "chapter": 7,
+      "scene": "ch07_s07"
+    },
+    {
+      "file": "assets/new_story/interlude07.png",
+      "title": "Два крепких отрезка",
+      "chapter": 7,
+      "scene": "ch07_interlude"
+    },
+    {
+      "file": "assets/story/augustan_marble.png",
+      "title": "Триумф и мастерская",
+      "chapter": 8,
+      "scene": "ch08_s01"
+    },
+    {
+      "file": "assets/illustrations/forum_oath.png",
+      "title": "Новое старое имя",
+      "chapter": 8,
+      "scene": "ch08_s02"
+    },
+    {
+      "file": "assets/story/old_friends.png",
+      "title": "Две чаши",
+      "chapter": 8,
+      "scene": "ch08_s03"
+    },
+    {
+      "file": "assets/story/sacrifice.png",
+      "title": "Две чаши",
+      "chapter": 8,
+      "scene": "ch08_s03"
+    },
+    {
+      "file": "assets/story/apart.png",
+      "title": "Две чаши",
+      "chapter": 8,
+      "scene": "ch08_s03"
+    },
+    {
+      "file": "assets/illustrations/laurel_ash.png",
+      "title": "Август умер",
+      "chapter": 8,
+      "scene": "ch08_s04"
+    },
+    {
+      "file": "assets/new_story/epilogue_together.png",
+      "title": "Два места у очага",
+      "chapter": 8,
+      "scene": "ch08_s05"
+    },
+    {
+      "file": "assets/story/together.png",
+      "title": "Два места у очага",
+      "chapter": 8,
+      "scene": "ch08_s05"
+    },
+    {
+      "file": "assets/new_story/epilogue_apart.png",
+      "title": "Письма через море",
+      "chapter": 8,
+      "scene": "ch08_s06"
+    },
+    {
+      "file": "assets/new_story/epilogue_sacrifice.png",
+      "title": "Один светильник",
+      "chapter": 8,
+      "scene": "ch08_s07"
+    },
+    {
+      "file": "assets/new_story/epilogue_bad.png",
+      "title": "Список без имён",
+      "chapter": 8,
+      "scene": "ch08_s08"
+    },
+    {
+      "file": "assets/story/bad.png",
+      "title": "Список без имён",
+      "chapter": 8,
+      "scene": "ch08_s08"
+    },
+    {
+      "file": "assets/new_story/interlude08.png",
+      "title": "Полка для незаконченных дел",
+      "chapter": 8,
+      "scene": "ch08_interlude"
+    },
+    {
+      "file": "assets/cs/actium_01.png",
+      "title": "Акций · 31 до н. э. · кадр 1",
+      "chapter": 7,
+      "beat": "beat_ch07_s02"
+    },
+    {
+      "file": "assets/cs/actium_02.png",
+      "title": "Акций · 31 до н. э. · кадр 2",
+      "chapter": 7,
+      "beat": "beat_ch07_s02"
+    },
+    {
+      "file": "assets/cs/actium_03.png",
+      "title": "Акций · 31 до н. э. · кадр 3",
+      "chapter": 7,
+      "beat": "beat_ch07_s02"
+    },
+    {
+      "file": "assets/cs/actium_04.png",
+      "title": "Акций · 31 до н. э. · кадр 4",
+      "chapter": 7,
+      "beat": "beat_ch07_s02"
+    },
+    {
+      "file": "assets/cs/actium_05.png",
+      "title": "Акций · 31 до н. э. · кадр 5",
+      "chapter": 7,
+      "beat": "beat_ch07_s02"
+    },
+    {
+      "file": "assets/cs/actium_06.png",
+      "title": "Акций · 31 до н. э. · кадр 6",
+      "chapter": 7,
+      "beat": "beat_ch07_s02"
+    },
+    {
+      "file": "assets/cs/alesia_01.png",
+      "title": "Алезия · 52 до н. э. · кадр 1",
+      "chapter": 1,
+      "beat": "beat_ch01_s06_tactical"
+    },
+    {
+      "file": "assets/cs/alesia_02.png",
+      "title": "Алезия · 52 до н. э. · кадр 2",
+      "chapter": 1,
+      "beat": "beat_ch01_s06_tactical"
+    },
+    {
+      "file": "assets/cs/alesia_03.png",
+      "title": "Алезия · 52 до н. э. · кадр 3",
+      "chapter": 1,
+      "beat": "beat_ch01_s06_tactical"
+    },
+    {
+      "file": "assets/cs/alesia_04.png",
+      "title": "Алезия · 52 до н. э. · кадр 4",
+      "chapter": 1,
+      "beat": "beat_ch01_s06_tactical"
+    },
+    {
+      "file": "assets/cs/alesia_05.png",
+      "title": "Алезия · 52 до н. э. · кадр 5",
+      "chapter": 1,
+      "beat": "beat_ch01_s06_tactical"
+    },
+    {
+      "file": "assets/cs/alesia_06.png",
+      "title": "Алезия · 52 до н. э. · кадр 6",
+      "chapter": 1,
+      "beat": "beat_ch01_s06_tactical"
+    },
+    {
+      "file": "assets/cs/alexandria_01.png",
+      "title": "Александрия · 48–47 до н. э. · кадр 1",
+      "chapter": 3,
+      "beat": "beat_ch03_s05"
+    },
+    {
+      "file": "assets/cs/alexandria_02.png",
+      "title": "Александрия · 48–47 до н. э. · кадр 2",
+      "chapter": 3,
+      "beat": "beat_ch03_s05"
+    },
+    {
+      "file": "assets/cs/alexandria_03.png",
+      "title": "Александрия · 48–47 до н. э. · кадр 3",
+      "chapter": 3,
+      "beat": "beat_ch03_s05"
+    },
+    {
+      "file": "assets/cs/alexandria_04.png",
+      "title": "Александрия · 48–47 до н. э. · кадр 4",
+      "chapter": 3,
+      "beat": "beat_ch03_s05"
+    },
+    {
+      "file": "assets/cs/alexandria_05.png",
+      "title": "Александрия · 48–47 до н. э. · кадр 5",
+      "chapter": 3,
+      "beat": "beat_ch03_s05"
+    },
+    {
+      "file": "assets/cs/alexandria_06.png",
+      "title": "Александрия · 48–47 до н. э. · кадр 6",
+      "chapter": 3,
+      "beat": "beat_ch03_s05"
+    },
+    {
+      "file": "assets/cs/brundisium_01.png",
+      "title": "Брундизий · 49 до н. э. · кадр 1",
+      "chapter": 3,
+      "beat": "beat_ch03_s01"
+    },
+    {
+      "file": "assets/cs/brundisium_02.png",
+      "title": "Брундизий · 49 до н. э. · кадр 2",
+      "chapter": 3,
+      "beat": "beat_ch03_s01"
+    },
+    {
+      "file": "assets/cs/brundisium_03.png",
+      "title": "Брундизий · 49 до н. э. · кадр 3",
+      "chapter": 3,
+      "beat": "beat_ch03_s01"
+    },
+    {
+      "file": "assets/cs/brundisium_04.png",
+      "title": "Брундизий · 49 до н. э. · кадр 4",
+      "chapter": 3,
+      "beat": "beat_ch03_s01"
+    },
+    {
+      "file": "assets/cs/brundisium_05.png",
+      "title": "Брундизий · 49 до н. э. · кадр 5",
+      "chapter": 3,
+      "beat": "beat_ch03_s01"
+    },
+    {
+      "file": "assets/cs/brundisium_06.png",
+      "title": "Брундизий · 49 до н. э. · кадр 6",
+      "chapter": 3,
+      "beat": "beat_ch03_s01"
+    },
+    {
+      "file": "assets/cs/cicero_01.png",
+      "title": "Лагерь Квинта Цицерона · 54 до н. э. · кадр 1",
+      "chapter": 1,
+      "beat": "beat_ch01_s03"
+    },
+    {
+      "file": "assets/cs/cicero_02.png",
+      "title": "Лагерь Квинта Цицерона · 54 до н. э. · кадр 2",
+      "chapter": 1,
+      "beat": "beat_ch01_s03"
+    },
+    {
+      "file": "assets/cs/cicero_03.png",
+      "title": "Лагерь Квинта Цицерона · 54 до н. э. · кадр 3",
+      "chapter": 1,
+      "beat": "beat_ch01_s03"
+    },
+    {
+      "file": "assets/cs/cicero_04.png",
+      "title": "Лагерь Квинта Цицерона · 54 до н. э. · кадр 4",
+      "chapter": 1,
+      "beat": "beat_ch01_s03"
+    },
+    {
+      "file": "assets/cs/cicero_05.png",
+      "title": "Лагерь Квинта Цицерона · 54 до н. э. · кадр 5",
+      "chapter": 1,
+      "beat": "beat_ch01_s03"
+    },
+    {
+      "file": "assets/cs/cicero_06.png",
+      "title": "Лагерь Квинта Цицерона · 54 до н. э. · кадр 6",
+      "chapter": 1,
+      "beat": "beat_ch01_s03"
+    },
+    {
+      "file": "assets/cs/forest_01.png",
+      "title": "Галльский лес · 54 до н. э. · кадр 1",
+      "chapter": 1,
+      "beat": "beat_ch01_s04"
+    },
+    {
+      "file": "assets/cs/forest_02.png",
+      "title": "Галльский лес · 54 до н. э. · кадр 2",
+      "chapter": 1,
+      "beat": "beat_ch01_s04"
+    },
+    {
+      "file": "assets/cs/forest_03.png",
+      "title": "Галльский лес · 54 до н. э. · кадр 3",
+      "chapter": 1,
+      "beat": "beat_ch01_s04"
+    },
+    {
+      "file": "assets/cs/forest_04.png",
+      "title": "Галльский лес · 54 до н. э. · кадр 4",
+      "chapter": 1,
+      "beat": "beat_ch01_s04"
+    },
+    {
+      "file": "assets/cs/forest_05.png",
+      "title": "Галльский лес · 54 до н. э. · кадр 5",
+      "chapter": 1,
+      "beat": "beat_ch01_s04"
+    },
+    {
+      "file": "assets/cs/forest_06.png",
+      "title": "Галльский лес · 54 до н. э. · кадр 6",
+      "chapter": 1,
+      "beat": "beat_ch01_s04"
+    },
+    {
+      "file": "assets/cs/ides_01.png",
+      "title": "Мартовские иды · 44 до н. э. · кадр 1",
+      "chapter": 4,
+      "beat": "beat_ch04_s04"
+    },
+    {
+      "file": "assets/cs/ides_02.png",
+      "title": "Мартовские иды · 44 до н. э. · кадр 2",
+      "chapter": 4,
+      "beat": "beat_ch04_s04"
+    },
+    {
+      "file": "assets/cs/ides_03.png",
+      "title": "Мартовские иды · 44 до н. э. · кадр 3",
+      "chapter": 4,
+      "beat": "beat_ch04_s04"
+    },
+    {
+      "file": "assets/cs/ides_04.png",
+      "title": "Мартовские иды · 44 до н. э. · кадр 4",
+      "chapter": 4,
+      "beat": "beat_ch04_s04"
+    },
+    {
+      "file": "assets/cs/ides_05.png",
+      "title": "Мартовские иды · 44 до н. э. · кадр 5",
+      "chapter": 4,
+      "beat": "beat_ch04_s04"
+    },
+    {
+      "file": "assets/cs/ides_06.png",
+      "title": "Мартовские иды · 44 до н. э. · кадр 6",
+      "chapter": 4,
+      "beat": "beat_ch04_s04"
+    },
+    {
+      "file": "assets/cs/munda_01.png",
+      "title": "Мунда · 45 до н. э. · кадр 1",
+      "chapter": 3,
+      "beat": "beat_ch03_s07"
+    },
+    {
+      "file": "assets/cs/munda_02.png",
+      "title": "Мунда · 45 до н. э. · кадр 2",
+      "chapter": 3,
+      "beat": "beat_ch03_s07"
+    },
+    {
+      "file": "assets/cs/munda_03.png",
+      "title": "Мунда · 45 до н. э. · кадр 3",
+      "chapter": 3,
+      "beat": "beat_ch03_s07"
+    },
+    {
+      "file": "assets/cs/munda_04.png",
+      "title": "Мунда · 45 до н. э. · кадр 4",
+      "chapter": 3,
+      "beat": "beat_ch03_s07"
+    },
+    {
+      "file": "assets/cs/munda_05.png",
+      "title": "Мунда · 45 до н. э. · кадр 5",
+      "chapter": 3,
+      "beat": "beat_ch03_s07"
+    },
+    {
+      "file": "assets/cs/munda_06.png",
+      "title": "Мунда · 45 до н. э. · кадр 6",
+      "chapter": 3,
+      "beat": "beat_ch03_s07"
+    },
+    {
+      "file": "assets/cs/perusia_01.png",
+      "title": "Перузия · 41–40 до н. э. · кадр 1",
+      "chapter": 6,
+      "beat": "beat_ch06_s05"
+    },
+    {
+      "file": "assets/cs/perusia_02.png",
+      "title": "Перузия · 41–40 до н. э. · кадр 2",
+      "chapter": 6,
+      "beat": "beat_ch06_s05"
+    },
+    {
+      "file": "assets/cs/perusia_03.png",
+      "title": "Перузия · 41–40 до н. э. · кадр 3",
+      "chapter": 6,
+      "beat": "beat_ch06_s05"
+    },
+    {
+      "file": "assets/cs/perusia_04.png",
+      "title": "Перузия · 41–40 до н. э. · кадр 4",
+      "chapter": 6,
+      "beat": "beat_ch06_s05"
+    },
+    {
+      "file": "assets/cs/perusia_05.png",
+      "title": "Перузия · 41–40 до н. э. · кадр 5",
+      "chapter": 6,
+      "beat": "beat_ch06_s05"
+    },
+    {
+      "file": "assets/cs/perusia_06.png",
+      "title": "Перузия · 41–40 до н. э. · кадр 6",
+      "chapter": 6,
+      "beat": "beat_ch06_s05"
+    },
+    {
+      "file": "assets/cs/pharsalus_01.png",
+      "title": "Фарсал · 48 до н. э. · кадр 1",
+      "chapter": 3,
+      "beat": "beat_ch03_s02"
+    },
+    {
+      "file": "assets/cs/pharsalus_02.png",
+      "title": "Фарсал · 48 до н. э. · кадр 2",
+      "chapter": 3,
+      "beat": "beat_ch03_s02"
+    },
+    {
+      "file": "assets/cs/pharsalus_03.png",
+      "title": "Фарсал · 48 до н. э. · кадр 3",
+      "chapter": 3,
+      "beat": "beat_ch03_s02"
+    },
+    {
+      "file": "assets/cs/pharsalus_04.png",
+      "title": "Фарсал · 48 до н. э. · кадр 4",
+      "chapter": 3,
+      "beat": "beat_ch03_s02"
+    },
+    {
+      "file": "assets/cs/pharsalus_05.png",
+      "title": "Фарсал · 48 до н. э. · кадр 5",
+      "chapter": 3,
+      "beat": "beat_ch03_s02"
+    },
+    {
+      "file": "assets/cs/pharsalus_06.png",
+      "title": "Фарсал · 48 до н. э. · кадр 6",
+      "chapter": 3,
+      "beat": "beat_ch03_s02"
+    },
+    {
+      "file": "assets/cs/philippi_01.png",
+      "title": "Филиппы · 42 до н. э. · кадр 1",
+      "chapter": 6,
+      "beat": "beat_ch06_s01"
+    },
+    {
+      "file": "assets/cs/philippi_02.png",
+      "title": "Филиппы · 42 до н. э. · кадр 2",
+      "chapter": 6,
+      "beat": "beat_ch06_s01"
+    },
+    {
+      "file": "assets/cs/philippi_03.png",
+      "title": "Филиппы · 42 до н. э. · кадр 3",
+      "chapter": 6,
+      "beat": "beat_ch06_s01"
+    },
+    {
+      "file": "assets/cs/philippi_04.png",
+      "title": "Филиппы · 42 до н. э. · кадр 4",
+      "chapter": 6,
+      "beat": "beat_ch06_s01"
+    },
+    {
+      "file": "assets/cs/philippi_05.png",
+      "title": "Филиппы · 42 до н. э. · кадр 5",
+      "chapter": 6,
+      "beat": "beat_ch06_s01"
+    },
+    {
+      "file": "assets/cs/philippi_06.png",
+      "title": "Филиппы · 42 до н. э. · кадр 6",
+      "chapter": 6,
+      "beat": "beat_ch06_s01"
+    },
+    {
+      "file": "assets/cs/proscriptions_01.png",
+      "title": "Проскрипции · 43 до н. э. · кадр 1",
+      "chapter": 5,
+      "beat": "beat_ch05_s07"
+    },
+    {
+      "file": "assets/cs/proscriptions_02.png",
+      "title": "Проскрипции · 43 до н. э. · кадр 2",
+      "chapter": 5,
+      "beat": "beat_ch05_s07"
+    },
+    {
+      "file": "assets/cs/proscriptions_03.png",
+      "title": "Проскрипции · 43 до н. э. · кадр 3",
+      "chapter": 5,
+      "beat": "beat_ch05_s07"
+    },
+    {
+      "file": "assets/cs/proscriptions_04.png",
+      "title": "Проскрипции · 43 до н. э. · кадр 4",
+      "chapter": 5,
+      "beat": "beat_ch05_s07"
+    },
+    {
+      "file": "assets/cs/proscriptions_05.png",
+      "title": "Проскрипции · 43 до н. э. · кадр 5",
+      "chapter": 5,
+      "beat": "beat_ch05_s07"
+    },
+    {
+      "file": "assets/cs/proscriptions_06.png",
+      "title": "Проскрипции · 43 до н. э. · кадр 6",
+      "chapter": 5,
+      "beat": "beat_ch05_s07"
+    },
+    {
+      "file": "assets/cs/thapsus_01.png",
+      "title": "Тапс · 46 до н. э. · кадр 1",
+      "chapter": 3,
+      "beat": "beat_ch03_s06"
+    },
+    {
+      "file": "assets/cs/thapsus_02.png",
+      "title": "Тапс · 46 до н. э. · кадр 2",
+      "chapter": 3,
+      "beat": "beat_ch03_s06"
+    },
+    {
+      "file": "assets/cs/thapsus_03.png",
+      "title": "Тапс · 46 до н. э. · кадр 3",
+      "chapter": 3,
+      "beat": "beat_ch03_s06"
+    },
+    {
+      "file": "assets/cs/thapsus_04.png",
+      "title": "Тапс · 46 до н. э. · кадр 4",
+      "chapter": 3,
+      "beat": "beat_ch03_s06"
+    },
+    {
+      "file": "assets/cs/thapsus_05.png",
+      "title": "Тапс · 46 до н. э. · кадр 5",
+      "chapter": 3,
+      "beat": "beat_ch03_s06"
+    },
+    {
+      "file": "assets/cs/thapsus_06.png",
+      "title": "Тапс · 46 до н. э. · кадр 6",
+      "chapter": 3,
+      "beat": "beat_ch03_s06"
+    },
+    {
+      "file": "assets/chronicle/caesar.png",
+      "title": "Гай Юлий Цезарь",
+      "chapter": 1
+    },
+    {
+      "file": "assets/chronicle/pompey.png",
+      "title": "Гней Помпей Великий",
+      "chapter": 3
+    },
+    {
+      "file": "assets/chronicle/cicero.png",
+      "title": "Марк Туллий Цицерон",
+      "chapter": 2
+    },
+    {
+      "file": "assets/chronicle/octavian.png",
+      "title": "Октавиан",
+      "chapter": 4
+    },
+    {
+      "file": "assets/chronicle/antony.png",
+      "title": "Марк Антоний",
+      "chapter": 4
+    },
+    {
+      "file": "assets/chronicle/cleopatra.png",
+      "title": "Клеопатра VII",
+      "chapter": 3
+    },
+    {
+      "file": "assets/chronicle/brutus.png",
+      "title": "Марк Юний Брут",
+      "chapter": 4
+    },
+    {
+      "file": "assets/chronicle/cato.png",
+      "title": "Марк Порций Катон Младший",
+      "chapter": 3
+    },
+    {
+      "file": "assets/chronicle/agrippa.png",
+      "title": "Марк Випсаний Агриппа",
+      "chapter": 7
+    },
+    {
+      "file": "assets/chronicle/rubicon.png",
+      "title": "Переход Рубикона",
+      "chapter": 2
+    },
+    {
+      "file": "assets/chronicle/forum.png",
+      "title": "Римский Форум",
+      "chapter": 2
+    },
+    {
+      "file": "assets/chronicle/scutum.png",
+      "title": "Щит республиканского легионера",
+      "chapter": 1
+    },
+    {
+      "file": "assets/chronicle/gladius.png",
+      "title": "Короткий меч",
+      "chapter": 1
+    },
+    {
+      "file": "assets/chronicle/pilum.png",
+      "title": "Пилум",
+      "chapter": 1
+    },
+    {
+      "file": "assets/chronicle/mail.png",
+      "title": "Кольчужный доспех",
+      "chapter": 1
+    },
+    {
+      "file": "assets/chronicle/helmet.png",
+      "title": "Шлем эпохи республики",
+      "chapter": 1
+    },
+    {
+      "file": "assets/chronicle/tablet.png",
+      "title": "Восковая табличка",
+      "chapter": 1
+    },
+    {
+      "file": "assets/chronicle/papyrus.png",
+      "title": "Папирус",
+      "chapter": 3
+    },
+    {
+      "file": "assets/chronicle/trireme.png",
+      "title": "Гребной военный корабль",
+      "chapter": 7
+    },
+    {
+      "file": "assets/chronicle/aquila.png",
+      "title": "Легионный орёл",
+      "chapter": 1
+    },
+    {
+      "file": "assets/new_story/mediterranean.png",
+      "title": "Средиземноморье",
+      "chapter": 1,
+      "always": true
+    },
+    {
+      "file": "assets/new_story/menu.png",
+      "title": "Пепел лавра",
+      "chapter": 1,
+      "always": true
+    },
+    {
+      "file": "assets/final/loading_oath.png",
+      "title": "Архив · Картина 173",
+      "chapter": 8
+    },
+    {
+      "file": "assets/final/splash.png",
+      "title": "Архив · Картина 174",
+      "chapter": 8
+    },
+    {
+      "file": "assets/final/menu.png",
+      "title": "Архив · Картина 175",
+      "chapter": 8
+    },
+    {
+      "file": "assets/final/loading_city.png",
+      "title": "Архив · Картина 176",
+      "chapter": 8
+    },
+    {
+      "file": "assets/final/loading_march.png",
+      "title": "Архив · Картина 177",
+      "chapter": 8
+    },
+    {
+      "file": "assets/final/loading_battle.png",
+      "title": "Архив · Картина 178",
+      "chapter": 8
+    },
+    {
+      "file": "assets/final/loading_memory.png",
+      "title": "Архив · Картина 179",
+      "chapter": 8
+    }
+  ]
+}

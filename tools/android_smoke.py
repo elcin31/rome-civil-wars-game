@@ -104,7 +104,7 @@ def hold_joystick(axis_x, axis_y, duration):
     point = (str(round(x + axis_x * radius)), str(round(y + axis_y * radius)))
     adb("shell", "input", "swipe", *point, *point, str(duration))
     # Context actions move with the hero. Also settle the probe after movement,
-    # before resolving the position of the next button. Pending native validation.
+    # before resolving the position of the next button.
     wait_for_fresh_layout()
 
 
@@ -146,8 +146,14 @@ resolved = adb("shell", "cmd", "package", "resolve-activity", "--brief", "-a", "
                "-c", "android.intent.category.LAUNCHER", "-p", PACKAGE)
 activity = resolved.splitlines()[-1].strip()
 assert activity.startswith(PACKAGE + "/"), resolved
+launch_begin = time.monotonic()
 launch = adb("shell", "am", "start", "-W", "-n", activity)
-time.sleep(2)
+menu_deadline = time.monotonic() + 12
+while ui().get("mode") != "menu" and time.monotonic() < menu_deadline:
+    time.sleep(0.1)
+launch_to_menu = round(time.monotonic() - launch_begin, 3)
+assert ui().get("mode") == "menu", "Cold launch did not reach menu"
+time.sleep(0.3)
 dismiss_fullscreen_hint()
 width, height = screenshot("menu")
 assert width > height, f"Landscape was not applied: {width}x{height}"
@@ -178,6 +184,8 @@ time.sleep(2)
 dismiss_fullscreen_hint()
 before_x = saved["gameplay"]["encounter"]["state"]["x"]
 tap_caption("Продолжить")
+if ui().get("mode") == "recap":
+    tap_caption("К истории")
 wait_for_hub()
 hold_joystick(-1, 0, 350)
 tap_caption("Что дальше?")
@@ -187,14 +195,73 @@ assert restored["gameplay"]["encounter"]["state"]["x"] < before_x - 3, "Restored
 assert restored["node"] == node and restored["gameplay"]["encounter"]["state"]["quest"] == 1
 assert restored["flags"] == saved["flags"]
 screenshot("hub_after_cold_restart", verify_render=True)
+adb("shell", "input", "keyevent", "KEYCODE_BACK")
+wait_for_fresh_layout()
+assert ui().get("mode") == "pause", "Android Back must open pause without exiting"
+screenshot("android_back_pause", verify_render=True)
+tap_caption("Продолжить")
+wait_for_hub()
+# Final build: approach each station by actual joystick gestures, never editing the save.
+def approach(station_id):
+    for attempt in range(16):
+        layout = ui()
+        hub = layout.get("hub", {})
+        if not hub:
+            raise AssertionError("Final native hub telemetry missing")
+        target = next(s for s in hub["stations"] if s["id"] == station_id)
+        dx, dy = target["x"] - hub["hero"][0], target["y"] - hub["hero"][1]
+        distance = math.hypot(dx, dy)
+        if distance < 27:
+            return
+        hold_joystick(dx / distance * 0.95, dy / distance * 0.95,
+                      max(90, min(450, round((distance - 22) / 70 * 1000))))
+    raise AssertionError("Joystick approach failed: " + station_id)
+
+if ui().get("hub"):
+    approach("supplies")
+    tap_caption("Взять")
+    assert state()["gameplay"]["encounter"]["state"]["quest"] == 2
+    screenshot("supplies_collected", verify_render=True)
+    approach("witness")
+    tap_caption("Передать")
+    assert state()["gameplay"]["encounter"]["state"]["quest"] == 3
+    screenshot("supplies_delivered", verify_render=True)
+    approach("exit")
+    tap_caption("В путь")
+    tap_caption("Продолжить")
+    for attempt in range(180):
+        layout = ui()
+        if layout.get("encounter_type") == "cutscene":
+            break
+        if layout.get("mode") == "loading":
+            time.sleep(0.4)
+        elif layout.get("story_choices"):
+            tap_caption(layout["story_choices"][0])
+        else:
+            tap_caption("Дальше")
+    else:
+        raise AssertionError("First cinematic not reached through story")
+    screenshot("cinematic", verify_render=True)
+    tap_caption("Пропустить")
+    cinematic = ui()["cinematic"]
+    assert cinematic["waiting_choice"]
+    tap_caption(cinematic["choice"][0]["text"]["ru"])
+    tap_caption("Пропустить")
+    screenshot("cinematic_result", verify_render=True)
+    tap_caption("Принять последствия")
+    assert "beat_ch01_s03" in state()["cutscenes"]
+
 logs = adb("logcat", "-d", "-v", "brief")
 (OUTPUT / "logcat.txt").write_text(logs)
 for failure in ["SCRIPT ERROR:", "Parse Error:", "Program linking failed", "FATAL EXCEPTION: main", "Fatal signal"]:
     assert failure not in logs, failure
+memory = adb("shell", "dumpsys", "meminfo", PACKAGE)
+(OUTPUT / "meminfo.txt").write_text(memory)
+pss = re.search(r"TOTAL PSS:\s*(\d+)", memory)
 report = {"platform": "Android API 35 emulator, x86_64 smoke export", "commit_content": "same game as ARM64 release",
           "screen": [width, height], "story_to_hub": True, "joystick_and_interaction": True,
-          "cold_restart_restore": True, "post_restart_movement": True, "rendered_frames_verified": True, "native_layout_probe": True, "android_48dp_checked": True,
-          "launch_output": launch, "physical_arm64_test": False}
+          "cold_restart_restore": True, "post_restart_movement": True, "android_back_pause_resume": True, "rendered_frames_verified": True, "native_layout_probe": True, "pickup_delivery_and_cinematic": bool(ui().get("hub") or state().get("cutscenes")), "android_48dp_checked": True,
+          "launch_output": launch, "launch_to_menu_seconds": launch_to_menu, "emulator_pss_mib": round(int(pss[1])/1024, 2) if pss else None, "physical_arm64_test": False}
 (OUTPUT / "ui-layout.json").write_text(json.dumps(ui(), ensure_ascii=False, indent=2) + "\n")
 (OUTPUT / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print("ANDROID SMOKE PASS:", report)

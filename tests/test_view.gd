@@ -93,6 +93,41 @@ func test_campaign_map_preserves_current_story_decisions() -> void:
 	assert_eq(game.state.decisions, decisions)
 
 
+func test_auto_advance_keeps_counting_after_text_is_fully_revealed() -> void:
+	var previous: bool = GameServices.settings.auto_advance
+	GameServices.set_preference("auto_advance", true, false)
+	view._new_game()
+	view._reveal()
+	view.auto_clock = maxf(3.0, view.body.text.length() / 18.0) - 0.2
+	for frame in range(3):
+		view._process(0.1)
+	assert_eq(view.page_index, 1)
+	game.go("ch01_s01_n90")
+	view.refresh()
+	var before: Array = game.state.decisions.duplicate(true)
+	view._process(100.0)
+	assert_eq(game.state.node, "ch01_s01_n90", "Automatic reading never picks a decision")
+	assert_eq(game.state.decisions, before)
+	GameServices.set_preference("auto_advance", previous, false)
+
+
+func test_skip_read_advances_remembered_pages_but_waits_on_new_text() -> void:
+	var previous: bool = GameServices.settings.skip_read
+	var remembered: Dictionary = GameServices.read_nodes.duplicate(true)
+	GameServices.set_preference("skip_read", true, false)
+	view._new_game()
+	GameServices.read_nodes[game.current().id] = true
+	for frame in range(3):
+		view._process(0.2)
+	assert_eq(view.page_index, 1)
+	GameServices.read_nodes.erase(game.current().id)
+	for frame in range(5):
+		view._process(0.2)
+	assert_eq(view.page_index, 1)
+	GameServices.read_nodes = remembered
+	GameServices.set_preference("skip_read", previous, false)
+
+
 func test_hints_obey_preference_and_manual_help_remains_available() -> void:
 	game.go("ch01_s01_n75")
 	view.refresh()

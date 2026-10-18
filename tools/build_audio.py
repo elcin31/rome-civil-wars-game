@@ -50,13 +50,29 @@ def main():
     music("city", [0, 2, 4, 2, 1, 0, 3, 2, 0, 4, 5, 4, 2, 1, 2, 0] * 2, 0.6, 0.025)
     music("march", [0, 0, 4, 3, 2, 0, 1, 0, 0, 2, 4, 5, 4, 2, 1, 0] * 2, 0.5, 0.12)
     music("battle", [0, 4, 0, 2, 1, 4, 3, 2, 0, 5, 4, 3, 2, 1, 2, 0] * 2, 0.375, 0.18)
+    music("tension", [0, 1, 0, 3, 0, 1, 2, 1] * 4, 0.7, 0.055)
+    music("sadness", [4, 3, 2, 0, 1, 0, 2, 0] * 4, 0.95, 0.0)
+    music("triumph", [0, 2, 4, 5, 7, 5, 4, 2] * 4, 0.62, 0.07)
     noise = random.Random(1543)
+    for name,base in [("forest",0.055),("camp",0.038),("forum",0.05),("sea",0.075)]:
+        def ambient(t, mood=name, gain=base):
+            wind = (math.sin(t * 3.1) + math.sin(t * 7.7) * 0.5) * gain * 0.18
+            grain = noise.uniform(-1, 1) * gain * (0.35 + 0.25 * math.sin(t * 0.7))
+            bird = math.sin(math.tau * (1800 + 300 * math.sin(t * 24)) * t) * 0.018 if mood == 'forest' and t % 4 < 0.25 else 0
+            voices = (math.sin(math.tau * 124 * t) + math.sin(math.tau * 157 * t)) * 0.012 * (0.5 + 0.5 * math.sin(t * 1.8)) if mood == 'forum' else 0
+            return (wind + grain + bird + voices) * min(1, t * 5, (20-t) * 5)
+        render('ambient_' + name, 20, ambient)
+    render("step", 0.16, lambda t: noise.uniform(-1, 1) * 0.16 * math.exp(-t * 30))
+    render("shield", 0.35, lambda t: (math.sin(math.tau * 213 * t) + 0.6 * math.sin(math.tau * 337 * t)) * 0.14 * math.exp(-t * 12))
+    render("horns", 1.5, lambda t: (math.sin(math.tau * 146.832 * t) + 0.35 * math.sin(math.tau * 293.665 * t)) * 0.12 * min(1,t*6,(1.5-t)*4))
+    render("fire", 0.6, lambda t: noise.uniform(-1,1) * 0.07 * (0.4 + 0.4 * math.sin(t * 75)) * math.exp(-t*3))
+    render("crowd", 1.5, lambda t: sum(math.sin(math.tau * f * t) for f in [91,127,173,211]) * 0.025 * (0.7 + 0.3 * math.sin(t * 7)) * min(1,t*8,(1.5-t)*5))
     render("sword", 0.18, lambda t: (noise.uniform(-1, 1) * 0.13 + math.sin(math.tau * 1537 * t) * 0.1) * math.exp(-t * 26))
     render("hit", 0.2, lambda t: (noise.uniform(-1, 1) * 0.17 + math.sin(math.tau * 98 * t) * 0.2) * math.exp(-t * 20))
     render("choice", 0.13, lambda t: math.sin(math.tau * 659.25 * t) * 0.14 * math.exp(-t * 35))
     render("turn", 0.22, lambda t: math.sin(math.tau * 196 * t) * 0.16 * math.exp(-t * 14))
     render("victory", 0.9, lambda t: math.sin(math.tau * [293.665, 349.228, 440][min(2, int(t / 0.3))] * t) * 0.16 * math.exp(-(t % 0.3) * 7))
-    print("AUDIO PASS: 3 original music loops, 5 effects, Ogg Vorbis")
+    print("AUDIO PASS: 6 original music loops, 4 ambiences, 10 effects, Ogg Vorbis")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 [
   {
-    "checks": 1430,
+    "checks": 2771,
     "errors": [],
     "frames": [
       "menu",
@@ -8,16 +8,24 @@
       "pause",
       "saves",
       "settings",
+      "comfort",
+      "recap",
+      "chronicle",
+      "chronicle_article",
+      "fate",
+      "locked_gallery",
+      "gallery_fullscreen",
+      "gallery_zoom",
       "credits",
       "licenses",
       "campaign",
       "log",
       "hub",
       "hub_result",
-      "tactical",
-      "tactical_result",
-      "platformer",
-      "platformer_result",
+      "cinematic",
+      "cinematic_result",
+      "soft",
+      "soft_result",
       "shop",
       "hub_debug",
       "hub_supplies_overlap",
@@ -26,6 +34,8 @@
       "hub_step_2",
       "hub_step_3",
       "large_controls",
+      "left_handed_hub",
+      "left_handed_soft",
       "notch_menu",
       "gallery_0",
       "gallery_1",
@@ -37,7 +47,7 @@
       1280,
       720
     ],
-    "touches": 162,
+    "touches": 245,
     "exit_code": 0
   }
 ]

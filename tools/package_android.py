@@ -9,12 +9,12 @@ import subprocess
 build = Path(__file__).resolve().parents[1] / "build"
 commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=build.parent, text=True).strip()
 apk = build / "cinis-lauri.apk"
-info = {"commit": commit, "package": "org.cinislauri.game", "version": "0.4.2", "version_code": 6,
+info = {"commit": commit, "package": "org.cinislauri.game", "version": "0.5.0", "version_code": 7,
         "abi": "arm64-v8a", "min_sdk": 24, "target_sdk": 36, "bytes": apk.stat().st_size,
         "sha256": hashlib.sha256(apk.read_bytes()).hexdigest()}
 (build / "build-info.json").write_text(json.dumps(info, indent=2) + "\n")
 readme = build / "README_INSTALL.txt"
-readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.4.2
+readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.5.0
 Пакет: org.cinislauri.game. Android 7.0+ (API 24), ARM64, ландшафт.
 
 1. Скопируйте cinis-lauri.apk на Android и откройте файл.
@@ -23,10 +23,14 @@ readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.4.2
 4. После установки можно снова отключить разрешение неизвестных источников.
 
 Это debug-сборка для прямой установки, без сетевых разрешений и мультиплеера.
+Разрешение VIBRATE используется только для отключаемого отклика кнопок.
 Сохранения хранятся на устройстве. Удаление приложения удаляет сохранения.
 Подпись CI debug; разные сборки могут потребовать удаления старой версии.
 В хабе: писец → запасы → получатель → дорога. Действие появляется рядом с героем.
 «Что дальше?» подсказывает текущую цель; «Журнал» показывает ход поручения.
+Бои заменены катсценами: выбор → мягкая вставка → последствия. Потеря не прерывает сюжет.
+В меню доступны Хроника, галерея и карта; свиток судеб — из журнала или вкладок библиотеки.
+Настройки → Комфорт: 30 FPS, левая рука, автотекст, вибрация и пропуск вставок.
 Пауза — в верхней панели или системной кнопкой «Назад».
 Документация и ограничения: https://github.com/elcin31/rome-civil-wars-game
 """, encoding="utf-8")

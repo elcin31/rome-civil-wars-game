@@ -252,6 +252,8 @@ func advance() -> bool:
 func complete_beat(result: Dictionary = {}) -> bool:
 	if current().get("kind") != "beat":
 		return false
+	if not result.is_empty() and result.get("beat") != current().beat:
+		return false
 	if current().beat not in state.beats_completed:
 		if beats[current().beat].type == "cutscene":
 			if result.is_empty():
@@ -265,6 +267,9 @@ func complete_beat(result: Dictionary = {}) -> bool:
 				result = cinematic.result()
 			apply_effects(result)
 			state.gameplay.coins += int(result.get("reward", 0))
+			state.gameplay.supplies = maxi(
+				0, int(state.gameplay.supplies) - int(result.get("supplies_used", 0))
+			)
 			if not state.has("cutscenes"):
 				state.cutscenes = {}
 			state.cutscenes[current().beat] = result.duplicate(true)
@@ -358,7 +363,7 @@ func _load_path(path: String) -> bool:
 	if not Progression.valid(data.gameplay):
 		return false
 	if not data.has("seed"):
-		data.seed = absi(str(data.applied).hash())
+		data.seed = absi(str(data.applied).hash()) % 2147483646 + 1
 	if not data.has("cutscenes"):
 		data.cutscenes = {}
 	state = data
@@ -387,6 +392,59 @@ func _valid_save_fields(data: Dictionary) -> bool:
 			return false
 	if not data.get("progress") is Dictionary or not data.progress.get("visited") is Array:
 		return false
+	return _valid_library_fields(data)
+
+
+func _valid_library_fields(data: Dictionary) -> bool:
+	if (
+		data.has("seed")
+		and (
+			not _numeric(data.seed)
+			or data.seed != int(data.seed)
+			or data.seed < 1
+			or data.seed > 2147483647
+		)
+	):
+		return false
+	if data.has("cutscenes"):
+		if not data.cutscenes is Dictionary or not _valid_cutscene_records(data.cutscenes):
+			return false
+	if data.has("art_seen"):
+		if not data.art_seen is Array or data.art_seen.size() > 10000:
+			return false
+		for path in data.art_seen:
+			if not path is String:
+				return false
+	return true
+
+
+func _valid_cutscene_records(cards: Dictionary) -> bool:
+	for ident in cards:
+		var card: Variant = cards[ident]
+		if not card is Dictionary or not beats.has(ident):
+			return false
+		if card.get("beat") != ident or card.get("outcome") not in ["win", "costly", "loss"]:
+			return false
+		for key in ["title", "text", "losses", "choice", "decision"]:
+			if not card.get(key) is String:
+				return false
+		for key in ["bond", "reward", "supplies_used"]:
+			if not _numeric(card.get(key)) or card[key] != int(card[key]):
+				return false
+		if not _valid_cutscene_effects(card):
+			return false
+	return true
+
+
+func _valid_cutscene_effects(card: Dictionary) -> bool:
+	if not card.get("rep") is Dictionary or not card.get("set_flags") is Array:
+		return false
+	for faction in card.rep:
+		if not faction is String or not _numeric(card.rep[faction]):
+			return false
+	for flag in card.set_flags:
+		if not flag is String:
+			return false
 	return true
 
 

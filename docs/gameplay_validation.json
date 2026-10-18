@@ -1,12 +1,12 @@
 {
-  "encounters": 29,
+  "encounters": 40,
   "types": {
-    "tactical": 10,
-    "platformer": 10,
-    "rpg": 9
+    "cutscene": 13,
+    "soft": 7,
+    "rpg": 20
   },
   "routes": 24,
-  "choices_covered": 114,
+  "choices_covered": 136,
   "endings": [
     "apart",
     "bad",
@@ -14,8 +14,9 @@
     "together"
   ],
   "logical_art_compositions": 75,
-  "game_pngs": 292,
-  "music_layers": 3,
-  "effects": 5,
+  "game_pngs": 410,
+  "music_layers": 6,
+  "effects": 10,
+  "ambiences": 4,
   "errors": []
 }

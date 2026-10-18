@@ -148,6 +148,11 @@ static func button(
 	control.pressed.connect(
 		func():
 			parent.get_node("/root/GameServices").effect("choice")
+			if (
+				OS.has_feature("android")
+				and parent.get_node("/root/GameServices").settings.vibration
+			):
+				Input.vibrate_handheld(12)
 			callback.call()
 	)
 	parent.add_child(control)

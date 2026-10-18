@@ -17,9 +17,7 @@ func _profile() -> void:
 	game.start_new()
 	game.state.bond = 65
 	var results: Array = []
-	for pair in [
-		["ch01_s03_n80", "tactical"], ["ch01_s06_n80", "platformer"], ["ch01_s01_n75", "rpg"]
-	]:
+	for pair in [["ch01_s03_n80", "cutscene"], ["ch01_s06_n80", "soft"], ["ch01_s01_n75", "rpg"]]:
 		game.go(pair[0])
 		view.refresh()
 		var samples: Array = []
@@ -27,18 +25,15 @@ func _profile() -> void:
 		var memory_max: float = 0.0
 		for frame in range(300):
 			var encounter: Control = view.encounter
-			if encounter.model.state.won or encounter.model.state.failed:
-				encounter._retry()
-			if pair[1] == "platformer":
-				var action: Dictionary = encounter.model.bot_input()
-				encounter.joy_axis = Vector2(action.axis, 0)
-				encounter.controls.jump = action.jump
-				encounter.controls.strike = action.strike
-			elif pair[1] == "tactical" and frame % 30 == 0:
-				encounter.model.bot_turn()
-				encounter.queue_redraw()
+			if pair[1] == "cutscene" and frame % 60 == 0:
+				if encounter.model.state.won:
+					encounter.model.replay()
+				encounter.model.bot_step(0)
+				encounter._rebuild()
+			elif pair[1] == "soft":
+				encounter.axis = 1.0
 			elif pair[1] == "rpg":
-				encounter.model.bot_step(1.0 / 60.0)
+				encounter.joy_axis = Vector2(sin(frame * 0.05), cos(frame * 0.05))
 			await process_frame
 			if frame >= 180:
 				samples.append(Performance.get_monitor(Performance.TIME_FPS))
@@ -55,7 +50,7 @@ func _profile() -> void:
 				"static_memory_max_mib": snappedf(memory_max, 0.01)
 			}
 		)
-	for presentation in ["menu", "dialogue", "gallery"]:
+	for presentation in ["menu", "dialogue", "gallery", "chronicle", "campaign", "fate"]:
 		var gallery: Control
 		if presentation == "menu":
 			view.menu()
@@ -64,10 +59,8 @@ func _profile() -> void:
 			view.refresh()
 			view._reveal()
 		else:
-			view.menu()
-			view.hide()
-			gallery = load("res://scenes/AssetGallery.tscn").instantiate()
-			root.add_child(gallery)
+			game.start_new(8)
+			view._library(presentation)
 		var samples: Array = []
 		var cpu_max: float = 0.0
 		var memory_max: float = 0.0

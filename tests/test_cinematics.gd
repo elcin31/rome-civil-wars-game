@@ -61,3 +61,32 @@ func test_reject_corrupt_cinematic_snapshot() -> void:
 		corrupt = model.state.duplicate(true)
 		corrupt.won = true
 		assert_false(model.restore(corrupt))
+
+
+func test_cinematic_consequences_commit_once_and_survive_save() -> void:
+	var game = StoryRuntime
+	var old_path: String = game.save_path
+	var old_state: Dictionary = game.state.duplicate(true)
+	game.save_path = "user://gut_cinematic_commit_%s.json" % OS.get_process_id()
+	game.start_new()
+	game.go("ch01_s03_n80")
+	var beat: Dictionary = game.beats[game.current().beat]
+	var model = Factory.create(beat, game.state.gameplay, int(game.state.bond))
+	model.configure({"seed": game.state.seed, "flags": game.state.flags})
+	Factory.solve(model, "cutscene")
+	var before: int = game.state.gameplay.coins
+	var result: Dictionary = model.result()
+	var wrong: Dictionary = result.duplicate(true)
+	wrong.beat = "beat_ch07_s02"
+	assert_false(game.complete_beat(wrong))
+	assert_true(game.complete_beat(result))
+	assert_eq(int(game.state.gameplay.coins), before + int(result.reward) + 8)
+	assert_false(game.complete_beat(result))
+	var committed: Dictionary = game.state.duplicate(true)
+	assert_true(game.load_game())
+	assert_eq(game.state.cutscenes, JSON.parse_string(JSON.stringify(committed.cutscenes)))
+	assert_eq(int(game.state.gameplay.coins), int(committed.gameplay.coins))
+	game.state = old_state
+	for suffix in ["", ".bak", ".tmp"]:
+		DirAccess.remove_absolute(ProjectSettings.globalize_path(game.save_path + suffix))
+	game.save_path = old_path

@@ -1,0 +1,53 @@
+[
+  {
+    "checks": 2777,
+    "errors": [],
+    "frames": [
+      "menu",
+      "dialogue",
+      "pause",
+      "saves",
+      "settings",
+      "comfort",
+      "recap",
+      "chronicle",
+      "chronicle_article",
+      "fate",
+      "locked_gallery",
+      "gallery_fullscreen",
+      "gallery_zoom",
+      "credits",
+      "licenses",
+      "campaign",
+      "log",
+      "hub",
+      "hub_result",
+      "cinematic",
+      "cinematic_result",
+      "soft",
+      "soft_result",
+      "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
+      "hub_step_0",
+      "hub_step_1",
+      "hub_step_2",
+      "hub_step_3",
+      "large_controls",
+      "left_handed_hub",
+      "left_handed_soft",
+      "notch_menu",
+      "gallery_0",
+      "gallery_1",
+      "gallery_2",
+      "gallery_3",
+      "gallery_4"
+    ],
+    "resolution": [
+      1280,
+      720
+    ],
+    "touches": 247,
+    "exit_code": 0
+  }
+]

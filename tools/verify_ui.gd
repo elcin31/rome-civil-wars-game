@@ -1,6 +1,7 @@
 extends SceneTree
 ## Real-renderer layout and touch regression matrix. Uses an isolated save.
 
+const Lore = preload("res://scripts/lore_library.gd")
 const UI = preload("res://scripts/roman_ui.gd")
 
 var game: Node
@@ -38,6 +39,11 @@ func _check_layout() -> Array[Button]:
 	var safe: Rect2 = UI.safe_rect(view)
 	for control in _controls(view):
 		var bounds: Rect2 = control.get_global_rect()
+		var ancestor: Node = control.get_parent()
+		while ancestor is Control:
+			if ancestor.clip_contents:
+				bounds = bounds.intersection(ancestor.get_global_rect())
+			ancestor = ancestor.get_parent()
 		if control is ScrollBar or control.get_parent() is ScrollBar:
 			continue
 		checks += 1
@@ -206,6 +212,27 @@ func _run() -> void:
 	await _shot("saves", true)
 	view._open_settings(view.menu)
 	await _shot("settings", true)
+	view._comfort()
+	await _shot("comfort", true)
+	view._recap()
+	await _shot("recap", true)
+	view._library("chronicle")
+	await _shot("chronicle", true)
+	var chronicle_view: Control = view.layer.get_child(0)
+	chronicle_view._open_article(Lore.entries(game.state)[0])
+	await _shot("chronicle_article", true)
+	view._library("fate")
+	await _shot("fate", true)
+	view._gallery()
+	await _shot("locked_gallery", true)
+	var library: Control = view.layer.get_child(0)
+	for painting in Lore.gallery(game.state):
+		if painting.unlocked:
+			library._open_picture(painting.file)
+			break
+	await _shot("gallery_fullscreen", true)
+	library._zoom(1.0)
+	await _shot("gallery_zoom", true)
 	view._credits()
 	await _shot("credits", true)
 	view._licenses()
@@ -214,15 +241,20 @@ func _run() -> void:
 	await _shot("campaign", true)
 	view._log()
 	await _shot("log", true)
-	for pair in [
-		["ch01_s01_n75", "hub"], ["ch01_s03_n80", "tactical"], ["ch01_s06_n80", "platformer"]
-	]:
+	for pair in [["ch01_s01_n75", "hub"], ["ch01_s03_n80", "cinematic"], ["ch01_s06_n80", "soft"]]:
 		game.start_new()
 		game.go(pair[0])
 		view.refresh()
 		await _shot(pair[1], true)
-		view.encounter.model.state.won = true
-		view.encounter._result()
+		preload("res://scripts/gameplay/encounter_factory.gd").solve(
+			view.encounter.model, game.beats[game.current().beat].type
+		)
+		if game.beats[game.current().beat].type == "rpg":
+			view.encounter._result()
+		elif game.beats[game.current().beat].type == "cutscene":
+			view.encounter._rebuild()
+		else:
+			view.encounter._build()
 		await _shot(pair[1] + "_result", true)
 	game.start_new()
 	game.go("ch01_s01_n75")
@@ -294,6 +326,14 @@ func _run() -> void:
 	await _shot("large_controls", true)
 	services.settings.button_scale = 1.0
 	services.settings.button_offset = 0.0
+	services.settings.left_handed = true
+	game.go("ch01_s01_n75")
+	view.refresh()
+	await _shot("left_handed_hub", true)
+	game.go("ch01_s06_n80")
+	view.refresh()
+	await _shot("left_handed_soft", true)
+	services.settings.left_handed = false
 	view.set_meta("safe_insets", Vector4(32, 16, 48, 28))
 	view.menu()
 	await _shot("notch_menu", true)
@@ -326,6 +366,20 @@ func _run() -> void:
 								> view._width() - 224
 							):
 								_fail("text exceeds page width in " + node.id)
+		for beat in game.beats.values():
+			if beat.type != "cutscene":
+				continue
+			game.go(beat.node)
+			game.state.gameplay.encounter = {}
+			view.refresh()
+			var cinematic: Control = view.encounter
+			for step in range(12):
+				cinematic._rebuild()
+				await _shot(beat.cutscene + "_frame_%02d" % step, true)
+				if cinematic.model.state.won:
+					break
+				cinematic.model.bot_step(0)
+
 	view.queue_free()
 	await process_frame
 	view = load("res://scenes/AssetGallery.tscn").instantiate()

@@ -1,13 +1,13 @@
 {
   "mode": "strict",
-  "nodes": 1059,
-  "scenes": 76,
-  "choices": 55,
+  "nodes": 1241,
+  "scenes": 95,
+  "choices": 66,
   "major_branches": 10,
-  "side_scenes": 11,
-  "narrative_words": 34355,
-  "all_text_minutes": 171.8,
-  "finished_scenes": 76,
+  "side_scenes": 22,
+  "narrative_words": 46184,
+  "all_text_minutes": 230.9,
+  "finished_scenes": 95,
   "illustrations": 30,
   "new_pngs": 102,
   "verified_scenarios": 24,
@@ -17,113 +17,113 @@
       "route": "legion",
       "faction": "neutral",
       "side_quests": false,
-      "words": 24483,
-      "minutes": 122.4
+      "words": 34306,
+      "minutes": 171.5
     },
     {
       "route": "legion",
       "faction": "neutral",
       "side_quests": true,
-      "words": 27148,
-      "minutes": 135.7
+      "words": 37524,
+      "minutes": 187.6
     },
     {
       "route": "legion",
       "faction": "octavian",
       "side_quests": false,
-      "words": 24472,
-      "minutes": 122.4
+      "words": 34295,
+      "minutes": 171.5
     },
     {
       "route": "legion",
       "faction": "octavian",
       "side_quests": true,
-      "words": 27137,
-      "minutes": 135.7
+      "words": 37513,
+      "minutes": 187.6
     },
     {
       "route": "legion",
       "faction": "antony",
       "side_quests": false,
-      "words": 24468,
-      "minutes": 122.3
+      "words": 34291,
+      "minutes": 171.5
     },
     {
       "route": "legion",
       "faction": "antony",
       "side_quests": true,
-      "words": 27133,
-      "minutes": 135.7
+      "words": 37509,
+      "minutes": 187.5
     },
     {
       "route": "legion",
       "faction": "republicans",
       "side_quests": false,
-      "words": 24490,
-      "minutes": 122.5
+      "words": 34313,
+      "minutes": 171.6
     },
     {
       "route": "legion",
       "faction": "republicans",
       "side_quests": true,
-      "words": 27155,
-      "minutes": 135.8
+      "words": 37531,
+      "minutes": 187.7
     },
     {
       "route": "citizen",
       "faction": "neutral",
       "side_quests": false,
-      "words": 24129,
-      "minutes": 120.6
+      "words": 33103,
+      "minutes": 165.5
     },
     {
       "route": "citizen",
       "faction": "neutral",
       "side_quests": true,
-      "words": 26800,
-      "minutes": 134.0
+      "words": 36321,
+      "minutes": 181.6
     },
     {
       "route": "citizen",
       "faction": "octavian",
       "side_quests": false,
-      "words": 24118,
-      "minutes": 120.6
+      "words": 33092,
+      "minutes": 165.5
     },
     {
       "route": "citizen",
       "faction": "octavian",
       "side_quests": true,
-      "words": 26789,
-      "minutes": 133.9
+      "words": 36310,
+      "minutes": 181.6
     },
     {
       "route": "citizen",
       "faction": "antony",
       "side_quests": false,
-      "words": 24114,
-      "minutes": 120.6
+      "words": 33088,
+      "minutes": 165.4
     },
     {
       "route": "citizen",
       "faction": "antony",
       "side_quests": true,
-      "words": 26785,
-      "minutes": 133.9
+      "words": 36306,
+      "minutes": 181.5
     },
     {
       "route": "citizen",
       "faction": "republicans",
       "side_quests": false,
-      "words": 24136,
-      "minutes": 120.7
+      "words": 33110,
+      "minutes": 165.6
     },
     {
       "route": "citizen",
       "faction": "republicans",
       "side_quests": true,
-      "words": 26807,
-      "minutes": 134.0
+      "words": 36328,
+      "minutes": 181.6
     }
   ],
   "errors": [],

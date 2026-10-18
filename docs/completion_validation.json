@@ -1,0 +1,58 @@
+{
+  "story_words": 46184,
+  "cinematic_words": 2271,
+  "total_narrative_words": 48455,
+  "interludes": {
+    "ch01_interlude": 754,
+    "ch02_interlude": 777,
+    "ch03_interlude": 760,
+    "ch04_interlude": 779,
+    "ch05_interlude": 769,
+    "ch06_interlude": 801,
+    "ch07_interlude": 809,
+    "ch08_interlude": 815
+  },
+  "epilogues": {
+    "together": 1596,
+    "apart": 1572,
+    "sacrifice": 1553,
+    "bad": 1533
+  },
+  "new_original_compositions": 118,
+  "new_art_categories": {
+    "cs": 78,
+    "chronicle": 20,
+    "new_story": 20
+  },
+  "cinematics": 13,
+  "cinematic_frames": 78,
+  "personal_scenes": {
+    "neria": 18,
+    "lucilla": 29,
+    "serranus": 43,
+    "aglaia": 11,
+    "vettius": 11,
+    "aulus": 25
+  },
+  "peaceful_quests": 20,
+  "soft_episodes": 7,
+  "chronicle_entries": 60,
+  "gallery_paintings": 179,
+  "audio_bytes": 752764,
+  "reading_routes": [
+    {
+      "route": "legion",
+      "words": 37524,
+      "minutes_at_120_wpm": 312.7,
+      "minutes_at_200_wpm": 187.6
+    },
+    {
+      "route": "citizen",
+      "words": 36321,
+      "minutes_at_120_wpm": 302.7,
+      "minutes_at_200_wpm": 181.6
+    }
+  ],
+  "physical_device_performance": "requires physical ARM64 device",
+  "errors": []
+}
