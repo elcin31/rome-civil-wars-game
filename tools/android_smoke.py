@@ -260,6 +260,7 @@ if ui().get("hub"):
     assert "beat_ch01_s03" in state()["cutscenes"]
 
 # Exercise the new library with the real Android keyboard and touch callbacks.
+adb("shell", "settings", "put", "secure", "show_ime_with_hard_keyboard", "1")
 tap_caption("Пауза")
 tap_caption("Главное меню")
 tap_caption("Хроника")
@@ -272,6 +273,7 @@ wait_for_fresh_layout()
 adb("shell", "input", "text", "54")
 wait_for_fresh_layout()
 screenshot("chronicle_keyboard", verify_render=True)
+(OUTPUT / "keyboard-state.txt").write_text(adb("shell", "dumpsys", "input_method"))
 adb("shell", "input", "keyevent", "KEYCODE_BACK")
 wait_for_fresh_layout()
 tap_caption("Найти")
