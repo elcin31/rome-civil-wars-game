@@ -31,7 +31,9 @@ def screenshot(name, verify_render=False):
     image = Image.open(io.BytesIO(data)).convert("RGB")
     if verify_render:
         colors = image.getcolors(image.width * image.height)
-        assert max(count for count, _ in colors) < image.width * image.height * 0.75, "Blank Android game frame"
+        # Article/fate pages legitimately have a large flat background. Require
+        # visible detail, while still rejecting an empty renderer surface.
+        assert len(colors) >= 16 and max(count for count, _ in colors) < image.width * image.height * .985, "Blank Android game frame"
     return image.size
 
 
