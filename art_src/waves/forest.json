@@ -1,0 +1,12 @@
+{
+  "id": "forest",
+  "source": "art_src/waves/forest.png",
+  "generator": "image_gen",
+  "prompt": "Original six-frame contact sheet, Gallic forest53BCE: narrow road, broken wheel, scouts halt, arrows and shields, refuge in gully, roll call on meadow. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouette, clear light source, rich limited palette40colors,16-bit JRPG. Two columns three rows. Original game centurions; no copying adaptations. No text, no gore.",
+  "reference": "art_src/waves/cicero.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

@@ -10,7 +10,8 @@
       },
       "years": "58–52 до н. э.",
       "entry": "ch01_s01_n01",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Тот, кто держит щит, тоже нуждается в руке."
     },
     {
       "schema_version": 1,
@@ -22,7 +23,8 @@
       },
       "years": "50–49 до н. э.",
       "entry": "ch02_s01_n01",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Не всякая граница отмечена на земле."
     },
     {
       "schema_version": 1,
@@ -34,7 +36,8 @@
       },
       "years": "49–45 до н. э.",
       "entry": "ch03_entry",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Письмо переживает того, кто уверен в его итоге."
     },
     {
       "schema_version": 1,
@@ -46,7 +49,8 @@
       },
       "years": "44 до н. э.",
       "entry": "ch04_s01_n01",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Известие приходит раньше понимания."
     },
     {
       "schema_version": 1,
@@ -58,7 +62,8 @@
       },
       "years": "43 до н. э.",
       "entry": "ch05_s01_n01",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Назвать имя бывает опаснее, чем открыть дверь."
     },
     {
       "schema_version": 1,
@@ -70,7 +75,8 @@
       },
       "years": "42–36 до н. э.",
       "entry": "ch06_s01_n01",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Общая мера начинается с чужой доли."
     },
     {
       "schema_version": 1,
@@ -82,7 +88,8 @@
       },
       "years": "31–30 до н. э.",
       "entry": "ch07_s01_n01",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Берег видят не все, кого ждут."
     },
     {
       "schema_version": 1,
@@ -94,7 +101,8 @@
       },
       "years": "29 до н. э. — 14 н. э.",
       "entry": "ch08_s01_n01",
-      "prose_status": "complete"
+      "prose_status": "complete",
+      "epigraph": "Память не освобождает от следующего вопроса."
     }
   ]
 }

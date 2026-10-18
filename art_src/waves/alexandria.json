@@ -1,0 +1,12 @@
+{
+  "id": "alexandria",
+  "source": "art_src/waves/alexandria.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. Alexandria48-47 BCE street escape. Frames: 1 Hellenistic harbor quarter with white houses and lighthouse distant; 2 interior papyrus workshop stacked scrolls and water jars; 3 Greek dark-haired craftswoman guiding two centurions and families through narrow alley; 4 harsh light and shield silhouettes on blank white wall, no gore; 5 civilian boat at slippery stone steps in harbor dusk; 6 rescued papyrus sheets drying in morning light, family silhouettes behind.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

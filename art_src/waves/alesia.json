@@ -1,0 +1,12 @@
+{
+  "id": "alesia",
+  "source": "art_src/waves/alesia.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. 52 BCE. Double Roman siege lines around the hilltop oppidum Alesia. Frames: 1 vast hilltown and two rings of earthworks at dawn; 2 close hands mapping ditches on wax tablet; 3 the lean centurion inspecting braced shield wall near timber stakes; 4 silhouettes struggling over palisade in swirling dust, no gore; 5 broad centurion shielding stretcher bearers in narrow gate; 6 silent sunset over abandoned shields and intact path.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

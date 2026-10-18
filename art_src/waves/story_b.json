@@ -1,0 +1,25 @@
+{
+  "id": "story_b",
+  "source": "art_src/waves/story_b.png",
+  "generator": "image_gen",
+  "prompt": "Make an original Cinis Lauri historical PIXEL ART contact sheet, exactly TWO columns by FIVE rows, TEN DIFFERENT panels. ENTIRE canvas PORTRAIT aspect32:45, EACH panel16:9. No text, borders, lettering, labels or gutters. Use reference only for art style. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouette, clear light source, rich limited48-color teal ochre burgundy palette, 16-bit JRPG. Simple clean large pixel clusters with room to breathe, avoid micro-detail and noise. Every panel has a distinct composition, NO duplicated subjects. Historically credible late Republican Rome, no modern objects or imperial plate armor, no copying screen adaptations. Ten panels in reading order: 1 single oil lamp and second empty chair with old Roman shield, grief and tenderness, 2 cold workshop with scraped wax tablet separate keys and dim lamp, 3 ordinary Roman citizens discussing debt before public witness bench, 4 freedwoman healer in modest courtyard infirmary with clean cloth and water, 5 Roman woman potter strong silhouette tending kiln, 6 young scribe examining source tablet against copy by lamplight, 7 Greek craftswoman boatmaster repairing small wooden rescue boat, 8 weary retired centurion carrying plain worker's sack on country road, 9 parchment map of Mediterranean with recognizable Iberia Italy Greece Egypt Gaul coasts NO TEXT NO MARKERS, 10 beautiful original menu art two late Republican centurion silhouettes overlooking Rome at dawn laurel branches framing upper sky empty for separately rendered title",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    5
+  ],
+  "unique_compositions": 10,
+  "category": "new_story",
+  "names": [
+    "epilogue_sacrifice",
+    "epilogue_bad",
+    "citizen_court",
+    "neria_clinic",
+    "lucilla_kiln",
+    "serranus_desk",
+    "aglaia_boat",
+    "vettius_road",
+    "mediterranean",
+    "menu"
+  ]
+}

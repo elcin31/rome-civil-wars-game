@@ -133,11 +133,14 @@
       },
       "year": "36 до н. э.",
       "entry": "ch06_s08_n01",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/new_story/vettius_road.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
+      ]
     },
     {
       "id": "ch06_s09",
@@ -161,14 +164,16 @@
       },
       "year": "36 до н. э.",
       "entry": "ch06_interlude_n01",
-      "illustration": "assets/locations/alexandria.png",
+      "illustration": "assets/new_story/interlude06.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 801,
-      "planned_art": "assets/new_story/interlude06.png"
+      "illustration_archive": [
+        "assets/locations/alexandria.png"
+      ]
     },
     {
       "id": "ch06_job01",
@@ -178,13 +183,15 @@
       },
       "year": "36 до н. э.",
       "entry": "ch06_job01_optional_n90",
-      "illustration": "assets/locations/alexandria.png",
+      "illustration": "assets/new_story/interlude06.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude06.png"
+      "illustration_archive": [
+        "assets/locations/alexandria.png"
+      ]
     }
   ],
   "nodes": [
@@ -2103,5 +2110,6 @@
       },
       "next": "ch07_s01_n01"
     }
-  ]
+  ],
+  "epigraph": "Общая мера начинается с чужой доли."
 }

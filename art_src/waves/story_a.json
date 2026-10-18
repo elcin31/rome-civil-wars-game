@@ -1,0 +1,25 @@
+{
+  "id": "story_a",
+  "source": "art_src/waves/story_a.png",
+  "generator": "image_gen",
+  "prompt": "Make an original Cinis Lauri historical PIXEL ART contact sheet, exactly TWO columns by FIVE rows, TEN DIFFERENT panels. ENTIRE canvas PORTRAIT aspect32:45, EACH panel16:9. No text, borders, lettering, labels or gutters. Use reference only for art style. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouette, clear light source, rich limited48-color teal ochre burgundy palette, 16-bit JRPG. Simple clean large pixel clusters with room to breathe, avoid micro-detail and noise. Every panel has a distinct composition, NO duplicated subjects. Historically credible late Republican Rome, no modern objects or imperial plate armor, no copying screen adaptations. Ten panels in reading order: 1 lamp-lit camp scribe desk with iron buckle and damp letters, 2 Italian woman potter and small boy beside kiln and two clay cups, 3 Alexandrian papyrus craftswoman packing cups and letters at pier, 4 three separate stacks of wax witness tablets on modest workshop desk, 5 healer handing water to refugee mother and reunited child in dark courtyard, 6 young adult oarsman counting first wage beside wooden oarlock, 7 old cord cut into two strong lengths beside rescued boat at calm shore, 8 elderly craftsperson sorting old letters on repaired shelf in Roman workshop, 9 peaceful shared hearth with two plain benches and two cups, 10 two coastal homes separated by sea with small letter bundle foreground",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    5
+  ],
+  "unique_compositions": 10,
+  "category": "new_story",
+  "names": [
+    "interlude01",
+    "interlude02",
+    "interlude03",
+    "interlude04",
+    "interlude05",
+    "interlude06",
+    "interlude07",
+    "interlude08",
+    "epilogue_together",
+    "epilogue_apart"
+  ]
+}

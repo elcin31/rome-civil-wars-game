@@ -1,0 +1,25 @@
+{
+  "id": "chronicle_b",
+  "source": "art_src/waves/chronicle_b.png",
+  "generator": "image_gen",
+  "prompt": "Make an original Cinis Lauri historical PIXEL ART contact sheet, exactly TWO columns by FIVE rows, TEN DIFFERENT panels. ENTIRE canvas PORTRAIT aspect32:45, EACH panel16:9. No text, borders, lettering, labels or gutters. Use reference only for art style. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouette, clear light source, rich limited48-color teal ochre burgundy palette, 16-bit JRPG. Simple clean large pixel clusters with room to breathe, avoid micro-detail and noise. Every panel has a distinct composition, NO duplicated subjects. Historically credible late Republican Rome, no modern objects or imperial plate armor, no copying screen adaptations. Ten panels in reading order: 1 Republican gladius short sword in plain scabbard, 2 three Roman pila javelins stacked on ochre cloth, 3 chainmail lorica hamata displayed on simple wooden stand, 4 bronze Montefortino helmet with simple knob and cheek guards, 5 wax writing tablet and bronze stylus, 6 papyrus sheets and reed pen in Alexandrian workshop, 7 Hellenistic wooden oared warship seen from high side angle at sea, 8 Roman legion eagle standard against tents, 9 late Republican Roman Forum everyday market wide view without imperial monuments, 10 small shallow Rubicon stream amid northern Italian farmland, no bridge inscriptions",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    5
+  ],
+  "unique_compositions": 10,
+  "category": "chronicle",
+  "names": [
+    "gladius",
+    "pilum",
+    "mail",
+    "helmet",
+    "tablet",
+    "papyrus",
+    "trireme",
+    "aquila",
+    "forum",
+    "rubicon"
+  ]
+}

@@ -32,11 +32,14 @@
       },
       "year": "50 до н. э.",
       "entry": "ch02_s02_n01",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/lucilla_kiln.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     },
     {
       "id": "ch02_s03",
@@ -143,14 +146,16 @@
       },
       "year": "49 до н. э.",
       "entry": "ch02_interlude_n01",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/interlude02.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 777,
-      "planned_art": "assets/new_story/interlude02.png"
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     },
     {
       "id": "ch02_job01",
@@ -160,13 +165,15 @@
       },
       "year": "49 до н. э.",
       "entry": "ch02_job01_optional_n90",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/interlude02.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude02.png"
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     },
     {
       "id": "ch02_job02",
@@ -176,13 +183,15 @@
       },
       "year": "49 до н. э.",
       "entry": "ch02_job02_optional_n90",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/interlude02.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude02.png"
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     }
   ],
   "nodes": [
@@ -2325,5 +2334,6 @@
       },
       "next": "ch03_entry"
     }
-  ]
+  ],
+  "epigraph": "Не всякая граница отмечена на земле."
 }

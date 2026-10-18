@@ -149,14 +149,16 @@
       },
       "year": "52 до н. э.",
       "entry": "ch01_interlude_n01",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/new_story/interlude01.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 754,
-      "planned_art": "assets/new_story/interlude01.png"
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
+      ]
     },
     {
       "id": "ch01_job01",
@@ -166,13 +168,15 @@
       },
       "year": "52 до н. э.",
       "entry": "ch01_job01_optional_n90",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/new_story/interlude01.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude01.png"
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
+      ]
     },
     {
       "id": "ch01_job02",
@@ -182,13 +186,15 @@
       },
       "year": "52 до н. э.",
       "entry": "ch01_job02_optional_n90",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/new_story/interlude01.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude01.png"
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
+      ]
     }
   ],
   "nodes": [
@@ -2402,5 +2408,6 @@
       },
       "next": "ch02_s01_n01"
     }
-  ]
+  ],
+  "epigraph": "Тот, кто держит щит, тоже нуждается в руке."
 }

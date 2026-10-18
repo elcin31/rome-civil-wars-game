@@ -1,0 +1,12 @@
+{
+  "id": "perusia",
+  "source": "art_src/waves/perusia.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. Italy Perusia41-40 BCE famine relief. Frames: 1 walled hilltown in winter under siege, empty fields; 2 mature pottery craftswoman comparing two grain measuring jars in candlelight; 3 grey-bearded scribe counting portions on wax tablet in modest grain store; 4 hungry families waiting in orderly courtyard with siege tower SHADOW on wall; 5 older broad centurion carrying last grain sack onto dry raised floor; 6 opened hilltown gate and departing families under pale dawn.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

@@ -1,0 +1,12 @@
+{
+  "id": "philippi",
+  "source": "art_src/waves/philippi.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. Macedonia Philippi42 BCE. Frames: 1 marshland Roman camps under autumn sky; 2 older lean centurion testing submerged plank with foot; 3 broad older centurion tying guide cord between stakes along bog path; 4 distant battle silhouettes beyond reedbeds seen from safety, no gore; 5 men holding guide rope by hand while stretcher crosses narrow boardwalk; 6 survivors emerging from misty marsh into morning fields.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

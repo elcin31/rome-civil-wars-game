@@ -159,14 +159,16 @@
       },
       "year": "30 до н. э.",
       "entry": "ch07_interlude_n01",
-      "illustration": "assets/locations/actium.png",
+      "illustration": "assets/new_story/interlude07.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 809,
-      "planned_art": "assets/new_story/interlude07.png"
+      "illustration_archive": [
+        "assets/locations/actium.png"
+      ]
     },
     {
       "id": "ch07_job01",
@@ -176,13 +178,15 @@
       },
       "year": "30 до н. э.",
       "entry": "ch07_job01_optional_n90",
-      "illustration": "assets/locations/actium.png",
+      "illustration": "assets/new_story/interlude07.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude07.png"
+      "illustration_archive": [
+        "assets/locations/actium.png"
+      ]
     },
     {
       "id": "ch07_job02",
@@ -192,13 +196,15 @@
       },
       "year": "30 до н. э.",
       "entry": "ch07_job02_optional_n90",
-      "illustration": "assets/locations/actium.png",
+      "illustration": "assets/new_story/interlude07.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude07.png"
+      "illustration_archive": [
+        "assets/locations/actium.png"
+      ]
     }
   ],
   "nodes": [
@@ -2124,5 +2130,6 @@
       },
       "next": "ch08_s01_n01"
     }
-  ]
+  ],
+  "epigraph": "Берег видят не все, кого ждут."
 }

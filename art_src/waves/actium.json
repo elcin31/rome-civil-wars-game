@@ -1,0 +1,12 @@
+{
+  "id": "actium",
+  "source": "art_src/waves/actium.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. Ionian sea Actium31 BCE. Centurions now around50 years old, graying. Frames: 1 wide naval fleets near Greek coast with headlands; 2 close young adult oarsman repairing wooden oarlock; 3 older Greek woman boatmaster and grey centurions judging gap between immense galleys from small boat; 4 dark sails and restrained distant fire through smoke, small rescue boat below, no gore; 5 rowers synchronized in small wooden boat riding wave, broad centurion supporting rescued passenger; 6 quiet sandy shore with survivors and grounded boat at sunset.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

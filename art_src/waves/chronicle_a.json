@@ -1,0 +1,25 @@
+{
+  "id": "chronicle_a",
+  "source": "art_src/waves/chronicle_a.png",
+  "generator": "image_gen",
+  "prompt": "Make an original Cinis Lauri historical PIXEL ART contact sheet, exactly TWO columns by FIVE rows, TEN DIFFERENT panels. ENTIRE canvas PORTRAIT aspect32:45, EACH panel16:9. No text, borders, lettering, labels or gutters. Use reference only for art style. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouette, clear light source, rich limited48-color teal ochre burgundy palette, 16-bit JRPG. Simple clean large pixel clusters with room to breathe, avoid micro-detail and noise. Every panel has a distinct composition, NO duplicated subjects. Historically credible late Republican Rome, no modern objects or imperial plate armor, no copying screen adaptations. Ten panels in reading order: 1 dignified balding Julius Caesar carved marble bust, 2 Pompey broad face carved marble bust, 3 Marcus Tullius Cicero elder orator bust, 4 young Octavian bust, 5 Mark Antony powerful Roman bust, 6 Cleopatra VII Hellenistic queen with diadem not fantasy costume, 7 Marcus Junius Brutus bust, 8 Cato the Younger stern bust, 9 Marcus Agrippa realistic bust, 10 oval Republican scutum shield with central boss lying on cloth",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    5
+  ],
+  "unique_compositions": 10,
+  "category": "chronicle",
+  "names": [
+    "caesar",
+    "pompey",
+    "cicero",
+    "octavian",
+    "antony",
+    "cleopatra",
+    "brutus",
+    "cato",
+    "agrippa",
+    "scutum"
+  ]
+}

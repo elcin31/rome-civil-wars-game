@@ -1,0 +1,12 @@
+{
+  "id": "munda",
+  "source": "art_src/waves/munda.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. Southern Spain Munda45 BCE. Frames: 1 long sunlit hillside with distant Roman opposing lines; 2 older broad centurion examining worn shield strap close; 3 healer tearing clean cloth beside waiting empty stretchers; 4 fragmented silhouettes of shields on bright stony ridge, no gore; 5 both weathered centurions descending hill carrying water and supporting survivor; 6 lone wheelwright repairing cart under lantern after battle.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

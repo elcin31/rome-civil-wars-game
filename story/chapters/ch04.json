@@ -142,14 +142,16 @@
       },
       "year": "44 до н. э.",
       "entry": "ch04_interlude_n01",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/interlude04.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 779,
-      "planned_art": "assets/new_story/interlude04.png"
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     },
     {
       "id": "ch04_job01",
@@ -159,13 +161,15 @@
       },
       "year": "44 до н. э.",
       "entry": "ch04_job01_optional_n90",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/interlude04.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude04.png"
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     }
   ],
   "nodes": [
@@ -1946,5 +1950,6 @@
       "beat": "beat_ch04_s04",
       "next": "ch04_s02_n90"
     }
-  ]
+  ],
+  "epigraph": "Известие приходит раньше понимания."
 }

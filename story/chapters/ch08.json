@@ -94,14 +94,16 @@
       },
       "year": "память о 12 до н. э.",
       "entry": "ch08_s05_n01",
-      "illustration": "assets/story/together.png",
+      "illustration": "assets/new_story/epilogue_together.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "ending": "together",
       "epilogue_words": 1596,
-      "planned_art": "assets/new_story/epilogue_together.png"
+      "illustration_archive": [
+        "assets/story/together.png"
+      ]
     },
     {
       "id": "ch08_s06",
@@ -111,14 +113,16 @@
       },
       "year": "память о 12 до н. э.",
       "entry": "ch08_s06_n01",
-      "illustration": "assets/story/apart.png",
+      "illustration": "assets/new_story/epilogue_apart.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "ending": "apart",
       "epilogue_words": 1572,
-      "planned_art": "assets/new_story/epilogue_apart.png"
+      "illustration_archive": [
+        "assets/story/apart.png"
+      ]
     },
     {
       "id": "ch08_s07",
@@ -128,14 +132,16 @@
       },
       "year": "память о 31–12 до н. э.",
       "entry": "ch08_s07_n01",
-      "illustration": "assets/story/sacrifice.png",
+      "illustration": "assets/new_story/epilogue_sacrifice.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "ending": "sacrifice",
       "epilogue_words": 1592,
-      "planned_art": "assets/new_story/epilogue_sacrifice.png"
+      "illustration_archive": [
+        "assets/story/sacrifice.png"
+      ]
     },
     {
       "id": "ch08_s08",
@@ -145,14 +151,16 @@
       },
       "year": "14 н. э.",
       "entry": "ch08_s08_n01",
-      "illustration": "assets/story/bad.png",
+      "illustration": "assets/new_story/epilogue_bad.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "ending": "bad",
       "epilogue_words": 1591,
-      "planned_art": "assets/new_story/epilogue_bad.png"
+      "illustration_archive": [
+        "assets/story/bad.png"
+      ]
     },
     {
       "id": "ch08_interlude",
@@ -162,14 +170,16 @@
       },
       "year": "13 н. э.",
       "entry": "ch08_interlude_n01",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/interlude08.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 815,
-      "planned_art": "assets/new_story/interlude08.png"
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     }
   ],
   "nodes": [
@@ -2380,5 +2390,6 @@
       },
       "next": "ch08_s08_expanded_11"
     }
-  ]
+  ],
+  "epigraph": "Память не освобождает от следующего вопроса."
 }

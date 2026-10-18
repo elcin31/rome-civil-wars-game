@@ -72,7 +72,7 @@
       },
       "year": "48–47 до н. э.",
       "entry": "ch03_s04_n01",
-      "illustration": "assets/illustrations/pharos_dawn.png",
+      "illustration": "assets/new_story/aglaia_boat.png",
       "optional": false,
       "route": "legion",
       "prose_status": "complete",
@@ -81,7 +81,8 @@
         "cleopatra"
       ],
       "illustration_archive": [
-        "assets/locations/cleopatra_palace.png"
+        "assets/locations/cleopatra_palace.png",
+        "assets/illustrations/pharos_dawn.png"
       ]
     },
     {
@@ -138,11 +139,14 @@
       },
       "year": "45 до н. э.",
       "entry": "ch03_s08_n01",
-      "illustration": "assets/locations/roman_camp.png",
+      "illustration": "assets/new_story/serranus_desk.png",
       "optional": true,
       "route": "legion",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/roman_camp.png"
+      ]
     },
     {
       "id": "ch03_s09",
@@ -261,11 +265,14 @@
       },
       "year": "45 до н. э.",
       "entry": "ch03_s16_n01",
-      "illustration": "assets/locations/roman_forum.png",
+      "illustration": "assets/new_story/citizen_court.png",
       "optional": true,
       "route": "citizen",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/roman_forum.png"
+      ]
     },
     {
       "id": "ch03_s17",
@@ -289,14 +296,16 @@
       },
       "year": "45 до н. э.",
       "entry": "ch03_interlude_n01",
-      "illustration": "assets/locations/alexandria.png",
+      "illustration": "assets/new_story/interlude03.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 760,
-      "planned_art": "assets/new_story/interlude03.png"
+      "illustration_archive": [
+        "assets/locations/alexandria.png"
+      ]
     },
     {
       "id": "ch03_job01",
@@ -306,13 +315,15 @@
       },
       "year": "45 до н. э.",
       "entry": "ch03_job01_optional_n90",
-      "illustration": "assets/locations/alexandria.png",
+      "illustration": "assets/new_story/interlude03.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude03.png"
+      "illustration_archive": [
+        "assets/locations/alexandria.png"
+      ]
     },
     {
       "id": "ch03_job02",
@@ -322,13 +333,15 @@
       },
       "year": "45 до н. э.",
       "entry": "ch03_job02_optional_n90",
-      "illustration": "assets/locations/alexandria.png",
+      "illustration": "assets/new_story/interlude03.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude03.png"
+      "illustration_archive": [
+        "assets/locations/alexandria.png"
+      ]
     }
   ],
   "nodes": [
@@ -3646,5 +3659,6 @@
       },
       "next": "ch04_s01_n01"
     }
-  ]
+  ],
+  "epigraph": "Письмо переживает того, кто уверен в его итоге."
 }

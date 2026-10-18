@@ -1,0 +1,12 @@
+{
+  "id": "ides",
+  "source": "art_src/waves/ides.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. Rome Ides of March15 March44 BCE. Entirely NO assassination imagery, NO violence. Frames: 1 exterior monumental Republican portico of Pompey's theater with people in ordinary clothing; 2 pottery craftswoman carrying broken clay mold through market; 3 young scribe hesitating with stylus as worried men emerge from portico; 4 bewildered crowd and raised-hand SHADOW reflected on plaster, no body or dagger; 5 two older centurions moving wooden bench to keep exit clear for crowd; 6 abandoned clay mold lying alone on quiet plaza at dusk.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

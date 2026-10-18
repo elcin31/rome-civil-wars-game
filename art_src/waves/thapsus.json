@@ -1,0 +1,12 @@
+{
+  "id": "thapsus",
+  "source": "art_src/waves/thapsus.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. North Africa Thapsus46 BCE. Frames: 1 pale African coastal battlefield with sea beyond Roman tents; 2 healer drawing water sources on reverse of wax campaign tablet; 3 broad centurion clearing spears from stretcher lane beside camp; 4 very distant elephant silhouettes amid sunlit dust, soldiers foreground shielded, no gore; 5 young scribe helping carry stretcher past little wooden route stakes; 6 empty marked path toward water at warm sunset.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

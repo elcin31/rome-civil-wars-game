@@ -1,0 +1,12 @@
+{
+  "id": "proscriptions",
+  "source": "art_src/waves/proscriptions.png",
+  "generator": "image_gen",
+  "prompt": "Original Cinis Lauri pixel art. Use reference ONLY for consistent art style and centurion faces. SIX DIFFERENT full compositions in precise TWO columns THREE rows contact sheet. Entire image aspect32:27 nearly square; EACH panel16:9, no gaps, borders, text or letters. Clean hand-placed pixel art, crisp edges, no dithering noise, no anti-aliasing, strong silhouettes, clear light source, rich limited palette40 colors, 16-bit JRPG. Deep teal shadows, burgundy and warm ochre. Historical late Republican Rome, chainmail and simple helmets, no imperial plate armor, no copying adaptations. Rome43 BCE night rescue. Frames: 1 rain dark Roman side street with ominous blank notice board silhouettes; 2 close hands separating wax cargo receipt from confidential names; 3 pottery craftswoman leaves small ceramic cup as sign at shadowy threshold; 4 guard boots and torch glow visible beneath closed courtyard gate; 5 healer guiding elderly refugee down narrow back steps, older broad centurion blocks alley with empty cart; 6 refugees waiting together in tiny dark orchard before dawn.",
+  "reference": "art_src/waves/forest.png",
+  "layout": [
+    2,
+    3
+  ],
+  "unique_compositions": 6
+}

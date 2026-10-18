@@ -103,11 +103,14 @@
       },
       "year": "43 до н. э.",
       "entry": "ch05_s06_n01",
-      "illustration": "assets/locations/rome_night.png",
+      "illustration": "assets/new_story/neria_clinic.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
-      "historical_anchors": []
+      "historical_anchors": [],
+      "illustration_archive": [
+        "assets/locations/rome_night.png"
+      ]
     },
     {
       "id": "ch05_s07",
@@ -159,14 +162,16 @@
       },
       "year": "43 до н. э.",
       "entry": "ch05_interlude_n01",
-      "illustration": "assets/locations/rome_night.png",
+      "illustration": "assets/new_story/interlude05.png",
       "optional": false,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "interlude": true,
       "word_count": 769,
-      "planned_art": "assets/new_story/interlude05.png"
+      "illustration_archive": [
+        "assets/locations/rome_night.png"
+      ]
     },
     {
       "id": "ch05_job01",
@@ -176,13 +181,15 @@
       },
       "year": "43 до н. э.",
       "entry": "ch05_job01_optional_n90",
-      "illustration": "assets/locations/rome_night.png",
+      "illustration": "assets/new_story/interlude05.png",
       "optional": true,
       "route": "shared",
       "prose_status": "complete",
       "historical_anchors": [],
       "side_quest": true,
-      "planned_art": "assets/new_story/interlude05.png"
+      "illustration_archive": [
+        "assets/locations/rome_night.png"
+      ]
     }
   ],
   "nodes": [
@@ -2089,5 +2096,6 @@
       },
       "next": "ch06_s01_n01"
     }
-  ]
+  ],
+  "epigraph": "Назвать имя бывает опаснее, чем открыть дверь."
 }

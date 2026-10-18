@@ -1,0 +1,2013 @@
+{
+  "generator": "image_gen",
+  "pipeline": "480x270 shared48-color palette, no dithering, nearest, singleton cleanup, indexed PNG",
+  "compositions": 118,
+  "assets": [
+    {
+      "id": "actium_01",
+      "file": "assets/cs/actium_01.png",
+      "source": "art_src/waves/actium.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        385
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "1459151239b01e740b9acd105eeb8a9446ba177cafedffac9ee6036922788de7"
+    },
+    {
+      "id": "actium_02",
+      "file": "assets/cs/actium_02.png",
+      "source": "art_src/waves/actium.png",
+      "source_box": [
+        682,
+        0,
+        1363,
+        385
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a147d30b396f8dbde13801e6aba1a8340b1261a5e031fa46c2195a4a448e8e4c"
+    },
+    {
+      "id": "actium_03",
+      "file": "assets/cs/actium_03.png",
+      "source": "art_src/waves/actium.png",
+      "source_box": [
+        0,
+        385,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "f363bec8d56c5ee3cd959adc106b23b3f1da65795739ec33ff661d441f1b8f10"
+    },
+    {
+      "id": "actium_04",
+      "file": "assets/cs/actium_04.png",
+      "source": "art_src/waves/actium.png",
+      "source_box": [
+        682,
+        385,
+        1363,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "bfca3c9ed98eacce85daed1f0bd01082f8d1ff8108d4bcee1aaa4cb4e517cf00"
+    },
+    {
+      "id": "actium_05",
+      "file": "assets/cs/actium_05.png",
+      "source": "art_src/waves/actium.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1154
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "2dab3b46f4ac764da33a46431920c92c0ed491e33f205fca187ac5d4b61a9fb3"
+    },
+    {
+      "id": "actium_06",
+      "file": "assets/cs/actium_06.png",
+      "source": "art_src/waves/actium.png",
+      "source_box": [
+        682,
+        769,
+        1363,
+        1154
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "c6e9de59ddf1cc58d260f89578002c5347746b1a793bb6ab296c8c8acc8d80d5"
+    },
+    {
+      "id": "alesia_01",
+      "file": "assets/cs/alesia_01.png",
+      "source": "art_src/waves/alesia.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        385
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "0e758cde671488ed0d992de031f264fa06b7e5f12808b7607282385402ed2d89"
+    },
+    {
+      "id": "alesia_02",
+      "file": "assets/cs/alesia_02.png",
+      "source": "art_src/waves/alesia.png",
+      "source_box": [
+        682,
+        0,
+        1363,
+        385
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "37498681300b37028dd35da9c91eace634e728fa527ac753bcf599252fd8311b"
+    },
+    {
+      "id": "alesia_03",
+      "file": "assets/cs/alesia_03.png",
+      "source": "art_src/waves/alesia.png",
+      "source_box": [
+        0,
+        385,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "43deca28710c95bc380acfd6c9c1d0f725cfe15917f6e32ca099d7321878ceb0"
+    },
+    {
+      "id": "alesia_04",
+      "file": "assets/cs/alesia_04.png",
+      "source": "art_src/waves/alesia.png",
+      "source_box": [
+        682,
+        385,
+        1363,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "466422ced631b8889f4e09455f765130d53fa9d5be0cc28efbdf0a3eb1d1774c"
+    },
+    {
+      "id": "alesia_05",
+      "file": "assets/cs/alesia_05.png",
+      "source": "art_src/waves/alesia.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1154
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "3fedbb88f84fb2049401991614e9b5ec1a31a11bc2ae56c47fd7f0925f92fb30"
+    },
+    {
+      "id": "alesia_06",
+      "file": "assets/cs/alesia_06.png",
+      "source": "art_src/waves/alesia.png",
+      "source_box": [
+        682,
+        769,
+        1363,
+        1154
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "46ac7b7cee7b160eab757151d12a731c6559a1ce77b3f9faf51f35804ea03b29"
+    },
+    {
+      "id": "alexandria_01",
+      "file": "assets/cs/alexandria_01.png",
+      "source": "art_src/waves/alexandria.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "8d5af097764efb98f060cc0c918cfce20753ef6ca8a04364609425cd2152e303"
+    },
+    {
+      "id": "alexandria_02",
+      "file": "assets/cs/alexandria_02.png",
+      "source": "art_src/waves/alexandria.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a7adcdffe192fe6fe8dfcf612e0a44bea13b8856cc25d41ff9553c70a6aecd59"
+    },
+    {
+      "id": "alexandria_03",
+      "file": "assets/cs/alexandria_03.png",
+      "source": "art_src/waves/alexandria.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a279c517afc0d1bd422e738bde6d39ba39dc968b860c1a47f9819ae48212f5d9"
+    },
+    {
+      "id": "alexandria_04",
+      "file": "assets/cs/alexandria_04.png",
+      "source": "art_src/waves/alexandria.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "5c4b9fc4e0c71698cf78b4aa4111aadda8fe44df0b55ca1a71bed1f986cb9aba"
+    },
+    {
+      "id": "alexandria_05",
+      "file": "assets/cs/alexandria_05.png",
+      "source": "art_src/waves/alexandria.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "906a0e1030c02bc5e3e510b60ae997be526164fd14a430e03e657f8c22fdbde5"
+    },
+    {
+      "id": "alexandria_06",
+      "file": "assets/cs/alexandria_06.png",
+      "source": "art_src/waves/alexandria.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "cb3d340a96f963328af6380f0897cdb8509ec227aba2309492f4adf130eefa47"
+    },
+    {
+      "id": "brundisium_01",
+      "file": "assets/cs/brundisium_01.png",
+      "source": "art_src/waves/brundisium.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "1fc4ba61689c6e8407e04dc93fbb46729c34504e718dde96a79741b6aceb89ab"
+    },
+    {
+      "id": "brundisium_02",
+      "file": "assets/cs/brundisium_02.png",
+      "source": "art_src/waves/brundisium.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "ca3e94949b2ad034947541c55a10607563d524ee7e9e3b90434cfd5ce8a0226d"
+    },
+    {
+      "id": "brundisium_03",
+      "file": "assets/cs/brundisium_03.png",
+      "source": "art_src/waves/brundisium.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "d0b911194ccf41c4e54339b4b08429693dfc685a1e1c6948ab7aee5b6dfa0d4a"
+    },
+    {
+      "id": "brundisium_04",
+      "file": "assets/cs/brundisium_04.png",
+      "source": "art_src/waves/brundisium.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "27a1c3028b62e920ef52547047eda9cff4fe6b3314a22684dac08241d4e21d52"
+    },
+    {
+      "id": "brundisium_05",
+      "file": "assets/cs/brundisium_05.png",
+      "source": "art_src/waves/brundisium.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "c433d9609249e5009b6cf5397d92a1ba71d3ef18ca370f8c2744195df3c852d1"
+    },
+    {
+      "id": "brundisium_06",
+      "file": "assets/cs/brundisium_06.png",
+      "source": "art_src/waves/brundisium.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "6490426a37fc79f39875f128a408b0d4b9a133a4930d2e6f4f9d8ea973cc56be"
+    },
+    {
+      "id": "caesar",
+      "file": "assets/chronicle/caesar.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        0,
+        0,
+        529,
+        297
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "a952f55adce7f3aa3022c39ef88586e1109e8f2ffe2a7e1c4943a3e1059ef8fb"
+    },
+    {
+      "id": "pompey",
+      "file": "assets/chronicle/pompey.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        529,
+        0,
+        1058,
+        297
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "64fc3229cf6f5e830167c0e8ab956a77a947058bfda910fa4a9b77936cc2717d"
+    },
+    {
+      "id": "cicero",
+      "file": "assets/chronicle/cicero.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        0,
+        297,
+        529,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "ce0b31b523beed66b8ed21aa7d0901d17e76195c57bac2a6c9013c70103bf590"
+    },
+    {
+      "id": "octavian",
+      "file": "assets/chronicle/octavian.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        529,
+        297,
+        1058,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "33ab9de4807e89a2b8d21b2701ba13e3c37ce547a1c72e328edd4a9dfc8f508e"
+    },
+    {
+      "id": "antony",
+      "file": "assets/chronicle/antony.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        0,
+        595,
+        529,
+        892
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "e09dcd9e54372b94be91ab85f820d244ca8cc461c5392a9660efc8a2ad1344b7"
+    },
+    {
+      "id": "cleopatra",
+      "file": "assets/chronicle/cleopatra.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        529,
+        595,
+        1058,
+        892
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "aab8d60c845e13034f54dc6616ecb8e4b6acc9236a6aae2fe4d2e626b4537710"
+    },
+    {
+      "id": "brutus",
+      "file": "assets/chronicle/brutus.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        0,
+        892,
+        529,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "bb51a96fb544e50fb5fe9fbbcb43f76e2bea25da0fdef2751c26aa4cd6cb2980"
+    },
+    {
+      "id": "cato",
+      "file": "assets/chronicle/cato.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        529,
+        892,
+        1058,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "fe04744a337f086f5617116df6e3c8264e504d80f86031a9be544d2eaf340ae7"
+    },
+    {
+      "id": "agrippa",
+      "file": "assets/chronicle/agrippa.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        0,
+        1190,
+        529,
+        1487
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "0afd5bf4009ccffe9547328958438cab8a5607e5b5aaef7f627c8a5655536ad9"
+    },
+    {
+      "id": "scutum",
+      "file": "assets/chronicle/scutum.png",
+      "source": "art_src/waves/chronicle_a.png",
+      "source_box": [
+        529,
+        1190,
+        1058,
+        1487
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "a031ca065eb6f018c1d7da35acf19c0f081523a95089c83fdbbe01ae4493ca02"
+    },
+    {
+      "id": "gladius",
+      "file": "assets/chronicle/gladius.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        0,
+        0,
+        529,
+        297
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "aad3fd57492e71ca8bd39136bc60f656cbb7b4386042a7885a8311e5dd6914a5"
+    },
+    {
+      "id": "pilum",
+      "file": "assets/chronicle/pilum.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        529,
+        0,
+        1058,
+        297
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "568266b1866e6bc7966c5e4d3123001459a88293dce2a2cb311315bd2c585a2c"
+    },
+    {
+      "id": "mail",
+      "file": "assets/chronicle/mail.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        0,
+        297,
+        529,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "2a82cb026e46af39408b8346670c8354b429d4b4f1069285cdf7b63af7c3da99"
+    },
+    {
+      "id": "helmet",
+      "file": "assets/chronicle/helmet.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        529,
+        297,
+        1058,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "7d8e525b19663054230391a5c5b196eafb55a3b05ac52dd094889639effd86d7"
+    },
+    {
+      "id": "tablet",
+      "file": "assets/chronicle/tablet.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        0,
+        595,
+        529,
+        892
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "faebf0cce778a76484e0f43cf8432f798bca05cb76f0b0a15b52302016258fe0"
+    },
+    {
+      "id": "papyrus",
+      "file": "assets/chronicle/papyrus.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        529,
+        595,
+        1058,
+        892
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "e974832c56f7f84fe6530bf4003750cafc557485b8e6ab5450abe534ebec602f"
+    },
+    {
+      "id": "trireme",
+      "file": "assets/chronicle/trireme.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        0,
+        892,
+        529,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "65e2a2cbe349a0963d633273a0b6b19f2dd4e7f44d63bccc9b7c744c3ccf3493"
+    },
+    {
+      "id": "aquila",
+      "file": "assets/chronicle/aquila.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        529,
+        892,
+        1058,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "8f0d906fddf769d36df6e1e7fc169d5a04edc8b0741d5e33d43c6bd34aae976f"
+    },
+    {
+      "id": "forum",
+      "file": "assets/chronicle/forum.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        0,
+        1190,
+        529,
+        1487
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "aa1824caba53e20b5f58915148af8d4db00f39d6559916317ca439e2aee034bf"
+    },
+    {
+      "id": "rubicon",
+      "file": "assets/chronicle/rubicon.png",
+      "source": "art_src/waves/chronicle_b.png",
+      "source_box": [
+        529,
+        1190,
+        1058,
+        1487
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "chronicle",
+      "composition_sha256": "88fc064ac26e8552fa41482290b03994212ffcaec3889a1c3406793c772212dc"
+    },
+    {
+      "id": "cicero_01",
+      "file": "assets/cs/cicero_01.png",
+      "source": "art_src/waves/cicero.png",
+      "source_box": [
+        0,
+        0,
+        836,
+        314
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "1dcbaae4bae2c17b295739c45955332f18fb968ccdb5c4685ecb81480fd429e5"
+    },
+    {
+      "id": "cicero_02",
+      "file": "assets/cs/cicero_02.png",
+      "source": "art_src/waves/cicero.png",
+      "source_box": [
+        836,
+        0,
+        1672,
+        314
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "7bbc86812ccef1c1ee7b4e134c63fbd10782763c69f8dc736ef25cee898ad986"
+    },
+    {
+      "id": "cicero_03",
+      "file": "assets/cs/cicero_03.png",
+      "source": "art_src/waves/cicero.png",
+      "source_box": [
+        0,
+        314,
+        836,
+        627
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "27389bef1c33c0336a0b4f182c60ecef5b6c902807518ad30feeab49ebb7db63"
+    },
+    {
+      "id": "cicero_04",
+      "file": "assets/cs/cicero_04.png",
+      "source": "art_src/waves/cicero.png",
+      "source_box": [
+        836,
+        314,
+        1672,
+        627
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "00644d3e575c147bf622d0af0ef01836d7d1d9d0d5208e118675a003c5f7e676"
+    },
+    {
+      "id": "cicero_05",
+      "file": "assets/cs/cicero_05.png",
+      "source": "art_src/waves/cicero.png",
+      "source_box": [
+        0,
+        627,
+        836,
+        941
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a0dd4fcc4c192d1915db12183936b3b6a39e6563e40dbcca036dbcd94210dd74"
+    },
+    {
+      "id": "cicero_06",
+      "file": "assets/cs/cicero_06.png",
+      "source": "art_src/waves/cicero.png",
+      "source_box": [
+        836,
+        627,
+        1672,
+        941
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "806e95b235a91614ec5c58845b2faafdf7930dc0deef04cbff8862d6961576ae"
+    },
+    {
+      "id": "forest_01",
+      "file": "assets/cs/forest_01.png",
+      "source": "art_src/waves/forest.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "406b04da07332284e29217b8815648218cfd8dfd621c52e292cd4e89b07d5323"
+    },
+    {
+      "id": "forest_02",
+      "file": "assets/cs/forest_02.png",
+      "source": "art_src/waves/forest.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "98f4a53d8b4910e1a61f9b7a31e414b7632cd321e07096b5bc81e3548308a385"
+    },
+    {
+      "id": "forest_03",
+      "file": "assets/cs/forest_03.png",
+      "source": "art_src/waves/forest.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a0220221fc1d649e7dea175770e1e14cfc94e1ecead43e055794c2fb0cfc0c87"
+    },
+    {
+      "id": "forest_04",
+      "file": "assets/cs/forest_04.png",
+      "source": "art_src/waves/forest.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "0e40c010d96b3cadc2ce9deaf611acc8396409b4871fe38dad8617e14e4b8df2"
+    },
+    {
+      "id": "forest_05",
+      "file": "assets/cs/forest_05.png",
+      "source": "art_src/waves/forest.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "f5e18daa085e223585b85193036fe4ddee0fb792689ee5b4022f8ca309ab4c13"
+    },
+    {
+      "id": "forest_06",
+      "file": "assets/cs/forest_06.png",
+      "source": "art_src/waves/forest.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "7d888b233c98513b8d3bdd255a72898e9112c59d5107d27a8ce982628cc03bb1"
+    },
+    {
+      "id": "ides_01",
+      "file": "assets/cs/ides_01.png",
+      "source": "art_src/waves/ides.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "85c0c0b5bea9fbae3ea261eb1a9ef84bf59ed38505c3633832e2c4d551afb717"
+    },
+    {
+      "id": "ides_02",
+      "file": "assets/cs/ides_02.png",
+      "source": "art_src/waves/ides.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "e68bb8d24471b8e1ae4f9d5c0c23f4a429ef7da6d3570177c77eabff4d9cfef2"
+    },
+    {
+      "id": "ides_03",
+      "file": "assets/cs/ides_03.png",
+      "source": "art_src/waves/ides.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a7481c1b9ca59d6fd06eaa0b0cbb16236386a34c11827c1c43a713e8809c6f64"
+    },
+    {
+      "id": "ides_04",
+      "file": "assets/cs/ides_04.png",
+      "source": "art_src/waves/ides.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "139d2cc313762e8daa04e81c087d86c658889502d50491b4d4798771840e574b"
+    },
+    {
+      "id": "ides_05",
+      "file": "assets/cs/ides_05.png",
+      "source": "art_src/waves/ides.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "ca098e10da4a9fb19f8fa813b313f628ce5013802cb96e73382a8f0e549ed409"
+    },
+    {
+      "id": "ides_06",
+      "file": "assets/cs/ides_06.png",
+      "source": "art_src/waves/ides.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "edd0a5e66f910be998dc2651107ab296a177fc494e1599221bb8a49a70f63e23"
+    },
+    {
+      "id": "munda_01",
+      "file": "assets/cs/munda_01.png",
+      "source": "art_src/waves/munda.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "111572aa15c450c58173f5aa454ab5e5b2e80d5382a4feb2b836a635fd08ec22"
+    },
+    {
+      "id": "munda_02",
+      "file": "assets/cs/munda_02.png",
+      "source": "art_src/waves/munda.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "e0eef0ea94072250dd5728cd3a945355a408b9941ceda97fd0ea346ba90f821e"
+    },
+    {
+      "id": "munda_03",
+      "file": "assets/cs/munda_03.png",
+      "source": "art_src/waves/munda.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "39b57689339d53074d97fdfb43b79f7b06523e4e1c1d4db83f594b9129c28624"
+    },
+    {
+      "id": "munda_04",
+      "file": "assets/cs/munda_04.png",
+      "source": "art_src/waves/munda.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "d7e4e0f017e01a41620222ef8751699e7877df32e55aa16d7aa706887d0872f3"
+    },
+    {
+      "id": "munda_05",
+      "file": "assets/cs/munda_05.png",
+      "source": "art_src/waves/munda.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "f8b8e6732db2bd0f953408e1a0d47683f05814914e11457c07beed732c21821b"
+    },
+    {
+      "id": "munda_06",
+      "file": "assets/cs/munda_06.png",
+      "source": "art_src/waves/munda.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "20b63790e74478d4de7fd762014c4179cf88dc28c7cc96b5ad9d5c3ad43dc48d"
+    },
+    {
+      "id": "perusia_01",
+      "file": "assets/cs/perusia_01.png",
+      "source": "art_src/waves/perusia.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a47bbb95502a7e90135801916bd9baba35f17dfd4004dd1673c6a75eb17035bf"
+    },
+    {
+      "id": "perusia_02",
+      "file": "assets/cs/perusia_02.png",
+      "source": "art_src/waves/perusia.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "1b01317d77a2eabb98eb27224b02f9c5010be565598b365d7c4e8e338befe737"
+    },
+    {
+      "id": "perusia_03",
+      "file": "assets/cs/perusia_03.png",
+      "source": "art_src/waves/perusia.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "a211c7ff1c772b86fc8f585a4afcdee1e41e3bf04c61def43850cf87fa4c9d98"
+    },
+    {
+      "id": "perusia_04",
+      "file": "assets/cs/perusia_04.png",
+      "source": "art_src/waves/perusia.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "f7e74dcdfc4e2d1f0b46a145da6d80d18aa470dc63aa33bb2c337c7826cae672"
+    },
+    {
+      "id": "perusia_05",
+      "file": "assets/cs/perusia_05.png",
+      "source": "art_src/waves/perusia.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "e23eeed7bad83045817722d0fb0c3a97aa887aae1900a0021da0d8889ab1ceac"
+    },
+    {
+      "id": "perusia_06",
+      "file": "assets/cs/perusia_06.png",
+      "source": "art_src/waves/perusia.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "0854a7c0c44c1acdbbf87cc7aabe7f2bdef8e735a499a2035d72117bb14e8f0a"
+    },
+    {
+      "id": "pharsalus_01",
+      "file": "assets/cs/pharsalus_01.png",
+      "source": "art_src/waves/pharsalus.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "df97376e67da002862dc68d052ab2f08707178667601731b2701bd98c92dabf5"
+    },
+    {
+      "id": "pharsalus_02",
+      "file": "assets/cs/pharsalus_02.png",
+      "source": "art_src/waves/pharsalus.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "99c5fe1b37b2e038b3c61a99085acbaffca2c76b6042e7c577272342ceff14f7"
+    },
+    {
+      "id": "pharsalus_03",
+      "file": "assets/cs/pharsalus_03.png",
+      "source": "art_src/waves/pharsalus.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "24bdbebe8cdc32d93c2b728b1890023d20ee19b077705d9796b055479ad03f7a"
+    },
+    {
+      "id": "pharsalus_04",
+      "file": "assets/cs/pharsalus_04.png",
+      "source": "art_src/waves/pharsalus.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "7daa21822a708a6c622befb9ae8858a0d601f1d5201ec997282f84d5eef81161"
+    },
+    {
+      "id": "pharsalus_05",
+      "file": "assets/cs/pharsalus_05.png",
+      "source": "art_src/waves/pharsalus.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "641f9045b6209347d719a6e4fd531675994f9cb989916cd9862770ef0726dc20"
+    },
+    {
+      "id": "pharsalus_06",
+      "file": "assets/cs/pharsalus_06.png",
+      "source": "art_src/waves/pharsalus.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "4f5b16c21d68decb554f3cf62fe14119409a5b1f09b285a427a535cc2e97aca3"
+    },
+    {
+      "id": "philippi_01",
+      "file": "assets/cs/philippi_01.png",
+      "source": "art_src/waves/philippi.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "c7f5e3e491f2e5418234377c5e7321ba79cb3e6ce792137b7ceeace2b29e7438"
+    },
+    {
+      "id": "philippi_02",
+      "file": "assets/cs/philippi_02.png",
+      "source": "art_src/waves/philippi.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "0819a094c583ffc7332194823c59af70ff0794fc494974568a8736759c115031"
+    },
+    {
+      "id": "philippi_03",
+      "file": "assets/cs/philippi_03.png",
+      "source": "art_src/waves/philippi.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "c21f951980c3271bdd86850bda0c9f8f0c3b68cd8ab89b4a438854609e6fda52"
+    },
+    {
+      "id": "philippi_04",
+      "file": "assets/cs/philippi_04.png",
+      "source": "art_src/waves/philippi.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "265209cf4d2567f3ca54ef96002413223bf94c29f89ccda9535ec9e30f910638"
+    },
+    {
+      "id": "philippi_05",
+      "file": "assets/cs/philippi_05.png",
+      "source": "art_src/waves/philippi.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "f1daab041b3823244ce376d25ac5d98cf582094703b784ca093964c89f57c025"
+    },
+    {
+      "id": "philippi_06",
+      "file": "assets/cs/philippi_06.png",
+      "source": "art_src/waves/philippi.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "872ebec3d67821f8d179ae543ba5ed1f7a766141d74007b4c2e99cd7ba6b72b5"
+    },
+    {
+      "id": "proscriptions_01",
+      "file": "assets/cs/proscriptions_01.png",
+      "source": "art_src/waves/proscriptions.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        385
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "1efe090ccbca1d37ff1029fce7e1a151a23abe93f749f1c5b41f25d8ee5c381e"
+    },
+    {
+      "id": "proscriptions_02",
+      "file": "assets/cs/proscriptions_02.png",
+      "source": "art_src/waves/proscriptions.png",
+      "source_box": [
+        682,
+        0,
+        1363,
+        385
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "fa19e545dc19af5019c5a5f9e6348621a5ae392a6a0740eb143e44d6daaf4aff"
+    },
+    {
+      "id": "proscriptions_03",
+      "file": "assets/cs/proscriptions_03.png",
+      "source": "art_src/waves/proscriptions.png",
+      "source_box": [
+        0,
+        385,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "63957b44d7b50f422c9c5e5f23b60331ec43f46b2b73a29db3926005c0284c8a"
+    },
+    {
+      "id": "proscriptions_04",
+      "file": "assets/cs/proscriptions_04.png",
+      "source": "art_src/waves/proscriptions.png",
+      "source_box": [
+        682,
+        385,
+        1363,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "06c8cfc402ce1b0cbb08cff27e9d41693b7f75e10b0cd3a4ad8a0f95a42c5d0f"
+    },
+    {
+      "id": "proscriptions_05",
+      "file": "assets/cs/proscriptions_05.png",
+      "source": "art_src/waves/proscriptions.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1154
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "1f6c62d8df638d7ca1e300302c1cc65694adee56c605ed1f5b5ea131d2ea960c"
+    },
+    {
+      "id": "proscriptions_06",
+      "file": "assets/cs/proscriptions_06.png",
+      "source": "art_src/waves/proscriptions.png",
+      "source_box": [
+        682,
+        769,
+        1363,
+        1154
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "ca0bfc98d7070ba7349456d493a1d921222f9aefc9c3548da48215c7c0c8e491"
+    },
+    {
+      "id": "interlude01",
+      "file": "assets/new_story/interlude01.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        0,
+        0,
+        528,
+        298
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "69dc3da87d4cd260e0867996d52e9a4cf86baea88339b4e2f04bbd14d6caf0b9"
+    },
+    {
+      "id": "interlude02",
+      "file": "assets/new_story/interlude02.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        528,
+        0,
+        1057,
+        298
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "3a60c8240c015be1370caf3ac7e426c75adb051ae09369c112e5f046bcd9b68c"
+    },
+    {
+      "id": "interlude03",
+      "file": "assets/new_story/interlude03.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        0,
+        298,
+        528,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "422a97e6b71681884b15498b7307bd2a35b11c883270ad8d02b64861b39ba412"
+    },
+    {
+      "id": "interlude04",
+      "file": "assets/new_story/interlude04.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        528,
+        298,
+        1057,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "de7f0916f94609ed10fedf4e7460f1a04cb4ef74ade0ceb13afa83496599c563"
+    },
+    {
+      "id": "interlude05",
+      "file": "assets/new_story/interlude05.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        0,
+        595,
+        528,
+        893
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "c77bd70e58de533579aff4452b715d857c119565df0aed7a7545ae01b651969e"
+    },
+    {
+      "id": "interlude06",
+      "file": "assets/new_story/interlude06.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        528,
+        595,
+        1057,
+        893
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "84a39a39ef0379b51c2ee4d397e2834938b8acded0d58727a8f9035708f365f7"
+    },
+    {
+      "id": "interlude07",
+      "file": "assets/new_story/interlude07.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        0,
+        893,
+        528,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "ca14d326466aaa4f6f8d02044215fe48d8b237480c8455157608ea480b3c9ead"
+    },
+    {
+      "id": "interlude08",
+      "file": "assets/new_story/interlude08.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        528,
+        893,
+        1057,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "415d0bf82fb461a9f4e38630462c948bf5e09744245455cbf7ff79e1b90fa3c5"
+    },
+    {
+      "id": "epilogue_together",
+      "file": "assets/new_story/epilogue_together.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        0,
+        1190,
+        528,
+        1488
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "413d431d9d8c7622c95a44ab5c1b44fb4493a369c3b2d84b9293d9d6252203cc"
+    },
+    {
+      "id": "epilogue_apart",
+      "file": "assets/new_story/epilogue_apart.png",
+      "source": "art_src/waves/story_a.png",
+      "source_box": [
+        528,
+        1190,
+        1057,
+        1488
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "8518574df45d4945c905b19a3db057fcac4e47543ce0fcebb699dbce07d6f095"
+    },
+    {
+      "id": "epilogue_sacrifice",
+      "file": "assets/new_story/epilogue_sacrifice.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        0,
+        0,
+        529,
+        297
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "a1c699048e75afc0d8f04b57804a569084aa5e4862a83520a3b9c6c51fa23596"
+    },
+    {
+      "id": "epilogue_bad",
+      "file": "assets/new_story/epilogue_bad.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        529,
+        0,
+        1058,
+        297
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "f00651f1dfa205df4f724041cdd00cede1d7ff7ccd0f9a774eeef6f62b360851"
+    },
+    {
+      "id": "citizen_court",
+      "file": "assets/new_story/citizen_court.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        0,
+        297,
+        529,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "a028a05b68234464b2d0a0a1527ec83a3182f1d0d3001b57b2f71d56bca86e0c"
+    },
+    {
+      "id": "neria_clinic",
+      "file": "assets/new_story/neria_clinic.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        529,
+        297,
+        1058,
+        595
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "6c84d572369f3c3e4f6b9cbd5cf238b555b39343616a7bbfcf68ef6813c8eb28"
+    },
+    {
+      "id": "lucilla_kiln",
+      "file": "assets/new_story/lucilla_kiln.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        0,
+        595,
+        529,
+        892
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "d3afeb13e1c4d20c534faf21d1948923acb3d336b69823b82f9b9cbeecd43b2b"
+    },
+    {
+      "id": "serranus_desk",
+      "file": "assets/new_story/serranus_desk.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        529,
+        595,
+        1058,
+        892
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "8942f8496a4b9e472bb3307301c6ee9573b063909049c020e61f50ce4a4bb54f"
+    },
+    {
+      "id": "aglaia_boat",
+      "file": "assets/new_story/aglaia_boat.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        0,
+        892,
+        529,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "bd84b8025bf77dea2b300df65c09bdadef1791754b081068612fd788b7ea0cd1"
+    },
+    {
+      "id": "vettius_road",
+      "file": "assets/new_story/vettius_road.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        529,
+        892,
+        1058,
+        1190
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "9a5bea2ae54209e778bacdea3576ce89fc288397312527c82a2cf19d52f58a6e"
+    },
+    {
+      "id": "mediterranean",
+      "file": "assets/new_story/mediterranean.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        0,
+        1190,
+        529,
+        1487
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "783b3a2e7d4785c432d9ba6bc47a701564c23ac3a9e1afd05b67006965b0b992"
+    },
+    {
+      "id": "menu",
+      "file": "assets/new_story/menu.png",
+      "source": "art_src/waves/story_b.png",
+      "source_box": [
+        529,
+        1190,
+        1058,
+        1487
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "new_story",
+      "composition_sha256": "67f4fc5915913dff320b0e2c16e2aa25cede194f9feaa09331b79b3e52003513"
+    },
+    {
+      "id": "thapsus_01",
+      "file": "assets/cs/thapsus_01.png",
+      "source": "art_src/waves/thapsus.png",
+      "source_box": [
+        0,
+        0,
+        682,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "3774fd733ef7578c794c7f8fb62f2e1f0de3bc2a563d90c721ec14210e981b8b"
+    },
+    {
+      "id": "thapsus_02",
+      "file": "assets/cs/thapsus_02.png",
+      "source": "art_src/waves/thapsus.png",
+      "source_box": [
+        682,
+        0,
+        1364,
+        384
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "b1825bdd21b9c78449f0f11c04ba1c02ace8924767f985b71aa0f64abe85b1f4"
+    },
+    {
+      "id": "thapsus_03",
+      "file": "assets/cs/thapsus_03.png",
+      "source": "art_src/waves/thapsus.png",
+      "source_box": [
+        0,
+        384,
+        682,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "bd34f9060eee5f9b619d1a564ab4188bf86996efcb4af1a97f89548f1f7bac24"
+    },
+    {
+      "id": "thapsus_04",
+      "file": "assets/cs/thapsus_04.png",
+      "source": "art_src/waves/thapsus.png",
+      "source_box": [
+        682,
+        384,
+        1364,
+        769
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "f3fcd8d2a1e3f442b729e3ef34f7e85622e47fca94f728acc17a32b092f10dcd"
+    },
+    {
+      "id": "thapsus_05",
+      "file": "assets/cs/thapsus_05.png",
+      "source": "art_src/waves/thapsus.png",
+      "source_box": [
+        0,
+        769,
+        682,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "ee12b25105da5152d966a43d05253ea6ae23b409d68a23a3cef7ec6e6f7cc2fd"
+    },
+    {
+      "id": "thapsus_06",
+      "file": "assets/cs/thapsus_06.png",
+      "source": "art_src/waves/thapsus.png",
+      "source_box": [
+        682,
+        769,
+        1364,
+        1153
+      ],
+      "size": [
+        480,
+        270
+      ],
+      "category": "cs",
+      "composition_sha256": "fa9facd1a5572d11730aa3dec7af893033ee8a7d4dd1ac3512e0a9633b2af350"
+    }
+  ]
+}
