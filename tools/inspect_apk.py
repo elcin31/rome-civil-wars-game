@@ -1,5 +1,6 @@
 """Fail the build on the wrong package, ABI, SDK, signing layout or size."""
 from pathlib import Path
+import json
 import re
 import sys
 from zipfile import ZipFile
@@ -18,4 +19,12 @@ with ZipFile(apk) as archive:
     assert libraries and all(name.startswith("lib/arm64-v8a/") for name in libraries)
     assert "assets/game.pck" in archive.namelist() or any(
         name.startswith("assets/") for name in archive.namelist())
+    # These JSON files are read through FileAccess, so Godot's resource export
+    # must include them explicitly. Check the delivered payload, not just source.
+    root = Path(__file__).resolve().parents[1]
+    for path in (root / 'story').rglob('*.json'):
+        if path.name == 'test_routes.json':
+            continue
+        payload = 'assets/' + path.relative_to(root).as_posix()
+        assert json.loads(archive.read(payload)) == json.loads(path.read_text()), payload
 print(f"APK PASS: org.cinislauri.game 0.5.0, ARM64, SDK 24/36, {apk.stat().st_size / 1048576:.1f} MiB")
