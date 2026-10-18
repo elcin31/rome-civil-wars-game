@@ -1,0 +1,29 @@
+{
+  "platform": "Android API 35 emulator, x86_64 smoke export",
+  "commit_content": "same game as ARM64 release",
+  "screen": [
+    1280,
+    720
+  ],
+  "story_to_hub": true,
+  "joystick_and_interaction": true,
+  "cold_restart_restore": true,
+  "post_restart_movement": true,
+  "android_back_pause_resume": true,
+  "rendered_frames_verified": true,
+  "native_layout_probe": true,
+  "pickup_delivery_and_cinematic": true,
+  "android_48dp_checked": true,
+  "launch_output": "Starting: Intent { cmp=org.cinislauri.game/com.godot.game.GodotAppLauncher }\nStatus: ok\nLaunchState: COLD\nActivity: org.cinislauri.game/com.godot.game.GodotApp\nTotalTime: 3879\nWaitTime: 3950\nComplete",
+  "launch_to_menu_seconds": 9.844,
+  "first_install_launch_to_menu_seconds": 9.844,
+  "subsequent_cold_launch_output": "Starting: Intent { cmp=org.cinislauri.game/com.godot.game.GodotAppLauncher }\nStatus: ok\nLaunchState: COLD\nActivity: org.cinislauri.game/com.godot.game.GodotApp\nTotalTime: 2077\nWaitTime: 2084\nComplete",
+  "subsequent_cold_launch_to_menu_seconds": 5.239,
+  "emulator_pss_mib": 161.47,
+  "physical_arm64_test": false,
+  "status": "passed",
+  "ci_run": 39139680483,
+  "source_commit": "f8caa0d034861feba37e594d661fe6c853705b8a",
+  "test_fixture_commit": "00c3f07b5e7fbde6de1f31820b7a7092444b615a",
+  "version": "0.5.0 baseline"
+}
