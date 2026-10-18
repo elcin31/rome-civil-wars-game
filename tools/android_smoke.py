@@ -138,7 +138,7 @@ wait_for_hub()
 screenshot("hub_before", verify_render=True)
 # Hold the joystick northeast, then interact with the actual scribe.
 hold_joystick(0.96, -0.27, 800)
-tap_caption("Дело")
+tap_caption("Говорить")
 time.sleep(0.3)
 saved = state()
 assert saved["gameplay"]["encounter"]["state"]["quest"] == 1, "Touch interaction did not accept the hub quest"
@@ -153,7 +153,7 @@ before_x = saved["gameplay"]["encounter"]["state"]["x"]
 tap_caption("Продолжить")
 wait_for_hub()
 hold_joystick(-1, 0, 350)
-tap_caption("Дело")
+tap_caption("Что дальше?")
 time.sleep(0.3)
 restored = state()
 assert restored["gameplay"]["encounter"]["state"]["x"] < before_x - 3, "Restored hub did not respond to joystick"

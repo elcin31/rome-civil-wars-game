@@ -449,6 +449,7 @@ func _show_beat(node: Dictionary) -> void:
 	encounter.size = layer.size
 	encounter.setup(StoryRuntime.beats[node.beat])
 	encounter.pause_requested.connect(_pause)
+	encounter.journal_requested.connect(_log)
 	encounter.completed.connect(_after_encounter)
 	layer.add_child(encounter)
 
@@ -551,6 +552,11 @@ func _settings() -> void:
 	_clear("settings")
 	_heading("Настройки", settings_return)
 	_button("Об игре", Rect2(_width() - 196, 14, 180, _touch()), _credits)
+	_button(
+		"Подсказки: " + ("вкл" if GameServices.settings.hints else "выкл"),
+		Rect2(212, 14, 256, _touch()),
+		_toggle_hints
+	)
 	var rows: Array = [
 		["music", "Музыка", 0.1],
 		["effects", "Эффекты", 0.1],
@@ -589,6 +595,11 @@ func _settings() -> void:
 			Rect2(right - button_width, y, button_width, _touch()),
 			_adjust.bind(row[0], row[2])
 		)
+
+
+func _toggle_hints() -> void:
+	GameServices.set_preference("hints", not GameServices.settings.hints)
+	_settings()
 
 
 func _credits() -> void:
@@ -700,6 +711,13 @@ func _log() -> void:
 	var active: String = StoryRuntime.current().get("beat", "")
 	if StoryRuntime.beats.has(active):
 		log_text += "Текущее поручение: " + StoryRuntime.beats[active].objective.ru + "\n\n"
+		if StoryRuntime.beats[active].type == "rpg":
+			var hub = preload("res://scripts/gameplay/hub_model.gd").new()
+			hub.setup(StoryRuntime.beats[active], StoryRuntime.state.gameplay, 0)
+			var saved: Dictionary = StoryRuntime.state.gameplay.encounter.get("state", {})
+			if not saved.is_empty():
+				hub.restore(saved)
+			log_text += hub.objective_text() + "\n" + hub.hint_text() + "\n\n"
 	for ident in StoryRuntime.state.get("gameplay", {}).get("quests", {}):
 		if StoryRuntime.beats.has(ident):
 			log_text += "Выполнено: " + StoryRuntime.beats[ident].title.ru + "\n"
@@ -712,7 +730,7 @@ func _log() -> void:
 			+ "\n"
 		)
 	var log_view: RichTextLabel = _reading_panel(log_text, _content_top(), 20)
-	log_view.scroll_to_line(maxi(0, log_view.get_line_count() - 8))
+	log_view.scroll_to_line(0)
 
 
 func _unhandled_input(event: InputEvent) -> void:

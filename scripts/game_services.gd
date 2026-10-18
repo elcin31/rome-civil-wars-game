@@ -8,7 +8,8 @@ var settings: Dictionary = {
 	"button_scale": 1.0,
 	"button_offset": 0.0,
 	"language": "ru",
-	"text_speed": 36.0
+	"text_speed": 36.0,
+	"hints": true
 }
 var music: AudioStreamPlayer
 var voices: Array[AudioStreamPlayer] = []
@@ -35,6 +36,10 @@ func set_preference(key: String, value: Variant, persist: bool = true) -> void:
 		return
 	if key == "language":
 		settings[key] = "ru"  # English data are prepared; do not expose an empty locale.
+	elif key == "hints":
+		if not value is bool:
+			return
+		settings[key] = value
 	elif value is float or value is int:
 		if not is_finite(float(value)):
 			return

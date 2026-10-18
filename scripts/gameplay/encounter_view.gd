@@ -3,9 +3,11 @@ extends Control
 
 signal pause_requested
 signal completed
+signal journal_requested
 
 const UI = preload("res://scripts/roman_ui.gd")
 const Factory = preload("res://scripts/gameplay/encounter_factory.gd")
+const HubPresentation = preload("res://scripts/gameplay/hub_presentation.gd")
 const INK = Color("14151f")
 const IVORY = Color("ede3cc")
 const OCHRE = Color("d9a441")
@@ -32,6 +34,9 @@ var action_buttons: Array[Button] = []
 var nearby_button: Button
 var world_transform: Transform2D
 var panel_hidden: Array[Control] = []
+var idle_seconds: float = 0.0
+var hint_shown: bool = false
+var debug_interactions: bool = false
 
 
 func setup(value: Dictionary) -> void:
@@ -170,9 +175,9 @@ func _ready() -> void:
 			_button("Конец хода", _action_rect(2), _end_turn)
 			GameServices.play_layer("battle")
 		"rpg":
-			_button("Дело", _action_rect(0), _interact)
+			_button("Что дальше?", _action_rect(0), _hint)
 			_button("Герой", _action_rect(1), _switch_hero)
-			_button("Лавка", _action_rect(2), _shop)
+			_button("Журнал", _action_rect(2), _journal)
 			nearby_button = _button(
 				"Говорить", Rect2(200, 200, 156, UI.touch_height(self)), _interact
 			)
@@ -228,6 +233,14 @@ func _physics_process(delta: float) -> void:
 			camera = clampf(float(model.state.x) - 85.0, 0.0, model.width - 320.0)
 		"rpg":
 			model.tick(delta, axis)
+			if axis.length() > 0.05:
+				idle_seconds = 0.0
+				hint_shown = false
+			else:
+				idle_seconds += delta
+			if GameServices.settings.hints and idle_seconds >= 20.0 and not hint_shown:
+				_hint()
+				hint_shown = true
 	save_clock += delta
 	if save_clock >= 1.5:
 		save_clock = 0.0
@@ -256,32 +269,14 @@ func _update_status() -> void:
 				]
 			)
 		_:
-			var next: String = [
-				"Поговорите с писцом",
-				"Заберите припасы",
-				"Передайте припасы получателю",
-				"Идите к дороге"
-			][clampi(int(model.state.quest), 0, 3)]
-			status.text = next + " · " + model.state.message
+			status.text = model.state.message
+			objective.text = model.objective_text()
+			UI.fit_label(objective, 22)
 			if is_instance_valid(nearby_button):
 				var station: String = model.nearest()
 				nearby_button.visible = not station.is_empty()
-				var point: Vector2 = world_transform * Vector2(model.state.x, model.state.y)
-				nearby_button.position = Vector2(
-					clampf(point.x + 32, 16, size.x - 180),
-					clampf(point.y - 70, 132, status.position.y - nearby_button.size.y - 20)
-				)
-				for nearby in model.stations:
-					if nearby.id != station:
-						continue
-					var caption: Rect2 = world_transform * _npc_caption_rect(nearby)
-					nearby_button.set_meta("avoid_rect", caption)
-					if nearby_button.get_rect().grow(8).intersects(caption):
-						nearby_button.position.x = clampf(
-							minf(point.x - 32, caption.position.x - 12) - nearby_button.size.x,
-							16,
-							size.x - nearby_button.size.x - 16
-						)
+				UI.set_button_text(nearby_button, model.action_text())
+				HubPresentation.place_prompt(self)
 	if status.get_meta("fitted_text", "") != status.text:
 		UI.fit_label(status, 22)
 		status.set_meta("fitted_text", status.text)
@@ -323,12 +318,25 @@ func _end_turn() -> void:
 
 
 func _interact() -> void:
+	idle_seconds = 0.0
+	hint_shown = false
 	var station: String = model.interact()
 	GameServices.effect("choice")
 	if station == "merchant":
 		_shop()
 	persist()
 	queue_redraw()
+
+
+func _hint() -> void:
+	model.state.message = model.hint_text()
+	_update_status()
+	persist()
+
+
+func _journal() -> void:
+	persist()
+	journal_requested.emit()
 
 
 func _switch_hero() -> void:
@@ -601,6 +609,8 @@ func _input(event: InputEvent) -> void:
 				return
 	if event is InputEventScreenTouch:
 		if event.pressed:
+			if beat.type == "rpg":
+				HubPresentation.debug_tap(self, _local(event.position))
 			if _pointer_down(event.index, _local(event.position)):
 				get_viewport().set_input_as_handled()
 		else:
@@ -641,6 +651,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_E and beat.type == "rpg":
 			_interact()
+		elif event.keycode == KEY_F3 and beat.type == "rpg":
+			debug_interactions = not debug_interactions
+			queue_redraw()
 		elif event.keycode == KEY_ENTER and beat.type == "tactical":
 			_end_turn()
 
@@ -848,112 +861,5 @@ func _draw_platformer() -> void:
 	draw_rect(Rect2(exit_point - Vector2(0, 36), Vector2(14, 9)), Color("7a1f1f"))
 
 
-func _npc_caption_rect(station: Dictionary) -> Rect2:
-	var width: float = font.get_string_size(station.name, HORIZONTAL_ALIGNMENT_LEFT, -1, 11).x
-	return Rect2(
-		clampf(station.x + 18, 4, 316 - width) - 3,
-		station.y - 34,
-		width + 6,
-		font.get_height(11) + 6
-	)
-
-
 func _draw_hub() -> void:
-	# A continuous earth plane, a path, horizon and contact shadows make depth explicit.
-	draw_rect(Rect2(0, 66, 320, 67), Color(0.29, 0.22, 0.15, 0.84))
-	draw_line(Vector2(0, 66), Vector2(320, 66), Color("bfa87a"), 2)
-	draw_colored_polygon(
-		PackedVector2Array([Vector2(0, 114), Vector2(320, 97), Vector2(320, 128), Vector2(0, 132)]),
-		Color("76503b")
-	)
-	# A small brazier has a recognisable bowl, feet and two flickering flame clusters.
-	var flicker: float = float(int(Time.get_ticks_msec() / 180) % 2)
-	draw_line(Vector2(32, 89), Vector2(32, 98), Color("737e82"), 2)
-	draw_line(Vector2(26, 98), Vector2(38, 98), Color("737e82"), 2)
-	draw_colored_polygon(
-		PackedVector2Array([Vector2(26, 85), Vector2(38, 85), Vector2(36, 89), Vector2(28, 89)]),
-		BRONZE
-	)
-	draw_colored_polygon(
-		PackedVector2Array(
-			[
-				Vector2(28, 85),
-				Vector2(31, 77 + flicker),
-				Vector2(33, 81),
-				Vector2(35, 76 - flicker),
-				Vector2(37, 85)
-			]
-		),
-		Color("ed803e")
-	)
-	draw_colored_polygon(
-		PackedVector2Array([Vector2(31, 85), Vector2(33, 80 + flicker), Vector2(35, 85)]), OCHRE
-	)
-	var actors: Array = []
-	var target: String = ["scribe", "supplies", "witness", "exit"][clampi(
-		int(model.state.quest), 0, 3
-	)]
-	for station in model.stations:
-		actors.append({"kind": station.id, "x": station.x, "y": station.y})
-		if station.id == target:
-			var tip = Vector2(station.x + 18, station.y - 38)
-			draw_colored_polygon(
-				PackedVector2Array([tip, tip + Vector2(-4, -6), tip + Vector2(4, -6)]), OCHRE
-			)
-	actors.append({"kind": "hero", "x": model.state.x, "y": model.state.y})
-	if not StoryRuntime.state.flags.get("friend_lost", false):
-		actors.append(
-			{"kind": "ally", "x": clampf(model.state.x - 18, 18, 302), "y": model.state.y + 2}
-		)
-	actors.sort_custom(func(a, b): return a.y < b.y)
-	for actor in actors:
-		var point = Vector2(actor.x, actor.y)
-		match actor.kind:
-			"supplies":
-				draw_rect(Rect2(point - Vector2(9, 13), Vector2(18, 13)), Color("4a3026"))
-				draw_rect(Rect2(point - Vector2(9, 13), Vector2(18, 13)), BRONZE, false)
-				draw_line(point - Vector2(8, 12), point - Vector2(-8, 1), BRONZE)
-				draw_line(point - Vector2(-8, 12), point - Vector2(8, 1), BRONZE)
-			"exit":
-				draw_line(point, point - Vector2(0, 28), Color("76503b"), 3)
-				draw_colored_polygon(
-					PackedVector2Array(
-						[
-							point + Vector2(-2, -28),
-							point + Vector2(12, -28),
-							point + Vector2(16, -24),
-							point + Vector2(12, -20),
-							point + Vector2(-2, -20)
-						]
-					),
-					OCHRE
-				)
-			"hero":
-				_sprite(_hero_sprite(), point, 4 if joy_axis.length() > 0.1 else 3)
-			"ally":
-				_sprite(
-					"lucius_vorenus" if _hero_sprite() == "titus_pullo" else "titus_pullo", point, 4
-				)
-			_:
-				_sprite(
-					(
-						"npc_merchant"
-						if actor.kind == "merchant"
-						else ("npc_scribe" if actor.kind == "scribe" else "npc_healer")
-					),
-					point
-				)
-	var near: String = model.nearest()
-	for station in model.stations:
-		if station.id == near:
-			var caption: Rect2 = _npc_caption_rect(station)
-			draw_rect(caption, INK)
-			draw_string(
-				font,
-				caption.position + Vector2(3, 3 + font.get_ascent(11)),
-				station.name,
-				HORIZONTAL_ALIGNMENT_LEFT,
-				-1,
-				11,
-				OCHRE
-			)
+	HubPresentation.draw(self)

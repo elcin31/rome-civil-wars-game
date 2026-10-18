@@ -127,3 +127,36 @@ func test_campaign_map_preserves_current_story_decisions() -> void:
 	view._campaign_resume()
 	assert_eq(game.state.node, node)
 	assert_eq(game.state.decisions, decisions)
+
+
+func test_hints_obey_preference_and_manual_help_remains_available() -> void:
+	game.go("ch01_s01_n75")
+	view.refresh()
+	var services: Node = get_node("/root/GameServices")
+	var previous: bool = services.settings.hints
+	services.set_preference("hints", false, false)
+	var initial: String = view.encounter.model.state.message
+	view.encounter._physics_process(20.1)
+	assert_eq(view.encounter.model.state.message, initial)
+	services.set_preference("hints", true, false)
+	view.encounter._physics_process(0.1)
+	assert_eq(view.encounter.model.state.message, view.encounter.model.hint_text())
+	view.encounter.model.state.quest = 1
+	view.encounter._hint()
+	assert_true(view.encounter.model.state.message.contains("Взять"))
+	assert_eq(game.state.gameplay.encounter.state.quest, 1)
+	services.set_preference("hints", previous, false)
+
+
+func test_journal_opens_at_the_current_quest_step() -> void:
+	game.go("ch01_s01_n75")
+	view.refresh()
+	view.encounter.model.state.quest = 2
+	view.encounter._journal()
+	assert_eq(view.mode, "log")
+	var text: String = ""
+	for child in view.layer.get_children():
+		if child is RichTextLabel:
+			text += child.text
+	assert_true(text.contains("3/3"))
+	assert_true(text.contains("Передать"))

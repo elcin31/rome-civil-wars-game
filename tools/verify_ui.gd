@@ -75,6 +75,12 @@ func _check_layout() -> Array[Button]:
 				_fail("clipped dialogue page")
 		if control is Button:
 			buttons.append(control)
+			for obstacle in control.get_meta("avoid_rects", []):
+				var actor: Rect2 = (
+					control.get_parent().get_global_transform_with_canvas() * obstacle
+				)
+				if bounds.intersects(actor):
+					_fail("context button obscures an actor or object")
 			if control.has_meta("avoid_rect"):
 				var caption: Rect2 = (
 					control.get_parent().get_global_transform_with_canvas()
@@ -227,6 +233,39 @@ func _run() -> void:
 	view.encounter._shop()
 	await _shot("shop", true)
 	view.encounter._close_panel()
+	# The hidden diagnostic switch must also work without a hardware keyboard.
+	for index in range(5):
+		for pressed in [true, false]:
+			var touch = InputEventScreenTouch.new()
+			touch.index = 9
+			touch.position = (
+				root.get_screen_transform() * (view.layer.global_position + Vector2(300, 44))
+			)
+			touch.pressed = pressed
+			Input.parse_input_event(touch)
+			await process_frame
+	if not view.encounter.debug_interactions:
+		_fail("five header touches did not enable interaction debug")
+	await _shot("hub_debug", true)
+	view.encounter.debug_interactions = false
+	# Reproduce the player's overlap position, then tap the real contextual action.
+	view.encounter.model.state.quest = 1
+	view.encounter.model.state.x = 180.0
+	view.encounter.model.state.y = 106.0
+	view.encounter._update_status()
+	await _shot("hub_supplies_overlap", true)
+	if view.encounter.nearby_button.get_meta("caption") != "Взять":
+		_fail("supplies prompt does not say Take")
+	var take_point: Vector2 = view.encounter.nearby_button.get_global_rect().get_center()
+	for pressed in [true, false]:
+		var touch = InputEventScreenTouch.new()
+		touch.index = 8
+		touch.position = root.get_screen_transform() * take_point
+		touch.pressed = pressed
+		Input.parse_input_event(touch)
+		await process_frame
+	if int(view.encounter.model.state.quest) != 2:
+		_fail("real touch failed to take quest supplies")
 	for index in range(4):
 		var station: Dictionary = view.encounter.model.stations[[0, 1, 3, 4][index]]
 		view.encounter.model.state.x = station.x

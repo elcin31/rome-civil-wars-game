@@ -9,12 +9,12 @@ import subprocess
 build = Path(__file__).resolve().parents[1] / "build"
 commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=build.parent, text=True).strip()
 apk = build / "cinis-lauri.apk"
-info = {"commit": commit, "package": "org.cinislauri.game", "version": "0.4.1", "version_code": 5,
+info = {"commit": commit, "package": "org.cinislauri.game", "version": "0.4.2", "version_code": 6,
         "abi": "arm64-v8a", "min_sdk": 24, "target_sdk": 36, "bytes": apk.stat().st_size,
         "sha256": hashlib.sha256(apk.read_bytes()).hexdigest()}
 (build / "build-info.json").write_text(json.dumps(info, indent=2) + "\n")
 readme = build / "README_INSTALL.txt"
-readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.4.1
+readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.4.2
 Пакет: org.cinislauri.game. Android 7.0+ (API 24), ARM64, ландшафт.
 
 1. Скопируйте cinis-lauri.apk на Android и откройте файл.
@@ -25,7 +25,9 @@ readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.4.1
 Это debug-сборка для прямой установки, без сетевых разрешений и мультиплеера.
 Сохранения хранятся на устройстве. Удаление приложения удаляет сохранения.
 Подпись CI debug; разные сборки могут потребовать удаления старой версии.
-Управление: джойстик слева, действия справа; пауза — в верхней панели/«Назад».
+В хабе: писец → запасы → получатель → дорога. Действие появляется рядом с героем.
+«Что дальше?» подсказывает текущую цель; «Журнал» показывает ход поручения.
+Пауза — в верхней панели или системной кнопкой «Назад».
 Документация и ограничения: https://github.com/elcin31/rome-civil-wars-game
 """, encoding="utf-8")
 name = "rome-civil-wars-" + datetime.now(timezone.utc).strftime("%Y-%m-%d") + ".zip"
