@@ -28,5 +28,13 @@
   "signature_blocks_independently_parsed": [
     "v2",
     "v3"
-  ]
+  ],
+  "release_download_verified": true,
+  "release_url": "https://github.com/elcin31/rome-civil-wars-game/releases/tag/v0.4.2",
+  "release_asset_url": "https://github.com/elcin31/rome-civil-wars-game/releases/download/v0.4.2/rome-civil-wars-2026-10-18.zip",
+  "release_download_sha256": "f1600c2ca2eacfd209aed1ca9f270866225d4f1f7317d7ee139ea15fa1b8b29f",
+  "publish_run": 39117667175,
+  "release_kind": "prerelease",
+  "full_ci_status": "failure",
+  "open_issue": "SMOKE-04"
 }
