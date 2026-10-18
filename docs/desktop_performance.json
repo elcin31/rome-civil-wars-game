@@ -1,77 +1,79 @@
 {
-	"aspects": [
-		{
-			"viewport": [
-				1280,
-				720
-			],
-			"window": [
-				1280,
-				720
-			]
-		},
-		{
-			"viewport": [
-				1280,
-				720
-			],
-			"window": [
-				1680,
-				720
-			]
-		}
-	],
-	"device": "Linux desktop, Xorg dummy, Mesa llvmpipe software OpenGL",
-	"godot": "4.6.3-stable (official)",
-	"layers": [
-		{
-			"cpu_frame_max_ms": 52.06,
-			"fps_max": 61.0,
-			"fps_min": 44.0,
-			"layer": "tactical",
-			"static_memory_max_mib": 34.34
-		},
-		{
-			"cpu_frame_max_ms": 19.18,
-			"fps_max": 61.0,
-			"fps_min": 60.0,
-			"layer": "platformer",
-			"static_memory_max_mib": 35.12
-		},
-		{
-			"cpu_frame_max_ms": 40.75,
-			"fps_max": 60.0,
-			"fps_min": 58.0,
-			"layer": "rpg",
-			"static_memory_max_mib": 35.54
-		},
-		{
-			"cpu_frame_max_ms": 47.12,
-			"fps_max": 60.0,
-			"fps_min": 59.0,
-			"layer": "menu",
-			"static_memory_max_mib": 36.35
-		},
-		{
-			"cpu_frame_max_ms": 35.72,
-			"fps_max": 60.0,
-			"fps_min": 60.0,
-			"layer": "dialogue",
-			"static_memory_max_mib": 36.84
-		},
-		{
-			"cpu_frame_max_ms": 20.83,
-			"fps_max": 60.0,
-			"fps_min": 60.0,
-			"layer": "gallery",
-			"static_memory_max_mib": 37.55
-		}
-	],
-	"nodes_after_pause_cycles": 24,
-	"nodes_before_pause_cycles": 24,
-	"pause_cycles": 20,
-	"physical_android": false,
-	"samples_per_layer": 120,
-	"static_memory_after_pause_mib": 36.93,
-	"static_memory_before_pause_mib": 36.93
+  "aspects": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "window": [
+        1280,
+        720
+      ]
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "window": [
+        1680,
+        720
+      ]
+    }
+  ],
+  "device": "Linux desktop, Xorg dummy, Mesa llvmpipe software OpenGL",
+  "godot": "4.6.3-stable (official)",
+  "layers": [
+    {
+      "cpu_frame_max_ms": 39.43,
+      "fps_max": 61.0,
+      "fps_min": 56.0,
+      "layer": "tactical",
+      "static_memory_max_mib": 39.89
+    },
+    {
+      "cpu_frame_max_ms": 18.55,
+      "fps_max": 60.0,
+      "fps_min": 60.0,
+      "layer": "platformer",
+      "static_memory_max_mib": 40.68
+    },
+    {
+      "cpu_frame_max_ms": 21.59,
+      "fps_max": 60.0,
+      "fps_min": 60.0,
+      "layer": "rpg",
+      "static_memory_max_mib": 41.1
+    },
+    {
+      "cpu_frame_max_ms": 13.52,
+      "fps_max": 60.0,
+      "fps_min": 60.0,
+      "layer": "menu",
+      "static_memory_max_mib": 43.41
+    },
+    {
+      "cpu_frame_max_ms": 17.15,
+      "fps_max": 60.0,
+      "fps_min": 60.0,
+      "layer": "dialogue",
+      "static_memory_max_mib": 44.41
+    },
+    {
+      "cpu_frame_max_ms": 16.19,
+      "fps_max": 60.0,
+      "fps_min": 60.0,
+      "layer": "gallery",
+      "static_memory_max_mib": 45.17
+    }
+  ],
+  "nodes_after_pause_cycles": 24,
+  "nodes_before_pause_cycles": 24,
+  "pause_cycles": 20,
+  "physical_android": false,
+  "samples_per_layer": 120,
+  "static_memory_after_pause_mib": 44.69,
+  "static_memory_before_pause_mib": 44.54,
+  "source_commit": "fe0a69817a7f72ef0b3af9fa4e370126dd75d54f",
+  "typography": "Golos Text 450/600 and PT Serif Bold, grayscale AA, oversampling 2"
 }
