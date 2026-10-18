@@ -8,6 +8,7 @@ import sys
 import time
 import re
 import xml.etree.ElementTree as ET
+import traceback as traceback_module
 from PIL import Image
 
 PACKAGE = "org.cinislauri.game"
@@ -122,6 +123,7 @@ def dismiss_fullscreen_hint():
 
 def record_failure(kind, value, traceback):
     try:
+        (OUTPUT / "failure.txt").write_text("".join(traceback_module.format_exception(kind, value, traceback)))
         (OUTPUT / "logcat.txt").write_text(adb("logcat", "-d", "-v", "brief", check=False))
         (OUTPUT / "failure-ui.json").write_text(json.dumps(ui(), ensure_ascii=False, indent=2))
         (OUTPUT / "failure-state.json").write_text(json.dumps(state(), ensure_ascii=False, indent=2))
@@ -134,6 +136,11 @@ sys.excepthook = record_failure
 
 
 assert adb("shell", "getprop", "ro.kernel.qemu") == "1", "This smoke runner requires an emulator"
+# The stock Messages app can ANR during the Google APIs image's first boot.
+# Its system dialog intercepts otherwise valid game taps. Scope this setup to
+# the already-verified disposable emulator; the game does not use SMS.
+adb("shell", "am", "force-stop", "com.google.android.apps.messaging", check=False)
+adb("shell", "pm", "disable-user", "--user", "0", "com.google.android.apps.messaging", check=False)
 adb("install", "-r", sys.argv[1])
 adb("shell", "pm", "clear", PACKAGE)
 adb("shell", "wm", "size", "720x1280")
