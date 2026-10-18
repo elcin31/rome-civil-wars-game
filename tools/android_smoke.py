@@ -179,8 +179,16 @@ node = saved["node"]
 adb("shell", "input", "keyevent", "KEYCODE_HOME")
 time.sleep(0.2)
 adb("shell", "am", "force-stop", PACKAGE)
-adb("shell", "am", "start", "-W", "-n", activity)
-time.sleep(2)
+# Remove only debug layout telemetry so a previous process cannot satisfy the
+# menu timing check. The actual story save remains untouched.
+adb("shell", "run-as", PACKAGE, "rm", "-f", "files/cinis_ui_layout.json")
+restart_begin = time.monotonic()
+restart_launch = adb("shell", "am", "start", "-W", "-n", activity)
+restart_deadline = time.monotonic() + 12
+while ui().get("mode") != "menu" and time.monotonic() < restart_deadline:
+    time.sleep(0.1)
+restart_to_menu = round(time.monotonic() - restart_begin, 3)
+assert ui().get("mode") == "menu", "Subsequent cold launch did not reach menu"
 dismiss_fullscreen_hint()
 before_x = saved["gameplay"]["encounter"]["state"]["x"]
 tap_caption("Продолжить")
@@ -261,7 +269,11 @@ pss = re.search(r"TOTAL PSS:\s*(\d+)", memory)
 report = {"platform": "Android API 35 emulator, x86_64 smoke export", "commit_content": "same game as ARM64 release",
           "screen": [width, height], "story_to_hub": True, "joystick_and_interaction": True,
           "cold_restart_restore": True, "post_restart_movement": True, "android_back_pause_resume": True, "rendered_frames_verified": True, "native_layout_probe": True, "pickup_delivery_and_cinematic": bool(ui().get("hub") or state().get("cutscenes")), "android_48dp_checked": True,
-          "launch_output": launch, "launch_to_menu_seconds": launch_to_menu, "emulator_pss_mib": round(int(pss[1])/1024, 2) if pss else None, "physical_arm64_test": False}
+          "launch_output": launch, "launch_to_menu_seconds": launch_to_menu,
+          "first_install_launch_to_menu_seconds": launch_to_menu,
+          "subsequent_cold_launch_output": restart_launch,
+          "subsequent_cold_launch_to_menu_seconds": restart_to_menu,
+          "emulator_pss_mib": round(int(pss[1])/1024, 2) if pss else None, "physical_arm64_test": False}
 (OUTPUT / "ui-layout.json").write_text(json.dumps(ui(), ensure_ascii=False, indent=2) + "\n")
 (OUTPUT / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
 print("ANDROID SMOKE PASS:", report)
