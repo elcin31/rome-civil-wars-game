@@ -45,6 +45,10 @@ func _check_layout() -> Array[Button]:
 			_fail("outside safe area: %s %s / %s" % [control.get_class(), bounds, safe])
 		if control is Label and not control.text.is_empty():
 			var minimum: Vector2 = control.get_minimum_size()
+			if control.has_meta("text_budget"):
+				var budget: Vector2 = control.get_meta("text_budget")
+				if minimum.y > budget.y + 1:
+					_fail("status text crosses its frame: " + control.text.left(70))
 			if minimum.x > control.size.x + 1 or minimum.y > control.size.y + 1:
 				_fail(
 					(
@@ -213,8 +217,20 @@ func _run() -> void:
 		view.encounter.model.state.x = station.x
 		view.encounter.model.state.y = station.y
 		view.encounter.model.state.quest = index
+		if index < 3:
+			view.encounter.model.interact()
 		view.encounter._update_status()
 		await _shot("hub_step_%d" % index, true)
+	# Real quest messages can wrap farther than the initial hub introduction.
+	for encounter in game.read_json("res://story/beats.json").beats:
+		for key in encounter.get("hub_dialogue", {}):
+			view.encounter.model.state.quest = (
+				{"intro": 0, "request": 1, "collected": 2, "delivered": 3}.get(key, 1)
+			)
+			view.encounter.model.state.message = encounter.hub_dialogue[key].ru
+			view.encounter._update_status()
+			await process_frame
+			_check_layout()
 	var services: Node = root.get_node("GameServices")
 	services.settings.button_scale = 1.3
 	services.settings.button_offset = 8.0

@@ -162,6 +162,7 @@ func _ready() -> void:
 		status = _label(
 			"", Rect2(164, size.y - _action_rect(0).size.y - 100, size.x - 196, 60), 22, OCHRE
 		)
+	status.set_meta("text_budget", status.size)
 	match beat.type:
 		"tactical":
 			_button("Щит", _action_rect(0), _guard)
@@ -280,6 +281,16 @@ func _update_status() -> void:
 							16,
 							size.x - nearby_button.size.x - 16
 						)
+	if status.get_meta("fitted_text", "") != status.text:
+		var budget: Vector2 = status.get_meta("text_budget")
+		var font_size: int = 22
+		status.add_theme_font_size_override("font_size", font_size)
+		status.size = budget
+		while status.get_minimum_size().y > budget.y and font_size > 18:
+			font_size -= 2
+			status.add_theme_font_size_override("font_size", font_size)
+			status.size = budget
+		status.set_meta("fitted_text", status.text)
 
 
 func persist() -> void:
