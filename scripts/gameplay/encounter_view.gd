@@ -269,6 +269,17 @@ func _update_status() -> void:
 				nearby_button.position = Vector2(
 					clampf(point.x + 32, 16, size.x - 180), clampf(point.y - 70, 132, size.y - 248)
 				)
+				for nearby in model.stations:
+					if nearby.id != station:
+						continue
+					var caption: Rect2 = world_transform * _npc_caption_rect(nearby)
+					nearby_button.set_meta("avoid_rect", caption)
+					if nearby_button.get_rect().grow(8).intersects(caption):
+						nearby_button.position.x = clampf(
+							minf(point.x - 32, caption.position.x - 12) - nearby_button.size.x,
+							16,
+							size.x - nearby_button.size.x - 16
+						)
 
 
 func persist() -> void:
@@ -832,6 +843,11 @@ func _draw_platformer() -> void:
 	draw_rect(Rect2(exit_point - Vector2(0, 36), Vector2(14, 9)), Color("7a1f1f"))
 
 
+func _npc_caption_rect(station: Dictionary) -> Rect2:
+	var width: float = font.get_string_size(station.name, HORIZONTAL_ALIGNMENT_LEFT, -1, 9).x
+	return Rect2(clampf(station.x + 18, 4, 316 - width) - 3, station.y - 30, width + 6, 13)
+
+
 func _draw_hub() -> void:
 	# A continuous earth plane, a path, horizon and contact shadows make depth explicit.
 	draw_rect(Rect2(0, 66, 320, 67), Color(0.29, 0.22, 0.15, 0.84))
@@ -920,16 +936,11 @@ func _draw_hub() -> void:
 	var near: String = model.nearest()
 	for station in model.stations:
 		if station.id == near:
-			var width: float = (
-				font.get_string_size(station.name, HORIZONTAL_ALIGNMENT_LEFT, -1, 9).x
-			)
-			draw_rect(
-				Rect2(clampf(station.x + 18, 4, 316 - width) - 3, station.y - 30, width + 6, 13),
-				INK
-			)
+			var caption: Rect2 = _npc_caption_rect(station)
+			draw_rect(caption, INK)
 			draw_string(
 				font,
-				Vector2(clampf(station.x + 18, 4, 316 - width), station.y - 20),
+				caption.position + Vector2(3, 10),
 				station.name,
 				HORIZONTAL_ALIGNMENT_LEFT,
 				-1,

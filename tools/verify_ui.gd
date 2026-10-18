@@ -62,6 +62,13 @@ func _check_layout() -> Array[Button]:
 				_fail("clipped dialogue page")
 		if control is Button:
 			buttons.append(control)
+			if control.has_meta("avoid_rect"):
+				var caption: Rect2 = (
+					control.get_parent().get_global_transform_with_canvas()
+					* control.get_meta("avoid_rect")
+				)
+				if bounds.grow(1).intersects(caption):
+					_fail("context button obscures NPC caption")
 			var pixels: Vector2 = get_root().get_screen_transform().get_scale() * bounds.size
 			if minf(pixels.x, pixels.y) < 48.0 * density - 0.1:
 				_fail("touch area below 48 pixels at density 1: " + str(pixels))
