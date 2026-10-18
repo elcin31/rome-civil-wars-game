@@ -31,6 +31,7 @@ var ambience_clock: float = 0.0
 var probe_clock: float = 0.0
 var previous_button: Button
 var library_tab: String = "gallery"
+var library_view: Control
 var last_shown_chapter: int = 1
 var auto_clock: float = 0
 var reveal_button: Button
@@ -53,6 +54,7 @@ func _clear(new_mode: String) -> void:
 		encounter.persist()
 		encounter = null
 	mode = new_mode
+	library_view = null
 	body = null
 	face = null
 	previous_button = null
@@ -215,16 +217,14 @@ func _chronicle() -> void:
 func _library(tab: String, screen_mode: String = "library") -> void:
 	library_tab = tab
 	var back: Callable = _log if mode == "log" else menu
-	var snapshot: Dictionary = StoryRuntime.state
-	if snapshot.is_empty():
-		snapshot = StoryRuntime.read_json(StoryRuntime.save_path)
+	var snapshot: Dictionary = StoryRuntime.progress_snapshot()
 	_clear(screen_mode)
-	var library = LibraryView.new()
-	library.size = layer.size
-	library.setup(tab, snapshot)
-	library.closed.connect(back)
-	library.resume_requested.connect(_campaign_resume)
-	layer.add_child(library)
+	library_view = LibraryView.new()
+	library_view.size = layer.size
+	library_view.setup(tab, snapshot)
+	library_view.closed.connect(back)
+	library_view.resume_requested.connect(_campaign_resume)
+	layer.add_child(library_view)
 
 
 func _recap() -> void:
@@ -717,10 +717,14 @@ func _reflow() -> void:
 			refresh()
 		"menu":
 			menu()
-		"chapters":
-			_chapters()
-		"library":
-			_library(library_tab)
+		"chapters", "library":
+			var safe: Rect2 = UI.safe_rect(self)
+			layer.position = safe.position
+			layer.size = safe.size
+			if is_instance_valid(library_view):
+				library_view.size = layer.size
+				library_view.build()
+			queue_redraw()
 		"recap":
 			_recap()
 		"pause":

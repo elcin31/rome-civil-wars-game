@@ -21,6 +21,7 @@ var clock: float = 0.0
 var route_renderer: Control
 var map_rect: Rect2
 var route_points: Array[Vector2] = []
+var search_field: LineEdit
 
 
 func setup(mode: String, progress: Dictionary) -> void:
@@ -30,6 +31,13 @@ func setup(mode: String, progress: Dictionary) -> void:
 
 func _ready() -> void:
 	mouse_filter = MOUSE_FILTER_IGNORE
+	# Keep the actual input node alive when the Android keyboard resizes the view.
+	search_field = LineEdit.new()
+	search_field.placeholder_text = "Поиск в Хронике"
+	search_field.max_length = 120
+	search_field.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	search_field.text_submitted.connect(_search)
+	add_child(search_field)
 	build()
 
 
@@ -46,6 +54,7 @@ func build() -> void:
 	map_rect = Rect2()
 	route_renderer = null
 	var touch: float = UI.touch_height(self)
+	search_field.visible = tab == "chronicle" and article.is_empty() and picture_file.is_empty()
 	UI.panel(layer, Rect2(Vector2.ZERO, size))
 	UI.button(layer, "Назад", Rect2(16, 16, 132, touch), closed.emit)
 	var names: Array = [
@@ -75,6 +84,7 @@ func build() -> void:
 				_document(Lore.fate(state), Rect2(24, touch + 48, size.x - 48, size.y - touch - 72))
 			"campaign":
 				_campaign(touch)
+	move_child(search_field, get_child_count() - 1)
 	queue_redraw()
 
 
@@ -134,15 +144,12 @@ func _chronicle(touch: float) -> void:
 		_article(touch)
 		return
 	var top: float = touch + 48
-	var search = LineEdit.new()
-	search.position = Vector2(16, top)
-	search.size = Vector2(size.x * 0.5 - 32, touch)
-	search.placeholder_text = "Поиск в Хронике"
-	search.text = query
-	search.add_theme_font_size_override("font_size", 24)
-	search.text_submitted.connect(_search)
-	layer.add_child(search)
-	UI.button(layer, "Найти", Rect2(size.x * 0.5, top, 152, touch), func(): _search(search.text))
+	search_field.position = Vector2(16, top)
+	search_field.size = Vector2(size.x * 0.5 - 32, touch)
+	search_field.add_theme_font_size_override("font_size", UI.accessible_font_size(self, 24))
+	UI.button(
+		layer, "Найти", Rect2(size.x * 0.5, top, 152, touch), func(): _search(search_field.text)
+	)
 	var labels: Dictionary = {
 		"all": "Все",
 		"people": "Люди",
@@ -156,8 +163,12 @@ func _chronicle(touch: float) -> void:
 		Rect2(size.x * 0.5 + 168, top, size.x * 0.5 - 184, touch),
 		_filter
 	)
+	var available: float = size.y - top - touch * 2 - 56
+	# The keyboard can leave room only for navigation and the search row.
+	if available < touch + 12:
+		return
 	var entries: Array = Lore.entries(state, query, category)
-	var per_page: int = clampi(int((size.y - top - touch * 2 - 56) / (touch + 12)), 1, 3)
+	var per_page: int = clampi(int(available / (touch + 12)), 1, 3)
 	_pager(touch, entries.size(), per_page)
 	top += touch + 20
 	var width: float = size.x * 0.31
@@ -200,6 +211,10 @@ func _chronicle(touch: float) -> void:
 
 func _search(value: String) -> void:
 	query = value.strip_edges().left(120)
+	search_field.text = query
+	search_field.release_focus()
+	if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):
+		DisplayServer.virtual_keyboard_hide()
 	page = 0
 	selected = 0
 	build()

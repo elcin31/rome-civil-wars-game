@@ -111,6 +111,22 @@ def hold_joystick(axis_x, axis_y, duration):
     wait_for_fresh_layout()
 
 
+def approach(station_id):
+    for attempt in range(16):
+        layout = ui()
+        hub = layout.get("hub", {})
+        if not hub:
+            raise AssertionError("Final native hub telemetry missing")
+        target = next(s for s in hub["stations"] if s["id"] == station_id)
+        dx, dy = target["x"] - hub["hero"][0], target["y"] - hub["hero"][1]
+        distance = math.hypot(dx, dy)
+        if distance < 27:
+            return
+        hold_joystick(dx / distance * 0.95, dy / distance * 0.95,
+                      max(90, min(450, round((distance - 22) / 70 * 1000))))
+    raise AssertionError("Joystick approach failed: " + station_id)
+
+
 def dismiss_fullscreen_hint():
     adb("shell", "uiautomator", "dump", "/data/local/tmp/cinis-window.xml", check=False)
     xml = adb("exec-out", "cat", "/data/local/tmp/cinis-window.xml", check=False)
@@ -178,8 +194,8 @@ else:
     raise AssertionError("Story input did not reach the first real RPG hub")
 wait_for_hub()
 screenshot("hub_before", verify_render=True)
-# Hold the joystick northeast, then interact with the actual scribe.
-hold_joystick(0.96, -0.27, 800)
+# Reach the actual scribe using observed hero coordinates after each gesture.
+approach("scribe")
 tap_caption("Говорить")
 time.sleep(0.3)
 saved = state()
@@ -219,20 +235,6 @@ screenshot("android_back_pause", verify_render=True)
 tap_caption("Продолжить")
 wait_for_hub()
 # Final build: approach each station by actual joystick gestures, never editing the save.
-def approach(station_id):
-    for attempt in range(16):
-        layout = ui()
-        hub = layout.get("hub", {})
-        if not hub:
-            raise AssertionError("Final native hub telemetry missing")
-        target = next(s for s in hub["stations"] if s["id"] == station_id)
-        dx, dy = target["x"] - hub["hero"][0], target["y"] - hub["hero"][1]
-        distance = math.hypot(dx, dy)
-        if distance < 27:
-            return
-        hold_joystick(dx / distance * 0.95, dy / distance * 0.95,
-                      max(90, min(450, round((distance - 22) / 70 * 1000))))
-    raise AssertionError("Joystick approach failed: " + station_id)
 
 if ui().get("hub"):
     approach("supplies")
@@ -279,10 +281,12 @@ search_button = next(b for b in ui()["buttons"] if b["text"] == "Найти")
 x, y, box_width, box_height = search_button["rect"]
 adb("shell", "input", "tap", str(round(x * 0.5)), str(round(y + box_height / 2)))
 wait_for_fresh_layout()
+screenshot("chronicle_keyboard", verify_render=True)
+keyboard_state = adb("shell", "dumpsys", "input_method")
+(OUTPUT / "keyboard-state.txt").write_text(keyboard_state)
+soft_keyboard_visible = bool(re.search(r"mInputShown\s*=\s*true", keyboard_state))
 adb("shell", "input", "text", "54")
 wait_for_fresh_layout()
-screenshot("chronicle_keyboard", verify_render=True)
-(OUTPUT / "keyboard-state.txt").write_text(adb("shell", "dumpsys", "input_method"))
 adb("shell", "input", "keyevent", "KEYCODE_BACK")
 wait_for_fresh_layout()
 tap_caption("Найти")
@@ -341,7 +345,7 @@ report = {"platform": "Android API 35 emulator, x86_64 smoke export", "commit_co
           "first_install_launch_to_menu_seconds": launch_to_menu,
           "subsequent_cold_launch_output": restart_launch,
           "subsequent_cold_launch_to_menu_seconds": restart_to_menu,
-          "android_keyboard_search": True, "gallery_zoom_and_pan": True,
+          "android_keyboard_search": True, "android_soft_keyboard_visible": soft_keyboard_visible, "gallery_zoom_and_pan": True,
           "comfort_restart_restore": True, "memory_snapshot_mode": ui().get("mode"),
           "emulator_pss_mib": round(int(pss[1])/1024, 2) if pss else None, "physical_arm64_test": False}
 (OUTPUT / "ui-layout.json").write_text(json.dumps(ui(), ensure_ascii=False, indent=2) + "\n")

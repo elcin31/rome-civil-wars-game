@@ -120,6 +120,69 @@ func test_campaign_map_preserves_current_story_decisions() -> void:
 	assert_eq(game.state.decisions, decisions)
 
 
+func test_library_reflow_preserves_draft_query_filter_and_input_focus() -> void:
+	view._library("chronicle")
+	var library: Control = view.layer.get_child(0)
+	library.query = "Цицерон"
+	library.category = "people"
+	var search: LineEdit = library.find_children("*", "LineEdit", true, false)[0]
+	search.text = "54"
+	search.grab_focus()
+	assert_true(search.has_focus())
+	view._reflow()
+	var resumed: Control = view.layer.get_child(0)
+	var input: LineEdit = resumed.find_children("*", "LineEdit", true, false)[0]
+	assert_eq(resumed, library, "Viewport/keyboard resize must retain the active library")
+	assert_eq(resumed.query, "Цицерон")
+	assert_eq(resumed.category, "people")
+	assert_eq(input.text, "54", "Unsubmitted text survives a viewport resize")
+	assert_true(input.has_focus(), "Resizing must not dismiss the focused search field")
+
+
+func test_library_reflow_keeps_gallery_tab_picture_zoom_and_pan() -> void:
+	view._library("chronicle")
+	var library: Control = view.layer.get_child(0)
+	library._tab("gallery")
+	library._open_picture("assets/cs/cicero_01.png")
+	library._zoom(1.0)
+	library.offset = Vector2(12, 0)
+	view._reflow()
+	var resumed: Control = view.layer.get_child(0)
+	assert_eq(resumed.tab, "gallery")
+	assert_eq(resumed.picture_file, "assets/cs/cicero_01.png")
+	assert_eq(resumed.zoom_value, 2.0)
+	assert_eq(resumed.offset, Vector2(12, 0))
+
+
+func test_menu_library_ignores_corrupt_progress_without_loading_a_story() -> void:
+	var corrupt: Dictionary = game.state.duplicate(true)
+	corrupt.progress = "broken"
+	var file = FileAccess.open(game.save_path, FileAccess.WRITE)
+	file.store_string(JSON.stringify(corrupt))
+	file.close()
+	DirAccess.remove_absolute(ProjectSettings.globalize_path(game.save_path + ".bak"))
+	game.state = {}
+	view.menu()
+	view._library("gallery")
+	assert_eq(game.state, {})
+	assert_eq(view.layer.get_child(0).state, {})
+	view.layer.get_child(0)._tab("fate")
+	assert_eq(game.state, {})
+
+
+func test_short_chronicle_keeps_search_without_overlapping_result_navigation() -> void:
+	view._library("chronicle")
+	var library: Control = view.layer.get_child(0)
+	library.size = Vector2(960, UI.touch_height(library) * 2 + 100)
+	library.build()
+	assert_true(library.search_field.is_visible_in_tree())
+	for button in library.find_children("*", "Button", true, false):
+		if not button.is_visible_in_tree():
+			continue
+		assert_ne(button.get_meta("caption", button.text), "Следующая")
+		assert_lte(button.get_global_rect().end.y, library.get_global_rect().end.y)
+
+
 func test_auto_advance_keeps_counting_after_text_is_fully_revealed() -> void:
 	var previous: bool = GameServices.settings.auto_advance
 	GameServices.set_preference("auto_advance", true, false)

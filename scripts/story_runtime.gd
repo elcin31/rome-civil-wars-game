@@ -345,6 +345,25 @@ func load_game(use_backup: bool = false) -> bool:
 	return false
 
 
+func progress_snapshot() -> Dictionary:
+	# Menu libraries may inspect progress before Continue, without advancing it.
+	if not state.is_empty():
+		return state.duplicate(true)
+	for path in [save_path, save_path + ".bak"]:
+		var data: Dictionary = read_json(path)
+		if (
+			not _valid_save_fields(data)
+			or not _valid_save_records(data)
+			or not _migrate_flags(data)
+		):
+			continue
+		if data.has("gameplay") and not Progression.valid(data.gameplay):
+			continue
+		data.progress.chapter = int(data.node.substr(2, 2))
+		return data
+	return {}
+
+
 func _load_path(path: String) -> bool:
 	if not FileAccess.file_exists(path):
 		return false
