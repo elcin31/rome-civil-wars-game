@@ -357,7 +357,8 @@ func _switch_hero() -> void:
 func _panel() -> void:
 	_clear_input()
 	if is_instance_valid(overlay):
-		remove_child(overlay)
+		overlay.hide()
+		overlay.process_mode = Node.PROCESS_MODE_DISABLED
 		overlay.queue_free()
 	else:
 		panel_hidden.clear()
@@ -379,7 +380,8 @@ func _panel() -> void:
 
 func _close_panel() -> void:
 	if is_instance_valid(overlay):
-		remove_child(overlay)
+		overlay.hide()
+		overlay.process_mode = Node.PROCESS_MODE_DISABLED
 		overlay.queue_free()
 	overlay = null
 	for control in panel_hidden:

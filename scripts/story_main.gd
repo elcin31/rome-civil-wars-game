@@ -50,7 +50,10 @@ func _clear(new_mode: String) -> void:
 	previous_button = null
 	reveal_button = null
 	if is_instance_valid(layer):
-		remove_child(layer)
+		# A button callback may still be on the GUI dispatch stack. Keep its nodes
+		# inside the tree until deferred deletion, but hide and stop them immediately.
+		layer.hide()
+		layer.process_mode = Node.PROCESS_MODE_DISABLED
 		layer.queue_free()
 	layer = Control.new()
 	layer.mouse_filter = MOUSE_FILTER_IGNORE

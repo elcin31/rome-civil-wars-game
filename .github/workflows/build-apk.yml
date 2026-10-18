@@ -87,12 +87,15 @@ jobs:
           sudo apt-get install -y xvfb
           python tools/run_display.py python tools/ui_matrix.py
           python tools/run_display.py python tools/ui_matrix.py --quick --size=1280x720 --density=2.625
+          python tools/contact_wave1.py --capture
       - uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
           name: presentation-matrix
           path: |
             build/ui
+            build/wave1
+            docs/contact_wave1.png
             docs/ui_validation.json
             docs/ui_density_validation.json
             docs/portrait_validation.json
