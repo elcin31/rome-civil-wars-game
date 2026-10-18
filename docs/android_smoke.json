@@ -10,6 +10,10 @@
   "cold_restart_restore": true,
   "post_restart_movement": true,
   "rendered_frames_verified": true,
-  "launch_output": "Starting: Intent { cmp=org.cinislauri.game/com.godot.game.GodotAppLauncher }\nStatus: ok\nLaunchState: COLD\nActivity: org.cinislauri.game/com.godot.game.GodotApp\nTotalTime: 2635\nWaitTime: 2672\nComplete",
-  "physical_arm64_test": false
+  "native_layout_probe": true,
+  "android_48dp_checked": true,
+  "launch_output": "Starting: Intent { cmp=org.cinislauri.game/com.godot.game.GodotAppLauncher }\nStatus: ok\nLaunchState: COLD\nActivity: org.cinislauri.game/com.godot.game.GodotApp\nTotalTime: 1686\nWaitTime: 1693\nComplete",
+  "physical_arm64_test": false,
+  "ci_run": 39094711525,
+  "source_commit": "79d3f96dbc044668b2a6492ffb1ebe8b5d8f6f9c"
 }
