@@ -259,6 +259,63 @@ if ui().get("hub"):
     tap_caption("Принять последствия")
     assert "beat_ch01_s03" in state()["cutscenes"]
 
+# Exercise the new library with the real Android keyboard and touch callbacks.
+tap_caption("Пауза")
+tap_caption("Главное меню")
+tap_caption("Хроника")
+captions = lambda: [b["text"] for b in ui().get("buttons", []) if not b["disabled"]]
+assert "Гай Юлий Цезарь" in captions()
+search_button = next(b for b in ui()["buttons"] if b["text"] == "Найти")
+x, y, box_width, box_height = search_button["rect"]
+adb("shell", "input", "tap", str(round(x * 0.5)), str(round(y + box_height / 2)))
+wait_for_fresh_layout()
+adb("shell", "input", "text", "54")
+wait_for_fresh_layout()
+screenshot("chronicle_keyboard", verify_render=True)
+adb("shell", "input", "keyevent", "KEYCODE_BACK")
+wait_for_fresh_layout()
+tap_caption("Найти")
+assert "Гай Юлий Цезарь" not in captions(), "Android search query was lost or not applied"
+assert "Квинт Туллий Цицерон" in captions()
+screenshot("chronicle_filtered", verify_render=True)
+tap_caption("Квинт Туллий Цицерон")
+adb("shell", "input", "swipe", str(round(width * .75)), str(round(height * .62)),
+    str(round(width * .75)), str(round(height * .35)), "400")
+wait_for_fresh_layout()
+screenshot("chronicle_article", verify_render=True)
+tap_caption("К списку")
+tap_caption("Галерея")
+tap_caption("Ров, который ещё не выкопан")
+tap_caption("+")
+adb("shell", "input", "swipe", str(round(width * .5)), str(round(height * .45)),
+    str(round(width * .65)), str(round(height * .5)), "350")
+wait_for_fresh_layout()
+screenshot("gallery_zoom", verify_render=True)
+tap_caption("К списку")
+tap_caption("Свиток судеб")
+screenshot("fate", verify_render=True)
+tap_caption("Карта")
+screenshot("campaign", verify_render=True)
+tap_caption("Назад")
+tap_caption("Настройки")
+tap_caption("Комфорт")
+tap_caption("Левая рука: выкл")
+assert "Левая рука: вкл" in captions()
+config = adb("exec-out", "run-as", PACKAGE, "cat", "files/settings.cfg")
+assert re.search(r"left_handed\s*=\s*true", config)
+adb("shell", "am", "force-stop", PACKAGE)
+adb("shell", "run-as", PACKAGE, "rm", "-f", "files/cinis_ui_layout.json")
+adb("shell", "am", "start", "-W", "-n", activity)
+deadline = time.monotonic() + 12
+while ui().get("mode") != "menu" and time.monotonic() < deadline:
+    time.sleep(.1)
+assert ui().get("mode") == "menu"
+tap_caption("Настройки")
+tap_caption("Комфорт")
+assert "Левая рука: вкл" in captions(), "Comfort setting did not survive process restart"
+screenshot("comfort_restored", verify_render=True)
+tap_caption("Левая рука: вкл")
+
 logs = adb("logcat", "-d", "-v", "brief")
 (OUTPUT / "logcat.txt").write_text(logs)
 for failure in ["SCRIPT ERROR:", "Parse Error:", "Program linking failed", "FATAL EXCEPTION: main", "Fatal signal"]:
@@ -273,6 +330,8 @@ report = {"platform": "Android API 35 emulator, x86_64 smoke export", "commit_co
           "first_install_launch_to_menu_seconds": launch_to_menu,
           "subsequent_cold_launch_output": restart_launch,
           "subsequent_cold_launch_to_menu_seconds": restart_to_menu,
+          "android_keyboard_search": True, "gallery_zoom_and_pan": True,
+          "comfort_restart_restore": True, "memory_snapshot_mode": ui().get("mode"),
           "emulator_pss_mib": round(int(pss[1])/1024, 2) if pss else None, "physical_arm64_test": False}
 (OUTPUT / "ui-layout.json").write_text(json.dumps(ui(), ensure_ascii=False, indent=2) + "\n")
 (OUTPUT / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
