@@ -13,6 +13,7 @@ from PIL import Image
 PACKAGE = "org.cinislauri.game"
 OUTPUT = Path("build/android-smoke")
 OUTPUT.mkdir(parents=True, exist_ok=True)
+TAPS = []
 
 
 def adb(*args, binary=False, check=True):
@@ -78,6 +79,9 @@ def tap_caption(caption, allow_hub=False):
         for button in layout.get("buttons", []):
             if button["text"] == caption and not button["disabled"]:
                 x, y, width, height = button["rect"]
+                TAPS.append({"caption": caption, "frame": layout.get("frame"),
+                             "rect": button["rect"], "mode": layout.get("mode")})
+                (OUTPUT / "taps.json").write_text(json.dumps(TAPS, ensure_ascii=False, indent=2))
                 adb("shell", "input", "tap", str(round(x + width / 2)), str(round(y + height / 2)))
                 wait_for_fresh_layout()
                 return
@@ -99,6 +103,9 @@ def hold_joystick(axis_x, axis_y, duration):
     x, y, radius = data["joystick"]
     point = (str(round(x + axis_x * radius)), str(round(y + axis_y * radius)))
     adb("shell", "input", "swipe", *point, *point, str(duration))
+    # Context actions move with the hero. Also settle the probe after movement,
+    # before resolving the position of the next button. Pending native validation.
+    wait_for_fresh_layout()
 
 
 def dismiss_fullscreen_hint():

@@ -1,19 +1,18 @@
 {
+  "status": "failed",
   "platform": "Android API 35 emulator, x86_64 smoke export",
-  "commit_content": "same game as ARM64 release",
-  "screen": [
-    1280,
-    720
-  ],
+  "ci_run": 39115851082,
+  "source_commit": "1f1323246cbb32147fbac7c311747f00e2e3502d",
   "story_to_hub": true,
-  "joystick_and_interaction": true,
-  "cold_restart_restore": true,
-  "post_restart_movement": true,
-  "rendered_frames_verified": true,
-  "native_layout_probe": true,
+  "joystick_movement": true,
+  "native_quest_action": "not_confirmed",
+  "quest_stage": 0,
+  "interactions": [],
+  "cold_restart_restore": "not_run",
+  "post_restart_movement": "not_run",
+  "script_errors_in_logcat": false,
   "android_48dp_checked": true,
-  "launch_output": "Starting: Intent { cmp=org.cinislauri.game/com.godot.game.GodotAppLauncher }\nStatus: ok\nLaunchState: COLD\nActivity: org.cinislauri.game/com.godot.game.GodotApp\nTotalTime: 2069\nWaitTime: 2186\nComplete",
   "physical_arm64_test": false,
-  "ci_run": 39096850736,
-  "source_commit": "fe0a69817a7f72ef0b3af9fa4e370126dd75d54f"
+  "known_issue": "SMOKE-04",
+  "probe_frame": 434
 }

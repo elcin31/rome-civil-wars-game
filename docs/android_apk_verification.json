@@ -1,37 +1,32 @@
 {
-  "commit": "fe0a69817a7f72ef0b3af9fa4e370126dd75d54f",
+  "commit": "1f1323246cbb32147fbac7c311747f00e2e3502d",
   "package": "org.cinislauri.game",
-  "version": "0.4.1",
-  "version_code": 5,
+  "version": "0.4.2",
+  "version_code": 6,
   "abi": "arm64-v8a",
   "min_sdk": 24,
   "target_sdk": 36,
-  "bytes": 35544454,
-  "sha256": "cec1269cf94741e7e3d0dae2c8df9868489e4e1b4beb6bd4fb1c56b9f99a7592",
+  "bytes": 35552831,
+  "sha256": "ad598e6b270406ec42b195216aaefcfb57527a159540d20d9592612459b250c9",
   "bundled_fonts": [
     "GolosText-Reading",
     "GolosText-Semibold",
     "PTSerif-Bold"
   ],
   "font_licenses_verified": true,
-  "mib": 33.9,
+  "mib": 33.91,
   "manifest_independently_parsed": true,
   "zip_verified": true,
   "zip_name": "rome-civil-wars-2026-10-18.zip",
-  "zip_bytes": 35013290,
-  "zip_sha256": "8d4006ad53ba66ed48fff80a15565d458813ba84e701e0e4d8e16a1209a034de",
+  "zip_bytes": 35019201,
+  "zip_sha256": "f1600c2ca2eacfd209aed1ca9f270866225d4f1f7317d7ee139ea15fa1b8b29f",
   "activity": "com.godot.game.GodotAppLauncher",
   "permissions": [],
-  "ci_run": 39096850736,
-  "ci_url": "https://github.com/elcin31/rome-civil-wars-game/actions/runs/39096850736",
+  "ci_run": 39115851082,
+  "ci_url": "https://github.com/elcin31/rome-civil-wars-game/actions/runs/39115851082",
   "signature_verified_in_ci": "v2/v3",
   "signature_blocks_independently_parsed": [
     "v2",
     "v3"
-  ],
-  "release_download_verified": true,
-  "release_url": "https://github.com/elcin31/rome-civil-wars-game/releases/tag/v0.4.1",
-  "release_asset_url": "https://github.com/elcin31/rome-civil-wars-game/releases/download/v0.4.1/rome-civil-wars-2026-10-18.zip",
-  "release_download_sha256": "8d4006ad53ba66ed48fff80a15565d458813ba84e701e0e4d8e16a1209a034de",
-  "publish_run": 39097591210
+  ]
 }

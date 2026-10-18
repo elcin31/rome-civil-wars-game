@@ -3,9 +3,14 @@ on:
   workflow_dispatch:
     inputs:
       run_id:
-        description: Successful Android APK run to publish
+        description: Android APK run with a successful build job
         required: true
         default: ''
+      candidate:
+        description: Publish an explicitly marked intermediate candidate with open Android smoke
+        type: boolean
+        required: false
+        default: false
 permissions:
   contents: write
   actions: read
@@ -16,18 +21,27 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
       RELEASE_RUN_ID: ${{ inputs.run_id }}
+      PUBLISH_CANDIDATE: ${{ inputs.candidate }}
     steps:
       - uses: actions/checkout@v4.2.2
       - name: Require a successful main build
         run: |
           [[ "$RELEASE_RUN_ID" =~ ^[0-9]+$ ]]
           gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RELEASE_RUN_ID" > run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$RELEASE_RUN_ID/jobs" > jobs.json
           python - <<'PY'
-          import json
+          import json, os
           run = json.load(open('run.json'))
-          assert run['conclusion'] == 'success'
           assert run['head_branch'] == 'main'
           assert run['name'] == 'Android APK'
+          jobs = json.load(open('jobs.json'))['jobs']
+          assert any(j['name'] == 'build' and j['conclusion'] == 'success' for j in jobs)
+          if os.environ['PUBLISH_CANDIDATE'] == 'true':
+              assert run['conclusion'] in ['success', 'failure']
+              assert all(j['conclusion'] == 'success' or
+                         (j['name'] == 'android-smoke' and j['conclusion'] == 'failure') for j in jobs)
+          else:
+              assert run['conclusion'] == 'success'
           PY
       - uses: actions/download-artifact@v4.3.0
         with:
@@ -64,4 +78,10 @@ jobs:
           PY
       - name: Publish in this repository
         run: |
-          gh release create v0.4.2 --repo "$GITHUB_REPOSITORY" --target "$RELEASE_COMMIT" --title 'CINIS LAURI 0.4.2 — Android' --notes-file docs/RELEASE_NOTES_v0.4.2.md delivery/rome-civil-wars-*.zip delivery/rome-civil-wars-*.zip.sha256
+          release_flags=()
+          release_title='CINIS LAURI 0.4.2 — Android'
+          if [ "$PUBLISH_CANDIDATE" = 'true' ]; then
+            release_flags+=(--prerelease --latest=false)
+            release_title='CINIS LAURI 0.4.2 — кандидат волны 1'
+          fi
+          gh release create v0.4.2 --repo "$GITHUB_REPOSITORY" --target "$RELEASE_COMMIT" --title "$release_title" --notes-file docs/RELEASE_NOTES_v0.4.2.md "${release_flags[@]}" delivery/rome-civil-wars-*.zip delivery/rome-civil-wars-*.zip.sha256

@@ -1,6 +1,6 @@
 [
   {
-    "checks": 1394,
+    "checks": 1430,
     "errors": [],
     "frames": [
       "menu",
@@ -19,6 +19,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -35,7 +37,7 @@
       1280,
       720
     ],
-    "touches": 151,
+    "touches": 162,
     "exit_code": 0
   }
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "checks": 3918,
+    "checks": 3954,
     "errors": [],
     "frames": [
       "menu",
@@ -19,6 +19,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -199,11 +201,11 @@
       1280,
       720
     ],
-    "touches": 503,
+    "touches": 514,
     "exit_code": 0
   },
   {
-    "checks": 3918,
+    "checks": 3954,
     "errors": [],
     "frames": [
       "menu",
@@ -222,6 +224,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -402,11 +406,11 @@
       1920,
       1080
     ],
-    "touches": 503,
+    "touches": 514,
     "exit_code": 0
   },
   {
-    "checks": 3918,
+    "checks": 3954,
     "errors": [],
     "frames": [
       "menu",
@@ -425,6 +429,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -605,11 +611,11 @@
       2160,
       1080
     ],
-    "touches": 503,
+    "touches": 514,
     "exit_code": 0
   },
   {
-    "checks": 3918,
+    "checks": 3954,
     "errors": [],
     "frames": [
       "menu",
@@ -628,6 +634,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -808,11 +816,11 @@
       2340,
       1080
     ],
-    "touches": 503,
+    "touches": 514,
     "exit_code": 0
   },
   {
-    "checks": 3918,
+    "checks": 3954,
     "errors": [],
     "frames": [
       "menu",
@@ -831,6 +839,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -1011,11 +1021,11 @@
       2400,
       1080
     ],
-    "touches": 503,
+    "touches": 514,
     "exit_code": 0
   },
   {
-    "checks": 3918,
+    "checks": 3954,
     "errors": [],
     "frames": [
       "menu",
@@ -1034,6 +1044,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -1214,11 +1226,11 @@
       2560,
       1080
     ],
-    "touches": 503,
+    "touches": 514,
     "exit_code": 0
   },
   {
-    "checks": 3918,
+    "checks": 3954,
     "errors": [],
     "frames": [
       "menu",
@@ -1237,6 +1249,8 @@
       "platformer",
       "platformer_result",
       "shop",
+      "hub_debug",
+      "hub_supplies_overlap",
       "hub_step_0",
       "hub_step_1",
       "hub_step_2",
@@ -1417,7 +1431,7 @@
       800,
       480
     ],
-    "touches": 503,
+    "touches": 514,
     "exit_code": 0
   }
 ]
