@@ -5,7 +5,7 @@ on:
       apk_run:
         description: Run containing the cinis-smoke-x86 artifact
         required: true
-        default: '39140506580'
+        default: '39145761218'
 permissions:
   contents: read
   actions: read

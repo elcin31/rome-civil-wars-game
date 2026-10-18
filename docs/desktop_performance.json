@@ -25,67 +25,67 @@
   "godot": "4.6.3-stable (official)",
   "layers": [
     {
-      "cpu_frame_max_ms": 51.97,
-      "fps_max": 52.0,
-      "fps_min": 47.0,
+      "cpu_frame_max_ms": 51.78,
+      "fps_max": 55.0,
+      "fps_min": 39.0,
       "layer": "cutscene",
-      "static_memory_max_mib": 38.53
+      "static_memory_max_mib": 38.54
     },
     {
-      "cpu_frame_max_ms": 16.94,
+      "cpu_frame_max_ms": 18.54,
       "fps_max": 60.0,
       "fps_min": 60.0,
       "layer": "soft",
-      "static_memory_max_mib": 38.31
+      "static_memory_max_mib": 38.33
     },
     {
-      "cpu_frame_max_ms": 19.69,
-      "fps_max": 60.0,
-      "fps_min": 60.0,
+      "cpu_frame_max_ms": 163.88,
+      "fps_max": 56.0,
+      "fps_min": 47.0,
       "layer": "rpg",
-      "static_memory_max_mib": 40.52
+      "static_memory_max_mib": 40.53
     },
     {
-      "cpu_frame_max_ms": 22.38,
+      "cpu_frame_max_ms": 42.43,
       "fps_max": 60.0,
-      "fps_min": 60.0,
+      "fps_min": 58.0,
       "layer": "menu",
-      "static_memory_max_mib": 42.98
+      "static_memory_max_mib": 42.99
     },
     {
-      "cpu_frame_max_ms": 23.98,
+      "cpu_frame_max_ms": 23.26,
       "fps_max": 60.0,
       "fps_min": 60.0,
       "layer": "dialogue",
-      "static_memory_max_mib": 44.82
+      "static_memory_max_mib": 44.83
     },
     {
-      "cpu_frame_max_ms": 50.76,
-      "fps_max": 50.0,
-      "fps_min": 41.0,
+      "cpu_frame_max_ms": 47.76,
+      "fps_max": 54.0,
+      "fps_min": 51.0,
       "layer": "gallery",
-      "static_memory_max_mib": 50.72
+      "static_memory_max_mib": 50.74
     },
     {
-      "cpu_frame_max_ms": 43.79,
+      "cpu_frame_max_ms": 32.51,
       "fps_max": 60.0,
-      "fps_min": 56.0,
+      "fps_min": 60.0,
       "layer": "chronicle",
-      "static_memory_max_mib": 51.97
+      "static_memory_max_mib": 51.98
     },
     {
-      "cpu_frame_max_ms": 43.31,
-      "fps_max": 58.0,
-      "fps_min": 54.0,
+      "cpu_frame_max_ms": 46.17,
+      "fps_max": 56.0,
+      "fps_min": 52.0,
       "layer": "campaign",
-      "static_memory_max_mib": 51.53
+      "static_memory_max_mib": 51.56
     },
     {
-      "cpu_frame_max_ms": 44.0,
+      "cpu_frame_max_ms": 20.93,
       "fps_max": 60.0,
-      "fps_min": 58.0,
+      "fps_min": 60.0,
       "layer": "fate",
-      "static_memory_max_mib": 54.99
+      "static_memory_max_mib": 55.02
     }
   ],
   "nodes_after_pause_cycles": 26,
@@ -93,8 +93,8 @@
   "pause_cycles": 20,
   "physical_android": false,
   "samples_per_layer": 120,
-  "static_memory_after_pause_mib": 50.94,
-  "static_memory_before_pause_mib": 50.81,
-  "profiling_process_max_rss_mib": 211.32,
-  "source_commit": "f2709bb9f3ffcb54e98f15ada0362d8b8a9c05fc"
+  "static_memory_after_pause_mib": 50.95,
+  "static_memory_before_pause_mib": 50.82,
+  "profiling_process_max_rss_mib": 212.13,
+  "source_commit": "15275a97d0f41d4b39fe1738a49f5b1d37002d1b"
 }

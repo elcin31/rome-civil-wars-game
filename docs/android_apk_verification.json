@@ -1,40 +1,43 @@
 {
-  "commit": "1f1323246cbb32147fbac7c311747f00e2e3502d",
+  "commit": "15275a97d0f41d4b39fe1738a49f5b1d37002d1b",
   "package": "org.cinislauri.game",
-  "version": "0.4.2",
-  "version_code": 6,
+  "version": "0.5.1",
+  "version_code": 8,
   "abi": "arm64-v8a",
   "min_sdk": 24,
   "target_sdk": 36,
-  "bytes": 35552831,
-  "sha256": "ad598e6b270406ec42b195216aaefcfb57527a159540d20d9592612459b250c9",
-  "bundled_fonts": [
-    "GolosText-Reading",
-    "GolosText-Semibold",
-    "PTSerif-Bold"
-  ],
-  "font_licenses_verified": true,
-  "mib": 33.91,
+  "bytes": 40706247,
+  "sha256": "33b97c9b3c6b04ffcb0d529633d72a600bb0017125769942e4a9239304b52dc3",
+  "mib": 38.82,
   "manifest_independently_parsed": true,
   "zip_verified": true,
   "zip_name": "rome-civil-wars-2026-10-18.zip",
-  "zip_bytes": 35019201,
-  "zip_sha256": "f1600c2ca2eacfd209aed1ca9f270866225d4f1f7317d7ee139ea15fa1b8b29f",
+  "zip_bytes": 40130828,
+  "zip_sha256": "0f00592db2be8f1542b42c57ddbcb8264620d465f3776f6fca38256c5ed7a730",
   "activity": "com.godot.game.GodotAppLauncher",
-  "permissions": [],
-  "ci_run": 39115851082,
-  "ci_url": "https://github.com/elcin31/rome-civil-wars-game/actions/runs/39115851082",
+  "permissions": [
+    "android.permission.VIBRATE"
+  ],
+  "ci_run": 39145761218,
+  "ci_url": "https://github.com/elcin31/rome-civil-wars-game/actions/runs/39145761218",
   "signature_verified_in_ci": "v2/v3",
   "signature_blocks_independently_parsed": [
     "v2",
     "v3"
   ],
+  "all_story_payloads_verified": true,
+  "new_art_payloads_verified": 118,
+  "font_licenses_verified": true,
+  "bundled_fonts": [
+    "GolosText-Reading",
+    "GolosText-Semibold",
+    "PTSerif-Bold"
+  ],
+  "release_kind": "stable",
+  "full_ci_status": "success",
   "release_download_verified": true,
-  "release_url": "https://github.com/elcin31/rome-civil-wars-game/releases/tag/v0.4.2",
-  "release_asset_url": "https://github.com/elcin31/rome-civil-wars-game/releases/download/v0.4.2/rome-civil-wars-2026-10-18.zip",
-  "release_download_sha256": "f1600c2ca2eacfd209aed1ca9f270866225d4f1f7317d7ee139ea15fa1b8b29f",
-  "publish_run": 39117667175,
-  "release_kind": "prerelease",
-  "full_ci_status": "failure",
-  "open_issue": "SMOKE-04"
+  "release_url": "https://github.com/elcin31/rome-civil-wars-game/releases/tag/v0.5.1",
+  "release_asset_url": "https://github.com/elcin31/rome-civil-wars-game/releases/download/v0.5.1/rome-civil-wars-2026-10-18.zip",
+  "release_download_sha256": "0f00592db2be8f1542b42c57ddbcb8264620d465f3776f6fca38256c5ed7a730",
+  "publish_run": 39147935700
 }

@@ -53,7 +53,8 @@ Godot **4.6.3**, GDScript, Android **7.0+ / ARM64**, ландшафт.
 
 [Новый арт](docs/contact_new_art.png) · [Волна 1](docs/contact_wave1.png) ·
 [Волна 2](docs/contact_wave2.png) · [Волна 3](docs/contact_wave3.png) ·
-[Волна 4](docs/contact_wave4.png).
+[Волна 4](docs/contact_wave4.png) · [Android](docs/contact_android_v0.5.1.png) ·
+[Библиотека Android](docs/contact_android_library_v0.5.1.png).
 
 ## Управление
 
