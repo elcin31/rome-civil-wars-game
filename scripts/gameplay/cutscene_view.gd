@@ -210,16 +210,19 @@ func _draw() -> void:
 	var start: Array = camera.from
 	var end: Array = camera.to
 	var zoom: float = lerpf(start[2], end[2], progress)
-	var extent: Vector2 = size * zoom
+	var physical_scale: float = get_viewport().get_screen_transform().get_scale().y
 	var offset: Vector2 = (
 		Vector2(lerpf(start[0], end[0], progress), lerpf(start[1], end[1], progress)) * size
 	)
 	if "shake" in frame.get("fx", []) and progress < 0.2:
 		offset += Vector2(sin(clock * 65), cos(clock * 53)) * 3
 	if previous and fade < 1.0:
-		draw_texture_rect(previous, Rect2(Vector2.ZERO, size), false)
+		draw_texture_rect(previous, UI.cover_rect(previous.get_size(), size, physical_scale), false)
 	draw_texture_rect(
-		texture, Rect2((size - extent) * 0.5 + offset, extent), false, Color(1, 1, 1, fade)
+		texture,
+		UI.cover_rect(texture.get_size(), size, physical_scale, zoom, offset),
+		false,
+		Color(1, 1, 1, fade)
 	)
 	draw_rect(Rect2(Vector2.ZERO, size), Color(0.07, 0.05, 0.1, 0.12))
 	for i in range(8):

@@ -114,7 +114,13 @@ func _process(delta: float) -> void:
 
 func _draw() -> void:
 	if background:
-		draw_texture_rect(background, Rect2(Vector2.ZERO, size), false, Color(0.6, 0.6, 0.7))
+		var physical_scale: float = get_viewport().get_screen_transform().get_scale().y
+		draw_texture_rect(
+			background,
+			UI.cover_rect(background.get_size(), size, physical_scale),
+			false,
+			Color(0.6, 0.6, 0.7)
+		)
 	var floor_y: float = size.y * 0.73
 	draw_rect(Rect2(0, floor_y, size.x, 18), Color("7d6949"))
 	for i in range(3):

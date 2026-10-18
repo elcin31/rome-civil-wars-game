@@ -9,12 +9,12 @@ import subprocess
 build = Path(__file__).resolve().parents[1] / "build"
 commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=build.parent, text=True).strip()
 apk = build / "cinis-lauri.apk"
-info = {"commit": commit, "package": "org.cinislauri.game", "version": "0.5.0", "version_code": 7,
+info = {"commit": commit, "package": "org.cinislauri.game", "version": "0.5.1", "version_code": 8,
         "abi": "arm64-v8a", "min_sdk": 24, "target_sdk": 36, "bytes": apk.stat().st_size,
         "sha256": hashlib.sha256(apk.read_bytes()).hexdigest()}
 (build / "build-info.json").write_text(json.dumps(info, indent=2) + "\n")
 readme = build / "README_INSTALL.txt"
-readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.5.0
+readme.write_text("""CINIS LAURI / Пепел лавра — Android 0.5.1
 Пакет: org.cinislauri.game. Android 7.0+ (API 24), ARM64, ландшафт.
 
 1. Скопируйте cinis-lauri.apk на Android и откройте файл.

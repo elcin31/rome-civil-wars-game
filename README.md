@@ -2,9 +2,9 @@
 
 Оригинальная офлайн 2D пиксельная история о Риме, 58 до н. э. — 14 н. э.
 Godot **4.6.3**, GDScript, Android **7.0+ / ARM64**, ландшафт.
-Финальная версия по [заданию PDF](docs/FINAL_REQUIREMENTS.md): **0.5.0**.
+Финальная версия по [заданию PDF](docs/FINAL_REQUIREMENTS.md): **0.5.1**.
 
-[APK и ZIP](https://github.com/elcin31/rome-civil-wars-game/releases/tag/v0.5.0)
+[APK и ZIP](https://github.com/elcin31/rome-civil-wars-game/releases/tag/v0.5.1)
 · [Готовность](docs/STATUS.md) · [Проверки](docs/completion_validation.json)
 · [Ограничения](docs/KNOWN_ISSUES.md).
 
@@ -84,7 +84,7 @@ Godot **4.6.3**, GDScript, Android **7.0+ / ARM64**, ландшафт.
 
 Скачайте ZIP, распакуйте и откройте `cinis-lauri.apk`. Разрешите установку
 для браузера/файлового менеджера и нажмите «Установить». Инструкция внутри.
-Пакет `org.cinislauri.game`, версия **0.5.0 / code 7**, minSdk 24, targetSdk 36,
+Пакет `org.cinislauri.game`, версия **0.5.1 / code 8**, minSdk 24, targetSdk 36,
 только arm64-v8a. Разрешение VIBRATE нужно для отключаемого отклика;
 разрешения INTERNET нет. Подпись отладочная: между CI-сборками может
 потребоваться удаление прежней версии. Удаление удаляет локальные сохранения.

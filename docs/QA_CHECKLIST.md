@@ -1,4 +1,4 @@
-# QA — 0.5.0
+# QA — 0.5.1
 
 Автоматические отчёты: `story_validation.json`, `completion_validation.json`,
 `ui_validation.json`, `ui_density_validation.json`, `desktop_performance.json`,

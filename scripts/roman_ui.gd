@@ -38,6 +38,23 @@ static func theme_resource() -> Theme:
 	return shared_theme
 
 
+static func cover_rect(
+	image: Vector2,
+	area: Vector2,
+	physical_scale: float = 1.0,
+	zoom: float = 1.0,
+	offset: Vector2 = Vector2.ZERO
+) -> Rect2:
+	var density: float = maxf(0.01, physical_scale)
+	var ratio: float = ceilf(maxf(area.x / image.x, area.y / image.y) * density) / density
+	var extent: Vector2 = image * ratio * maxf(1.0, zoom)
+	var origin: Vector2 = (area - extent) * 0.5 + offset
+	# A pan or shake must never expose an empty edge of the frame.
+	origin.x = clampf(origin.x, minf(0.0, area.x - extent.x), 0.0)
+	origin.y = clampf(origin.y, minf(0.0, area.y - extent.y), 0.0)
+	return Rect2(origin, extent)
+
+
 static func safe_rect(view: Control) -> Rect2:
 	var rect = view.get_viewport_rect()
 	if OS.has_feature("android"):

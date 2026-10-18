@@ -1,5 +1,7 @@
 extends "res://addons/gut/test.gd"
 
+const UI = preload("res://scripts/roman_ui.gd")
+
 var view: Control
 var game: Node
 
@@ -74,6 +76,31 @@ func test_dialogue_buttons_follow_page_and_reveal_state() -> void:
 	view._previous_page()
 	assert_eq(view.page_index, 0)
 	assert_true(view.previous_button.disabled)
+
+
+func test_art_keeps_aspect_and_covers_all_screens_during_pan_and_zoom() -> void:
+	var image: Vector2 = Vector2(480, 270)
+	for area in [
+		Vector2(1280, 720),
+		Vector2(1920, 1080),
+		Vector2(2160, 1080),
+		Vector2(2340, 1080),
+		Vector2(2400, 1080),
+		Vector2(2560, 1080),
+		Vector2(800, 480)
+	]:
+		for density in [1.0, 2.625]:
+			for zoom in [1.0, 1.15]:
+				for offset in [Vector2.ZERO, Vector2(-5000, 5000), Vector2(5000, -5000)]:
+					var rect: Rect2 = UI.cover_rect(image, area, density, zoom, offset)
+					assert_almost_eq(rect.size.x / image.x, rect.size.y / image.y, 0.0001)
+					assert_lte(rect.position.x, 0.001)
+					assert_lte(rect.position.y, 0.001)
+					assert_gte(rect.end.x, area.x - 0.001)
+					assert_gte(rect.end.y, area.y - 0.001)
+					if zoom == 1.0:
+						var pixel_scale: float = rect.size.x / image.x * density
+						assert_almost_eq(pixel_scale, roundf(pixel_scale), 0.0001)
 
 
 func test_campaign_map_preserves_current_story_decisions() -> void:
