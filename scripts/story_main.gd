@@ -5,6 +5,8 @@ const IVORY = Color("ede3cc")
 const BRONZE = Color("a87b3d")
 const OCHRE = Color("d9a441")
 const UI = preload("res://scripts/roman_ui.gd")
+const SoftView = preload("res://scripts/gameplay/soft_view.gd")
+const CutsceneView = preload("res://scripts/gameplay/cutscene_view.gd")
 const EncounterView = preload("res://scripts/gameplay/encounter_view.gd")
 var layer: Control
 var mode: String = "menu"
@@ -435,7 +437,11 @@ func _enter_current() -> void:
 		return
 	var beat: Dictionary = StoryRuntime.beats[node.beat]
 	var art: String = {
-		"tactical": "loading_battle", "platformer": "loading_march", "rpg": "loading_city"
+		"tactical": "loading_battle",
+		"platformer": "loading_march",
+		"rpg": "loading_city",
+		"cutscene": "loading_battle",
+		"soft": "loading_march"
 	}[beat.type]
 	_clear("loading")
 	_set_background("res://assets/final/" + art + ".png")
@@ -448,7 +454,13 @@ func _enter_current() -> void:
 
 
 func _show_beat(node: Dictionary) -> void:
-	encounter = EncounterView.new()
+	match StoryRuntime.beats[node.beat].type:
+		"cutscene":
+			encounter = CutsceneView.new()
+		"soft":
+			encounter = SoftView.new()
+		_:
+			encounter = EncounterView.new()
 	encounter.size = layer.size
 	encounter.setup(StoryRuntime.beats[node.beat])
 	encounter.pause_requested.connect(_pause)

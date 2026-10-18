@@ -1,5 +1,7 @@
 extends RefCounted
 
+const Soft = preload("res://scripts/gameplay/soft_model.gd")
+const Cinematic = preload("res://scripts/gameplay/cutscene_model.gd")
 const Tactical = preload("res://scripts/gameplay/tactical_model.gd")
 const Platformer = preload("res://scripts/gameplay/platform_model.gd")
 const Hub = preload("res://scripts/gameplay/hub_model.gd")
@@ -10,6 +12,10 @@ static func create(
 ) -> RefCounted:
 	var model: RefCounted
 	match beat.type:
+		"soft":
+			model = Soft.new()
+		"cutscene":
+			model = Cinematic.new()
 		"tactical":
 			model = Tactical.new()
 		"platformer":

@@ -80,6 +80,8 @@ func start_new(chapter: int = 1, route: String = "legion") -> void:
 		flags[flag] = definitions.flags[flag].default
 	state = {
 		"schema_version": 2,
+		"seed": randi_range(1, 2147483646),
+		"cutscenes": {},
 		"node": "ch01_s01_n01",
 		"bond": definitions.get("initial_bond", 35),
 		"flags": flags,
@@ -246,10 +248,32 @@ func advance() -> bool:
 	return go(node.get("next", ""))
 
 
-func complete_beat() -> bool:
+func complete_beat(result: Dictionary = {}) -> bool:
 	if current().get("kind") != "beat":
 		return false
 	if current().beat not in state.beats_completed:
+		if beats[current().beat].type == "cutscene":
+			if result.is_empty():
+				var cinematic = preload("res://scripts/gameplay/cutscene_model.gd").new()
+				cinematic.setup(beats[current().beat], state.gameplay, int(state.bond))
+				cinematic.configure({"seed": state.get("seed", 1), "flags": state.flags})
+				for step in range(20):
+					cinematic.bot_step(0)
+					if cinematic.state.won:
+						break
+				result = cinematic.result()
+			apply_effects(result)
+			state.gameplay.coins += int(result.get("reward", 0))
+			if not state.has("cutscenes"):
+				state.cutscenes = {}
+			state.cutscenes[current().beat] = result.duplicate(true)
+			state.history.append(
+				{
+					"node": state.node,
+					"speaker": "narrator",
+					"text": "Итог: " + str(result.get("text", ""))
+				}
+			)
 		state.beats_completed.append(current().beat)
 		Progression.reward(state.gameplay, current().beat)
 		if beats[current().beat].type == "rpg":
@@ -332,6 +356,10 @@ func _load_path(path: String) -> bool:
 					data.gameplay.quests[ident] = true
 	if not Progression.valid(data.gameplay):
 		return false
+	if not data.has("seed"):
+		data.seed = absi(str(data.applied).hash())
+	if not data.has("cutscenes"):
+		data.cutscenes = {}
 	state = data
 	_synchronize_hero()
 	_settle()

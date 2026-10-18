@@ -108,20 +108,14 @@ func test_corrupt_records_do_not_overwrite_the_last_valid_backup() -> void:
 	assert_eq(FileAccess.get_file_as_string(game.save_path + ".bak"), backup)
 
 
-func test_supplies_heal_only_an_active_wounded_episode() -> void:
+func test_supplies_cannot_be_spent_in_a_noncombat_episode() -> void:
 	game.go("ch01_s06_n80")
 	var factory = load("res://scripts/gameplay/encounter_factory.gd")
 	var model = factory.create(game.beats[game.current().beat], game.state.gameplay, 35)
-	model.state.hp = 1
 	game.state.gameplay.encounter = {"beat": game.current().beat, "state": model.state}
 	var before: int = game.state.gameplay.supplies
-	assert_true(game.use_supply())
-	assert_eq(int(game.state.gameplay.supplies), before - 1)
-
-	assert_eq(int(game.state.gameplay.encounter.state.hp), 4)
-	game.state.gameplay.encounter.state.hp = model.state.max_hp
 	assert_false(game.use_supply())
-	assert_eq(int(game.state.gameplay.supplies), before - 1)
+	assert_eq(int(game.state.gameplay.supplies), before)
 
 
 func test_legacy_story_save_recovers_completed_mission_progression_once() -> void:

@@ -297,6 +297,136 @@
         "ch05_s04_lucilla",
         "ch05_s04_both"
       ]
+    },
+    "cs_cicero_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_cicero_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_forest_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_forest_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_alesia_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_alesia_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_brundisium_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_brundisium_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_pharsalus_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_pharsalus_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_alexandria_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_alexandria_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_thapsus_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_thapsus_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_munda_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_munda_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_ides_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_ides_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_proscriptions_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_proscriptions_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_philippi_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_philippi_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_perusia_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_perusia_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_actium_0": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
+    },
+    "cs_actium_1": {
+      "type": "bool",
+      "default": false,
+      "restore_from_choices": []
     }
   },
   "reputation": {

@@ -1,11 +1,10 @@
 {
-  "version": 1,
   "beats": [
     {
       "id": "beat_ch01_s03",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "Ночная оборона",
+        "ru": "Лагерь Квинта Цицерона · 54 до н. э.",
         "en": ""
       },
       "place": {
@@ -30,11 +29,12 @@
       "tiles": "camp_fields",
       "difficulty": 1,
       "variant": 1,
-      "goal": "hold"
+      "goal": "hold",
+      "cutscene": "cicero"
     },
     {
       "id": "beat_ch01_s06",
-      "type": "platformer",
+      "type": "soft",
       "title": {
         "ru": "Связь между валами",
         "en": ""
@@ -61,7 +61,8 @@
       "tiles": "camp_fields",
       "difficulty": 1,
       "variant": 1,
-      "goal": "exit"
+      "goal": "exit",
+      "minigame": "escape"
     },
     {
       "id": "beat_ch02_s04",
@@ -122,9 +123,9 @@
     },
     {
       "id": "beat_ch03_s02",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "Пыль и щиты",
+        "ru": "Фарсал · 48 до н. э.",
         "en": ""
       },
       "place": {
@@ -149,7 +150,8 @@
       "tiles": "camp_fields",
       "difficulty": 4,
       "variant": 4,
-      "goal": "escort"
+      "goal": "escort",
+      "cutscene": "pharsalus"
     },
     {
       "id": "beat_ch03_s11",
@@ -210,9 +212,9 @@
     },
     {
       "id": "beat_ch04_s04",
-      "type": "platformer",
+      "type": "cutscene",
       "title": {
-        "ru": "Проход на Форуме",
+        "ru": "Мартовские иды · 44 до н. э.",
         "en": ""
       },
       "place": {
@@ -237,11 +239,12 @@
       "tiles": "city",
       "difficulty": 7,
       "variant": 7,
-      "goal": "exit"
+      "goal": "exit",
+      "cutscene": "ides"
     },
     {
       "id": "beat_ch05_s05",
-      "type": "platformer",
+      "type": "soft",
       "title": {
         "ru": "Боковые ворота",
         "en": ""
@@ -268,13 +271,14 @@
       "tiles": "city",
       "difficulty": 8,
       "variant": 8,
-      "goal": "exit"
+      "goal": "exit",
+      "minigame": "stealth"
     },
     {
       "id": "beat_ch06_s01",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "Болотный проход",
+        "ru": "Филиппы · 42 до н. э.",
         "en": ""
       },
       "place": {
@@ -299,13 +303,14 @@
       "tiles": "camp_fields",
       "difficulty": 9,
       "variant": 9,
-      "goal": "escort"
+      "goal": "escort",
+      "cutscene": "philippi"
     },
     {
       "id": "beat_ch06_s05",
-      "type": "rpg",
+      "type": "cutscene",
       "title": {
-        "ru": "Зимняя дорога",
+        "ru": "Перузия · 41–40 до н. э.",
         "en": ""
       },
       "place": {
@@ -356,13 +361,14 @@
           "ru": "Пока нечего подтверждать. У писца есть заявка на этот груз.",
           "en": ""
         }
-      }
+      },
+      "cutscene": "perusia"
     },
     {
       "id": "beat_ch07_s02",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "Между галерами",
+        "ru": "Акций · 31 до н. э.",
         "en": ""
       },
       "place": {
@@ -387,11 +393,12 @@
       "tiles": "camp_fields",
       "difficulty": 10,
       "variant": 10,
-      "goal": "escort"
+      "goal": "escort",
+      "cutscene": "actium"
     },
     {
       "id": "beat_ch07_s03",
-      "type": "platformer",
+      "type": "soft",
       "title": {
         "ru": "Натянутый канат",
         "en": ""
@@ -418,7 +425,8 @@
       "tiles": "camp_fields",
       "difficulty": 10,
       "variant": 10,
-      "goal": "exit"
+      "goal": "exit",
+      "minigame": "stealth"
     },
     {
       "id": "beat_ch08_s01",
@@ -537,9 +545,9 @@
     {
       "id": "beat_ch01_s04",
       "scene": "ch01_s04",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "За наружным рвом",
+        "ru": "Галльский лес · 53 до н. э.",
         "en": ""
       },
       "objective": {
@@ -563,14 +571,15 @@
           "ru": "Разбейте малый заслон и вернитесь под защиту лагеря.",
           "en": ""
         }
-      ]
+      ],
+      "cutscene": "forest"
     },
     {
       "id": "beat_ch01_s06_tactical",
       "scene": "ch01_s06",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "Подход к валу",
+        "ru": "Алезия · 52 до н. э.",
         "en": ""
       },
       "objective": {
@@ -594,12 +603,13 @@
           "ru": "Очистите проход перед доставкой сообщения.",
           "en": ""
         }
-      ]
+      ],
+      "cutscene": "alesia"
     },
     {
       "id": "beat_ch01_s07",
       "scene": "ch01_s07",
-      "type": "platformer",
+      "type": "soft",
       "title": {
         "ru": "Деревянная игла",
         "en": ""
@@ -625,12 +635,13 @@
           "ru": "Заберите крепления с трёх постов и вернитесь к дороге.",
           "en": ""
         }
-      ]
+      ],
+      "minigame": "dice"
     },
     {
       "id": "beat_ch02_s05",
       "scene": "ch02_s05",
-      "type": "platformer",
+      "type": "soft",
       "title": {
         "ru": "Через пустые дворы",
         "en": ""
@@ -656,14 +667,15 @@
           "ru": "Соберите три оставленных свёртка и вынесите к дороге.",
           "en": ""
         }
-      ]
+      ],
+      "minigame": "escape"
     },
     {
       "id": "beat_ch03_s01",
       "scene": "ch03_s01",
-      "type": "platformer",
+      "type": "cutscene",
       "title": {
-        "ru": "Камни пристани",
+        "ru": "Брундизий · 49 до н. э.",
         "en": ""
       },
       "objective": {
@@ -687,7 +699,8 @@
           "ru": "Соберите три верёвки для частной лодки и доберитесь до причала.",
           "en": ""
         }
-      ]
+      ],
+      "cutscene": "brundisium"
     },
     {
       "id": "beat_ch03_s04",
@@ -749,9 +762,9 @@
     {
       "id": "beat_ch03_s05",
       "scene": "ch03_s05",
-      "type": "platformer",
+      "type": "cutscene",
       "title": {
-        "ru": "Лодка и ящик",
+        "ru": "Александрия · 48–47 до н. э.",
         "en": ""
       },
       "objective": {
@@ -775,14 +788,15 @@
           "ru": "Соберите три метки груза и дойдите до лодки.",
           "en": ""
         }
-      ]
+      ],
+      "cutscene": "alexandria"
     },
     {
       "id": "beat_ch03_s06",
       "scene": "ch03_s06",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "Путь после Тапса",
+        "ru": "Тапс · 46 до н. э.",
         "en": ""
       },
       "objective": {
@@ -806,14 +820,15 @@
           "ru": "Прикройте вынос раненых до пятого хода.",
           "en": ""
         }
-      ]
+      ],
+      "cutscene": "thapsus"
     },
     {
       "id": "beat_ch03_s07",
       "scene": "ch03_s07",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "На склоне Мунды",
+        "ru": "Мунда · 45 до н. э.",
         "en": ""
       },
       "objective": {
@@ -837,12 +852,13 @@
           "ru": "Освободите малый проход для отступающих носильщиков.",
           "en": ""
         }
-      ]
+      ],
+      "cutscene": "munda"
     },
     {
       "id": "beat_ch03_s12",
       "scene": "ch03_s12",
-      "type": "platformer",
+      "type": "soft",
       "title": {
         "ru": "Письмо через порт",
         "en": ""
@@ -868,18 +884,19 @@
           "ru": "Соберите три свёртка писем и вынесите их к дороге.",
           "en": ""
         }
-      ]
+      ],
+      "minigame": "escape"
     },
     {
       "id": "beat_ch03_s14",
       "scene": "ch03_s14",
-      "type": "tactical",
+      "type": "rpg",
       "title": {
         "ru": "У частного склада",
         "en": ""
       },
       "objective": {
-        "ru": "Удержите двор пять ходов, пока люди прячут припасы.",
+        "ru": "Примите заявку, заберите припасы и передайте семьям у выхода.",
         "en": ""
       },
       "location": "roman_forum",
@@ -1018,9 +1035,9 @@
     {
       "id": "beat_ch05_s07",
       "scene": "ch05_s07",
-      "type": "tactical",
+      "type": "cutscene",
       "title": {
-        "ru": "Под защитой двора",
+        "ru": "Проскрипции · 43 до н. э.",
         "en": ""
       },
       "objective": {
@@ -1044,12 +1061,13 @@
           "ru": "Прикройте двор пять ходов до ухода укрываемых.",
           "en": ""
         }
-      ]
+      ],
+      "cutscene": "proscriptions"
     },
     {
       "id": "beat_ch06_s07",
       "scene": "ch06_s07",
-      "type": "platformer",
+      "type": "soft",
       "title": {
         "ru": "Первое весло",
         "en": ""
@@ -1075,7 +1093,8 @@
           "ru": "Соберите три крепления и донесите их к малому судну.",
           "en": ""
         }
-      ]
+      ],
+      "minigame": "stealth"
     },
     {
       "id": "beat_ch07_s01",

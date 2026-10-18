@@ -74,5 +74,17 @@ class Model:
                     if option is None:raise ValueError('Requested choice unavailable: '+target+'/'+wanted)
                 effects(option,state);words+=len(WORD.findall(option['text']['ru']))
                 decisions.append({'node':target,'choice':option['id']});target=option['goto']
-            else:target=node['next']
+            else:
+                if node.get('kind')=='beat':
+                    beat=next(b for b in read('story/beats.json')['beats'] if b['id']==node['beat'])
+                    if beat['type']=='cutscene':
+                        data=read('story/cutscenes/'+beat['cutscene']+'.json')
+                        salt=0
+                        for code in beat['id']:salt=(salt*31+ord(code))%2147483647
+                        roll=(48271+salt)%5-2
+                        option=data['choice']['options'][0]
+                        score=option['power']+roll+state['bond']//25+sum(bool(state['flags'].get(f)) for f in data['helpful_flags'])
+                        outcome='win' if score>=5 else 'costly' if score>=2 else 'loss'
+                        effects(option,state);effects(data['outcome']['cards'][outcome],state)
+                target=node['next']
         raise ValueError('Traversal limit exceeded')

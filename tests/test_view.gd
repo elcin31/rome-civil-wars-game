@@ -27,61 +27,25 @@ func _touch(index: int, point: Vector2, pressed: bool) -> InputEventScreenTouch:
 	return event
 
 
-func test_two_finger_controls_pause_and_in_episode_reload() -> void:
+func test_soft_controls_pause_and_in_episode_reload() -> void:
 	game.go("ch01_s06_n80")
 	view.refresh()
 	var encounter: Control = view.encounter
 	assert_not_null(encounter)
-	encounter._input(
-		_touch(
-			0,
-			(
-				encounter.get_global_transform_with_canvas()
-				* (encounter._joy_center() + Vector2(encounter._joy_radius(), 0))
-			),
-			true
-		)
-	)
-	encounter._input(
-		_touch(
-			1,
-			encounter.get_global_transform_with_canvas() * encounter._action_rect(0).get_center(),
-			true
-		)
-	)
-	assert_gt(encounter.joy_axis.x, 0.9)
-	assert_true(encounter.controls.jump)
 	var start_x: float = encounter.model.state.x
-	encounter._physics_process(1.0 / 60.0)
+	encounter._move(1.0)
+	encounter._cover(true)
+	encounter._process(0.1)
 	assert_gt(float(encounter.model.state.x), start_x)
-	assert_lt(float(encounter.model.state.vy), 0.0)
-	encounter._input(
-		_touch(
-			0,
-			(
-				encounter.get_global_transform_with_canvas()
-				* (encounter._joy_center() + Vector2(encounter._joy_radius(), 0))
-			),
-			false
-		)
-	)
-	assert_eq(encounter.joy_axis, Vector2.ZERO)
-	assert_true(encounter.controls.jump)
-	encounter._input(
-		_touch(
-			1,
-			encounter.get_global_transform_with_canvas() * encounter._action_rect(0).get_center(),
-			false
-		)
-	)
-	assert_false(encounter.controls.jump)
+	assert_true(encounter.model.state.cover)
 	var saved_x: float = encounter.model.state.x
-	encounter._pause()
+	encounter.persist()
+	view._pause()
 	assert_eq(view.mode, "pause")
 	assert_true(game.load_game())
 	view.refresh()
 	assert_almost_eq(float(view.encounter.model.state.x), saved_x, 0.001)
-	assert_eq(view.encounter.joy_axis, Vector2.ZERO)
+	assert_eq(view.encounter.axis, 0.0)
 
 
 func test_gameplay_cannot_finish_before_objective_is_won() -> void:
@@ -91,7 +55,7 @@ func test_gameplay_cannot_finish_before_objective_is_won() -> void:
 	view._complete_beat()
 	assert_eq(game.state.node, original)
 	var factory = load("res://scripts/gameplay/encounter_factory.gd")
-	assert_gte(factory.solve(view.encounter.model, "tactical"), 0)
+	assert_gte(factory.solve(view.encounter.model, "cutscene"), 0)
 	view._complete_beat()
 	assert_ne(game.state.node, original)
 	assert_true("beat_ch01_s03" in game.state.beats_completed)

@@ -4,7 +4,7 @@ extends SceneTree
 const Factory = preload("res://scripts/gameplay/encounter_factory.gd")
 var game: Node
 var chapter_filter: int = 0
-var counts: Dictionary = {"tactical": 0, "platformer": 0, "rpg": 0}
+var counts: Dictionary = {"cutscene": 0, "soft": 0, "rpg": 0}
 var unique: Dictionary = {}
 var total_steps: int = 0
 var reload_checked: bool = false
@@ -47,6 +47,7 @@ func _run() -> void:
 
 func _walk(route: Dictionary) -> bool:
 	game.start_new()
+	game.state.seed = 1
 	game.suppress_save = true
 	var decision: int = 0
 	var reached_chapter: bool = false
@@ -82,8 +83,8 @@ func _play(ident: String) -> bool:
 		int(game.state.bond),
 		not game.state.flags.get("friend_lost", false)
 	)
-	if beat.type == "rpg":
-		_prepare_hub(model)
+	if beat.type == "cutscene":
+		model.configure({"seed": 1, "flags": game.state.flags})
 	if not reload_checked:
 		game.state.gameplay.encounter = {"beat": ident, "state": model.state.duplicate(true)}
 		if not game.save_game() or not game.load_game():
