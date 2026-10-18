@@ -15,6 +15,7 @@ var definitions: Dictionary = {}
 var ui: Dictionary = {}
 var state: Dictionary = {}
 var last_error: String = ""
+var test_seed: int = 0
 var suppress_save: bool = false
 var loaded_chapters: Dictionary = {}
 
@@ -80,7 +81,7 @@ func start_new(chapter: int = 1, route: String = "legion") -> void:
 		flags[flag] = definitions.flags[flag].default
 	state = {
 		"schema_version": 2,
-		"seed": randi_range(1, 2147483646),
+		"seed": test_seed if test_seed > 0 else randi_range(1, 2147483646),
 		"cutscenes": {},
 		"node": "ch01_s01_n01",
 		"bond": definitions.get("initial_bond", 35),

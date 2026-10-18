@@ -80,14 +80,15 @@ def main():
         edges[ident]=destinations
     duplicates=[text for text,n in Counter(texts).items() if n>1]
     if duplicates:errors.append('Duplicated long narrative paragraphs')
-    visited=set();active=set()
-    def visit(node):
-        if node in active:errors.append('Graph cycle at '+node);return
-        if node in visited or node not in nodes:return
-        active.add(node)
-        for dest in edges[node]:visit(dest)
-        active.remove(node);visited.add(node)
-    visit('ch01_s01_n01')
+    visited=set();active=set();stack=[('ch01_s01_n01',False)]
+    while stack:
+        ident,leaving=stack.pop()
+        if leaving:
+            active.discard(ident);visited.add(ident);continue
+        if ident in active:errors.append('Graph cycle at '+ident);continue
+        if ident in visited or ident not in nodes:continue
+        active.add(ident);stack.append((ident,True))
+        stack.extend((dest,False) for dest in reversed(edges[ident]))
     if set(nodes)-visited:errors.append(f'{len(set(nodes)-visited)} unreachable nodes')
     for scene in scenes.values():
         if scene.get('entry') not in nodes:errors.append(scene['id']+': missing entry')

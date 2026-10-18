@@ -7,6 +7,7 @@ func _initialize() -> void:
 
 func _verify() -> void:
 	var game = root.get_node("StoryRuntime")
+	game.test_seed = 1
 	game.save_path = "user://story_verification_%s.json" % OS.get_process_id()
 	var witnesses = game.read_json("res://story/test_routes.json")
 	var routes = witnesses.get("routes", [])

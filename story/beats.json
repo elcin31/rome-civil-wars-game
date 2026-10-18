@@ -232,9 +232,9 @@
         }
       ],
       "condition": "",
-      "node": "ch04_s04_n80",
+      "node": "ch04_s02_n75",
       "implementation": "playable",
-      "scene": "ch04_s04",
+      "scene": "ch04_s02",
       "location": "roman_forum",
       "tiles": "city",
       "difficulty": 7,

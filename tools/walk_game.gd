@@ -16,6 +16,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	game = root.get_node("StoryRuntime")
+	game.test_seed = 1
 	game.save_path = "user://gameplay_bot_%s.json" % OS.get_process_id()
 	for argument in OS.get_cmdline_user_args():
 		if argument.begins_with("--chapter="):
