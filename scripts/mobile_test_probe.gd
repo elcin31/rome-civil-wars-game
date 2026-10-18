@@ -21,7 +21,11 @@ static func write(view: Control) -> void:
 			)
 		pending.append_array(node.get_children())
 	var data: Dictionary = {
-		"mode": view.mode, "dpi": DisplayServer.screen_get_dpi(), "buttons": buttons
+		"mode": view.mode,
+		"dpi": DisplayServer.screen_get_dpi(),
+		"buttons": buttons,
+		"frame": Engine.get_process_frames(),
+		"transition": view.transition_serial
 	}
 	var encounter: Control = view.encounter
 	if is_instance_valid(encounter):

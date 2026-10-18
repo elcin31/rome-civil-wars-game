@@ -52,6 +52,23 @@ def ui():
     return data
 
 
+def wait_for_fresh_layout():
+    # The probe is written every 250 ms. A tap can change the screen before the
+    # next probe; immediately reusing old Next coordinates can hit the hub Journal.
+    previous = ui().get("frame", -1)
+    updates = 0
+    deadline = time.monotonic() + 5
+    while time.monotonic() < deadline:
+        current = ui().get("frame", -1)
+        if current > previous:
+            previous = current
+            updates += 1
+            if updates == 2:
+                return
+        time.sleep(0.05)
+    raise AssertionError("Native layout probe did not acknowledge the touch")
+
+
 def tap_caption(caption, allow_hub=False):
     deadline = time.monotonic() + 5
     while time.monotonic() < deadline:
@@ -62,6 +79,7 @@ def tap_caption(caption, allow_hub=False):
             if button["text"] == caption and not button["disabled"]:
                 x, y, width, height = button["rect"]
                 adb("shell", "input", "tap", str(round(x + width / 2)), str(round(y + height / 2)))
+                wait_for_fresh_layout()
                 return
         time.sleep(0.1)
     raise AssertionError("Visible enabled button not found: " + caption)
@@ -98,6 +116,8 @@ def dismiss_fullscreen_hint():
 def record_failure(kind, value, traceback):
     try:
         (OUTPUT / "logcat.txt").write_text(adb("logcat", "-d", "-v", "brief", check=False))
+        (OUTPUT / "failure-ui.json").write_text(json.dumps(ui(), ensure_ascii=False, indent=2))
+        (OUTPUT / "failure-state.json").write_text(json.dumps(state(), ensure_ascii=False, indent=2))
         screenshot("failure")
     finally:
         sys.__excepthook__(kind, value, traceback)
